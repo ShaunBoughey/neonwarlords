@@ -1,0 +1,8 @@
+[Heading2] Gang (Clan)
+[] A player is required to join a ‘Gang’ before they can enter/take part in Bastions as they are a clan only activity. Once in a Gang, players will have a gang chatroom, access to Gang messages if the Gang leader.
+[] 
+[] -Think up reason to have clan other than Bastions-
+[] 
+[Heading2] The Plaza
+[] The plaza is a market in the city center which updates hourly with new items for purchase with credits. 
+[] 

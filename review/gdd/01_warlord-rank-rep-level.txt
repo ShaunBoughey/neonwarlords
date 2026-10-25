@@ -1,0 +1,547 @@
+[Heading1] Warlords
+[Heading2] Warlord Rank
+[] Consuming warlords will rank up the rank of the chosen warlord. The required rank and number of warlords is equal to that of the current rank of the Chosen Warlord. The chosen Warlord must also be at their max level within their current rank. Warlords of different rarities start at different ranks. 
+[] 
+[] Starting Rank
+[] Required to ascend from
+[] Required 1 Ranks to Ascend From
+[] 1 - Common
+[] Requires 1 x 1 Rank Warlord
+[] 2
+[] 2 - Uncommon
+[] Requires 2 x 2 Rank Warlords
+[] 6
+[] 3 - Rare
+[] Requires 3 x 3 Rank Warlords
+[] 18
+[] 4 - Epic
+[] Requires 4 x 4 Rank Warlords
+[] 90
+[] 5 - Legendary
+[] Requires 5 x 5 Rank Warlords
+[] 540
+[] 6
+[] N/A - Max
+[] N/A
+[] 
+[Heading2] Warlord Reputation
+[] A warlord can have their Reputation level increased to a maximum of their current star rating. Reputation level is increased through the acquisition of Alignment Deed. If the character is of ‘Paragon’ alignment they require both Paragon Deeds and Generic Deeds increase in reputation. Deeds break down into three tiers, Minor, Major and Grand assigned to their respective alignments of Paragon, Neutral and Renegade all of which are acquired from their respective Hideouts.
+[]  
+[] Warlord Rarity
+[] Reputation Level
+[] Required Alignment Deeds
+[] Required Generic Deeds
+[] Common, Uncommon and Rare
+[] 1
+[] 2 Minor
+[] 3 Minor
+[] 
+[] 2
+[] 3 Minor
+[] 3 Minor
+[] 
+[] 3
+[] 4 Minor
+[] 4 Minor
+[] 
+[] 4
+[] 5 Minor
+[] 4 Minor
+[] 
+[] 5
+[] 2 Major
+[] 2 Major
+[] 
+[] 6
+[] 3 Major
+[] 3 Major
+[] Epic
+[] 1
+[] 5 Minor
+[] 5 Minor
+[] 
+[] 2
+[] 7 Minor
+[] 5 Minor
+[] 
+[] 3
+[] 3 Major
+[] 3 Major
+[] 
+[] 4
+[] 3 Major
+[] 4 Major
+[] 
+[] 5
+[] 1 Grand
+[] 2 Grand
+[] 
+[] 6
+[] 3 Grand
+[] 2 Grand
+[] Legendary
+[] 1
+[] 1 Major
+[] 1 Major
+[] 
+[] 2
+[] 2 Major
+[] 2 Major
+[] 
+[] 3
+[] 3 Major
+[] 2 Major
+[] 
+[] 4
+[] 2 Grand
+[] 2 Grand
+[] 
+[] 5
+[] 4 Grand
+[] 3 Grand
+[] 
+[] 6
+[] 6 Grand
+[] 4 Grand
+[] 
+[Heading2] Warlord Level
+[] Warlords gain xp from all combat activities with the amount dependent on the content and outcome. Losses result in only a 20% reward of the total XP. The level scaling is a cumulative increase of 10% each level with the same rule for the increase of the starting level Rank.
+[] 
+[] Rank
+[] XP Rank 1
+[] XP Rank 2
+[] XP Rank 3
+[] XP Rank 4
+[] XP Rank 5
+[] XP Rank 6
+[] Total XP
+[] 6790
+[] 28137
+[] 89922
+[] 267163
+[] 773916
+[] 2220905
+[] 1
+[] 500
+[] 550
+[] 605
+[] 666
+[] 732
+[] 805
+[] 2
+[] 550
+[] 605
+[] 666
+[] 732
+[] 805
+[] 886
+[] 3
+[] 605
+[] 666
+[] 732
+[] 805
+[] 886
+[] 974
+[] 4
+[] 666
+[] 732
+[] 805
+[] 886
+[] 974
+[] 1072
+[] 5
+[] 732
+[] 805
+[] 886
+[] 974
+[] 1072
+[] 1179
+[] 6
+[] 805
+[] 886
+[] 974
+[] 1072
+[] 1179
+[] 1297
+[] 7
+[] 886
+[] 974
+[] 1072
+[] 1179
+[] 1297
+[] 1427
+[] 8
+[] 974
+[] 1072
+[] 1179
+[] 1297
+[] 1427
+[] 1569
+[] 9
+[] 1072
+[] 1179
+[] 1297
+[] 1427
+[] 1569
+[] 1726
+[] 10
+[] Max
+[] 1297
+[] 1427
+[] 1569
+[] 1726
+[] 1899
+[] 11
+[] 
+[] 1427
+[] 1569
+[] 1726
+[] 1899
+[] 2089
+[] 12
+[] 
+[] 1569
+[] 1726
+[] 1899
+[] 2089
+[] 2297
+[] 13
+[] 
+[] 1726
+[] 1899
+[] 2089
+[] 2297
+[] 2527
+[] 14
+[] 
+[] 1899
+[] 2089
+[] 2297
+[] 2527
+[] 2780
+[] 15
+[] 
+[] 2089
+[] 2297
+[] 2527
+[] 2780
+[] 3058
+[] 16
+[] 
+[] 2297
+[] 2527
+[] 2780
+[] 3058
+[] 3364
+[] 17
+[] 
+[] 2527
+[] 2780
+[] 3058
+[] 3364
+[] 3700
+[] 18
+[] 
+[] 2780
+[] 3058
+[] 3364
+[] 3700
+[] 4070
+[] 19
+[] 
+[] 3058
+[] 3364
+[] 3700
+[] 4070
+[] 4477
+[] 20
+[] 
+[] Max
+[] 3700
+[] 4070
+[] 4477
+[] 4925
+[] 21
+[] 
+[] 
+[] 4070
+[] 4477
+[] 4925
+[] 5417
+[] 22
+[] 
+[] 
+[] 4477
+[] 4925
+[] 5417
+[] 5959
+[] 23
+[] 
+[] 
+[] 4925
+[] 5417
+[] 5959
+[] 6555
+[] 24
+[] 
+[] 
+[] 5417
+[] 5959
+[] 6555
+[] 7210
+[] 25
+[] 
+[] 
+[] 5959
+[] 6555
+[] 7210
+[] 7932
+[] 26
+[] 
+[] 
+[] 6555
+[] 7210
+[] 7932
+[] 8725
+[] 27
+[] 
+[] 
+[] 7210
+[] 7932
+[] 8725
+[] 9597
+[] 28
+[] 
+[] 
+[] 7932
+[] 8725
+[] 9597
+[] 10557
+[] 29
+[] 
+[] 
+[] 8725
+[] 9597
+[] 10557
+[] 11613
+[] 30
+[] 
+[] 
+[] Max
+[] 10557
+[] 11613
+[] 12774
+[] 31
+[] 
+[] 
+[] 
+[] 11613
+[] 12774
+[] 14051
+[] 32
+[] 
+[] 
+[] 
+[] 12774
+[] 14051
+[] 15456
+[] 33
+[] 
+[] 
+[] 
+[] 14051
+[] 15456
+[] 17002
+[] 34
+[] 
+[] 
+[] 
+[] 15456
+[] 17002
+[] 18702
+[] 35
+[] 
+[] 
+[] 
+[] 17002
+[] 18702
+[] 20572
+[] 36
+[] 
+[] 
+[] 
+[] 18702
+[] 20572
+[] 22630
+[] 37
+[] 
+[] 
+[] 
+[] 20572
+[] 22630
+[] 24893
+[] 38
+[] 
+[] 
+[] 
+[] 22630
+[] 24893
+[] 27382
+[] 39
+[] 
+[] 
+[] 
+[] 24893
+[] 27382
+[] 30120
+[] 40
+[] 
+[] 
+[] 
+[] Max
+[] 30120
+[] 33132
+[] 41
+[] 
+[] 
+[] 
+[] 
+[] 33132
+[] 36445
+[] 42
+[] 
+[] 
+[] 
+[] 
+[] 36445
+[] 40090
+[] 43
+[] 
+[] 
+[] 
+[] 
+[] 40090
+[] 44099
+[] 44
+[] 
+[] 
+[] 
+[] 
+[] 44099
+[] 48509
+[] 45
+[] 
+[] 
+[] 
+[] 
+[] 48509
+[] 53359
+[] 46
+[] 
+[] 
+[] 
+[] 
+[] 53359
+[] 58695
+[] 47
+[] 
+[] 
+[] 
+[] 
+[] 58695
+[] 64565
+[] 48
+[] 
+[] 
+[] 
+[] 
+[] 64565
+[] 71021
+[] 49
+[] 
+[] 
+[] 
+[] 
+[] 71021
+[] 78124
+[] 50
+[] 
+[] 
+[] 
+[] 
+[] Max
+[] 85936
+[] 51
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 94530
+[] 52
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 103983
+[] 53
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 114381
+[] 54
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 125819
+[] 55
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 138401
+[] 56
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 152241
+[] 57
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 167465
+[] 58
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 184211
+[] 59
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 202633
+[] 60
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Max
+[] 
+[Heading3] Leveling Methods
+[] Warlords can be leveled through two methods. The first is taking them into a battle and receiving exp upon each completion which costs energy and time. The second is to take them into the Dojo and use varying levels of ‘Metabolics’ which provide Exp. This Exp bonus is higher if you align the right metabolic with the Warlord’s reputation. 
+[] 

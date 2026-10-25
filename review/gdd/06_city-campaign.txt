@@ -1,0 +1,1591 @@
+[Heading1] Levels
+[Heading2] City Centre
+[] The City Centre is the central screen or Hub of the game where all other locations and menus sprout from. Below is a flow chart of the main layout and how menus will connect together in Neon Warlords.
+[] 
+[] 
+[Heading2] Campaign
+[] The full campaign in Neon Warlords is split into 10 Locations each containing 7 Stages. Stages 1 - 6 will each reward some credits, xp, chance to drop a Warlord of Rarity common-rare and equipment of a specified set, Other than Location 10 which will rotate its reward set daily. Each stage contains requirements to be completed to 3 Chevrons which as accumulated throughout the campaign will result in rewards. Once the first campaign is completed, a new difficulty will open up, beginning the process again with a total of 3 difficulties overall. The XP gained from each battle should divide equally amongst the 5 Warlords used.
+[Heading3] Campaign Locations
+[Heading3] Campaign Reward Table
+[] Location
+[] Difficulty
+[] Equipment Set
+[] 
+[] Street Punk
+[] Mob Boss
+[] Warlord
+[] 
+[] Slums
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] Health
+[] Stage 1:1
+[] 2,000
+[] 1000
+[] 7,000
+[] 9,000
+[] 12,000
+[] 11,000
+[] Weapon
+[] Stage 1:2
+[] 2,000
+[] 1100
+[] 7,000
+[] 9,100
+[] 12,000
+[] 11,100
+[] Helmet
+[] Stage 1:3
+[] 2,000
+[] 1200
+[] 7,000
+[] 9,200
+[] 12,000
+[] 11,200
+[] Chest
+[] Stage 1:4
+[] 2,000
+[] 1300
+[] 7,000
+[] 9,300
+[] 12,000
+[] 11,300
+[] Gloves
+[] Stage 1:5
+[] 2,000
+[] 1400
+[] 7,000
+[] 9,400
+[] 12,000
+[] 11,400
+[] Legs
+[] Stage 1:6
+[] 2,000
+[] 1500
+[] 7,000
+[] 9,500
+[] 12,000
+[] 11,500
+[] Boots
+[] Stage 1:7
+[] 2,000
+[] 1600
+[] 7,000
+[] 9,600
+[] 12,000
+[] 11,600
+[] Random Piece
+[] Sewers
+[] EXP
+[] Credits
+[] EXP
+[] Credits
+[] EXP
+[] Credits
+[] Armour
+[] Stage 2:1
+[] 2,500
+[] 1,600
+[] 7,500
+[] 9,600
+[] 12,500
+[] 11,600
+[] Weapon
+[] Stage 2:2
+[] 2,500
+[] 1,700
+[] 7,500
+[] 9,700
+[] 12,500
+[] 11,700
+[] Helmet
+[] Stage 2:3
+[] 2,500
+[] 1,800
+[] 7,500
+[] 9,800
+[] 12,500
+[] 11,800
+[] Chest
+[] Stage 2:4
+[] 2,500
+[] 1,900
+[] 7,500
+[] 9,900
+[] 12,500
+[] 11,900
+[] Gloves
+[] Stage 2:5
+[] 2,500
+[] 2,000
+[] 7,500
+[] 10,000
+[] 12,500
+[] 12,000
+[] Legs
+[] Stage 2:6
+[] 2,500
+[] 2,100
+[] 7,500
+[] 10,100
+[] 12,500
+[] 12,100
+[] Boots
+[] Stage 2:7
+[] 2,500
+[] 2,200
+[] 7,500
+[] 10,200
+[] 12,500
+[] 12,200
+[] Random Piece
+[] Shipyard
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] Firepower
+[] Stage 3:1
+[] 3,000
+[] 2,200
+[] 8,000
+[] 10,200
+[] 13,000
+[] 12,200
+[] Weapon
+[] Stage 3:2
+[] 3,000
+[] 2,300
+[] 8,000
+[] 10,300
+[] 13,000
+[] 12,300
+[] Helmet
+[] Stage 3:3
+[] 3,000
+[] 2,400
+[] 8,000
+[] 10,400
+[] 13,000
+[] 12,400
+[] Chest
+[] Stage 3:4
+[] 3,000
+[] 2,500
+[] 8,000
+[] 10,500
+[] 13,000
+[] 12,500
+[] Gloves
+[] Stage 3:5
+[] 3,000
+[] 2,600
+[] 8,000
+[] 10,600
+[] 13,000
+[] 12,600
+[] Legs
+[] Stage 3:6
+[] 3,000
+[] 2,700
+[] 8,000
+[] 10,700
+[] 13,000
+[] 12,700
+[] Boots
+[] Stage 3:7
+[] 3,000
+[] 2,800
+[] 8,000
+[] 10,800
+[] 13,000
+[] 12,800
+[] Random Piece
+[] Industrial
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] Speed
+[] Stage 4:1
+[] 3,500
+[] 2,800
+[] 8,500
+[] 10,800
+[] 14,000
+[] 12,800
+[] Weapon
+[] Stage 4:2
+[] 3,500
+[] 2,900
+[] 8,500
+[] 10,900
+[] 14,000
+[] 12,900
+[] Helmet
+[] Stage 4:3
+[] 3,500
+[] 3,000
+[] 8,500
+[] 11,000
+[] 14,000
+[] 13,000
+[] Chest
+[] Stage 4:4
+[] 3,500
+[] 3,100
+[] 8,500
+[] 11,100
+[] 14,000
+[] 13,100
+[] Gloves
+[] Stage 4:5
+[] 3,500
+[] 3,200
+[] 8,500
+[] 11,200
+[] 14,000
+[] 13,200
+[] Legs
+[] Stage 4:6
+[] 3,500
+[] 3,300
+[] 8,500
+[] 11,300
+[] 14,000
+[] 13,300
+[] Boots
+[] Stage 4:7
+[] 3,500
+[] 3,400
+[] 8,500
+[] 11,400
+[] 14,000
+[] 13,400
+[] Random Piece
+[] Chemical Plant
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] Stitcher
+[] Stage 5:1
+[] 4,000
+[] 3,400
+[] 9,000
+[] 11,400
+[] 14,500
+[] 13,400
+[] Weapon
+[] Stage 5:2
+[] 4,000
+[] 3,500
+[] 9,000
+[] 11,500
+[] 14,500
+[] 13,500
+[] Helmet
+[] Stage 5:3
+[] 4,000
+[] 3,600
+[] 9,000
+[] 11,600
+[] 14,500
+[] 13,600
+[] Chest
+[] Stage 5:4
+[] 4,000
+[] 3,700
+[] 9,000
+[] 11,700
+[] 14,500
+[] 13,700
+[] Gloves
+[] Stage 5:5
+[] 4,000
+[] 3,800
+[] 9,000
+[] 11,800
+[] 14,500
+[] 13,800
+[] Legs
+[] Stage 5:6
+[] 4,000
+[] 3,900
+[] 9,000
+[] 11,900
+[] 14,500
+[] 13,900
+[] Boots
+[] Stage 5:7
+[] 4,000
+[] 4,000
+[] 9,000
+[] 12,000
+[] 14,500
+[] 14,000
+[] Random Piece
+[] Mall
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] Hacking
+[] Stage 6:1
+[] 4,500
+[] 4,000
+[] 9,500
+[] 12,000
+[] 15,000
+[] 14,000
+[] Weapon
+[] Stage 6:2
+[] 4,500
+[] 4,100
+[] 9,500
+[] 12,100
+[] 15,000
+[] 14,100
+[] Helmet
+[] Stage 6:3
+[] 4,500
+[] 4,200
+[] 9,500
+[] 12,200
+[] 15,000
+[] 14,200
+[] Chest
+[] Stage 6:4
+[] 4,500
+[] 4,300
+[] 9,500
+[] 12,300
+[] 15,000
+[] 14,300
+[] Gloves
+[] Stage 6:5
+[] 4,500
+[] 4,400
+[] 9,500
+[] 12,400
+[] 15,000
+[] 14,400
+[] Legs
+[] Stage 6:6
+[] 4,500
+[] 4,500
+[] 9,500
+[] 12,500
+[] 15,000
+[] 14,500
+[] Boots
+[] Stage 6:7
+[] 4,500
+[] 4,600
+[] 9,500
+[] 12,600
+[] 15,000
+[] 14,600
+[] Random Piece
+[] Sky Street
+[] XP
+[] Silver
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] Firewall
+[] Stage 7:1
+[] 5,000
+[] 4,600
+[] 10,000
+[] 12,600
+[] 15,500
+[] 14,600
+[] Weapon
+[] Stage 7:2
+[] 5,000
+[] 4,700
+[] 10,000
+[] 12,700
+[] 15,500
+[] 14,700
+[] Helmet
+[] Stage 7:3
+[] 5,000
+[] 4,800
+[] 10,000
+[] 12,800
+[] 15,500
+[] 14,800
+[] Chest
+[] Stage 7:4
+[] 5,000
+[] 4,900
+[] 10,000
+[] 12,900
+[] 15,500
+[] 14,900
+[] Gloves
+[] Stage 7:5
+[] 5,000
+[] 5,000
+[] 10,000
+[] 13,000
+[] 15,500
+[] 15,000
+[] Legs
+[] Stage 7:6
+[] 5,000
+[] 5,100
+[] 10,000
+[] 13,100
+[] 15,500
+[] 15,100
+[] Boots
+[] Stage 7:7
+[] 5,000
+[] 5,200
+[] 10,000
+[] 13,200
+[] 15,500
+[] 15,200
+[] Random Piece
+[] Megablock
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] Crit Chance
+[] Stage 8:1
+[] 5,500
+[] 5,200
+[] 10,500
+[] 13,200
+[] 16,000
+[] 15,200
+[] Weapon
+[] Stage 8:2
+[] 5,500
+[] 5,300
+[] 10,500
+[] 13,300
+[] 16,000
+[] 15,300
+[] Helmet
+[] Stage 8:3
+[] 5,500
+[] 5,400
+[] 10,500
+[] 13,400
+[] 16,000
+[] 15,400
+[] Chest
+[] Stage 8:4
+[] 5,500
+[] 5,500
+[] 10,500
+[] 13,500
+[] 16,000
+[] 15,500
+[] Gloves
+[] Stage 8:5
+[] 5,500
+[] 5,600
+[] 10,500
+[] 13,600
+[] 16,000
+[] 15,600
+[] Legs
+[] Stage 8:6
+[] 5,500
+[] 5,700
+[] 10,500
+[] 13,700
+[] 16,000
+[] 15,700
+[] Boots
+[] Stage 8:7
+[] 5,500
+[] 5,800
+[] 10,500
+[] 13,800
+[] 16,000
+[] 15,800
+[] Random Piece
+[] Downtown
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] Crit Damage
+[] Stage 9:1
+[] 6,000
+[] 5,800
+[] 11,000
+[] 13,800
+[] 16,500
+[] 15,800
+[] Weapon
+[] Stage 9:2
+[] 6,000
+[] 5,900
+[] 11,000
+[] 13,900
+[] 16,500
+[] 15,900
+[] Helmet
+[] Stage 9:3
+[] 6,000
+[] 6,000
+[] 11,000
+[] 14,000
+[] 16,500
+[] 16,000
+[] Chest
+[] Stage 9:4
+[] 6,000
+[] 6,100
+[] 11,000
+[] 14,100
+[] 16,500
+[] 16,100
+[] Gloves
+[] Stage 9:5
+[] 6,000
+[] 6,200
+[] 11,000
+[] 14,200
+[] 16,500
+[] 16,200
+[] Legs
+[] Stage 9:6
+[] 6,000
+[] 6,300
+[] 11,000
+[] 14,300
+[] 16,500
+[] 16,300
+[] Boots
+[] Stage 9:7
+[] 6,000
+[] 6,400
+[] 11,000
+[] 14,400
+[] 16,500
+[] 16,400
+[] Random Piece
+[] Corpo Tower
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] XP
+[] Credits
+[] Rotates Daily
+[] Stage 10:1
+[] 6,500
+[] 6,400
+[] 11,500
+[] 14,400
+[] 17,000
+[] 16,400
+[] Weapon
+[] Stage 10:2
+[] 6,500
+[] 6,500
+[] 11,500
+[] 14,500
+[] 17,000
+[] 16,500
+[] Helmet
+[] Stage 10:3
+[] 6,500
+[] 6,600
+[] 11,500
+[] 14,600
+[] 17,000
+[] 16,600
+[] Chest
+[] Stage 10:4
+[] 6,500
+[] 6,700
+[] 11,500
+[] 14,700
+[] 17,000
+[] 16,700
+[] Gloves
+[] Stage 10:5
+[] 6,500
+[] 6,800
+[] 11,500
+[] 14,800
+[] 17,000
+[] 16,800
+[] Legs
+[] Stage 10:6
+[] 6,500
+[] 6,900
+[] 11,500
+[] 14,900
+[] 17,000
+[] 16,900
+[] Boots
+[] Stage 10:7
+[] 6,500
+[] 7,000
+[] 11,500
+[] 15,000
+[] 17,000
+[] 17,000
+[] Random Piece
+[] 
+[] 
+[Heading3] Campaign Additional Drops Per Stage
+[] Difficulty
+[] Drop
+[] Drop Chance %
+[] Energy Cost
+[] Street Punk
+[] Common Warlord
+[] 15
+[] 4 Energy 
+[] Per Battle
+[] 
+[] Uncommon Warlord
+[] 5
+[] 
+[] 
+[] Equipment
+[] 75
+[] 
+[] 
+[] Uncommon Contract
+[] 5
+[] 
+[] Mob Boss
+[] Uncommon Warlord
+[] 17.5
+[] 6 Energy 
+[] Per Battle
+[] 
+[] Rare Warlord
+[] 2.5
+[] 
+[] 
+[] Equipment
+[] 75
+[] 
+[] 
+[] 2x Uncommon Contract
+[] 5
+[] 
+[] Warlord
+[] Uncommon Warlord
+[] 15
+[] 8 Energy 
+[] Per Battle
+[] 
+[] Rare Warlord
+[] 5
+[] 
+[] 
+[] Equipment
+[] 75
+[] 
+[] 
+[] 3x Uncommon Contract
+[] 5
+[] 
+[] 
+[Heading3] Campaign Progression Rewards
+[] Chevrons
+[] Difficulty
+[] 
+[] Street Punk
+[] Mob Boss
+[] Warlord
+[] 15
+[] 5x Uncommon Contract
+[] 1x Rare Contract
+[] 2x Rare Contract
+[] 30
+[] 50,000 Credits
+[] 100,000 Credits
+[] 200,000 Credits
+[] 45
+[] 1x Energy Battery
+[] 2x Energy Battery
+[] 3x Energy Battery
+[] 60
+[] 50 Trinium
+[] 100 Trinium
+[] 150 Trinium
+[] 75
+[] Gear Set: Rank 4 Health
+[] Gear Set: Rank 4 Speed
+[] Gear Set: Rank 4 Crit Chance
+[] 90
+[] 1x Rank 3 Firmware
+[] 2x Rank 3 Firmware
+[] 1x Rank 4 Firmware
+[] 105
+[] 100,000 Credits
+[] 150,000 Credits
+[] 250,000 Credits
+[] 120
+[] 1x Rare Contract
+[] 2x Rare Contract
+[] 3x Rare Contract
+[] 135
+[] Gear Set: Rank 4 Armour
+[] Gear Set: Rank 4 Hacking
+[] Gear Set: Rank 4 Crit Damage
+[] 150
+[] 2x Rank 3 Firmware
+[] 1x Rank 4 Firmware
+[] 1x Rank 5 Firmware
+[] 165
+[] 80 Trinium
+[] 120 Trinium
+[] 180 Trinium
+[] 180
+[] Gear Set: Rank 4 Firepower
+[] Gear Set: Rank 4 Firewall
+[] Gear Set: Rank 4 Stitcher
+[] 195
+[] 2x Energy Battery
+[] 3x Energy Battery
+[] 4x Energy Battery
+[] 210
+[] 1x Epic Contract
+[] 1x Epic Contract
+[] 1x Epic Contract
+[] 
+[Heading3] Campaign Enemy Levels
+[] As players progress through the main Campaign, the enemy should scale in considerable difficulty demanding that the players deploy a decent amount of resources to create any ‘Campaign Farmers’ who would be used to leveling lower level characters.
+[] 
+[] Campaign Enemy Warlord Levels
+[] Den Name and Stage
+[] Difficulty
+[] 
+[] Street Punk
+[] Mob Boss
+[] Warlord
+[] Slums
+[] Level
+[] Rank
+[] Rep
+[] Level
+[] Rank
+[] Rep
+[] Level
+[] Rank
+[] Rep
+[] Stage 1:1
+[] 1
+[] 1
+[] 0
+[] 50
+[] 5
+[] 1
+[] 60
+[] 6
+[] 5
+[] Stage 1:2
+[] 2
+[] 1
+[] 0
+[] 50
+[] 5
+[] 1
+[] 60
+[] 6
+[] 5
+[] Stage 1:3
+[] 3
+[] 1
+[] 0
+[] 50
+[] 5
+[] 1
+[] 50
+[] 6
+[] 6
+[] Stage 1:4
+[] 4
+[] 1
+[] 0
+[] 50
+[] 5
+[] 1
+[] 51
+[] 6
+[] 6
+[] Stage 1:5
+[] 5
+[] 2
+[] 0
+[] 50
+[] 5
+[] 1
+[] 52
+[] 6
+[] 6
+[] Stage 1:6
+[] 6
+[] 2
+[] 0
+[] 50
+[] 5
+[] 1
+[] 53
+[] 6
+[] 6
+[] Stage 1:7
+[] 10
+[] 2
+[] 0
+[] 30
+[] 6
+[] 1
+[] 65
+[] 6
+[] 6
+[] Sewers
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Stage 2:1
+[] 7
+[] 2
+[] 0
+[] 50
+[] 5
+[] 2
+[] 54
+[] 6
+[] 6
+[] Stage 2:2
+[] 8
+[] 2
+[] 0
+[] 50
+[] 5
+[] 2
+[] 55
+[] 6
+[] 6
+[] Stage 2:3
+[] 9
+[] 2
+[] 0
+[] 50
+[] 5
+[] 2
+[] 56
+[] 6
+[] 6
+[] Stage 2:4
+[] 10
+[] 2
+[] 0
+[] 50
+[] 5
+[] 2
+[] 57
+[] 6
+[] 6
+[] Stage 2:5
+[] 11
+[] 2
+[] 0
+[] 50
+[] 5
+[] 2
+[] 58
+[] 6
+[] 6
+[] Stage 2:6
+[] 12
+[] 2
+[] 0
+[] 50
+[] 5
+[] 2
+[] 59
+[] 6
+[] 6
+[] Stage 2:7
+[] 13
+[] 3
+[] 0
+[] 40
+[] 6
+[] 2
+[] 70
+[] 6
+[] 6
+[] Shipyard
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Stage 3:1
+[] 14
+[] 2
+[] 0
+[] 50
+[] 5
+[] 3
+[] 61
+[] 6
+[] 6
+[] Stage 3:2
+[] 15
+[] 2
+[] 0
+[] 50
+[] 5
+[] 3
+[] 62
+[] 6
+[] 6
+[] Stage 3:3
+[] 16
+[] 2
+[] 0
+[] 50
+[] 5
+[] 3
+[] 63
+[] 6
+[] 6
+[] Stage 3:4
+[] 17
+[] 2
+[] 0
+[] 50
+[] 5
+[] 3
+[] 64
+[] 6
+[] 6
+[] Stage 3:5
+[] 18
+[] 2
+[] 0
+[] 50
+[] 5
+[] 3
+[] 65
+[] 6
+[] 6
+[] Stage 3:6
+[] 19
+[] 3
+[] 0
+[] 50
+[] 5
+[] 3
+[] 66
+[] 6
+[] 6
+[] Stage 3:7
+[] 25
+[] 3
+[] 0
+[] 50
+[] 6
+[] 3
+[] 75
+[] 6
+[] 6
+[] Industrial
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Stage 4:1
+[] 19
+[] 3
+[] 0
+[] 50
+[] 5
+[] 4
+[] 67
+[] 6
+[] 6
+[] Stage 4:2
+[] 20
+[] 3
+[] 0
+[] 50
+[] 5
+[] 4
+[] 68
+[] 6
+[] 6
+[] Stage 4:3
+[] 21
+[] 3
+[] 0
+[] 50
+[] 5
+[] 4
+[] 69
+[] 6
+[] 6
+[] Stage 4:4
+[] 22
+[] 3
+[] 0
+[] 50
+[] 5
+[] 4
+[] 70
+[] 6
+[] 6
+[] Stage 4:5
+[] 23
+[] 3
+[] 0
+[] 50
+[] 5
+[] 4
+[] 71
+[] 6
+[] 6
+[] Stage 4:6
+[] 24
+[] 3
+[] 0
+[] 50
+[] 5
+[] 4
+[] 72
+[] 6
+[] 6
+[] Stage 4:7
+[] 22
+[] 4
+[] 0
+[] 55
+[] 6
+[] 4
+[] 80
+[] 6
+[] 6
+[] Chemical Plant
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Stage 5:1
+[] 25
+[] 3
+[] 0
+[] 50
+[] 5
+[] 5
+[] 73
+[] 6
+[] 6
+[] Stage 5:2
+[] 26
+[] 3
+[] 0
+[] 50
+[] 5
+[] 5
+[] 74
+[] 6
+[] 6
+[] Stage 5:3
+[] 27
+[] 3
+[] 0
+[] 50
+[] 5
+[] 5
+[] 75
+[] 6
+[] 6
+[] Stage 5:4
+[] 28
+[] 3
+[] 0
+[] 50
+[] 5
+[] 5
+[] 76
+[] 6
+[] 6
+[] Stage 5:5
+[] 29
+[] 3
+[] 0
+[] 50
+[] 5
+[] 5
+[] 77
+[] 6
+[] 6
+[] Stage 5:6
+[] 24
+[] 4
+[] 0
+[] 50
+[] 5
+[] 5
+[] 78
+[] 6
+[] 6
+[] Stage 5:7
+[] 35
+[] 4
+[] 0
+[] 55
+[] 6
+[] 5
+[] 85
+[] 6
+[] 6
+[] Mall
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Stage 6:1
+[] 25
+[] 4
+[] 0
+[] 30
+[] 6
+[] 3
+[] 79
+[] 6
+[] 6
+[] Stage 6:2
+[] 26
+[] 4
+[] 0
+[] 31
+[] 6
+[] 3
+[] 80
+[] 6
+[] 6
+[] Stage 6:3
+[] 27
+[] 4
+[] 0
+[] 32
+[] 6
+[] 3
+[] 81
+[] 6
+[] 6
+[] Stage 6:4
+[] 28
+[] 4
+[] 0
+[] 33
+[] 6
+[] 3
+[] 82
+[] 6
+[] 6
+[] Stage 6:5
+[] 29
+[] 4
+[] 0
+[] 34
+[] 6
+[] 3
+[] 83
+[] 6
+[] 6
+[] Stage 6:6
+[] 30
+[] 4
+[] 0
+[] 35
+[] 6
+[] 3
+[] 84
+[] 6
+[] 6
+[] Stage 6:7
+[] 39
+[] 4
+[] 0
+[] 40
+[] 6
+[] 4
+[] 90
+[] 6
+[] 6
+[] Sky Street
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Stage 7:1
+[] 32
+[] 4
+[] 0
+[] 36
+[] 6
+[] 4
+[] 85
+[] 6
+[] 6
+[] Stage 7:2
+[] 33
+[] 4
+[] 0
+[] 37
+[] 6
+[] 4
+[] 86
+[] 6
+[] 6
+[] Stage 7:3
+[] 34
+[] 4
+[] 0
+[] 38
+[] 6
+[] 4
+[] 87
+[] 6
+[] 6
+[] Stage 7:4
+[] 35
+[] 4
+[] 0
+[] 39
+[] 6
+[] 4
+[] 88
+[] 6
+[] 6
+[] Stage 7:5
+[] 36
+[] 4
+[] 0
+[] 40
+[] 6
+[] 4
+[] 89
+[] 6
+[] 6
+[] Stage 7:6
+[] 37
+[] 4
+[] 0
+[] 41
+[] 6
+[] 4
+[] 90
+[] 6
+[] 6
+[] Stage 7:7
+[] 25
+[] 5
+[] 0
+[] 55
+[] 6
+[] 4
+[] 95
+[] 6
+[] 6
+[] Megablock
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Stage 8:1
+[] 20
+[] 5
+[] 0
+[] 42
+[] 6
+[] 4
+[] 91
+[] 6
+[] 6
+[] Stage 8:2
+[] 21
+[] 5
+[] 0
+[] 43
+[] 6
+[] 4
+[] 92
+[] 6
+[] 6
+[] Stage 8:3
+[] 22
+[] 5
+[] 0
+[] 44
+[] 6
+[] 4
+[] 93
+[] 6
+[] 6
+[] Stage 8:4
+[] 23
+[] 5
+[] 0
+[] 45
+[] 6
+[] 4
+[] 94
+[] 6
+[] 6
+[] Stage 8:5
+[] 24
+[] 5
+[] 0
+[] 46
+[] 6
+[] 4
+[] 95
+[] 6
+[] 6
+[] Stage 8:6
+[] 25
+[] 5
+[] 0
+[] 47
+[] 6
+[] 4
+[] 96
+[] 6
+[] 6
+[] Stage 8:7
+[] 35
+[] 5
+[] 0
+[] 60
+[] 6
+[] 4
+[] 100
+[] 6
+[] 6
+[] Downtown
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Stage 9:1
+[] 27
+[] 5
+[] 0
+[] 48
+[] 6
+[] 4
+[] 97
+[] 6
+[] 6
+[] Stage 9:2
+[] 28
+[] 5
+[] 0
+[] 49
+[] 6
+[] 4
+[] 98
+[] 6
+[] 6
+[] Stage 9:3
+[] 29
+[] 5
+[] 0
+[] 50
+[] 6
+[] 4
+[] 99
+[] 6
+[] 6
+[] Stage 9:4
+[] 30
+[] 5
+[] 0
+[] 51
+[] 6
+[] 4
+[] 100
+[] 6
+[] 6
+[] Stage 9:5
+[] 31
+[] 5
+[] 0
+[] 52
+[] 6
+[] 4
+[] 101
+[] 6
+[] 6
+[] Stage 9:6
+[] 32
+[] 5
+[] 0
+[] 53
+[] 6
+[] 4
+[] 102
+[] 6
+[] 6
+[] Stage 9:7
+[] 45
+[] 5
+[] 0
+[] 60
+[] 6
+[] 4
+[] 107
+[] 6
+[] 6
+[] Corpo Tower
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Stage 10:1
+[] 50
+[] 5
+[] 0
+[] 54
+[] 6
+[] 4
+[] 103
+[] 6
+[] 6
+[] Stage 10:2
+[] 50
+[] 5
+[] 0
+[] 55
+[] 6
+[] 4
+[] 104
+[] 6
+[] 6
+[] Stage 10:3
+[] 50
+[] 5
+[] 0
+[] 56
+[] 6
+[] 4
+[] 105
+[] 6
+[] 6
+[] Stage 10:4
+[] 50
+[] 5
+[] 0
+[] 57
+[] 6
+[] 4
+[] 106
+[] 6
+[] 6
+[] Stage 10:5
+[] 50
+[] 5
+[] 0
+[] 58
+[] 6
+[] 4
+[] 107
+[] 6
+[] 6
+[] Stage 10:6
+[] 50
+[] 5
+[] 0
+[] 59
+[] 6
+[] 4
+[] 108
+[] 6
+[] 6
+[] Stage 10:7
+[] 50
+[] 5
+[] 0
+[] 60
+[] 6
+[] 5
+[] 125
+[] 6
+[] 6
+[] 

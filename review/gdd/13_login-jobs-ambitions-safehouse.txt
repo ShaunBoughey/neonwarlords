@@ -1,0 +1,1012 @@
+[Heading3] Monthly Login Rewards
+[] The monthly login rewards will be set to begin with, releasing a specified Epic Warlord for everyone to get. After so many months it’ll then become a rolling reward. This reward table will only progress on login. If a player does not login for a day there is no reset or deletion of progress. An additional feature would be to be able to randomise the groupings, EG month 1 is energy on yellow, month 2 is XP or credits on yellow etc.
+[] 
+[] Mon
+[] Tues
+[] Weds
+[] Thurs
+[] Fri
+[] Sat
+[] Sun
+[] 20K Credits
+[] 1x XP Boost
+[] 2x Rare T3 Gear Piece
+[] 1x Firmware lvl 2
+[] 3 x Uncommon Contract
+[] 2x Energy Battery
+[] 2x XP Boost
+[] 2 x Energy Battery
+[] 40K Credits
+[] 4x Rare T3 Gear Piece
+[] 1x XP Boost
+[] 1 x Uncommon T2 Implant
+[] 2x Firmware lvl 2
+[] 3 x Uncommon Contract
+[] 3 x Energy Battery
+[] 2x Firmware lvl 2
+[] 2x Rare T3 Gear Piece
+[] 3 x Uncommon Contract
+[] 80K Credits
+[] 1 x Uncommon T2 Implant
+[] 1x Firmware lvl 3
+[] 4 x Energy Battery
+[] 150K Credits
+[] 4x Rare T3 Gear Piece
+[] 3x XP Boost
+[] 1x Firmware lvl 3
+[] 250 Trinium
+[] 1 x Rare Contract
+[] 5 x Energy Battery
+[] 1 x Uncommon T2 Implant
+[] Epic Warlord
+[] N/A
+[] N/A
+[] N/A
+[] N/A
+[] 
+[Heading3] Jobs and Rewards
+[] Jobs are given to a player in the form of Daily Weekly and Monthly challenges, which when fulfilled will give xp and additional rewards. 
+[] 
+[] 
+[] Jobs and Rewards Table
+[] Jobs
+[] Rewards
+[] Daily
+[] Complete 3 'Pit Brawls'
+[] 100 XP, 1x Energy, 10k Credits
+[] Complete 10 'Den' Battles on Any Difficulty
+[] 100 XP, 10x Pit Brawl Invites, 10k Credits
+[] Purchase 1 Item From 'The Plaza'
+[] 100 XP,10x Generic Minor Deeds, 10k Credits
+[] Recruit 3 Warlords
+[] 100 XP, 10 Trinium, 10k Credits
+[] Upgrade Three Pieces of Equipment to 8+
+[] 100 XP, 1x lvl 3 Firmware, 10k Credits
+[] Raise a Warlords Level
+[] 100 XP, 1x Heist Plan, 10k Credits
+[] Gain 3 Equipment From Hideouts
+[] 100 XP, 10 Trinium, 10k Credits
+[] Complete All Daily Jobs
+[] 300 XP, 50 Trinium, 50K Credits
+[] Weekly
+[] Complete all Daily Jobs 5 Times
+[] 900 XP, 1x Rare Stimm, 20k Credits
+[] Complete 20 Pit Brawls
+[] 900 XP, 1x Energy, 20k Credits
+[] Increase 1 Warlord's Reputation
+[] 900 XP, 5x Generic Major Deeds, 20k Credits
+[] Gain 15 Equipment From Hideouts
+[] 900 XP, 100% XP Boost, 20k Credits
+[] Upgrade a Warlord to Rank 3
+[] 900 XP, 2x Heist Plan, 20k Credits
+[] Upgrade Three Pieces of Equipment to 12+
+[] 900 XP, 10x Pit Brawl Invites, 20k Credits
+[] Complete All Weekly Jobs
+[] 1600 XP, 1x Rare Contract, 100k Credits
+[] Monthly
+[] Complete all Daily Jobs 30 Times
+[] 1800 XP, 1x Epic Stimm, 100K Credits
+[] Complete 150 Pit Brawls
+[] 1800 XP, 2x Energy, 100K Credits
+[] Complete 400 'Den' Battles on Any Difficulty
+[] 1800 XP, 1x lvl 4 Firmware, 100K Credits
+[] Upgrade a Warlord to Rank 5
+[] 1800 XP, 2x Rare Stimm, 100K Credits
+[] Upgrade Three Pieces of Equipment to 16
+[] 1800 XP, 5x Generic Grand Deeds, 100K Credits
+[] Gain 100 Equipment From Hideouts
+[] 1800 XP, 3x 100% XP Boost, 100K Credits
+[] Complete All Monthly Jobs
+[] 3200 XP, 1x Epic Contract, 1M Credits
+[] 
+[Heading3] Ambitions (Lifetime Missions)
+[] Ambitions are effectively life long achievements to be made in game, for instance beating the highest stage of each Hideout several times. These achievements will act as an overall mission progression throughout the game.  
+[] 
+[] Campaign Ambitions
+[] 
+[] Campaign Ambitions Table and Rewards
+[] Tier
+[] Order
+[] Ambition Description
+[] Rewards
+[] 1
+[] 1
+[] Complete Den 1:7 on Street Punk
+[] 1x Energy, 10K Credits
+[] 1
+[] 2
+[] Complete Den 2:7 on Street Punk
+[] 1x 100% XP Boost,10K Credits
+[] 1
+[] 3
+[] Complete Den 3:7 on Street Punk
+[] 5x Generic Minor Deeds, 10K Credits
+[] 1
+[] 4
+[] Complete Den 4:7 on Street Punk
+[] 6x Rank 4 Epic Equipment, 10K Credits
+[] 1
+[] 5
+[] Complete Den 5:7 on Street Punk
+[] 50 Trinium, 10K Credits
+[] 1
+[] 6
+[] Complete Den 6:7 on Street Punk
+[] 2x Heist Plan, 10K Credits
+[] 1
+[] 7
+[] Complete Den 7:7 on Street Punk
+[] 1x lvl 3 Firmware, 10K Credits
+[] 1
+[] 8
+[] Complete Den 8:7 on Street Punk
+[] 250K Credits
+[] 1
+[] 9
+[] Complete Den 9:7 on Street Punk
+[] 10x Pit Brawl Invites, 10k Credits
+[] 1
+[] 10
+[] Complete Den 10:7 on Street Punk
+[] 3x Rank 4 Epic Implants, 10K Credits
+[] 1
+[] 11
+[] Complete All Tier 1 Campaign Ambitions
+[] 1x Rare Contract
+[] 2
+[] 1
+[] Complete Den 1:7 on Mob Boss
+[] 2x Energy, 25K Credits
+[] 2
+[] 2
+[] Complete Den 2:7 on Mob Boss
+[] 2x 100% XP Boost, 25K Credits
+[] 2
+[] 3
+[] Complete Den 3:7 on Mob Boss
+[] 5x Generic Major Deeds, 25K Credits
+[] 2
+[] 4
+[] Complete Den 4:7 on Mob Boss
+[] 6x Rank 5 Epic Equipment, 25K Credits
+[] 2
+[] 5
+[] Complete Den 5:7 on Mob Boss
+[] 100 Trinium, 25K Credits
+[] 2
+[] 6
+[] Complete Den 6:7 on Mob Boss
+[] 3x Heist Plan, 25K Credits
+[] 2
+[] 7
+[] Complete Den 7:7 on Mob Boss
+[] 1x lvl 4 Firmware, 25K Credits
+[] 2
+[] 8
+[] Complete Den 8:7 on Mob Boss
+[] 500K Credits
+[] 2
+[] 9
+[] Complete Den 9:7 on Mob Boss
+[] 10x Pit Brawl Invites, 250 Pit Coin, 25k Credits
+[] 2
+[] 10
+[] Complete Den 10:7 on Mob Boss
+[] 3x Rank 5 Epic Implants, 25K Credits
+[] 2
+[] 11
+[] Complete All Tier 2 Campaign Ambitions
+[] 1x Epic Contract
+[] 3
+[] 1
+[] Complete Den 1:7 on Warlord
+[] 3x Energy, 50K Credits
+[] 3
+[] 2
+[] Complete Den 2:7 on Warlord
+[] 3x 100% XP Boost, 50K Credits
+[] 3
+[] 3
+[] Complete Den 3:7 on Warlord
+[] 5x Generic Grand Deeds, 50K Credits
+[] 3
+[] 4
+[] Complete Den 4:7 on Warlord
+[] 6x Rank 6 Epic Equipment, 50K Credits
+[] 3
+[] 5
+[] Complete Den 5:7 on Warlord
+[] 200 Trinium, 50K Credits
+[] 3
+[] 6
+[] Complete Den 6:7 on Warlord
+[] 5x Heist Plan, 50K Credits
+[] 3
+[] 7
+[] Complete Den 7:7 on Warlord
+[] 1x lvl 5 Firmware, 50K Credits
+[] 3
+[] 8
+[] Complete Den 8:7 on Warlord
+[] 1M Credits
+[] 3
+[] 9
+[] Complete Den 9:7 on Warlord
+[] 1000 Pit Coin, 50k Credits
+[] 3
+[] 10
+[] Complete Den 10:7 on Warlord
+[] 3x Rank 6 Epic Implants, 50K Credits
+[] 3
+[] 11
+[] Complete All Tier 3 Campaign Ambitions
+[] 1x Legendary Contract
+[] 
+[] Hideout Ambitions
+[] 
+[] Hideout Ambitions Table and Rewards
+[] Tier
+[] Order
+[] Ambition Description
+[] Rewards
+[] 1
+[] 1
+[] Beat Hideout Cardinal Trolls Stage 10, 20 Times
+[] 1x Energy, 10K Credits
+[] 1
+[] 2
+[] Beat Hideout Vultures Stage 10, 20 Times
+[] 1x 100% XP Boost,10K Credits
+[] 1
+[] 3
+[] Beat Hideout TeraTech Cybernetics Stage 10, 20 Times
+[] 5x Generic Minor Deeds, 10K Credits
+[] 1
+[] 4
+[] Beat Hideout Quantum Vikings Stage 10, 20 Times
+[] 6x Rank 4 Epic Equipment, 10K Credits
+[] 1
+[] 5
+[] Beat Hideout Synapse Centre Stage 10, 20 Times
+[] 50 Trinium, 10K Credits
+[] 1
+[] 6
+[] Beat Hideout Heist Stage 10, 5 Times
+[] 2x Heist Plan, 10K Credits
+[] 1
+[] 7
+[] Beat Hideout Chop Shop Stage 10, 20 Times
+[] 1x lvl 3 Firmware, 10K Credits
+[] 1
+[] 8
+[] Beat Hideout Paragon Deeds Stage 10, 20 Times
+[] 250K Credits
+[] 1
+[] 9
+[] Beat Hideout Neutral Deeds Stage 10, 20 Times
+[] 10x Pit Brawl Invites, 10k Credits
+[] 1
+[] 10
+[] Beat Hideout Renegade Deeds Stage 10, 20 Times
+[] 3x Rank 4 Epic Implants, 10K Credits
+[] 1
+[] 11
+[] Beat Hideout Paragon Deeds Stage 10, 20 Times
+[] 50x Tier 1 Memory Fragments, 10K Credits
+[] 1
+[] 12
+[] Complete All Tier 1 Hideout Ambitions
+[] 1x Rare Contract
+[] 2
+[] 1
+[] Beat Hideout Cardinal Trolls Stage 15, 20 Times
+[] 2x Energy, 25K Credits
+[] 2
+[] 2
+[] Beat Hideout Vultures Stage 15, 20 Times
+[] 2x 100% XP Boost, 25K Credits
+[] 2
+[] 3
+[] Beat Hideout TeraTech Cybernetics Stage 15, 20 Times
+[] 5x Generic Major Deeds, 25K Credits
+[] 2
+[] 4
+[] Beat Hideout Quantum Vikings Stage 15, 20 Times
+[] 6x Rank 5 Epic Equipment, 25K Credits
+[] 2
+[] 5
+[] Beat Hideout Synapse Centre Stage 15, 20 Times
+[] 100 Trinium, 25K Credits
+[] 2
+[] 6
+[] Beat Hideout Heist Stage 15, 5 Times
+[] 3x Heist Plan, 25K Credits
+[] 2
+[] 7
+[] Beat Hideout Chop Shop Stage 15, 20 Times
+[] 1x lvl 4 Firmware, 25K Credits
+[] 2
+[] 8
+[] Beat Hideout Paragon Deeds Stage 15, 20 Times
+[] 500K Credits
+[] 2
+[] 9
+[] Beat Hideout Neutral Deeds Stage 15, 20 Times
+[] 10x Pit Brawl Invites, 250 Pit Coin, 25k Credits
+[] 2
+[] 10
+[] Beat Hideout Renegade Deeds Stage 15, 20 Times
+[] 3x Rank 5 Epic Implants, 25K Credits
+[] 2
+[] 11
+[] Beat Hideout Paragon Deeds Stage 15, 20 Times
+[] 100x Tier 2 Memory Fragments, 25K Credits
+[] 2
+[] 12
+[] Complete All Tier 2 Hideout Ambitions
+[] 1x Epic Contract
+[] 3
+[] 1
+[] Beat Hideout Cardinal Trolls Stage 20, 20 Times
+[] 3x Energy, 50K Credits
+[] 3
+[] 2
+[] Beat Hideout Vultures Stage 20, 20 Times
+[] 3x 100% XP Boost, 50K Credits
+[] 3
+[] 3
+[] Beat Hideout TeraTech Cybernetics Stage 20, 20 Times
+[] 5x Generic Grand Deeds, 50K Credits
+[] 3
+[] 4
+[] Beat Hideout Quantum Vikings Stage 20, 20 Times
+[] 6x Rank 6 Epic Equipment, 50K Credits
+[] 3
+[] 5
+[] Beat Hideout Synapse Centre Stage 20, 20 Times
+[] 200 Trinium, 50K Credits
+[] 3
+[] 6
+[] Beat Hideout Heist Stage 20, 5 Times
+[] 5x Heist Plan, 50K Credits
+[] 3
+[] 7
+[] Beat Hideout Chop Shop Stage 20, 20 Times
+[] 1x lvl 5 Firmware, 50K Credits
+[] 3
+[] 8
+[] Beat Hideout Paragon Deeds Stage 20, 20 Times
+[] 1M Credits
+[] 3
+[] 9
+[] Beat Hideout Neutral Deeds Stage 20, 20 Times
+[] 1000 Pit Coin, 50k Credits
+[] 3
+[] 10
+[] Beat Hideout Renegade Deeds Stage 20, 20 Times
+[] 3x Rank 6 Epic Implants, 50K Credits
+[] 3
+[] 11
+[] Beat Hideout Paragon Deeds Stage 20, 20 Times
+[] 100x Tier 3 Memory Fragments, 50K Credits
+[] 3
+[] 12
+[] Complete All Tier 3 Hideout Ambitions
+[] 1x Legendary Contract
+[] 
+[] Equipment Ambitions
+[] 
+[] Equipment Ambitions Table and Rewards
+[] Tier
+[] Order
+[] Ambition Description
+[] Rewards
+[] 1
+[] 1
+[] Gain HP Set Chest with HP% Primary
+[] 1x Energy, 10K Credits
+[] 1
+[] 2
+[] Gain Armour Set Chest with Armour% Primary
+[] 1x 100% XP Boost,10K Credits
+[] 1
+[] 3
+[] Gain Firepower Set Chest with Firepower% Primary
+[] 5x Generic Minor Deeds, 10K Credits
+[] 1
+[] 4
+[] Gain Speed Set Boots with Speed Primary
+[] 6x Rank 4 Epic Equipment, 10K Credits
+[] 1
+[] 5
+[] Gain Hacking Set Chest with Hacking Primary
+[] 50 Trinium, 10K Credits
+[] 1
+[] 6
+[] Gain Firewall Set Chest with Firewall Primary
+[] 2x Heist Plan, 10K Credits
+[] 1
+[] 7
+[] Gain Crit Chance Set Gloves with Crit Chance% Primary
+[] 1x lvl 3 Firmware, 10K Credits
+[] 1
+[] 8
+[] Gain Crit Damage Set Gloves with Crit Damage% Primary
+[] 250K Credits
+[] 1
+[] 9
+[] Sell 10 Equipments
+[] 10x Pit Brawl Invites, 10k Credits
+[] 1
+[] 10
+[] Level 6 Equipments to 4
+[] 3x Rank 4 Epic Implants, 10K Credits
+[] 1
+[] 11
+[] Equip 1 Warlord with a Full Set
+[] 50x Tier 1 Memory Fragments, 10K Credits
+[] 1
+[] 12
+[] Complete All Tier 1 Equipment Ambitions
+[] 1x Rare Contract
+[] 2
+[] 1
+[] Equip a Warlord with a HP Set
+[] 2x Energy, 25K Credits
+[] 2
+[] 2
+[] Equip a Warlord with a Armour Set
+[] 2x 100% XP Boost, 25K Credits
+[] 2
+[] 3
+[] Equip a Warlord with a Firepower Set
+[] 5x Generic Major Deeds, 25K Credits
+[] 2
+[] 4
+[] Equip a Warlord with a Speed Set
+[] 6x Rank 5 Epic Equipment, 25K Credits
+[] 2
+[] 5
+[] Equip a Warlord with a Hacking Set
+[] 100 Trinium, 25K Credits
+[] 2
+[] 6
+[] Equip a Warlord with a Firewall Set
+[] 3x Heist Plan, 25K Credits
+[] 2
+[] 7
+[] Equip a Warlord with a Crit Chance Set
+[] 1x lvl 4 Firmware, 25K Credits
+[] 2
+[] 8
+[] Equip a Warlord with a Crit Damage Set
+[] 500K Credits
+[] 2
+[] 9
+[] Sell 50 Equipments
+[] 10x Pit Brawl Invites, 250 Pit Coin, 25k Credits
+[] 2
+[] 10
+[] Level 6 Equipments to 12
+[] 3x Rank 5 Epic Implants, 25K Credits
+[] 2
+[] 11
+[] Equip 5 Warlords with a Full Set
+[] 100x Tier 2 Memory Fragments, 25K Credits
+[] 2
+[] 12
+[] Complete All Tier 2 Equipment Ambitions
+[] 1x Epic Contract
+[] 3
+[] 1
+[] Equip 3 Warlords with a HP Set
+[] 3x Energy, 50K Credits
+[] 3
+[] 2
+[] Equip 3 Warlords with a Armour Set
+[] 3x 100% XP Boost, 50K Credits
+[] 3
+[] 3
+[] Equip 3 Warlords with a Firepower Set
+[] 5x Generic Grand Deeds, 50K Credits
+[] 3
+[] 4
+[] Equip 3 Warlords with a Speed Set
+[] 6x Rank 6 Epic Equipment, 50K Credits
+[] 3
+[] 5
+[] Equip 3 Warlords with a Hacking Set
+[] 200 Trinium, 50K Credits
+[] 3
+[] 6
+[] Equip 3 Warlords with a Firewall Set
+[] 5x Heist Plan, 50K Credits
+[] 3
+[] 7
+[] Equip 3 Warlords with a Crit Chance Set
+[] 1x lvl 5 Firmware, 50K Credits
+[] 3
+[] 8
+[] Equip 3 Warlords with a Crit Damage Set
+[] 1M Credits
+[] 3
+[] 9
+[] Sell 100 Equipments
+[] 1000 Pit Coin, 50k Credits
+[] 3
+[] 10
+[] Level 6 Equipments to 16
+[] 3x Rank 6 Epic Implants, 50K Credits
+[] 3
+[] 11
+[] Equip 10 Warlords with a Full Set
+[] 100x Tier 3 Memory Fragments, 50K Credits
+[] 3
+[] 12
+[] Complete All Tier 3 Equipment Ambitions
+[] 1x Legendary Contract
+[] 
+[] Reputation Ambitions
+[] 
+[] Reputation Ambitions Table and Rewards
+[] Tier
+[] Order
+[] Ambition Description
+[] Rewards
+[] 1
+[] 1
+[] Gain 10 Minor Paragon Deeds
+[] 1x Energy, 10K Credits
+[] 1
+[] 2
+[] Gain 10 Minor Neutral Deeds
+[] 1x 100% XP Boost,10K Credits
+[] 1
+[] 3
+[] Gain 10 Minor Renegade Deeds
+[] 5x Generic Minor Deeds, 10K Credits
+[] 1
+[] 4
+[] Gain 10 Minor Generic Deeds
+[] 6x Rank 4 Epic Equipment, 10K Credits
+[] 1
+[] 5
+[] Raise a Paragon Warlord's Reputation to 1
+[] 50 Trinium, 10K Credits
+[] 1
+[] 6
+[] Raise a Paragon Warlord's Reputation to 2
+[] 2x Heist Plan, 10K Credits
+[] 1
+[] 7
+[] Raise a Neutral Warlord's Reputation to 1
+[] 1x lvl 3 Firmware, 10K Credits
+[] 1
+[] 8
+[] Raise a Neutral Warlord's Reputation to 2
+[] 250K Credits
+[] 1
+[] 9
+[] Raise a Renegade Warlord's Reputation to 1
+[] 10x Pit Brawl Invites, 10k Credits
+[] 1
+[] 10
+[] Raise a Renegade Warlord's Reputation to 2
+[] 3x Rank 4 Epic Implants, 10K Credits
+[] 1
+[] 11
+[] Complete all Tier 1 Reputation Ambitions
+[] 1x Rare Contract
+[] 2
+[] 1
+[] Gain 10 Major Paragon Deeds
+[] 2x Energy, 25K Credits
+[] 2
+[] 2
+[] Gain 10 Major Neutral Deeds
+[] 2x 100% XP Boost, 25K Credits
+[] 2
+[] 3
+[] Gain 10 Major Renegade Deeds
+[] 5x Generic Major Deeds, 25K Credits
+[] 2
+[] 4
+[] Gain 10 Major Generic Deeds
+[] 6x Rank 5 Epic Equipment, 25K Credits
+[] 2
+[] 5
+[] Raise a Paragon Warlord's Reputation to 3
+[] 100 Trinium, 25K Credits
+[] 2
+[] 6
+[] Raise a Paragon Warlord's Reputation to 4
+[] 3x Heist Plan, 25K Credits
+[] 2
+[] 7
+[] Raise a Neutral Warlord's Reputation to 3
+[] 1x lvl 4 Firmware, 25K Credits
+[] 2
+[] 8
+[] Raise a Neutral Warlord's Reputation to 4
+[] 500K Credits
+[] 2
+[] 9
+[] Raise a Renegade Warlord's Reputation to 3
+[] 10x Pit Brawl Invites, 250 Pit Coin, 25k Credits
+[] 2
+[] 10
+[] Raise a Renegade Warlord's Reputation to 4
+[] 3x Rank 5 Epic Implants, 25K Credits
+[] 2
+[] 11
+[] Complete all Tier 2 Reputation Ambitions
+[] 1x Epic Contract
+[] 3
+[] 1
+[] Gain 10 Grand Paragon Deeds
+[] 3x Energy, 50K Credits
+[] 3
+[] 2
+[] Gain 10 Grand Neutral Deeds
+[] 3x 100% XP Boost, 50K Credits
+[] 3
+[] 3
+[] Gain 10 Grand Renegade Deeds
+[] 5x Generic Grand Deeds, 50K Credits
+[] 3
+[] 4
+[] Gain 10 Grand Generic Deeds
+[] 6x Rank 6 Epic Equipment, 50K Credits
+[] 3
+[] 5
+[] Raise a Paragon Warlord's Reputation to 5
+[] 200 Trinium, 50K Credits
+[] 3
+[] 6
+[] Raise a Paragon Warlord's Reputation to 6
+[] 5x Heist Plan, 50K Credits
+[] 3
+[] 7
+[] Raise a Neutral Warlord's Reputation to 5
+[] 1x lvl 5 Firmware, 50K Credits
+[] 3
+[] 8
+[] Raise a Neutral Warlord's Reputation to 6
+[] 1M Credits
+[] 3
+[] 9
+[] Raise a Renegade Warlord's Reputation to 5
+[] 1000 Pit Coin, 50k Credits
+[] 3
+[] 10
+[] Raise a Renegade Warlord's Reputation to 6
+[] 3x Rank 6 Epic Implants, 50K Credits
+[] 3
+[] 11
+[] Complete all Tier 3 Reputation Ambitions
+[] 1x Legendary Contract
+[] 
+[] Warlord Ambitions
+[] 
+[] Warlord Ambitions Table and Rewards
+[] Tier
+[] Order
+[] Ambition Description
+[] Rewards
+[] 1
+[] 1
+[] Recruit 25 Warlords
+[] 1x Energy, 10K Credits
+[] 1
+[] 2
+[] Level 10 Warlords to 10
+[] 1x 100% XP Boost,10K Credits
+[] 1
+[] 3
+[] Rank 10 Warlords to Rank 2
+[] 5x Generic Minor Deeds, 10K Credits
+[] 1
+[] 4
+[] Consume 10 Warlords
+[] 6x Rank 4 Epic Equipment, 10K Credits
+[] 1
+[] 5
+[] Level an Armour Warlord to 30
+[] 50 Trinium, 10K Credits
+[] 1
+[] 6
+[] Level an Firepower Warlord to 30
+[] 1x lvl 3 Firmware, 10K Credits
+[] 1
+[] 7
+[] Level an Modder Warlord to 30
+[] 10x Pit Brawl Invites, 10k Credits
+[] 1
+[] 8
+[] Level an Hacker Warlord to 30
+[] 3x Rank 4 Epic Implants, 10K Credits
+[] 1
+[] 9
+[] Complete all Tier 1 Warlord Ambitions
+[] 1x Rare Contract
+[] 2
+[] 1
+[] Recruit 50 Warlords
+[] 2x Energy, 25K Credits
+[] 2
+[] 2
+[] Level 10 Warlords to 30
+[] 2x 100% XP Boost, 25K Credits
+[] 2
+[] 3
+[] Rank 10 Warlords to Rank 4
+[] 5x Generic Major Deeds, 25K Credits
+[] 2
+[] 4
+[] Consume 50 Warlords
+[] 6x Rank 5 Epic Equipment, 25K Credits
+[] 2
+[] 5
+[] Level an Armour Warlord to 40
+[] 100 Trinium, 25K Credits
+[] 2
+[] 6
+[] Level an Firepower Warlord to 40
+[] 1x lvl 4 Firmware, 25K Credits
+[] 2
+[] 7
+[] Level an Modder Warlord to 40
+[] 10x Pit Brawl Invites, 250 Pit Coin, 25k Credits
+[] 2
+[] 8
+[] Level an Hacker Warlord to 40
+[] 3x Rank 5 Epic Implants, 10K Credits
+[] 2
+[] 9
+[] Complete all Tier 2 Warlord Ambitions
+[] 1x Epic Contract
+[] 3
+[] 1
+[] Recruit 50 Warlords
+[] 3x Energy, 50K Credits
+[] 3
+[] 2
+[] Level 10 Warlords to 50
+[] 3x 100% XP Boost, 50K Credits
+[] 3
+[] 3
+[] Rank 10 Warlords to Rank 6
+[] 5x Generic Grand Deeds, 50K Credits
+[] 3
+[] 4
+[] Consume 100 Warlords
+[] 6x Rank 6 Epic Equipment, 50K Credits
+[] 3
+[] 5
+[] Level an Armour Warlord to 60
+[] 200 Trinium, 50K Credits
+[] 3
+[] 6
+[] Level an Firepower Warlord to 60
+[] 1x lvl 5 Firmware, 50K Credits
+[] 3
+[] 7
+[] Level an Modder Warlord to 60
+[] 1000 Pit Coin, 50k Credits
+[] 3
+[] 8
+[] Level an Hacker Warlord to 60
+[] 3x Rank 6 Epic Implants, 50K Credits
+[] 3
+[] 9
+[] Complete all Tier 3 Warlord Ambitions
+[] 1x Legendary Contract
+[] 
+[] Bastion and Pit  Ambitions
+[] 
+[] Bastion and Pit Ambitions Table and Rewards
+[] Tier
+[] Order
+[] Ambition Description
+[] Rewards
+[] 1
+[] 1
+[] Deal 10m Total Damage in Bastions
+[] 1x Energy, 10K Credits
+[] 1
+[] 2
+[] Apply 50 Debuffs to a Bastion Boss
+[] 1x 100% XP Boost,10K Credits
+[] 1
+[] 3
+[] Enter 10 Bastion Stages
+[] 5x Generic Minor Deeds, 10K Credits
+[] 1
+[] 4
+[] Survive 20 Turns Inside a Bastion
+[] 6x Rank 4 Epic Equipment, 10K Credits
+[] 1
+[] 5
+[] Enter 25 Pit Brawls/Royals
+[] 50 Trinium, 10K Credits
+[] 1
+[] 6
+[] Defeat 100 Enemies in The Pit
+[] 1x lvl 3 Firmware, 10K Credits
+[] 1
+[] 7
+[] Apply 50 Debuffs in The Pit
+[] 10x Pit Brawl Invites, 10k Credits
+[] 1
+[] 8
+[] Purchase a Safehouse Upgrade
+[] 3x Rank 4 Epic Implants, 10K Credits
+[] 1
+[] 9
+[] Complete all Tier 1 Bastion and Pit Ambitions
+[] 1x Rare Contract
+[] 2
+[] 1
+[] Deal 50m Total Damage in Bastions
+[] 2x Energy, 25K Credits
+[] 2
+[] 2
+[] Apply 100 Debuffs to a Bastion Boss
+[] 2x 100% XP Boost, 25K Credits
+[] 2
+[] 3
+[] Enter 25 Bastion Stages
+[] 5x Generic Major Deeds, 25K Credits
+[] 2
+[] 4
+[] Survive 30 Turns Inside a Bastion
+[] 6x Rank 5 Epic Equipment, 25K Credits
+[] 2
+[] 5
+[] Enter 50 Pit Brawls/Royals
+[] 100 Trinium, 25K Credits
+[] 2
+[] 6
+[] Defeat 150 Enemies in The Pit
+[] 1x lvl 4 Firmware, 25K Credits
+[] 2
+[] 7
+[] Apply 100 Debuffs in The Pit
+[] 10x Pit Brawl Invites, 250 Pit Coin, 25k Credits
+[] 2
+[] 8
+[] Purchase a Level 5 Safehouse Upgrade
+[] 3x Rank 5 Epic Implants, 10K Credits
+[] 2
+[] 9
+[] Complete all Tier 2 Bastion and Pit Ambitions
+[] 1x Epic Contract
+[] 3
+[] 1
+[] Deal 150m Total Damage in Bastions
+[] 3x Energy, 50K Credits
+[] 3
+[] 2
+[] Apply 150 Debuffs to a Bastion Boss
+[] 3x 100% XP Boost, 50K Credits
+[] 3
+[] 3
+[] Enter 50 Bastion Stages
+[] 5x Generic Grand Deeds, 50K Credits
+[] 3
+[] 4
+[] Survive 45 Turns Inside a Bastion
+[] 6x Rank 6 Epic Equipment, 50K Credits
+[] 3
+[] 5
+[] Enter 100 Pit Brawls/Royals
+[] 200 Trinium, 50K Credits
+[] 3
+[] 6
+[] Defeat 300 Enemies in The Pit
+[] 1x lvl 5 Firmware, 50K Credits
+[] 3
+[] 7
+[] Apply 150 Debuffs in The Pit
+[] 1000 Pit Coin, 50k Credits
+[] 3
+[] 8
+[] Purchase a Level 10 Safehouse Upgrade
+[] 3x Rank 6 Epic Implants, 50K Credits
+[] 3
+[] 9
+[] Complete all Tier 3 Bastion and Pit Ambitions
+[] 1x Legendary Contract
+[] 
+[] 
+[Heading3] Safehouse Upgrade
+[] The Safehouse is an upgradeable location found on the City Centre Hub. It contains nodes for each of the core attributes/stats split by morality. Each node can be upgraded by spending Pit Coin. 
+[]   
+[] 
+[] Safehouse Purchasable Upgrades
+[] Level
+[] Pit Coin
+[] Bonus
+[] Stats
+[] 1
+[] 100
+[] 1%
+[] HP, Armour, Firepower, Crit Damage
+[] 2
+[] 225
+[] 2%
+[] 
+[] 3
+[] 350
+[] 3%
+[] 
+[] 4
+[] 475
+[] 4%
+[] 
+[] 5
+[] 600
+[] 6%
+[] 
+[] 6
+[] 725
+[] 8%
+[] 
+[] 7
+[] 850
+[] 10%
+[] 
+[] 8
+[] 975
+[] 14%
+[] 
+[] 9
+[] 1,100
+[] 16%
+[] 
+[] 10
+[] 1,250
+[] 20%
+[] 
+[] 1
+[] 100
+[] 2
+[] Hacking and Firewall
+[] 2
+[] 225
+[] 4
+[] 
+[] 3
+[] 350
+[] 6
+[] 
+[] 4
+[] 475
+[] 8
+[] 
+[] 5
+[] 600
+[] 12
+[] 
+[] 6
+[] 725
+[] 16
+[] 
+[] 7
+[] 850
+[] 20
+[] 
+[] 8
+[] 975
+[] 28
+[] 
+[] 9
+[] 1,100
+[] 32
+[] 
+[] 10
+[] 1,250
+[] 40
+[] 
+[] 
+[] 

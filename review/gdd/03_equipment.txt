@@ -1,0 +1,470 @@
+[Heading2] Warlord Equipment
+[Heading3] Gear
+[] There will be six slots per warlord; Weapon, Boots, Legs, Chest, Helmet and Gloves. These are accessible with any level warlord.  
+[Heading3] Implants
+[] There are also three Implant slots; Limbs, Organs, Skeleton. These will be unlocked based on your Reputation rank. Unlocking Limbs at rank 2, Organs at rank 4 and Skeleton at rank 6.
+[Heading3] Neons
+[] Neons are additional upgrade materials that attach to equipment, improving a substat by its corresponding designation. Neons can only be applied to Equipment of the same or higher rank.  Neons drop from ‘Syndicate Wars’ and range from rank 1-6 and cover all substats except Critical Chance.
+[] 
+[] Example: A Rank 5 Speed Neon will increase a speed substat of an equipment piece ranked 5 or 6. It cannot be applied to Equipment without a speed substat or or rank =&lt;4
+[Heading3] Equipment Leveling
+[] All equipment contains a primary stat that increases with each level and sub stats that are either awarded or increased at 5 level intervals. Credits can be used to level your equipment  from 0 - 20 gaining and additional substat roll every 5 levels. Equipment is also inherently ranked by quality when acquired ranging from ranks 1 - 6. Equipment rank does not change once acquired.
+[] 
+[] Equipment Rarity
+[] Number of Substats Already Rolled
+[] Common
+[] 0
+[] Uncommon
+[] 1
+[] Rare
+[] 2
+[] Epic
+[] 3
+[] Legendary
+[] 4
+[] 
+[] Primary stats;
+[] Equipment Piece
+[] Weapon
+[] Helmet
+[] Chest
+[] Gloves
+[] Legs
+[] Boots
+[] Limbs
+[] Organs
+[] Skeleton
+[] Health
+[] 
+[] Primary
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Primary
+[] Sub
+[] Primary
+[] Sub
+[] Primary
+[] Sub
+[] Primary
+[] Sub
+[] Health %
+[] 
+[] Primary
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] Armour
+[] 
+[] Primary
+[] Sub
+[] Primary
+[] Sub
+[] Primary
+[] Sub
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Primary
+[] Sub
+[] Primary
+[] Sub
+[] Primary
+[] Sub
+[] Armour %
+[] 
+[] Primary
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] Firepower
+[] 
+[] Primary
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Primary
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Primary
+[] Sub
+[] Primary
+[] Sub
+[] Primary
+[] Sub
+[] Firepower %
+[] Primary
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] Speed
+[] 
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Sub
+[] N/A
+[] Sub
+[] Crit Chance %
+[] Primary
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] N/A
+[] N/A
+[] N/A
+[] Crit Damage %
+[] Primary
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Sub
+[] Hacking
+[] 
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Sub
+[] Sub
+[] Firewall
+[] 
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] Sub
+[] Primary
+[] Sub
+[] 
+[] 
+[] Equipment Primaries Table
+[] Primary
+[] Rank
+[] 
+[] 1
+[] 2
+[] 3
+[] 4
+[] 5
+[] 6
+[] Health
+[] 250
+[] 275
+[] 300
+[] 350
+[] 450
+[] 600
+[] Health %
+[] 1%
+[] 2%
+[] 4%
+[] 6%
+[] 8%
+[] 10%
+[] Armour
+[] 6
+[] 8
+[] 12
+[] 18
+[] 25
+[] 35
+[] Armour %
+[] 1%
+[] 2%
+[] 4%
+[] 6%
+[] 8%
+[] 10%
+[] Firepower
+[] 6
+[] 8
+[] 12
+[] 18
+[] 25
+[] 35
+[] Firepower %
+[] 1%
+[] 2%
+[] 4%
+[] 6%
+[] 8%
+[] 10%
+[] Crit Chance %
+[] 1%
+[] 2%
+[] 4%
+[] 6%
+[] 8%
+[] 10%
+[] Crit Damage %
+[] 1%
+[] 2%
+[] 4%
+[] 6%
+[] 8%
+[] 10%
+[] Hacking
+[] 1
+[] 3
+[] 5
+[] 8
+[] 12
+[] 17
+[] Firewall
+[] 1
+[] 3
+[] 5
+[] 8
+[] 12
+[] 17
+[] Speed
+[] 1
+[] 2
+[] 3
+[] 4
+[] 5
+[] 6
+[] 
+[] 
+[] Equipment Substats Table
+[] Substat
+[] Rank
+[] 
+[] 1
+[] 2
+[] 3
+[] 4
+[] 5
+[] 6
+[] Health
+[] 75
+[] 100
+[] 150
+[] 200
+[] 300
+[] 500
+[] Health %
+[] 1%
+[] 2%
+[] 3%
+[] 5%
+[] 7%
+[] 10%
+[] Armour
+[] 10
+[] 12
+[] 16
+[] 20
+[] 24
+[] 30
+[] Armour %
+[] 1%
+[] 2%
+[] 3%
+[] 5%
+[] 7%
+[] 10%
+[] Firepower
+[] 10
+[] 12
+[] 16
+[] 20
+[] 24
+[] 30
+[] Firepower %
+[] 1%
+[] 2%
+[] 3%
+[] 5%
+[] 7%
+[] 10%
+[] Crit Chance %
+[] 1%
+[] 2%
+[] 3%
+[] 5%
+[] 7%
+[] 10%
+[] Crit Damage %
+[] 1%
+[] 2%
+[] 3%
+[] 5%
+[] 7%
+[] 10%
+[] Hacking
+[] 10
+[] 12
+[] 16
+[] 20
+[] 24
+[] 30
+[] Firewall
+[] 10
+[] 12
+[] 16
+[] 20
+[] 24
+[] 30
+[] Speed
+[] 1
+[] 2
+[] 3
+[] 4
+[] 5
+[] 6
+[] 
+[] 
+[Heading3] Equipment Sets
+[] This is a list of all the Equipment sets, their various effects and the required amount of gear slots to activate the effect.
+[] 
+[] Set Name
+[] Full Set Effect
+[] Activation Amount
+[] Set Drop Locations
+[] HP
+[] Increase Base HP by 20%
+[] 2 Slots
+[] Campaign Den 1 Hideout: Vultures
+[] Armour
+[] Increase Base Armour by 20%
+[] 2 Slots
+[] Campaign Den 2
+[] Hideout: Teratek Cybernetics
+[] Firepower
+[] Increase Base Firepower by 20%
+[] 2 Slots
+[] Campaign Den 3
+[] Hideout: Cardinal Trolls
+[] Speed
+[] Increase Base Speed by 10%
+[] 2 Slots
+[] Campaign Den 4
+[] Hideout: Quantum Vikings
+[] Hacking
+[] Increase Base Hacking by 20
+[] 2 Slots
+[] Campaign Den 6
+[] Hideout: Teratek Cybernetics
+[] Firewall
+[] Increase Base Firewall by 20
+[] 2 Slots
+[] Campaign Den 7
+[] Hideout: Quantum Vikings
+[] Critical Chance
+[] Increase Critical Chance by 15%
+[] 2 Slots
+[] Campaign Den 8
+[] Hideout: Cardinal Trolls
+[] Critical Damage
+[] Increase Critical Damage by 30%
+[] 2 Slots
+[] Campaign Den 9 Hideout: Vultures
+[] Energy Drain
+[] Heal by 30% of Damage Dealt
+[] 4 Slots
+[] Hideout: Teratek Cybernetics
+[] Pain Mirror
+[] reflect 30% of damage back at the attacking player
+[] 4 Slots
+[] Hideout: Vultures
+[] Jamming
+[]  Blocks debuffs on warlord for 2 turns
+[] 4 Slots
+[] Hideout: Quantum Vikings
+[] Strike Back
+[] 50% chance to counter when hit
+[] 4 Slots
+[] Hideout: Cardinal Trolls
+[] Plague
+[] 40% Chance to apply Poison Debuff
+[] 4 Slots
+[] Hideout: Vultures
+[] Sanguine
+[] 40% Chance to apply Bleed Debuff
+[] 4 Slots
+[] Hideout: Quantum Vikings
+[] Discharge
+[] 30% Chance to apply Shock Debuff
+[] 4 Slots
+[] Hideout: Vultures
+[] Truma
+[] 20% Chance to apply Stun Debuff
+[] 4 Slots
+[] Hideout: Quantum Vikings
+[] Safeguard
+[] 3 Turn Overshield equal to 30% of this character's HP at the start of the round applied to the team.
+[] 4 Slots
+[] Hideout: Teratek Cybernetics
+[] Goad
+[] 20% Chance to Apply Enraged
+[] 4 Slots
+[] Hideout: Cardinal Trolls
+[] Stitcher
+[] 10% heal to each allied Warlord based on this Warlord’s HP
+[] 4 Slots
+[] Campaign Den 5
+[] Hideout: Teratek Cybernetics
+[] Ripper
+[] Ignore 25% of Armour
+[] 4 Slots
+[] Hideout: Cardinal Trolls
+[] 
+[Heading3] Equipment Acquisition
+[] Equipment’s main avenue of acquisition will be through the various Hideouts, each rendering up a different selection available to farm, though these will not be the exclusive locations. Campaign will also drop selected sets at a lower quality and rank, the game game shops will sell it for Credits and Premium currency and it will be rewarded for rank standing in PVP content.
+[] 

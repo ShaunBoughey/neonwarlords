@@ -1,0 +1,909 @@
+[Heading2] Hideouts
+[] Hideouts are set challenges often centered around specific mechanics that must be overcome with the deployed team in order to obtain victory. I.E two waves of strong enemies followed by a boss who cannot be killed unless both of his accompanying minions are dead, with the minions factoring some form of revive mechanic. The goal being to overcome the revive mechanics by a block revive skill or killing them all at the correctimes. This creates a dynamic economy amongst the Warlord viability as certain Warlords will excel within certain Hideouts. These Hideouts will be the number one location to obtain high rank and rarity equipment, increasing the reward payout chances through stages 1-20.
+[] 
+[Heading3] Hideout: Cardinal Trolls
+[] Deacon Chainz, head of the east side monastery has been leading his  devoted acolytes in regular raids of your territory. It’s about time he atoned for his sins. He has a naturally high defense with an average HP pool making him quite tanky. In addition he will enrage and break enemy warlords whilst placing a REFLECT DAMAGE buff on himself making him a spiky tank. His two trusted acolytes will also Buff Deacon whilst dealing heavy damage to debuffed Warlords. Players will be required to work around the Debuffs whilst also controlling his minions to become victorious.
+[] 
+[] Boss - Deacon Chainz:
+[] [ATK1] Not So Fast: Attacks one Enemy and Removes 10% Turn Meter, 20% if they have Enraged or Break, 40% if they have Both.
+[] [ATK2] Holy Torment: Attack all enemies and places ENRAGED - 3 Turn cooldown. 
+[] [ATK3] Holy Fracture: Attack all enemies and places BREAK - 4 Turns cooldown. 
+[] 
+[] [PASV1] Divine Retribution: Receive a stack of 1 30% REFLECT buff each time an enrage is placed on an opponent.
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, INCREASE COOL DOWN and ENRAGE. 
+[] 
+[] Acolyte Bishop Brick (Side Minion)
+[] [ATK1] Celestial Strike: Ignores 50% Armour Anyone with ENRAGE - 100% if both
+[] [PASV1] Mass:Places a 2 Turn 50% ARMOUR UP Buff on Deacon Chainz - 3 Turn Cooldown
+[] 
+[] Acolyte Bishop Clyde (Side Minion)
+[] [ATK1] Celestial Smite: Ignores 50% Armour Anyone with BREAK - 100% if both
+[] [PASV1] Prayer: Places a 2 Turn 10% CONTINUOUS HEAL Buff on Deacon Chainz -3 Turn Cooldown
+[] 
+[] Possible Victory Strategies:
+[] Resist or Block the debuffs
+[] Cleansing Debuffs Regularly
+[] High sustain and HP take the dmg reflect
+[] Can control or stun lock Acolytes
+[] Can Turn Meter Control Main Boss
+[] Removing Buffs from the Boss is a priority
+[] 
+[] Available Equipment Sets;
+[] Firepower
+[] Critical chance
+[] Strike back
+[] Goad
+[] Ripper
+[Heading3] Hideout: Vultures
+[] Cormac is a high ranking Vulture known for his love of bleeding enemies dry. He will deal high damage and lacerate the Warlords, opening wounds until his bloodlust drives him to a final blow. Staunching the wounds will be vital to defending against his powerful attacks.
+[] 
+[] Boss - Cormac The Carrion Leech:
+[] [ATK1] Open Wounds: Attacks 1 Warlord, doubling all stacks if BLEED on the target.
+[] [ATK2] Lacerate: Attacks all Warlords three times. Places 1 stack of 5% BLEED with each hit. 4 Turns cooldown. 
+[] [ATK3] Devour: (Automatic Trigger) Locked until 5 stacks of BLEED are on a Warlord - Attacks target enemy with 5 stacks of Bleed. Ignores 100% Armour and removes all BLEED debuffs. Heals by 25% Max HP.
+[] 
+[] [PASV1] Tear Stitches: Will use ‘[ATK1] Open Wounds’ ability on a random target whenever an opponent heals. 1 Turn Cooldown.
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, Turn Meter Manipulation, INCREASE COOL DOWN or ENRAGE. 
+[] 
+[] Possible Victory Strategies:
+[] Resist or Block the debuffs
+[] Cleansing Debuffs Regularly
+[] Enemy Max HP Attacks
+[] Revives and Block Dmg/Unkillable
+[] High HP Teams
+[] Heal Block
+[] Available Equipment Sets;
+[] HP
+[] Critical Damage
+[] Pain Mirror
+[] Plague
+[] Discharge
+[Heading3] Hideout: TeraTek Cybernetics
+[] Issac Vaun, the chief financial officer of TeraTek Cybernetics excels at making opportunist plays that leave him in a higher standing than his opponents. Players will have to hinder his progress whilst also fending off the opportunistic attacks of his colleagues. 
+[] 
+[] Boss - Issac Vuan: 
+[] [ATK1] Bribe: Attack target 1 time. 50% chance to apply STUPEFY  
+[] [ATK2] Hostile Takeover: Apply ‘FIREWALL UP’ to all allies for 2 turns and Apply ‘FIREWALL DOWN’ to all enemies for 2 turns. Apply BLOCK BUFFS for 1 turn. 4 Turn Cooldown.
+[] [ATK3] Power Play: Attacks all enemies 2 times. 25% chance to apply STUN for 1 turn.  4 Turn Cooldown  
+[] 
+[] [PASV1] Cash Injection : Heals all allies by 10% of their Max HP each turn.
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, INCREASE COOL DOWN or ENRAGE. 
+[] 
+[] Enforcer Kellen (Side Minion)
+[] [ATK1] Opportunist: Attack all enemies 1 time. Apply ARMOUR down for 1 turn. 
+[] [PASV1] Capitalist: Gain turn meter equal to double the turn meter removed from ‘’.
+[] 
+[] Enforcer Ried (Side Minion)
+[] [ATK1] Schemer: Attack all enemies 1 time. Apply FIREPOWER down for 1 turn.
+[] [PASV1] Capitalist: Gain turn meter equal to double the turn meter removed from ‘’.
+[] 
+[] Possible Victory Strategies:
+[] Resist or Block the debuffs
+[] Cleansing Debuffs Regularly
+[] Turn Meter down + Control minions
+[] Firewall down will be important/buff removal
+[] 
+[] Available Equipment Sets;
+[] Armour
+[] Hackers
+[] Energy Drain
+[] Safeguard
+[] Stitcher 
+[Heading3] Hideout: Quantum Vikings
+[] The Hammer of Four is the homage to the Viking god ‘Four’. He roams with his band of ‘four’ raider body guards under the misconception of value in the number four. He will use Four’s lightning to shock enemy Warlords then call his warband to assist. His chosen bodyguard also forms up a shield wall to protect him.
+[] 
+[] Boss - The Hammer of Four:
+[] [ATK1] Thunder God: Attacks all Warlords, 50% chance to place 50% SHOCK
+[] [ATK2] To Valhalla: Attack target Warlord, Then call all allied Warlords to attack that target (All Warlords use [ATK 1]).
+[] 
+[] [PASV1] Ragnarok : Revives 1 Minion at the start of this turn. Then trigger ‘ATK 3’ - 3 Turn Cooldown
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, Turn Meter Manipulation, INCREASE COOL DOWN or ENRAGE. 
+[] 
+[] Raider (Side Minion) x 4
+[] [ATK1] Hammer Time : Attack target Warlord, If the target was shocked heal The Hammer of Four by 10%
+[] [PASV1] Shield Wall: Provides 20% Armour Bonus to ‘The Hammer of Four’
+[] [PASV2] Four’s Chosen: Immune to SHOCK
+[] 
+[] Possible Victory Strategies:
+[] AOE damage to kill minions
+[] Cleansing shock will be useful
+[] Armour mitigation will be strong here.
+[] Block revive skills
+[] Heal Block
+[] Minion Control
+[] 
+[] Available Equipment Sets;
+[] Firewall
+[] Speed
+[] Stun
+[] Jamming
+[] Sanguine
+[] 
+[] 
+[Heading4] Hideout: Generic Reward Table For All Above
+[] Stage
+[] Rewards
+[] % Chance
+[] Cost to Play
+[] 1
+[] 1x 3000 Credits
+[] 100
+[] 10 Energy
+[] 
+[] 1x Random Equipment 1-3 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 1
+[] 15
+[] 
+[] 
+[] Rank 2
+[] 50
+[] 
+[] 
+[] Rank 3
+[] 35
+[] 
+[] 
+[] Uncommon
+[] 60
+[] 
+[] 
+[] Rare
+[] 40
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 2
+[] 1x 3200 Credits
+[] 100
+[] 10 Energy
+[] 
+[] 1x Random Equipment 1-3 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 1
+[] 12
+[] 
+[] 
+[] Rank 2
+[] 48
+[] 
+[] 
+[] Rank 3
+[] 40
+[] 
+[] 
+[] Uncommon
+[] 55
+[] 
+[] 
+[] Rare
+[] 45
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 3
+[] 1x 3400 Credits
+[] 100
+[] 10 Energy
+[] 
+[] 1x Random Equipment 1-3 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 1
+[] 10
+[] 
+[] 
+[] Rank 2
+[] 45
+[] 
+[] 
+[] Rank 3
+[] 45
+[] 
+[] 
+[] Uncommon
+[] 50
+[] 
+[] 
+[] Rare
+[] 50
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 4
+[] 1x 3600 Credits
+[] 100
+[] 10 Energy
+[] 
+[] 1x Random Equipment 1-3 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 1
+[] 8
+[] 
+[] 
+[] Rank 2
+[] 42
+[] 
+[] 
+[] Rank 3
+[] 50
+[] 
+[] 
+[] Uncommon
+[] 45
+[] 
+[] 
+[] Rare
+[] 55
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 5
+[] 1x 3800 Credits
+[] 100
+[] 10 Energy
+[] 
+[] 1x Random Equipment 1-3 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 1
+[] 5
+[] 
+[] 
+[] Rank 2
+[] 40
+[] 
+[] 
+[] Rank 3
+[] 55
+[] 
+[] 
+[] Uncommon
+[] 40
+[] 
+[] 
+[] Rare
+[] 60
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 6
+[] 1x 4000 Credits
+[] 100
+[] 12 Energy
+[] 
+[] 1x Random Equipment 1-3 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 2
+[] 40
+[] 
+[] 
+[] Rank 3
+[] 35
+[] 
+[] 
+[] Rank 4
+[] 35
+[] 
+[] 
+[] Uncommon
+[] 35
+[] 
+[] 
+[] Rare
+[] 55
+[] 
+[] 
+[] Epic
+[] 5
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 7
+[] 1x 4200 Credits
+[] 100
+[] 12 Energy
+[] 
+[] 1x Random Equipment 2-4 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 2
+[] 40
+[] 
+[] 
+[] Rank 3
+[] 35
+[] 
+[] 
+[] Rank 4
+[] 35
+[] 
+[] 
+[] Uncommon
+[] 30
+[] 
+[] 
+[] Rare
+[] 60
+[] 
+[] 
+[] Epic
+[] 10
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 8
+[] 1x 4400 Credits
+[] 100
+[] 12 Energy
+[] 
+[] 1x Random Equipment 2-4 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 2
+[] 20
+[] 
+[] 
+[] Rank 3
+[] 35
+[] 
+[] 
+[] Rank 4
+[] 45
+[] 
+[] 
+[] Uncommon
+[] 20
+[] 
+[] 
+[] Rare
+[] 65
+[] 
+[] 
+[] Epic
+[] 15
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 9
+[] 1x 4600 Credits
+[] 100
+[] 12 Energy
+[] 
+[] 1x Random Equipment 2-4 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 2
+[] 18
+[] 
+[] 
+[] Rank 3
+[] 32
+[] 
+[] 
+[] Rank 4
+[] 50
+[] 
+[] 
+[] Uncommon
+[] 10
+[] 
+[] 
+[] Rare
+[] 70
+[] 
+[] 
+[] Epic
+[] 20
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 10
+[] 1x 4800 Credits
+[] 100
+[] 12 Energy
+[] 
+[] 1x Random Equipment 2-4 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 2
+[] 15
+[] 
+[] 
+[] Rank 3
+[] 30
+[] 
+[] 
+[] Rank 4
+[] 55
+[] 
+[] 
+[] Uncommon
+[] 0
+[] 
+[] 
+[] Rare
+[] 75
+[] 
+[] 
+[] Epic
+[] 25
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 11
+[] 1x 5000 Credits
+[] 100
+[] 14 Energy
+[] 
+[] 1x Random Equipment 3-5 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 3
+[] 30
+[] 
+[] 
+[] Rank 4
+[] 55
+[] 
+[] 
+[] Rank 5
+[] 15
+[] 
+[] 
+[] Rare
+[] 65
+[] 
+[] 
+[] Epic
+[] 30
+[] 
+[] 
+[] Legendary
+[] 5
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 12
+[] 1x 5200 Credits
+[] 100
+[] 14 Energy
+[] 
+[] 1x Random Equipment 3-5 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 3
+[] 25
+[] 
+[] 
+[] Rank 4
+[] 55
+[] 
+[] 
+[] Rank 5
+[] 20
+[] 
+[] 
+[] Rare
+[] 55
+[] 
+[] 
+[] Epic
+[] 35
+[] 
+[] 
+[] Legendary
+[] 10
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 13
+[] 1x 5400 Credits
+[] 100
+[] 14 Energy
+[] 
+[] 1x Random Equipment 3-5 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 3
+[] 25
+[] 
+[] 
+[] Rank 4
+[] 55
+[] 
+[] 
+[] Rank 5
+[] 20
+[] 
+[] 
+[] Rare
+[] 55
+[] 
+[] 
+[] Epic
+[] 35
+[] 
+[] 
+[] Legendary
+[] 10
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 14
+[] 1x 5600 Credits
+[] 100
+[] 14 Energy
+[] 
+[] 1x Random Equipment 3-5 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 3
+[] 20
+[] 
+[] 
+[] Rank 4
+[] 55
+[] 
+[] 
+[] Rank 5
+[] 25
+[] 
+[] 
+[] Rare
+[] 50
+[] 
+[] 
+[] Epic
+[] 35
+[] 
+[] 
+[] Legendary
+[] 15
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 15
+[] 1x 5800 Credits
+[] 100
+[] 14 Energy
+[] 
+[] 1x Random Equipment 3-5 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 3
+[] 10
+[] 
+[] 
+[] Rank 4
+[] 55
+[] 
+[] 
+[] Rank 5
+[] 35
+[] 
+[] 
+[] Rare
+[] 40
+[] 
+[] 
+[] Epic
+[] 35
+[] 
+[] 
+[] Legendary
+[] 25
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 16
+[] 1x 6000 Credits
+[] 100
+[] 16 Energy
+[] 
+[] 1x Random Equipment 4-6 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 4
+[] 50
+[] 
+[] 
+[] Rank 5
+[] 40
+[] 
+[] 
+[] Rank 6
+[] 10
+[] 
+[] 
+[] Rare
+[] 40
+[] 
+[] 
+[] Epic
+[] 35
+[] 
+[] 
+[] Legendary
+[] 25
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 17
+[] 1x 6200 Credits
+[] 100
+[] 16 Energy
+[] 
+[] 1x Random Equipment 4-6 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 4
+[] 40
+[] 
+[] 
+[] Rank 5
+[] 45
+[] 
+[] 
+[] Rank 6
+[] 15
+[] 
+[] 
+[] Rare
+[] 40
+[] 
+[] 
+[] Epic
+[] 35
+[] 
+[] 
+[] Legendary
+[] 25
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 18
+[] 1x 6400 Credits
+[] 100
+[] 16 Energy
+[] 
+[] 1x Random Equipment 4-6 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 4
+[] 30
+[] 
+[] 
+[] Rank 5
+[] 50
+[] 
+[] 
+[] Rank 6
+[] 20
+[] 
+[] 
+[] Rare
+[] 40
+[] 
+[] 
+[] Epic
+[] 35
+[] 
+[] 
+[] Legendary
+[] 25
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 19
+[] 1x 6600 Credits
+[] 100
+[] 16 Energy
+[] 
+[] 1x Random Equipment 4-6 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 4
+[] 10
+[] 
+[] 
+[] Rank 5
+[] 60
+[] 
+[] 
+[] Rank 6
+[] 30
+[] 
+[] 
+[] Rare
+[] 40
+[] 
+[] 
+[] Epic
+[] 35
+[] 
+[] 
+[] Legendary
+[] 25
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 20
+[] 1x 8000 Credits
+[] 100
+[] 16 Energy
+[] 
+[] 1x Random Equipment 4-6 Random Rarity
+[] 100
+[] 
+[] 
+[] Rank 4
+[] 0
+[] 
+[] 
+[] Rank 5
+[] 65
+[] 
+[] 
+[] Rank 6
+[] 35
+[] 
+[] 
+[] Rare
+[] 35
+[] 
+[] 
+[] Epic
+[] 35
+[] 
+[] 
+[] Legendary
+[] 30
+[] 
+[] 
+[] Weapon, Helmet, Chest, Gloves, Legs or Boots
+[] 16.6
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 

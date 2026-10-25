@@ -1,0 +1,196 @@
+[Heading2] The Pit
+[Heading3] Pit Brawls
+[] Pit Brawls is the Player Vs Player aspect of the game (PVP). Brawl Invites are required to enter the brawls and are capped at 10. Refills of Brawl Invites are refreshed daily, can be earned through missions and can be purchased with Trinium. All players assign 5 Warlords as a Defensive Gang. When players select to fight in the pit, they are presented with a selection of 10 defensive gangs from players within their ‘Skill Bracket’ and ‘Ranking’. They may then tailor their ‘Offensive’ team to battle against the defensive gang. If the player is victorious they will gain Pit Coin (PTC used with the Safehouse and black market) and PVP Ranking. At the end of each 1 week Ranking period the player will receive rewards based on their ‘Skill Bracket’. A player can ascend brackets at any time as they acquire more rankings. If a player's defensive gang is beaten, they will lose PVP ranking allowing them to descend skill brackets over time.
+[] 
+[] Global Leaderboards will show the player’s defensive teams, weekly earned rankings and bracket as well as filter to ‘gang’, ‘friends’ and ‘search for players’.  
+[] 
+[Heading3] Pit Royal
+[] This is an extended version of Pit Brawls aimed at players with more bloated rosters. Royal Invites are required to enter and are capped at 10. Refills are earned daily and through missions as well as able to be purchased with Trinium. A player instead picks a team of 8 Warlords, 5 for the initially deployed gang and 3 as reinforcements. A reinforcement will enter the fight when one member of the gang dies taking their slot. Due to this mechanic NO REVIVES will be allowed during this mode. Warlords with Reinforce abilities become great for this mode as they will provide a bonus on entering the fight, helping to sway the tide of battle. 
+[] 
+[Heading3] Pit Brackets and Rewards
+[Heading4] Pit Brawls/Royal Skill Bracket
+[] Tier
+[] Name
+[] Points
+[] Weekly Rewards
+[] Fight Rewards
+[] 1
+[] Runner
+[] 100
+[] 1x Meager Cache
+[] x10 Points, 10k Credits, 10 Pit Coin
+[] 2
+[] Underling
+[] 200
+[] 1x Meager Cache
+[] x10 Points, 12k Credits, 15 Pit Coin
+[] 3
+[] Muscle
+[] 300
+[] 2x Meager Cache
+[] x10 Points, 14k Credits, 20 Pit Coin
+[] 4
+[] Enforcer
+[] 400
+[] 2x Meager Cache
+[] x10 Points, 16k Credits, 25 Pit Coin
+[] 5
+[] Soldier
+[] 600
+[] 1x Substantial Cache
+[] x10 Points, 18k Credits, 35 Pit Coin
+[] 6
+[] Body Guard
+[] 800
+[] 1x Substantial Cache
+[] x10 Points, 20k Credits, 45 Pit Coin
+[] 7
+[] Gun Runner
+[] 1,000
+[] 2x Substantial Cache
+[] x10 Points, 22k Credits, 55 Pit Coin
+[] 8
+[] Diplomat
+[] 1,200
+[] 2x Substantial Cache
+[] x10 Points, 24k Credits, 65 Pit Coin
+[] 9
+[] Captain
+[] 1,500
+[] 1x Sublime Cache
+[] x10 Points, 26k Credits, 80 Pit Coin
+[] 10
+[] UnderBoss
+[] 1,800
+[] 2x Sublime Cache
+[] x10 Points, 28k Credits, 95 Pit Coin
+[] 11
+[] Boss
+[] 2,100
+[] 3x Sublime Cache
+[] x10 Points, 30k Credits, 110 Pit Coin
+[] 12
+[] Warlord
+[] 2,400
+[] 1x Exalted Cache
+[] x10 Points, 35k Credits, 125 Pit Coin
+[] 13
+[] Neon Legend
+[] 3,000+
+[] 3x Exalted Cache
+[] x10 Points, 40k Credits, 150 Pit Coin
+[] 
+[Heading4] Pit Cache Rewards
+[] Meager Cache
+[] Chance
+[] 6x Random Set, Rank 4-5, Rare-Legendary Equipment
+[] 100%
+[] 1-3x Rare Contracts
+[] 50%
+[] 250-500k Credits
+[] 100%
+[] 1-3x Rare Stimm
+[] 25%
+[] 500 Pit Coin
+[] 100%
+[] Substantial Cache
+[] 6x Random Set, Rank 5-6, Rare-Legendary Equipment
+[] 100%
+[] 1-2x Epic Contracts
+[] 50%
+[] 500k-1m Credits
+[] 100%
+[] 1-2x Epic Stimm
+[] 25%
+[] 1x Meager Cache
+[] 20%
+[] 1000 Pit Coin
+[] 100%
+[] Sublime Cache
+[] 6x Random Set, Rank 6, Epic-Legendary Equipment
+[] 100%
+[] 1-2x Epic Contracts
+[] 50%
+[] 1m-1.5m Credits
+[] 100%
+[] 1-2x Epic Stimm
+[] 25%
+[] 1-3x Rare Stimm
+[] 50%
+[] 1x Substantial Cache
+[] 20%
+[] 1500 Pit Coin
+[] 100%
+[] Exalted Cache
+[] 6x Random Set, Rank 6, Legendary Equipment
+[] 100%
+[] 1-2x Epic Contracts
+[] 65%
+[] 2m-2.5m Credits
+[] 100%
+[] 1-2x Epic Stimm
+[] 35%
+[] 1-3x Rare Stimm
+[] 75%
+[] 1x Sublime Cache
+[] 25%
+[] 2000 Pit Coin
+[] 100%
+[] 
+[Heading3] Black Market
+[] Pit Coins earned from all PVP activities in game can be exchanged for limited goods from the Black Market. Purchases are limited to 1 per week or 1 per day depending on the individual item itself with the exception of Credits. 
+[Heading4] Black Market Store Items
+[] Item
+[] Pit Coin Cost
+[] Reset
+[] 350 Energy
+[] 1,000
+[] Weekly
+[] 250k Credits
+[] 250
+[] N/A
+[] 1x Rare Stimm
+[] 1,000
+[] Daily
+[] 1x Epic Stimm
+[] 15,000
+[] Weekly
+[] 1x Legendary Stimm
+[] 30,000
+[] Weekly
+[] 1x Lvl 3 Firmware
+[] 1,000
+[] Daily
+[] 1x Lvl 4 Firmware
+[] 10,000
+[] Weekly
+[] 1x Lvl 5 Firmware
+[] 25,000
+[] Weekly
+[] 1x Rank 4 Epic Equipment
+[] 300
+[] Daily
+[] 1x Rank 5 Epic Equipment
+[] 700
+[] Daily
+[] 1x Rank 6 Epic Equipment
+[] 1,100
+[] Daily
+[] 1x Rank 4 Epic Implant
+[] 600
+[] Daily
+[] 1x Rank 5 Epic Implant
+[] 1,000
+[] Daily
+[] 1x Rank 6 Epic Implant
+[] 1,400
+[] Daily
+[] 1x Rare Contract
+[] 1,200
+[] Weekly
+[] 1x Epic Contract
+[] 2,500
+[] Weekly
+[] 
+[] 
+[Heading2] 

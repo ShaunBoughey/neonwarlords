@@ -1,0 +1,55 @@
+[Heading2] Bastions
+[] A Bastion is a gang wide activity where everyone must combine their strengths to defeat the bastions. Each Bastion  will last 3 days presenting a 1 of its three stages on each day. After reset on each day, rewards will be given in accordance to damage dealt and the next stage will begin. Even when fully defeated, players are still able to enter to deal damage just in case any of them missed out on the initial attack from the gang. Everyone can achieve max rewards if they deal enough damage to the boss.
+[] 
+[Heading3] Bastion: Assault on Teratech’s Cybernetics
+[] Stage 1: The Atrium
+[] Boss - :
+[] [ATK1] : 
+[] [ATK2] :
+[] [PASV1] :
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, Turn Meter Manipulation, INCREASE COOL DOWN or ENRAGE. 
+[] 
+[] (Side Minion)
+[] [ATK1] :
+[] [PASV1] :
+[] 
+[] Possible Victory Strategies:
+[] 
+[] 
+[] Rewards Table:
+[] 
+[] Stage 2: The Foundry
+[] Boss - :
+[] [ATK1] : 
+[] [ATK2] :
+[] [PASV1] :
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, Turn Meter Manipulation, INCREASE COOL DOWN or ENRAGE. 
+[] 
+[] (Side Minion)
+[] [ATK1] :
+[] [PASV1] :
+[] 
+[] Possible Victory Strategies:
+[] 
+[] 
+[] Rewards Table
+[] 
+[] Stage 3: Head of the Hydra
+[] Boss - :
+[] [ATK1] : 
+[] [ATK2] :
+[] [PASV1] :
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, Turn Meter Manipulation, INCREASE COOL DOWN or ENRAGE. 
+[] 
+[] (Side Minion)
+[] [ATK1] :
+[] [PASV1] :
+[] 
+[] Possible Victory Strategies:
+[] 
+[] 
+[] Rewards Table
+[] 
+[Heading2] Trinium Stocks
+[] Trinium Stocks will be a location in the city that provides a daily reward of Trinium (Premium Currency) value depending on its level, maxim of 3. Level 1 will provide 22, Level 2 will provide 44 and Level 3 will provide 66. The Stocks are capped at 40,60 and 75 when level 3, with additional caps being a microtransaction. The Additional Stocks levels are gained through player progression missions.
+[] 

@@ -1,0 +1,234 @@
+[Heading2] Warlord Neuronet (Skilltree)
+[] The Warlord’s neuronet is split into 7 ‘synapse layers’ acting as the progression levels and 3 ‘careers’ acting as the class trees; Assault, Protection and Control.
+[] Acquiring memory fragments will improve a warlord’s skill tree and skills increase in cost as the tree progresses. Fragments are split into tier 1, 2 and 3 with later stages of the associated hideout producing more rewards of all three types. Warlords can assign 4 full memory slots per Synapse layer with most skills allowing for two points each, however they may only select 1 of the 2 presented in each career.  This should allow for diverse skill selection to benefit the inherent abilities of the selected Warlord.
+[] 
+[] Category
+[] Skill Name
+[] Skill Description
+[] Tier
+[] Cost Per Point
+[] Assault
+[] Precision Strike
+[] Increase Critical Chance by 5/10%.
+[] 1
+[] 50 x Tier 1 MF
+[] 
+[] Blitz
+[] First attack deals 5/10% more damage.
+[] 
+[] 
+[] 
+[] Munitions Dump
+[] Increase Firepower by 5/10%.
+[] 2
+[] 100 x Tier 1 MF
+[] 
+[] Force Measure
+[] Increase Critical Damage by 10/20%.
+[] 
+[] 
+[] 
+[] Essence Shield
+[] Gain OVERSHIELD equal to 5/10% Max HP on Kill.
+[] 3
+[] 150 x Tier 2 MF
+[] 
+[] Grand Challenge
+[] Deal 5/10% more damage to a target with higher HP.
+[] 
+[] 
+[] 
+[] Blood Frenzy
+[] Damage increased by 3/6% on each kill to a max of 9/18%.
+[] 4
+[] 200 x Tier 2 MF
+[] 
+[] Accruing Assault
+[] Each skill stacks 2/4% more damage on each use to a max of 6/12%.
+[] 
+[] 
+[] 
+[] Open Opportunity
+[] Increase damage by 5/10% against debuffed Warlords.
+[] 5
+[] 250 x Tier 3 MF
+[] 
+[] Berserker Rage
+[] Increase Damage by 10/20% for each debuff on this Warlord to a max of 30/60%.
+[] 
+[] 
+[] 
+[] Pummel
+[] Deal 5/10% more damage to Warlords with 50% or less HP.
+[] 6
+[] 300 x Tier 3 MF
+[] 
+[] Siphon Essence
+[] Heal by 10% of damage dealt when at 30% HP or less.
+[] 
+[] 
+[] 
+[] Warlord's Wrath
+[] 65% chance to deal extra damage equal to 50% of the total damage being dealt .
+[] 7
+[] 350 x Tier 3 MF
+[] 
+[] Fracture
+[] 50% chance to ignore 30% Armour when attacking.
+[] 
+[] 
+[] Protection
+[] Heavy Plating
+[] Increase Armour by 5/10%.
+[] 1
+[] 50 x Tier 1 MF
+[] 
+[] Fitness Regime
+[] Increase Health by 5/10%.
+[] 
+[] 
+[] 
+[] Egocentric
+[] Increase Healing and OVERSHIELD values received by this Warlord by 5/15%.
+[] 2
+[] 100 x Tier 1 MF
+[] 
+[] Altruistic
+[] Increase Healing and OVERSHIELD values given by abilities of this Warlord by 5/15%.
+[] 
+[] 
+[] 
+[] Guardian Angel
+[] This Warlord absorbs 5/10% of damage dealt to all allied Warlords.
+[] 3
+[] 150 x Tier 2 MF
+[] 
+[] Prepared Defense
+[] Decrease the damage of first to this Warlord by 10/20%.
+[] 
+[] 
+[] 
+[] Desperate Parry
+[] 15/25% Chance to COUNTERATTACK each time this Warlord is hit with a Critical. Once per enemy Warlord turn.
+[] 4
+[] 200 x Tier 2 MF
+[] 
+[] Field Surgeon
+[] Healing abilities used by this Warlord are increased by 50/100%.
+[] 
+[] 
+[] 
+[] Medical Learning
+[] Heal this champ by 5/10% of any value an enemy Warlord heals by.
+[] 5
+[] 250 x Tier 3 MF
+[] 
+[] Galvanized Metals
+[] Increase Armour by 10/20%.
+[] 
+[] 
+[] 
+[] White Knight
+[] 15/25% Chance to COUNTERATTACK each time an ally is hit with a Critical. Once per enemy Warlord turn.
+[] 6
+[] 300 x Tier 3 MF
+[] 
+[] Rapid Rescue
+[] Gain 15/25% turn meter whenever an allied Warlord drops below 25% HP.
+[] 
+[] 
+[] 
+[] Battlefield Foresight
+[] Provide an OVERSHIELD to the gang at the beginning of combat equal to 5/10% of this Warlord Max HP.
+[] 7
+[] 350 x Tier 3 MF
+[] 
+[] Advanced Formations
+[] Allied Warlords Gain 5/10% of this Warlords Max Armour.
+[] 
+[] 
+[] Control
+[] Malware Packages
+[] Increase Hacking by 5/15
+[] 1
+[] 50 x Tier 1 MF
+[] 
+[] Real Time Monitoring
+[] Increase Firewall by 10/20
+[] 
+[] 
+[] 
+[] Adaptive Networks
+[] Heal by 5/10% Max HP whenever a debuff is blocked by this Warlord.
+[] 2
+[] 100 x Tier 1 MF
+[] 
+[] System Exploits
+[] 20/40% chance to gain 10% Turn Meter when a debuff created by this Warlord expires.
+[] 
+[] 
+[] 
+[] Syphon Intel
+[] Heal by 5/10% Max HP whenever a debuff is blocked by an enemy Warlord.
+[] 3
+[] 150 x Tier 2 MF
+[] 
+[] Packet Filtering
+[] 20/40% chance to gain 10% Turn Meter when a buff created by this Warlord expires.
+[] 
+[] 
+[] 
+[] Adware
+[] 35% chance that each debuff created will last an extra turn.
+[] 4
+[] 200 x Tier 2 MF
+[] 
+[] Personal Advertisements
+[] 35% chance that each buff created will last an extra turn.
+[] 
+[] 
+[] 
+[] DDos
+[] Gain 10/20% chance to spread created debuff to all enemy Warlords.
+[] 5
+[] 250 x Tier 3 MF
+[] 
+[] Encrypt NeuroNet
+[] Increase Firewall by 30/60.
+[] 
+[] 
+[] 
+[] Pull Metadata
+[] Gain 10/20% chance to spread created buff to all allied Warlords
+[] 6
+[] 300 x Tier 3 MF
+[] 
+[] Ransomware
+[] Increase Hacking by 25/50
+[] 
+[] 
+[] 
+[] Bait and Switch
+[] Gain a 15/25% chance to 'Deflect' an incoming debuff to the attaching Warlord.
+[] 7
+[] 350 x Tier 3 MF
+[] 
+[] Breach
+[] Increase the chance to place all Debuffs by 5/10%.
+[] 
+[] 
+[] 
+[Heading2] Warlord Abilities
+[] Abilities can be level through multiple methods. One method is the consuming of a duplicate character to level the skill by 3 levels. Alternatively abilities can be raised 1 level through the use of the appropriate ‘Stimm’. The rarity of the warlord will require a stimm of equal rarity or higher.  Warlords ability count will vary from warlord to warlord giving them individual requirements. This will include a mixture of active, gang and passive abilities. All abilities have their own unique damage multiplies to help balance their damage output with their scaled states. Ability Damage scales off of both the ability multiplier and the appropriate stat.
+[] Active Abilities to a max of 3: Require activation during the combat.
+[] Passive Abilities: Always passively active during the combat.
+[] Leader/Syndicate Abilities to a max of 1: Only active when leading the team. Provides a passive bonus.
+[] Reinforce Abilities to a max of 2: Will only trigger if the Character reinforces during Pit Royal content or at the start of a combat round.
+[] 
+[] Ability Example
+[] Bob:
+[] Ab 1 - Attack 1 enemy Reduce their tm by 10% apply SPEED UP for one turn on self
+[] Ab 2 - Attack all enemies Reduce Enemy tm by 10% and a 50% chance to apply ARMOUR DOWN on all enemies for two turns. Cooldown of 3 turns. 
+[] 
+[] -Link to a Table listing all Warlords and their abilities-
+[] 

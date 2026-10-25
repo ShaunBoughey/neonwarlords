@@ -1,0 +1,217 @@
+[Heading1] 
+[Heading1] Combat
+[Heading2] Flow of Combat
+[] Start fight button. Match loads to show both teams ready and facing eachother. 
+[] All turn meters start. This is almost instantaneous stopping when the first warlord gains enough turn meter to fill their bar entirely.
+[] Take the warlords turn by first selecting which ability to use.
+[] Then select the target to use the ability on. Targets depend on the ability being used.
+[] Ability activates and applies all relative effects of the ability; turn meter loss or gain, dmg to targets, buff/debuffs etc.
+[] Trigger all relevant passive effects due to events and resolve their effects. Most passives should not then trigger additional passives.
+[] With the turn over, the turn meters will now begin again from their last position with the next Warlord to reach full gaining their turn.
+[] Repeat the process until all members of one team are dead. 
+[] Deploy win or loss screen with relevant outcomes and award player rewards then defaulting back to the fight select screen.
+[] 
+[Heading2] Squad Composition
+[]  
+[Heading2] Speed Equation 
+[] UMG: convert the speed value to a % to fill the bar. First bar filled, goes first. All Speed bars pause during a turn taking place. pause them for extra turns. 
+[] how to work out who goes first
+[] Possible Unreal reference
+[] 
+[Heading2] Total Damage Equation
+[] The total damage equation should factor in all forms of damage multipliers making a reliance on certain balance control values. A Warlord ability multiplier will be static and will aid in control by being the first number the total stats are multiplied by. 
+[] 
+[] Total Damage =  Total Base Stats * Warlord Ability Multiplier * Ability Level Multipliers * Crit Damage Multiplier *  Neuronet Bonuses * Currently Applied Buffs * Passive Effects
+[] 
+[] The damage mitigation percentage is taken from the total damage at the end to establish a final damage number on the attacked target.
+[] 
+[Heading2] Total Damage Mitigation Equation
+[] The total damage mitigation will work out total armour value after all buffs and multipliers are applied, once again keeping a control on warlord balance through a warlord’s base stat values. This will be converted to a mitigation percentage which will then be applied to the damage being dealt. 
+[] 
+[] Damage Mitigation = Total Base Armour * Neuronet Bonuses * Currently Applied Buffs * Passive Bonuses = Total Damage Mitigation Percentage.
+[] 
+[] Finally the Armour penetration values is taken from the Total Damage Mitigation Percentage 
+[] 
+[] 
+[Heading3] Example Equation
+[] A Warlord has a total base stat of 1000 Firepowers, Ability multiplier of 2.0, Ability Level Multiplier of 10%, 50% Critical Damage, Neuronet Bonuses of 15%, 30% Firepower Buff Currently Applied, A passive of 10% firepower and a 5% armour penetration.
+[] 
+[] 1000*2.0*1.1*1.5*1.15*1.3*1.1 = 5437 Total Damage
+[] 
+[] A Warlord has a total base stat 1000 Armour, Neuro Net Bonus of 20% Armour, 15% Armour Buff Currently Applied, and a 10% Passive. 
+[] 
+[] 1000*1.2*1.15*1.1 = 1518 Armour = 50% Damage Mitigation
+[] 
+[] Final Damage is calculated using one against the other whilst taking into account Armour Penetration.
+[] 
+[] 5437 - 45% (50%Armour - 5% Armour Penetration) = 2990 Damage dealt to the Warlord’s HealthPool.
+[] 
+[Heading2] Hacking Vs Firewall
+[] Whenever a warlord uses a skill that attempts to debuff or manipulate the turnmeter of an enemy Warlord a Hacking vs Firewall check will be made to assess if the buff will land.
+[] 
+[] Debuffing: Check if Debuff % is successful &gt; Check if Attacker’s Hacking is Higher than targets Firewall &gt; Check for Blocking Debuffs Status &gt; Check if Target already has the Relevant Debuff &gt; Can Debuff be Refreshed/Stacked &gt; Place/Replace Relevant Debuff for Relevant Turns.
+[] 
+[] Buffing: Check if Debuff % is successful &gt; Check for Blocking Buffs Status &gt; Check if Target already has the Relevant Debuff &gt; Can Buff be Refreshed &gt; Place/Replace Relevant Buff for Relevant Turns.
+[] 
+[Heading3] Buff and Positive Effects List
+[] Buff/Effect
+[] Effect
+[] Value Small
+[] Value Large
+[] Speed Up 
+[] Increase speed value by x%
+[] 15
+[] 30
+[] Armour Up
+[] Increase current armour value by x %
+[] 25
+[] 50
+[] Firepower Up
+[] Increase current firepower by x %
+[] 25
+[] 50
+[] Hacking Up
+[] Increase current hacking by x
+[] 40
+[] 70
+[] Firewall Up
+[] Increase current firewall by x
+[] 40
+[] 70
+[] Crit Chance Up
+[] Increase current Crit Chance by x %
+[] 15
+[] 30
+[] Crit Damage Up
+[] Increase current Crit Damage by x %
+[] 25
+[] 50
+[] Block Debuffs
+[] Block All Debuff Attempts
+[] N/A
+[] N/A
+[] Continuous Heal 
+[] Heal at start of each turn by x%
+[] 10
+[] 20
+[] Bolster
+[] Solid Dmg mitigation by x%
+[] 15
+[] 25
+[] Reflect
+[] Reflect x% of dmg back to the attack
+[] 15
+[] 30
+[] Overshield
+[] Place x of bonus shield (HP) on character
+[] 10
+[] 30
+[] Vampire
+[] Increase current HP based on x% of damage dealt
+[] 15
+[] 30
+[] Counter
+[] x% to counter when attacked
+[] 50
+[] 100
+[] Cooldown 
+[] Decreases the cooldown turns on skills.
+[] Decrease
+[] Reset
+[] Increase Turn Meter
+[] x% Increase to turn meter bar.
+[] 
+[] 
+[] 
+[] 
+[Heading3] Debuff and Negative EffectsList
+[] Debuff/Effect
+[] Effect
+[] Value Small
+[] Value Large
+[] Speed Down
+[] Decrease speed value by x%
+[] 15
+[] 30
+[] Armour Down
+[] Decrease current armour value by x %
+[] 25
+[] 50
+[] Firepower Down
+[] Decrease current firepower by x %
+[] 25
+[] 50
+[] Firewall Down
+[] Decrease current firewall by x (Shouldnt use HackVSFirewall Check) 
+[] 40
+[] 70
+[] Hacking Down
+[] Decrease current hacking by x 
+[] 40
+[] 70
+[] Crit Chance Down
+[] Decrease current Crit Chance by x %
+[] 15
+[] 30
+[] Crit Damage Down
+[] Decrease current Crit Damage by x %
+[] 25
+[] 50
+[] Poison
+[] Deal x% hp as dmg start of turn
+[] 2.5
+[] 5
+[] Bleed
+[] Deal x% of dmg dealt at the start of turn
+[] 2.5
+[] 5
+[] Shock
+[] Chance The character misses their next turn
+[] 25%
+[] 50%
+[] Stun
+[] Character Misses their next turn
+[] N/A
+[] N/A
+[] Break
+[] x% Dmg increase towards this warlord
+[] 15
+[] 25
+[] Mark Target
+[] next hit on target deal times x damage
+[] 2
+[] 3
+[] Enraged
+[] Attacks with only their basic attack to the Warlord that Enraged them.
+[] N/A
+[] N/A
+[] Block Buffs
+[] Stops all buffs from landing.
+[] 
+[] 
+[] Cooldown Increase
+[] Puts all skill cooldowns up.
+[] Increase
+[] Full Cooldown
+[] Reduce Turn Meter
+[] x% decrease turn meter bar.
+[] 
+[] 
+[] Heal Block
+[] Stops all healing effects.
+[] 
+[] 
+[] Stupefy
+[] 35% to miss next turn + Reduces Hacking by 50
+[] 
+[] 
+[] 
+[Heading2] Winning Process 
+[] When you win and combat is over, the player will be shown a winning screen that shall contain any XP gained and any other rewards given.
+[] Screen information should include; Content Name, Content Difficulty, Stage Number, Victory Header, Player XP Gained, Item Rewards/Drops, Warlords Used, Warlord Contributions (Dmg Dealt, Dmg Taken, Dmg Healed), Warlord XP Gained, Back to Upper Menu Button, Continue To Next Stage Button, Replay Button.
+[] 
+[Heading2] Losing Process
+[] When you lose and combat is over, the player will be shown a losing screen that shall contain 20% of the amount of XP you would get from winning. 
+[] Screen information should include; Content Name, Content Difficulty, Stage Number, Defeat Header, Player XP Gained, Warlords Used, Warlord Contributions (Dmg Dealt, Dmg Taken, Dmg Healed), Warlord XP Gained, Back to Upper Menu Button, Replay Button.
+[] 
+[] 

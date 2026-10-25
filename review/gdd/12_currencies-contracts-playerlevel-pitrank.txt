@@ -1,0 +1,460 @@
+[Heading1] Gameplay
+[Heading2] Currencies
+[] Currency
+[] Use case
+[] Acquired From
+[] Cap
+[] Credits
+[] Used to buy gear from shops
+[] By playing PvE Battles, Rewards, Mission, Selling Equipment, Neons and Implants.
+[] N/A
+[] Contracts
+[] Used to recruit new Gang Members of the relevant Rarity.
+[] Rewards for winning in PvE Content and Missions/Quests, Rewards
+[] N/A
+[] Trinium
+[] Premium currency, 132per £1
+[] Purchased with IRL Money
+[] N/A
+[] Energy
+[] Energy
+[] Rewards
+[] 160
+[] Brawl Invites
+[] Used to gain entry into Pit Brawls
+[] Gained via missions and purchased with Trinium, Rewards
+[] 10
+[] Royal Invites
+[] Used to gain entry into Pit Royal
+[] Gained via missions and purchased with Trinium, Rewards
+[] 10
+[] Heist Plan
+[] Use only to enter the Heist Hideout
+[] Get 5 a day - Rewards
+[] 5
+[] Pit Coin
+[] Used only in the Black Market and the Safe House
+[] PVP wins
+[] N/A
+[] Bounty Token
+[] Used to gain entry into Syndicate Wars.
+[] get 12 a day
+[] 12
+[] Merits
+[] Used to level Battle Pass
+[] Gain from battle pass missions. Purchased.
+[] 
+[] 
+[] 
+[Heading2] Contracts
+[] Warlords are acquired through the opening of contracts. Contracts will have specific drop rates for warlords depending on the quality of the contract opened. A whole contract can be gained from various areas of the game as well as the breaking down of existing warlords at a rate of 1-2 scrap pieces per warlord. 10 scraps will make a whole contract.
+[] 
+[] Contract
+[] Warlord pull chances
+[] Notes
+[] Uncommon
+[] 90% Common 9% Uncommon 1% Rare
+[] 
+[] Rare
+[] 92% Rare 7.5% Epic 0.5% Legendary 
+[] 
+[] Epic
+[] 92% Epic 8% Legendary
+[] 
+[] Legendary
+[] 100% Legendary Warlord.
+[] Only obtainable through breaking of legendary Warlords + Rewards + Purchase
+[] 
+[Heading2] Player Progression
+[Heading3] Player Level
+[] As the player progresses through the games ‘Jobs’ and ‘Life Goals’ they will earn XP. They will also earn 1XP from each energy they spend. Each level will give the player a maximum energy refill and provide additional rewards such as Credits, Contracts and Trinium. 
+[] 
+[Heading4] Player Level And Rewards Table
+[] Level
+[] XP Required
+[] Reward
+[] Level
+[] XP Required
+[] Reward
+[] Level
+[] XP Required
+[] Reward
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 1
+[] 100
+[] 1x Energy, 10K Credits, 5UC Contracts.
+[] 34
+[] 4,000
+[] 1x Energy, 760K Credits. 80 Trinium
+[] 67
+[] 13,300
+[] 1x Energy, 2.59M Credits. 150 Trinium
+[] 2
+[] 150
+[] 1x Energy, 20K Credits. 20 Trinium
+[] 35
+[] 4,200
+[] 1x Energy, 800K Credits. Lvl 4 Firmware.
+[] 68
+[] 13,650
+[] 1x Energy, 2.66M Credits. 150 Trinium
+[] 3
+[] 200
+[] 1x Energy, 30K Credits. 20 Trinium
+[] 36
+[] 4,400
+[] 1x Energy, 840K Credits. 90 Trinium
+[] 69
+[] 14,000
+[] 1x Energy, 2.73M Credits. 150 Trinium
+[] 4
+[] 250
+[] 1x Energy, 40K Credits. 20 Trinium
+[] 37
+[] 4,600
+[] 1x Energy, 880K Credits. 90 Trinium
+[] 70
+[] 14,400
+[] 1x Energy, 2.80M Credits. 1E Contract
+[] 5
+[] 300
+[] 1x Energy, 50K Credits. 10UC Contracts.
+[] 38
+[] 4,800
+[] 1x Energy, 920K Credits. 90 Trinium
+[] 71
+[] 14,800
+[] 1x Energy, 2.88M Credits. 160 Trinium
+[] 6
+[] 350
+[] 1x Energy, 60K Credits. 30 Trinium
+[] 39
+[] 5,000
+[] 1x Energy, 960K Credits. 90 Trinium
+[] 72
+[] 15,200
+[] 1x Energy, 2.96M Credits. 160 Trinium
+[] 7
+[] 400
+[] 1x Energy, 70K Credits. 30 Trinium
+[] 40
+[] 5,250
+[] 1x Energy, 1M Credits. 1R Contract
+[] 73
+[] 15,600
+[] 1x Energy, 3.04M Credits. 160 Trinium
+[] 8
+[] 450
+[] 1x Energy, 80K Credits. 30 Trinium
+[] 41
+[] 5,500
+[] 1x Energy, 1.05M Credits. 100 Trinium
+[] 74
+[] 16,000
+[] 1x Energy, 3.12M Credits. 160 Trinium
+[] 9
+[] 500
+[] 1x Energy, 90K Credits. 30 Trinium
+[] 42
+[] 5,750
+[] 1x Energy, 1.1M Credits. 100 Trinium
+[] 75
+[] 16,400
+[] 1x Energy, 3.20M Credits. 2 Lvl 5 Firmware.
+[] 10
+[] 600
+[] 1x Energy, 100K Credits. 1R Contract.
+[] 43
+[] 6,000
+[] 1x Energy, 1.15M Credits. 100 Trinium
+[] 76
+[] 16,800
+[] 1x Energy, 3.28M Credits. 170 Trinium
+[] 11
+[] 700
+[] 1x Energy, 120K Credits. 40 Trinium
+[] 44
+[] 6,250
+[] 1x Energy, 1.2M Credits. 100 Trinium
+[] 77
+[] 17,200
+[] 1x Energy, 3.36M Credits. 170 Trinium
+[] 12
+[] 800
+[] 1x Energy, 140K Credits. 40 Trinium
+[] 45
+[] 6,500
+[] 1x Energy, 1.25M Credits. Lvl 4 Firmware.
+[] 78
+[] 17,600
+[] 1x Energy, 3.44M Credits. 170 Trinium
+[] 13
+[] 900
+[] 1x Energy, 160K Credits. 40 Trinium
+[] 46
+[] 6,750
+[] 1x Energy, 1.3M Credits. 110 Trinium
+[] 79
+[] 18,000
+[] 1x Energy, 3.52M Credits. 170 Trinium
+[] 14
+[] 1,000
+[] 1x Energy, 180K Credits. 40 Trinium
+[] 47
+[] 7,000
+[] 1x Energy, 1.35M Credits. 110 Trinium
+[] 80
+[] 18,500
+[] 1x Energy, 3.60M Credits. 1E Contract
+[] 15
+[] 1,100
+[] 1x Energy, 200K Credits. Lvl 3 Firmware.
+[] 48
+[] 7,250
+[] 1x Energy, 1.4M Credits. 110 Trinium
+[] 81
+[] 19,000
+[] 1x Energy, 3.69M Credits. 180 Trinium
+[] 16
+[] 1,200
+[] 1x Energy, 220K Credits. 50 Trinium
+[] 49
+[] 7,500
+[] 1x Energy, 1.45M Credits. 110 Trinium
+[] 82
+[] 19,500
+[] 1x Energy, 3.78M Credits. 180 Trinium
+[] 17
+[] 1,300
+[] 1x Energy, 240K Credits. 50 Trinium
+[] 50
+[] 7,800
+[] 1x Energy, 1.5M Credits. 1R Contract
+[] 83
+[] 20,000
+[] 1x Energy, 3.87M Credits. 180 Trinium
+[] 18
+[] 1,400
+[] 1x Energy, 260K Credits. 50 Trinium
+[] 51
+[] 8,100
+[] 1x Energy, 1.56M Credits. 120 Trinium
+[] 84
+[] 20,500
+[] 1x Energy, 3.96M Credits. 180 Trinium
+[] 19
+[] 1,500
+[] 1x Energy, 280K Credits. 50 Trinium
+[] 52
+[] 8,400
+[] 1x Energy, 1.62M Credits. 120 Trinium
+[] 85
+[] 21,000
+[] 1x Energy, 4.05M Credits. 2 Lvl 5 Firmware.
+[] 20
+[] 1,650
+[] 1x Energy, 300K Credits. 1R Contract
+[] 53
+[] 8,700
+[] 1x Energy, 1.68M Credits. 120 Trinium
+[] 86
+[] 21,500
+[] 1x Energy, 4.14M Credits. 190 Trinium
+[] 21
+[] 1,800
+[] 1x Energy, 330K Credits. 60 Trinium
+[] 54
+[] 9,000
+[] 1x Energy, 1.74M Credits. 120 Trinium
+[] 87
+[] 22,000
+[] 1x Energy, 4.23M Credits. 190 Trinium
+[] 22
+[] 1,950
+[] 1x Energy, 360K Credits. 60 Trinium
+[] 55
+[] 9,300
+[] 1x Energy, 1.8M Credits. lvl 5 Firmware.
+[] 88
+[] 22,500
+[] 1x Energy, 4.32M Credits. 190 Trinium
+[] 23
+[] 2,100
+[] 1x Energy, 390K Credits. 60 Trinium
+[] 56
+[] 9,600
+[] 1x Energy, 1.86M Credits. 130 Trinium
+[] 89
+[] 23,000
+[] 1x Energy, 4.41M Credits. 190 Trinium
+[] 24
+[] 2,250
+[] 1x Energy, 420K Credits. 60 Trinium
+[] 57
+[] 9,900
+[] 1x Energy, 1.92M Credits. 130 Trinium
+[] 90
+[] 23,600
+[] 1x Energy, 4.5M Credits. 1E Contract
+[] 25
+[] 2,400
+[] 1x Energy, 450K Credits. Lvl 3 Firmware.
+[] 58
+[] 10,200
+[] 1x Energy, 1.98M Credits. 130 Trinium
+[] 91
+[] 24,200
+[] 1x Energy, 4.6M Credits. 200 Trinium
+[] 26
+[] 2,550
+[] 1x Energy, 480K Credits. 70 Trinium
+[] 59
+[] 10,500
+[] 1x Energy, 2.04M Credits. 130 Trinium
+[] 92
+[] 24,800
+[] 1x Energy, 4.7M Credits. 200 Trinium
+[] 27
+[] 2,700
+[] 1x Energy, 510K Credits. 70 Trinium
+[] 60
+[] 10,850
+[] 1x Energy, 2.10M Credits. 1E Contract
+[] 93
+[] 25,400
+[] 1x Energy, 4.8M Credits. 200 Trinium
+[] 28
+[] 2,850
+[] 1x Energy, 540K Credits. 70 Trinium
+[] 61
+[] 11,200
+[] 1x Energy, 2.17M Credits. 140 Trinium
+[] 94
+[] 26,000
+[] 1x Energy, 4.9M Credits. 200 Trinium
+[] 29
+[] 3,000
+[] 1x Energy, 570K Credits. 70 Trinium
+[] 62
+[] 11,550
+[] 1x Energy, 2.24M Credits. 140 Trinium
+[] 95
+[] 26,600
+[] 1x Energy, 5M Credits. 3 Lvl 5 Firmware.
+[] 30
+[] 3,200
+[] 1x Energy, 600K Credits. 1R Contract
+[] 63
+[] 11,900
+[] 1x Energy, 2.31M Credits. 140 Trinium
+[] 96
+[] 27,200
+[] 1x Energy, 5.1M Credits. 1L Contract
+[] 31
+[] 3,400
+[] 1x Energy, 640K Credits. 80 Trinium
+[] 64
+[] 12,250
+[] 1x Energy, 2.38M Credits. 140 Trinium
+[] 97
+[] 27,800
+[] 1x Energy, 5.2M Credits. 1L Contract
+[] 32
+[] 3,600
+[] 1x Energy, 680K Credits. 80 Trinium
+[] 65
+[] 12,600
+[] 1x Energy, 2.45M Credits. lvl 5 Firmware.
+[] 98
+[] 28,400
+[] 1x Energy, 5.3M Credits. 1L Contract
+[] 33
+[] 3,800
+[] 1x Energy, 720K Credits. 80 Trinium
+[] 66
+[] 12,950
+[] 1x Energy, 2.52M Credits. 150 Trinium
+[] 99
+[] 29,000
+[] 1x Energy, 5.5M Credits. 1L Contract
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 100
+[] 30,000
+[] 1x Energy, 6M Credits. 1L Warlord
+[] 
+[Heading3] Pit Rank (PVP)
+[] As outlined in the Pit section, there are 13 Ranks to the PVP side of the game. With two PVP aspects to the game there are two sets of ranks both of which will offer a regular weekly cache as a reward. Any and all players can ascend up the ranks to the top with the caveat that losses on offence and defense lose them points. Ranks 1-4 lose 10 pints, 5-8 lose 15 points, 9-12 lose 20 points and rank 13 loses 25 points. Victories each day from offensive fights will gain points +10 each. 
+[] 
+[] 
+[] Pit Ranks
+[] Tier
+[] Brawl
+[] Royal
+[] Points
+[] 1
+[] Runner
+[] Runner
+[] 100
+[] 2
+[] Underling
+[] Underling
+[] 200
+[] 3
+[] Muscle
+[] Muscle
+[] 300
+[] 4
+[] Enforcer
+[] Enforcer
+[] 400
+[] 5
+[] Soldier
+[] Soldier
+[] 600
+[] 6
+[] Body Guard
+[] Body Guard
+[] 800
+[] 7
+[] Gun Runner
+[] Gun Runner
+[] 1,000
+[] 8
+[] Diplomat
+[] Diplomat
+[] 1,200
+[] 9
+[] Captain
+[] Captain
+[] 1,500
+[] 10
+[] UnderBoss
+[] UnderBoss
+[] 1,800
+[] 11
+[] Boss
+[] Boss
+[] 2,100
+[] 12
+[] Warlord
+[] Warlord
+[] 2,400
+[] 13
+[] Neon Legend
+[] Neon Legend
+[] 3,000+
+[] 
+[Heading3] 

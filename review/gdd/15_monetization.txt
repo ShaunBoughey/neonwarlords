@@ -1,0 +1,540 @@
+[Heading1] Monetization 
+[Heading2] The Trinium Exchange (Shop)
+[] The Trinium Exchange is the in-game shop that allows for the purchase of various packs and resources with Neon Warlord’s Premium in-game currency.
+[] 
+[] Trinium Exchange
+[] Items
+[] Description
+[] Cost
+[] Limit
+[] Packs
+[] 
+[] 
+[] 
+[] Small Rare Contracts Pack
+[] 5 Rare Contracts, 125k Credits
+[] £4.99
+[] 5
+[] Large Rare Contracts Pack
+[] 15 Rare Contracts, 375k Credits
+[] £12.99
+[] 3
+[] Small Epic Contract Pack
+[] 1 Epic Contract, 50k Credits
+[] £9.99
+[] 5
+[] Medium Epic Contracts Pack
+[] 3 Epic Contract, 150k Credits
+[] £28.99
+[] 3
+[] Large Epic Contract Pack
+[] 10 Epic Contract, 500k Credits
+[] £89.99
+[] 1
+[]  Small Legendary Contract Pack
+[] 1 Legendary Contract, 100k Credits
+[] £19.99
+[] 3
+[] Large Legendary Contracts Pack
+[] 3 Legendary Contracts, 300k Credits
+[] £49.99
+[] 1
+[] Street Punk Pack
+[] 1 Rare Contract,150k Credits, 300 Trinium, 350 Energy
+[] £4.99
+[] 5
+[] Mob Boss Pack
+[] 5 Rare Contract, 1 Epic Contract, 500k Credits, 600 Trinium, 700 Energy
+[] £19.99
+[] 2
+[] Warlord Pack
+[] 10 Rare, 2 Epic, 1 Legendary Contracts, 1m Credits, 1000 Trinium, 1000 Energy
+[] £49.99
+[] 1
+[] Scavenger Pack
+[] 250 Energy, 150k Credits, 1x Lvl 3 Firmware, 1x 100% XP Boost, 5 Heist Plans
+[] £4.99
+[] 5
+[] Vulture Pack
+[] 500 Energy, 500k Credits, 3x Lvl 3 Firmware, 3x 100% XP Boost, 5 Heist Plans
+[] £9.99
+[] 2
+[] Hunter Pack
+[] 1000 Energy, 1m Credits, 2x Lvl 4 Firmware, 5x 100% XP Boost, 5 Heist Plans
+[] £19.99
+[] 1
+[] Equipment Pack
+[] Full Set of Rank 6 Legendary Equipment, 500k Credits, 200 Energy
+[] £19.99
+[] 5
+[] Implant Pack
+[] Full Set of Rank 6 Legendary Implants, 300k Credits, 150 Energy
+[] £14.99
+[] 5
+[] Neon Pack
+[] 12 Assorted Rank 6 Neons
+[] £4.99
+[] 5
+[] Massive Neon Pack
+[] 60 Assorted Rank 6 Neons
+[] £49.99
+[] 1
+[] Trinium Vault
+[] 
+[] 
+[] 
+[] Iota of Trinium
+[] 660 Trinium
+[] £4.99
+[] N/A
+[] Bundle of Trinium
+[] 1550 Trinium
+[] £9.99
+[] N/A
+[] Consignment of Trinium
+[] 3200 Trinium
+[] £19.99
+[] N/A
+[] Cluster of Trinium
+[] 4750 Trinium
+[] £29.99
+[] N/A
+[] Plethora of Trinium
+[] 8000 Trinium
+[] £49.99
+[] N/A
+[] Credit Bank
+[] 
+[] 
+[] 
+[] Small Investment
+[] 100k Credits
+[] 60 Trinium
+[] N/A
+[] Medium Investment
+[] 250k Credits
+[] 150 Trinium
+[] N/A
+[] Substantial Investment
+[] 1.5m Credits
+[] 900 Trinium
+[] N/A
+[] Exceptional Investment
+[] 4m Credits
+[] 2000 Trinium
+[] N/A
+[] Masterful Investment
+[] 10m Credits
+[] 5000 Trinium
+[] N/A
+[] Trinium Market
+[] 
+[] 
+[] 
+[] Paragon Deeds
+[] 30 Minor, 20 Major, 10 Grand
+[] 1200 Trinium
+[] N/A
+[] Neutral Deeds
+[] 30 Minor, 20 Major, 10 Grand
+[] 1200 Trinium
+[] N/A
+[] Renegade Deeds
+[] 30 Minor, 20 Major, 10 Grand
+[] 1200 Trinium
+[] N/A
+[] Generic Deeds
+[] 30 Minor, 20 Major, 10 Grand
+[] 1000 Trinium
+[] N/A
+[] Energy Boost
+[] 1x Energy
+[] 60 Trinium
+[] N/A
+[] Pit Brawl Refill
+[] 10x Pit Brawl Invites
+[] 100 Trinium
+[] 2
+[] Pit Royal Refill
+[] 10x Pit Royal Invites
+[] 100 Trinium
+[] 2
+[] 1 Day Boost
+[] 1x 100% XP Boost
+[] 100 Trinium
+[] N/A
+[] 3 Day Boost
+[] 3x 100% XP Boost
+[] 250 Trinium
+[] N/A
+[] 3x Rare Contracts
+[] 3x Rare Contracts, 75k Credits
+[] 500 Trinium
+[] N/A
+[] 7x Rare Contracts
+[] 7x Rare Contracts, 175k Credits
+[] 1100 Trinium
+[] N/A
+[] 15x Rare Contracts
+[] 15x Rare Contracts, 375k Credits
+[] 2200 Trinium
+[] N/A
+[] Raid Boss Ticket
+[] 1x Raid Boss Ticket
+[] 300 Trinium
+[] N/A
+[] Heist Plan
+[] 5x Heist Plan
+[] 1000 Trinium
+[] N/A
+[] 
+[Heading2] Subscriptions
+[] A Sub that gives you regular bonuses? More automated battles, increases to credits and xp given? 
+[] 
+[Heading2] Player Progress Double Rewards
+[] Gives extra Rewards on each of the player levels 
+[] 
+[Heading2] Battle Pass 
+[] The battle pass is a seasonal reward track that lasts for 10 weeks with a  2 week gap. During this time the players can level their pass from 1-100 gaming rewards along the way.  There will be two tracks, Free and Premium. Free players will only be able to receive the rewards aligned with the free track, whilst Premium players will receive the free track as well as the bonus rewards aligned in the premium track. Optionally you can purchase a Boosted Premium Pass which will boot the players pass straight to level 25. Reducing the amount they have to do to complete the pass during that season. 
+[] 
+[] The pass is leveled through the completion of daily and weekly challenges which each reward the player with ‘Merits’. Each level of the pass requires 20 Merits progress. Additionally, each week during the season will add a set of ‘Weekly’ challenges which offer up a total of 100 Merits to further help boost progress. The challenges will randomly select from an assortment and players have the ability to reset 1 weekly challenge from each of the respective weeks. 
+[] 
+[] The 3 price points are;
+[] Free: £0
+[] Premium: £15
+[] Premium + 25 Levels: £25
+[] 
+[] Daily Challenges x 5: 15 Merits Each + 25 Merits for Full Completion
+[] Kill 10 Warlords in the Pit.
+[] Rank up Warlord to Rank 4+
+[] Rank up An ‘x’ Warlord
+[] Leveling Equipment to 16
+[] Level 3 Equipments to 12
+[] Acquire 3 Equipment from Hideouts
+[] Open 10 Contracts
+[] Complete 10 Dens
+[] Complete 5 Hideouts
+[] Spend 100k Credits
+[] 
+[] Weekly Challenges x 4: 20 Merits Each + 20 Merits Full Completion
+[] Kill 25 Warlords in the Pit.
+[] Rank up Warlord to Rank 5+
+[] Rank up An ‘x’ Warlord
+[] Level 2 Equipment to 16
+[] Acquire 10 Equipment from Hideouts
+[] Open 25 Contracts
+[] Complete 50 Dens
+[] Complete 25 Hideouts
+[] Spend 500k Credits
+[] 
+[] 
+[] Battle Pass Reward Track
+[] Level
+[] Free Pass
+[] Paid Pass
+[] Level
+[] Free Pass
+[] Paid Pass
+[] 1
+[] 1x Rare Contract
+[] 10% XP Boost
+[] 51
+[] 
+[] Set of Rank 5 Equipment
+[] 2
+[] 1x Energy
+[] 1x Rare Contract
+[] 52
+[] 250K Credits
+[] 500K Credits
+[] 3
+[] 50K Credits
+[] 100K Credits
+[] 53
+[] 
+[] Set of Rank 5 Implants
+[] 4
+[] 1x 100% XP Boost
+[] 1x 100% XP Boost
+[] 54
+[] 2x 100% XP Boost
+[] 3x Energy
+[] 5
+[] 50 Trinium
+[] 50 Trinium
+[] 55
+[] 
+[] 100 Trinium
+[] 6
+[] 1x lvl 3 Firmware
+[] 2x lvl 3 Firmware
+[] 56
+[] Set of Rank 5 Equipment
+[] Set of Rank 5 Equipment
+[] 7
+[] 2x Heist Plan
+[] 2x Heist Plan
+[] 57
+[] 
+[] 1x lvl 5 Firmware
+[] 8
+[] Set of Rank 4 Equipment
+[] Set of Rank 4 Equipment
+[] 58
+[] 3x Energy
+[] 3x Energy
+[] 9
+[] Set of Rank 4 Implants
+[] Set of Rank 4 Implants
+[] 59
+[] 
+[] Set of Rank 5 Implants
+[] 10
+[] 1x Rare Contract
+[] 1x Rare Contract
+[] 60
+[] 2x Heist Plan
+[] 10% XP Boost
+[] 11
+[] 
+[] Set of Rank 4 Equipment
+[] 61
+[] 
+[] 1x Rare Contract
+[] 12
+[] 50K Credits
+[] 100K Credits
+[] 62
+[] 2x Rare Contract
+[] 3x Rare Contract
+[] 13
+[] 
+[] 2x Energy
+[] 63
+[] 
+[] 500K Credits
+[] 14
+[] 1x Rare Contract
+[] 1x Rare Contract
+[] 64
+[] Set of Rank 5 Implants
+[] Set of Rank 5 Implants
+[] 15
+[] 
+[] 2x lvl 3 Firmware
+[] 65
+[] 
+[] Set of Rank 5 Neons
+[] 16
+[] 1x 100% XP Boost
+[] 250K Credits
+[] 66
+[] 100 Trinium
+[] Set of Rank 5 Implants
+[] 17
+[] 
+[] Set of Rank 4 Neons
+[] 67
+[] 
+[] 200 Trinium
+[] 18
+[] 1x lvl 3 Firmware
+[] 1x lvl 3 Firmware
+[] 68
+[] Set of Rank 5 Neons
+[] Set of Rank 5 Neons
+[] 19
+[] 
+[] 2x Energy
+[] 69
+[] 
+[] 500K Credits
+[] 20
+[] 50 Trinium
+[] 10% XP Boost
+[] 70
+[] 2x 100% XP Boost
+[] 1x Rare Contract
+[] 21
+[] 
+[] 1x Rare Contract
+[] 71
+[] 
+[] Set of Rank 5 Equipment
+[] 22
+[] 100K Credits
+[] 100K Credits
+[] 72
+[] 3x Energy
+[] 3x Energy
+[] 23
+[] 
+[] Set of Rank 4 Equipment
+[] 73
+[] 
+[] Set of Rank 5 Neons
+[] 24
+[] 2x Energy
+[] 250K Credits
+[] 74
+[] 2x Heist Plan
+[] Set of Rank 5 Implants
+[] 25
+[] Set Rare Warlord
+[] Set of Rank 4 Implants
+[] 75
+[] Set Rare Warlord
+[] 1x lvl 5 Firmware
+[] 26
+[] 1x 100% XP Boost
+[] 1x Energy
+[] 76
+[] 200 Trinium
+[] 200 Trinium
+[] 27
+[] 
+[] 1x lvl 4 Firmware
+[] 77
+[] 
+[] Set of Rank 5 Equipment
+[] 28
+[] Set of Rank 4 Neons
+[] Set of Rank 4 Neons
+[] 78
+[] 1x Epic Contract
+[] 2x Epic Contract
+[] 29
+[] 
+[] 1x Rare Contract
+[] 79
+[] 
+[] 4x Energy
+[] 30
+[] 2x Energy
+[] 250K Credits
+[] 80
+[] 2x 100% XP Boost
+[] 10% XP Boost
+[] 31
+[] 
+[] 1x Rare Contract
+[] 81
+[] 
+[] 1x Rare Contract
+[] 32
+[] 2x Heist Plan
+[] 250K Credits
+[] 82
+[] Set of Rank 6 Implants
+[] Set of Rank 6 Implants
+[] 33
+[] 
+[] 2x Energy
+[] 83
+[] 
+[] 2x Heist Plan
+[] 34
+[] 100K Credits
+[] 100K Credits
+[] 84
+[] 500K Credits
+[] 1M Credits
+[] 35
+[] 
+[] Set of Rank 4 Equipment
+[] 85
+[] 
+[] Set of Rank 5 Neons
+[] 36
+[] Set of Rank 4 Equipment
+[] 1x lvl 4 Firmware
+[] 86
+[] 4x Energy
+[] 5x Energy
+[] 37
+[] 
+[] 1x Energy
+[] 87
+[] 
+[] 2x Heist Plan
+[] 38
+[] 50 Trinium
+[] 50 Trinium
+[] 88
+[] Set of Rank 6 Equipment
+[] Set of Rank 6 Equipment
+[] 39
+[] 
+[] Set of Rank 4 Neons
+[] 89
+[] 
+[] Set of Rank 6 Neons
+[] 40
+[] 2x Energy
+[] 10% XP Boost
+[] 90
+[] 2x Heist Plan
+[] 1x lvl 5 Firmware
+[] 41
+[] 
+[] 250K Credits
+[] 91
+[] 
+[] 1M Credits
+[] 42
+[] 2x Rare Contract
+[] 2x Rare Contract
+[] 92
+[] 1x Epic Contract
+[] 2x Epic Contract
+[] 43
+[] 
+[] 2x Energy
+[] 93
+[] 
+[] Set of Rank 6 Equipment
+[] 44
+[] 2x Heist Plan
+[] 2x Heist Plan
+[] 94
+[] Set of Rank 6 Neons
+[] Set of Rank 6 Neons
+[] 45
+[] 
+[] Set of Rank 5 Equipment
+[] 95
+[] 
+[] 1x lvl 5 Firmware
+[] 46
+[] 250K Credits
+[] 1x lvl 4 Firmware
+[] 96
+[] 500K Credits
+[] 1M Credits
+[] 47
+[] 
+[] Set of Rank 4 Implants
+[] 97
+[] 
+[] 2x 100% XP Boost
+[] 48
+[] 2x Energy
+[] 1x Rare Contract
+[] 98
+[] 5x Energy
+[] 5x Energy
+[] 49
+[] 
+[] 2x Energy
+[] 99
+[] 
+[] Set of Rank 6 Implants
+[] 50
+[] Set Epic Warlord
+[] 1x Epic Contract
+[] 100
+[] Set Legendary Warlord
+[] 1x Legendary Contract
+[] 
+[] 
+[] 

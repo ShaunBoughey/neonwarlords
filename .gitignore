@@ -1,0 +1,13 @@
+# Godot 4 cache and imports (regenerated on open)
+.godot/
+*.translation
+# Exports and local builds
+/build/
+/export/
+*.pck
+*.apk
+*.aab
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.tmp

@@ -1,0 +1,576 @@
+[] GAME DESIGN DOCUMENT
+[] Neon Warlords
+[] A mobile turn based looter game set in the neon dystopian world
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Prepared By:
+[] Shaun
+[] Last Updated:
+[] 23/01/21
+[] 
+[] 
+[] 
+[] 
+[] 
+[] TABLE OF CONTENTS
+[] 
+[] 
+[] 
+[] 
+[] Game Analysis4
+[] Mission Statement4
+[] Genre4
+[] Platforms5
+[] Technology5
+[] Target Audience5
+[] Warlords6
+[] Warlord Aspects6
+[] Warlord Star Rating6
+[] Warlord Reputation6
+[] Warlord Level7
+[] Warlord Neuronet (Skilltree)9
+[] Warlord Abilities10
+[] Warlord Equipment10
+[] Gear10
+[] Implants10
+[] Neons10
+[] Equipment Leveling11
+[] Equipment Sets12
+[] Equipment Acquisition13
+[] Warlord Class14
+[] Warlord Syndicate14
+[] Warlord Statistics15
+[] Combat18
+[] Flow of Combat18
+[] Speed Equation18
+[] Total Damage Equation18
+[] Total Damage Mitigation Equation18
+[] Example Equation19
+[] Hacking Vs Firewall20
+[] Buff List20
+[] Debuff List21
+[] Winning Process22
+[] Losing Process22
+[] Levels22
+[] Campaign22
+[] Campaign Locations22
+[] Campaign Reward Table22
+[] Campaign Additional Drops Per Stage25
+[] Campaign Progression Rewards25
+[] Campaign Enemy Levels26
+[] Hideouts27
+[] Hideout: Cardinal Trolls27
+[] Hideout: Vultures27
+[] Hideout: TeraTek Cybernetics27
+[] Hideout: Quantum Vikings27
+[] Hideout: Heist28
+[] Hideout: Heist Reward Table28
+[] Hideout: Chopshop33
+[] Hideout: Chopshop Reward Table33
+[] Syndicate Wars39
+[] Syndicate Wars Reward Table39
+[] Underground fights?42
+[] Premium Currency Mine42
+[] Gameplay42
+[] Currencies42
+[] Shop/Monetization43
+[] Contracts43
+[] Player Progression43
+[] Player Level43
+[] Pvp Rank43
+[] Achievement + Rewards44
+[] Monthly Login Rewards44
+[] Daily Mission Rewards44
+[] Weekly Mission Rewards44
+[] Monthly Mission Rewards44
+[] Career Progression (Game Life Missions)44
+[] Base of Operations Upgrade44
+[] PVP - Arena/teams44
+[] PVP - Shop45
+[] Level Design45
+[] Game Aesthetics &amp; User Interface46
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[Heading1] 
+[Heading1] Game Analysis
+[] Neon Warlords is a mobile game primarily aimed at people who love to level up characters as a form of progression and manipulate statistics to improve their characters for the purpose of PvE(Campaign, Hideouts) and PvP(Arena fights).
+[] This is in the same vein as RAID, SWGOH and Overhit. The design itself will be 3D harnessing the power of Unreal Engine with a clean GUI. 
+[] 
+[Heading1] Mission Statement
+[] In Neon Warlords, you start as a ragtag group who has to fight their way through the gangs of the city, in doing so leveling up your characters, collecting new gear and finding new companions along the way. The game will include PvE in the form of a campaign and boss fights in hideouts. There will also be a PvP aspect where you are able to fight other players' teams!  This will be an Android game with the aspiration to support IOS at a later date.
+[] 
+[Heading1] Genre
+[] Mobile looter, collection, PvE, PvP
+[] 
+[Heading1] Platforms
+[] Android - Planned
+[] IOS - Future (need a device to build)
+[] Web or Play Launcher- Possible
+[] 
+[Heading1] Technology 
+[] Unreal Engine 4 - Supports build of Web, Android and IOS.
+[] Google Firebase - Authentication, Database, Hosting(if needed), release pipelines and monitoring and analytics
+[] Unreal Asset - Soul: City 
+[] Unreal Asset - Firebase Blueprints 
+[] 
+[Heading1] Target Audience
+[] This game is targeted towards gamers who enjoy a grindy looter game that allows for a lot of progression with your characters. This should be someone who enjoys spending small amounts of time, regularly running missing or possibly with a side of being able to idle the game. The target audience often dislike energy limits and duplication of gear from missions. There is often a desire to be in the top percentile of players as a ‘bragging right’, it gives players a form of satisfaction to be higher than others. This Also constantly gives others something to aim for.
+
+=== LEVEL DESIGN / USER INTERFACE / FINANCE ===
+[Heading1] Level Design
+[] Discuss the levels. How many levels will the game have, what will be included in each level. Include overall look and feel, hazards the level presents, difficulty, objectives, etc. 
+[] 
+[] Slums Levels 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[Heading1] User Interface
+[] Below is a flow chart of the main layout and how menus will connect together in Neon Warlords.
+[] 
+[] 
+[Heading1] 
+[Heading1] Finance
+[] With a suggested Avg IAP conversion rate being 1.6 for this genre of game, we will make our predictions based on 1% for a realistic Revenue prediction. 
+[] ARPPU (Avg Rev Per Paying User) is *up to* $18 - $25, so for this we will take a lower number of £5.
+[] ARPDAU (Avg Rev Per Daily Active User) *up to* $0.07 - $0.30. The £5 transaction over a 1% conversion rate places the ARPDAU at £0.05 which is in line with the lower values.
+[] We can then compare this to our foreseen costs on maintaining a player base that supports the revenue of a 1% conversion rate.
+[] 
+[] allowance of read/writes * 30 for the month * MAU
+[] 
+[] Data PP/D: 100MB
+[] Egress PP/D: 2GB
+[] Reads PP/D: 1,000
+[] WritesPP/D:  2,000
+[] Deletes PP/D: 1,000
+[] 
+[] 
+[] 
+[] Monthly Cost Based On MAU (Monthly Active Users)
+[] 
+[] 
+[] 100 MAU
+[] 1000 MAU
+[] 10K MAU
+[] 100k MAU
+[] 1M MAU
+[] 10M MAU
+[] Authentication
+[] US,CA,IN
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] 
+[] All other
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] FireStore
+[] (Database)
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Data
+[] £0.00
+[] £0.00
+[] £1.31
+[] £13.11
+[] £130.00
+[] £1,300.00
+[] 
+[] Egress
+[] £18.00
+[] £161.00
+[] £1,166.00
+[] £11,660.00
+[] £116,600.00
+[] £1,166,000.00
+[] 
+[] Write
+[] £0.00
+[] £0.62
+[] £6.20
+[] £62.00
+[] £620.00
+[] £6,200.00
+[] 
+[] Read
+[] £0.00
+[] £0.92
+[] £9.20
+[] £92.00
+[] £920.00
+[] £9,200.00
+[] 
+[] Delete
+[] £0.00
+[] £0.44
+[] £4.40
+[] £44.00
+[] £440.00
+[] £4,400.00
+[] Web Hosting
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Storage
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] 
+[] Transfer
+[] £0.00
+[] £0.00
+[] £2.20
+[] £220.00
+[] £2,200.00
+[] £22,000.00
+[] Play Store
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] App deployment
+[] £1.60
+[] £1.60
+[] £1.60
+[] £1.60
+[] £1.60
+[] £1.60
+[] App Store
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] App Deployment
+[] £6.00
+[] £6.00
+[] £6.00
+[] £6.00
+[] £6.00
+[] £6.00
+[] Revenue
+[] 1% Conversion Rate*0.05 ARPDAU
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] £150.00
+[] £1,500.00
+[] £15,000.00
+[] £150,000.00
+[] £1,500,000.00
+[] £15,000,000.00
+[] 
+[] 30% Transaction Cost
+[] £45.00
+[] £450.00
+[] £4,500.00
+[] £45,000.00
+[] £450,000.00
+[] £4,500,000.00
+[] 
+[] Unreal 5%
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] £50,000.00
+[] £500,000.00
+[] 
+[] Total Revenue
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] £79.40
+[] £879.42
+[] £9,303.09
+[] £92,901.29
+[] £879,082.40
+[] £8,790,892.40
+[] 
+[] Other costs:
+[] Firebase unreal plugin: £43
+[] Google services goodies: £63
+[] Domain: £6.99/year
+[] UNITY 
+[] 
+[] 
+[] 
+[] Monthly Cost Based On MAU (Monthly Active Users)
+[] 
+[] 
+[] 100 MAU
+[] 1000 MAU
+[] 10K MAU
+[] 100k MAU
+[] 1M MAU
+[] 10M MAU
+[] Authentication
+[] All
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] Cloud Save
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Data
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Write
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Read
+[] 0
+[] 0
+[] 0
+[] 0
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Economy
+[] Write
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Read
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Web Hosting
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Storage
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] 
+[] Transfer
+[] £0.00
+[] £0.00
+[] £2.20
+[] £220.00
+[] £2,200.00
+[] £22,000.00
+[] Play Store
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] App deployment
+[] £1.60
+[] £1.60
+[] £1.60
+[] £1.60
+[] £1.60
+[] £1.60
+[] App Store
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] App Deployment
+[] £6.00
+[] £6.00
+[] £6.00
+[] £6.00
+[] £6.00
+[] £6.00
+[] Revenue
+[] 1% Conversion Rate*0.05 ARPDAU
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] £150.00
+[] £1,500.00
+[] £15,000.00
+[] £150,000.00
+[] £1,500,000.00
+[] £15,000,000.00
+[] 
+[] 30% Transaction Cost
+[] £45.00
+[] £450.00
+[] £4,500.00
+[] £45,000.00
+[] £450,000.00
+[] £4,500,000.00
+[] 
+[] Unreal 5%
+[] £0.00
+[] £0.00
+[] £0.00
+[] £0.00
+[] £50,000.00
+[] £500,000.00
+[] 
+[] Total Revenue
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] £79.40
+[] £879.42
+[] £9,303.09
+[] £92,901.29
+[] £879,082.40
+[] £8,790,892.40
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Emails (2 accounts) £3/month
+[] Business plan:
+[] 
+[] ltd? llc? magic?

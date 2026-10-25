@@ -1,0 +1,403 @@
+[Heading2] Warlord Class
+[] All Warlords split into classes with each representing their general roles and the stats they most care about being increased. Though the classes have a general desired role they are not limited to it. The control of the warlord’s balance will be strongly rooted in their base stats.  I.E. A ‘Armour’ Warlord will generally have a decent defensive stats but may still hit hard with a high ability multiplier. A Warlord with 1000 base armour receives a bigger scaling from equipment than a warlord with 900 armour.
+[] 
+[] Class
+[] Role
+[] Armour
+[] Tank: Dmg is scaled with the Armour stat. Focuses on taking punishment.
+[] Firepower
+[] DPS: High multipliers on abilities combined with damage being scaled off of the Firepower stat. Focuses on hitting the hardest. 
+[] Modder
+[] Buffer: Dmg scaled with the Health stat. Focuses on a supporting role, increasing speeds and team strengths.
+[] Hacker
+[] Debuffer:  Dmg is scaled with the Hacking stat. Focuses on a debilitating role of hindering the other team often placing various debuffs.
+[] 
+[Heading2] Warlord Syndicate
+[] Each warlord has a ‘Syndicate’ tag attached to them to represent the group that they derive from. Some Warlords will use abilities that call on the tag to work. I.E ‘This warlord attacks and calls two other  ‘X Syndicate’ warlords to attack the same target’. If the team does not contain other ‘X Syndicate’ tagged warlords, no additional attacks will be called. 
+[] 
+[] Syndicate Name
+[] Description
+[] Gang Sign
+[] Cardinal Trolls
+[] A rough and ready slum syndicate who is in it just for fun. Manic and Ferocious  themes.
+[] Papal Tiara with a Troll Face
+[] Vultures
+[] Lower slum syndicate who preys on the augmented to steal the augments by force. Dark and gruesome themes.
+[] Cybernetic Talon
+[] Teratek Cybernetics
+[] A corporation focused on the manufacturing and selling of augments. Suits and cyborgs theme.
+[] Cybernetic Illuminati Eye
+[] Quantum Vikings
+[] A stimm junkie syndicate who have based themselves on their neo misconception of vikings. Vikings and muscles theme.
+[] Helmet with Lightning Beard
+[] Neo Shogunate 
+[] Cyber Ninjas.
+[] Samurai Helmet
+[] Gene Spliced
+[] Anthropomorphic Hybrids.
+[] Ramshead
+[] Frontier Traders
+[] Corporation of Space Pirates.
+[] Cyborg Skull and Crossbones
+[] 
+[Heading2] Warlord Statistics
+[] The Warlord’s Base stats are the static starting values each individual Warlord has to help control their scaling as they level and help to keep them focused on the correct area for their class.
+[] 
+[] All Major Stat
+[] Affects
+[] Scales?
+[] Health
+[] Max health pool Increases Dmg Output on Modders
+[] Scales
+[] Armour
+[] Reduce Dmg % and Increase Armour Warlords Dmg Output
+[] Scales
+[] Firepower
+[] Increase Dmg Output on Firepower Warlords
+[] Scales
+[] Speed
+[] Rate the Warlords Turn Meter increases.
+[] 90-110
+[] Critical Chance
+[] Critical hit chance: Cap 100%, Base 10%
+[] 10%
+[] Critical Damage
+[] Critical hit damage multiplier: Base 50%
+[] 50%
+[] Hacking
+[] Chance increase to land debuffs (affect opponent)
+[] 0
+[] Firewall
+[] Chance increase to resist debuffs: Base 30
+[] 30
+[] 
+[] Warlord Base Stat Starting Ranges
+[] Class
+[] Rarity
+[] HP Starting Range: 800-1400
+[] Armour Starting Range: 60-80
+[] Firepower Starting Range: 50-80
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] Armour
+[] Common
+[] 800-1200
+[] 60-75
+[] 60-70
+[] 
+[] Uncommon
+[] 800-1200
+[] 60-75
+[] 60-70
+[] 
+[] Rare
+[] 1100-1400
+[] 60-80
+[] 60-75
+[] 
+[] Epic
+[] 1100-1400
+[] 60-80
+[] 60-75
+[] 
+[] Legendary
+[] 1100-1400
+[] 70-80
+[] 60-75
+[] Firepower
+[] Common
+[] 800-1200
+[] 60-70
+[] 60-75
+[] 
+[] Uncommon
+[] 800-1200
+[] 60-70
+[] 60-75
+[] 
+[] Rare
+[] 800-1300
+[] 60-75
+[] 60-80
+[] 
+[] Epic
+[] 800-1400
+[] 60-75
+[] 60-80
+[] 
+[] Legendary
+[] 800-1400
+[] 60-75
+[] 70-80
+[] Modder
+[] Common
+[] 900-1200
+[] 60-70
+[] 60-65
+[] 
+[] Uncommon
+[] 900-1200
+[] 60-70
+[] 60-65
+[] 
+[] Rare
+[] 900-1300
+[] 60-75
+[] 60-70
+[] 
+[] Epic
+[] 1100-1400
+[] 60-75
+[] 60-70
+[] 
+[] Legendary
+[] 1100-1400
+[] 60-75
+[] 60-70
+[] Hacker
+[] Common
+[] 900-1200
+[] 60-70
+[] 60-70
+[] 
+[] Uncommon
+[] 900-1200
+[] 60-70
+[] 60-70
+[] 
+[] Rare
+[] 1000-1300
+[] 60-75
+[] 60-75
+[] 
+[] Epic
+[] 1100-1400
+[] 60-75
+[] 60-75
+[] 
+[] Legendary
+[] 1100-1400
+[] 60-75
+[] 60-75
+[] 
+[] As Each Warlord levels, Ranks and Reps, their HP, Armour and Firepower will scale accordingly. The table below should accurately detail how each Class and Rarity of Warlord scales during this process.
+[] 
+[] Warlord Level Rank and Reputation Scaling
+[] Class
+[] Rarity
+[] Scaled Per Level Total % (%/Levels) Range = 70-80%
+[] Scaled Per Rank Total Percentage Range = 45-55%
+[] Scaled Per Reputation Range 1-3% Per Increase
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] 
+[] HP
+[] Armour
+[] Firepower
+[] HP
+[] Armour
+[] Firepower
+[] 
+[] Armour
+[] Common
+[] 70%
+[] 75%
+[] 70%
+[] 45%
+[] 55%
+[] 45%
+[] 1%
+[] 
+[] Uncommon
+[] 70%
+[] 75%
+[] 70%
+[] 45%
+[] 55%
+[] 45%
+[] 1%
+[] 
+[] Rare
+[] 70%
+[] 80%
+[] 70%
+[] 45%
+[] 55%
+[] 45%
+[] 2%
+[] 
+[] Epic
+[] 75%
+[] 80%
+[] 70%
+[] 50%
+[] 55%
+[] 45%
+[] 2%
+[] 
+[] Legendary
+[] 75%
+[] 80%
+[] 70%
+[] 50%
+[] 55%
+[] 45%
+[] 3%
+[] Firepower
+[] Common
+[] 70%
+[] 70%
+[] 75%
+[] 45%
+[] 45%
+[] 55%
+[] 1%
+[] 
+[] Uncommon
+[] 70%
+[] 70%
+[] 75%
+[] 45%
+[] 45%
+[] 55%
+[] 1%
+[] 
+[] Rare
+[] 70%
+[] 70%
+[] 80%
+[] 45%
+[] 45%
+[] 55%
+[] 2%
+[] 
+[] Epic
+[] 70%
+[] 70%
+[] 80%
+[] 45%
+[] 45%
+[] 55%
+[] 2%
+[] 
+[] Legendary
+[] 70%
+[] 70%
+[] 80%
+[] 45%
+[] 45%
+[] 55%
+[] 3%
+[] Modder
+[] Common
+[] 75%
+[] 70%
+[] 70%
+[] 55%
+[] 45%
+[] 45%
+[] 1%
+[] 
+[] Uncommon
+[] 75%
+[] 70%
+[] 70%
+[] 55%
+[] 45%
+[] 45%
+[] 1%
+[] 
+[] Rare
+[] 80%
+[] 70%
+[] 70%
+[] 55%
+[] 45%
+[] 45%
+[] 2%
+[] 
+[] Epic
+[] 80%
+[] 75%
+[] 70%
+[] 55%
+[] 50%
+[] 45%
+[] 2%
+[] 
+[] Legendary
+[] 80%
+[] 75%
+[] 70%
+[] 55%
+[] 50%
+[] 45%
+[] 3%
+[] Hacker
+[] Common
+[] 70%
+[] 70%
+[] 70%
+[] 45%
+[] 45%
+[] 45%
+[] 1%
+[] 
+[] Uncommon
+[] 70%
+[] 70%
+[] 70%
+[] 45%
+[] 45%
+[] 45%
+[] 1%
+[] 
+[] Rare
+[] 70%
+[] 70%
+[] 70%
+[] 45%
+[] 45%
+[] 45%
+[] 2%
+[] 
+[] Epic
+[] 75%
+[] 70%
+[] 75%
+[] 50%
+[] 45%
+[] 50%
+[] 2%
+[] 
+[] Legendary
+[] 75%
+[] 70%
+[] 75%
+[] 50%
+[] 45%
+[] 50%
+[] 3%
+[] 

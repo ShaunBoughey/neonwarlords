@@ -1,0 +1,465 @@
+[Heading2] Syndicate Wars
+[] Syndicate wars is where each team must be composed of a single Syndicate, EG: your full team will be from the Quantum Vikings. Syndicat War will be the only location that renders ‘Neons’ which are upgrades for the Warlord equipment. This will encourage the player to utilise not only the strongest warlords but also others to make sure their Syndicate team is strong enough to progress. This helps in giving another use to lesser warlords bolstering diverse rosters. Completing each of the 1-20 stages will reward 1-3 Chevrons depending on the circumstances. Total completion progress counts towards a reward bar, rewarding the player for full completion of each stage and the entirety of Syndicate Wars. Syndicate rewards will require Bounty Tokens to enter and tokens will be refreshed each day to a max of 12.
+[] 
+[Heading3] Syndicate Wars Reward Table
+[] Stage
+[] Rewards
+[] % Chance
+[] Cost to play
+[] 1
+[] Neon Rank 1-3
+[] 100
+[] 1x Bounty Token
+[] 
+[] Rank 1
+[] 35
+[] 
+[] 
+[] Rank 2
+[] 40
+[] 
+[] 
+[] Rank 3
+[] 25
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 2
+[] Neon Rank 1-3
+[] 100
+[] 1x Bounty Token
+[] 
+[] Rank 1
+[] 30
+[] 
+[] 
+[] Rank 2
+[] 40
+[] 
+[] 
+[] Rank 3
+[] 30
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 3
+[] Neon Rank 1-3
+[] 100
+[] 1x Bounty Token
+[] 
+[] Rank 1
+[] 25
+[] 
+[] 
+[] Rank 2
+[] 40
+[] 
+[] 
+[] Rank 3
+[] 35
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 4
+[] Neon Rank 1-3
+[] 100
+[] 1x Bounty Token
+[] 
+[] Rank 1
+[] 20
+[] 
+[] 
+[] Rank 2
+[] 40
+[] 
+[] 
+[] Rank 3
+[] 40
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 5
+[] Neon Rank 1-3
+[] 100
+[] 1x Bounty Token
+[] 
+[] Rank 1
+[] 15
+[] 
+[] 
+[] Rank 2
+[] 40
+[] 
+[] 
+[] Rank 3
+[] 45
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 6
+[] Neon Rank 2-4
+[] 100
+[] 2x Bounty Tokens
+[] 
+[] Rank 2
+[] 35
+[] 
+[] 
+[] Rank 3
+[] 40
+[] 
+[] 
+[] Rank 4
+[] 25
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 7
+[] Neon Rank 2-4
+[] 100
+[] 2x Bounty Tokens
+[] 
+[] Rank 2
+[] 30
+[] 
+[] 
+[] Rank 3
+[] 40
+[] 
+[] 
+[] Rank 4
+[] 30
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 8
+[] Neon Rank 2-4
+[] 100
+[] 2x Bounty Tokens
+[] 
+[] Rank 2
+[] 25
+[] 
+[] 
+[] Rank 3
+[] 40
+[] 
+[] 
+[] Rank 4
+[] 35
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 9
+[] Neon Rank 2-4
+[] 100
+[] 2x Bounty Tokens
+[] 
+[] Rank 2
+[] 20
+[] 
+[] 
+[] Rank 3
+[] 40
+[] 
+[] 
+[] Rank 4
+[] 40
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 10
+[] Neon Rank 2-4
+[] 100
+[] 2x Bounty Tokens
+[] 
+[] Rank 2
+[] 15
+[] 
+[] 
+[] Rank 3
+[] 40
+[] 
+[] 
+[] Rank 4
+[] 45
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 11
+[] Neon Rank 3-5
+[] 100
+[] 3x Bounty Tokens
+[] 
+[] Rank 3
+[] 35
+[] 
+[] 
+[] Rank 4
+[] 40
+[] 
+[] 
+[] Rank 5
+[] 25
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 12
+[] Neon Rank 3-5
+[] 100
+[] 3x Bounty Tokens
+[] 
+[] Rank 3
+[] 30
+[] 
+[] 
+[] Rank 4
+[] 40
+[] 
+[] 
+[] Rank 5
+[] 30
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 13
+[] Neon Rank 3-5
+[] 100
+[] 3x Bounty Tokens
+[] 
+[] Rank 3
+[] 25
+[] 
+[] 
+[] Rank 4
+[] 40
+[] 
+[] 
+[] Rank 5
+[] 35
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 14
+[] Neon Rank 3-5
+[] 100
+[] 3x Bounty Tokens
+[] 
+[] Rank 3
+[] 20
+[] 
+[] 
+[] Rank 4
+[] 40
+[] 
+[] 
+[] Rank 5
+[] 40
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 15
+[] Neon Rank 3-5
+[] 100
+[] 3x Bounty Tokens
+[] 
+[] Rank 3
+[] 15
+[] 
+[] 
+[] Rank 4
+[] 40
+[] 
+[] 
+[] Rank 5
+[] 45
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 16
+[] Neon Rank 4-6
+[] 100
+[] 4x Bounty Tokens
+[] 
+[] Rank 4
+[] 35
+[] 
+[] 
+[] Rank 5
+[] 40
+[] 
+[] 
+[] Rank 6
+[] 25
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 17
+[] Neon Rank 4-6
+[] 100
+[] 4x Bounty Tokens
+[] 
+[] Rank 4
+[] 30
+[] 
+[] 
+[] Rank 5
+[] 40
+[] 
+[] 
+[] Rank 6
+[] 30
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 18
+[] Neon Rank 4-6
+[] 100
+[] 4x Bounty Tokens
+[] 
+[] Rank 4
+[] 25
+[] 
+[] 
+[] Rank 5
+[] 40
+[] 
+[] 
+[] Rank 6
+[] 35
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 19
+[] Neon Rank 4-6
+[] 100
+[] 4x Bounty Tokens
+[] 
+[] Rank 4
+[] 20
+[] 
+[] 
+[] Rank 5
+[] 40
+[] 
+[] 
+[] Rank 6
+[] 40
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 20
+[] Neon Rank 5-6
+[] 100
+[] 4x Bounty Tokens
+[] 
+[] Rank 5
+[] 55
+[] 
+[] 
+[] Rank 6
+[] 45
+[] 
+[] 
+[] Equal Chance Random Stat Focus
+[] 10
+[] 
+[] 
+[] 
+[Heading3] Syndicate Progression Rewards
+[] Chevrons
+[] Rewards
+[] Chevrons
+[] Rewards
+[] 
+[] 
+[] 
+[] 
+[] 15
+[] 250K Credits
+[] 195
+[] Set of Rank 6 Implants
+[] 30
+[] 3x Energy
+[] 210
+[] 4x Energy
+[] 45
+[] 3x Rare Contract
+[] 225
+[] 3x Rare Contract
+[] 60
+[] 200 Trinium
+[] 240
+[] 200 Trinium
+[] 75
+[] 1x lvl 4 Firmware
+[] 255
+[] 2x lvl 4 Firmware
+[] 90
+[] 1x Epic Contract
+[] 270
+[] 3x Epic Contract
+[] 105
+[] Set of Rank 5 Implants
+[] 285
+[] 500K Credits
+[] 120
+[] 3x Energy
+[] 300
+[] 5x Energy
+[] 135
+[] 250K Credits
+[] 315
+[] Set of Rank 6 Equipment
+[] 150
+[] Set of Rank 5 Equipment
+[] 330
+[] 250 Trinium
+[] 165
+[] 2x lvl 4 Firmware
+[] 345
+[] 1M Credits
+[] 180
+[] 2x Epic Contract
+[] 360
+[] Legendary Warlord
+[] 
+[] 
