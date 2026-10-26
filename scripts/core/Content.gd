@@ -32,15 +32,17 @@ func player_units(uids: Array) -> Array:
 	return out
 
 ## Mixed gang of a syndicate: generic members plus recruitable warlords as stages climb.
-func gang(syn: String, count: int, level: int, rank: int, rep: int, quality: float, exclude: Array = [], max_modders := 99, bonus_add := 0.0, unique_named := false) -> Array:
+func gang(syn: String, count: int, level: int, rank: int, rep: int, quality: float, exclude: Array = [], max_modders := 99, bonus_add := 0.0, unique_named := false, max_named := 99) -> Array:
 	var pool_generic := ["thug_" + syn, "medic_" + syn, "netrunner_" + syn, "bruiser_" + syn]
 	var max_rar := 2 if rank <= 2 else (3 if rank <= 4 else 4)
 	var pool_named: Array = Warlords.by_syndicate(syn).filter(func(id): return Data.rarity_idx(Warlords.get_t(id).rarity) <= mini(max_rar, 3) and not exclude.has(id))
 	var out: Array = []
 	var modders := 0
+	var named := 0
 	for i in count:
 		var id: String
-		if U.rf() < quality and not pool_named.is_empty():
+		if U.rf() < quality and not pool_named.is_empty() and named < max_named:
+			named += 1
 			id = U.pick(pool_named)
 			if unique_named:
 				pool_named.erase(id)
@@ -99,9 +101,12 @@ func build_campaign(d: int, loc: int, st: int) -> Dictionary:
 						break
 		enemies = [enemy_unit(boss_id, lv, rk, rp, campaign_boss_mult(boss_id), bonus)]
 		max_mod = 0 if d == 2 or Warlords.get_t(boss_id).cls == "modder" else 1   # no healer escorts for Warlord bosses
-		enemies.append_array(gang(syn, 3, max(1, lv - 2), rk, rp, quality, [boss_id], max_mod, bonus, true))
+		enemies.append_array(gang(syn, 3, max(1, lv - 2), rk, rp, quality, [boss_id], max_mod, bonus, true, 2))
 	else:
-		enemies = gang(syn, 4, lv, rk, rp, quality, [], max_mod, bonus, true)
+		# named warlords build up through a den (1 / 2 / 3); all-named squads were random walls late on
+		# Warlord regular stages: no named healers (their self-heal stalls were the remaining walls)
+		var no_named: Array = Warlords.by_syndicate(syn).filter(func(id): return Warlords.get_t(id).cls == "modder") if d == 2 else []
+		enemies = gang(syn, 4, lv, rk, rp, quality, no_named, max_mod, bonus, true, 1 + st / 2)
 	U.rng.state = rng_state
 	var loc_name: String = Data.GDD.campaign[loc].name
 	return {"mode": "campaign", "d": d, "loc": loc, "st": st, "title": "%s %d-%d" % [loc_name, loc + 1, st + 1], "subtitle": Data.DIFFS[d],
@@ -112,7 +117,7 @@ func build_campaign(d: int, loc: int, st: int) -> Dictionary:
 ## Tuned with tests/review/07/Wall07.tscn: Street Punk unchanged; Mob Boss wins most dens with an R5
 ## epic squad and the last dens are ~50/50; Warlord needs R6 (R6 epic wins the early dens, ~50% in the
 ## middle, dens 9-10 need R6 legendary).
-const CAMPAIGN_BONUS := [[0.0, 0.0], [0.0, 0.06], [0.8, 0.0725]]   # per difficulty: [base, per den]
+const CAMPAIGN_BONUS := [[0.0, 0.0], [0.0, 0.045], [0.65, 0.04]]   # per difficulty: [base, per den]
 
 func campaign_bonus(d: int, loc: int, st: int) -> float:
 	var t := loc + st / 6.0   # 0 at den 1 stage 1, 10 at den 10 boss
@@ -124,7 +129,7 @@ func campaign_boss_mult(boss_id: String) -> float:
 	var t: Dictionary = Warlords.get_t(boss_id)
 	if t.cls == "modder":
 		return 1.0
-	return 1.2 if t.rarity == "legendary" else 1.8
+	return 1.3   # one boss HP multiplier for every non-healer den boss (epic final boss at 1.8 was a wall)
 
 func campaign_set(loc: int) -> String:
 	var s: String = Data.GDD.campaign[loc].set

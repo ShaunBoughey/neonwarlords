@@ -6,6 +6,9 @@ extends Node
 
 var problems: Array = []
 var seeded := false
+var prof := {}   # section -> usec (printed at the end)
+func _p(k: String, t0: int) -> void:
+	prof[k] = int(prof.get(k, 0)) + Time.get_ticks_usec() - t0
 var log_lines: Array = []
 
 func _ready() -> void:
@@ -30,6 +33,8 @@ func _ready() -> void:
 	print("\n===== PROBLEMS (%d) =====" % problems.size())
 	for p in problems:
 		print("  - " + p)
+	for k in prof:
+		print("   time %s: %.1f s" % [k, prof[k] / 1e6])
 	print("PLAYTHROUGH DONE")
 	get_tree().quit()
 
@@ -241,10 +246,26 @@ func gdd_progression_checks() -> void:
 # ============================================================ Part 2: simulated play
 var day_stats: Array = []
 
+## Picked like a player: strongest first, but no duplicate warlords and at least one damage dealer.
 func squad() -> Array:
 	var best: Array = Game.S.roster.duplicate()
 	best.sort_custom(func(a, b): return Game.power(a) > Game.power(b))
-	return best.slice(0, Data.TEAM_SIZE).map(func(x): return x.uid)
+	var picked: Array = []
+	var tpls := {}
+	for w in best:
+		if picked.size() >= Data.TEAM_SIZE:
+			break
+		if tpls.has(w.tpl):
+			continue
+		tpls[w.tpl] = true
+		picked.append(w)
+	var dps := func(w): return Game.tpl(w).cls in ["firepower", "hacker"]
+	if not picked.any(dps):
+		for w in best:
+			if dps.call(w) and not tpls.has(w.tpl):
+				picked[picked.size() - 1] = w
+				break
+	return picked.map(func(x): return x.uid)
 
 ## Credit ledger: where credits come from / go, by activity (printed every 10 days).
 var ledger := {}
@@ -289,20 +310,41 @@ func _fight(enc: Dictionary) -> String:
 			arr.append(u.duplicate(true))
 		waves.append(arr)
 	b.setup(Content.player_units(team), waves, {"turn_limit": enc.get("turn_limit", 0), "reinforcements": Content.player_units(team.slice(0, 0)), "enemy_reinforcements": enc.get("enemy_reinf", []).map(func(u): return u.duplicate(true)), "no_revive": enc.get("royal", false)}.merged({"seed": U.rng.randi()} if seeded else {}))
+	var t0 := Time.get_ticks_usec()
 	b.simulate()
+	_p("simulate", t0)
 	last_turns = b.player_turns
 	if b.result == "":
 		bad("battle ended without a result: %s" % enc.title)
+	var t1 := Time.get_ticks_usec()
 	Content.finish(enc, b, team)
+	_p("finish", t1)
 	return b.result
 
-func manage() -> void:
+func manage(full := false, daily := false) -> void:
 	var c0 := Game.cur("credits")
-	_manage()
+	var t0 := Time.get_ticks_usec()
+	_manage(full, daily)
+	_p("manage", t0)
 	_book("claims+upgrades+plaza+sell (net)", Game.cur("credits") - c0)
 
-func _manage() -> void:
-	# open contracts, claim everything, gear up squad, rank / rep / neuronet / metabolics
+## Played like a person: claims, contracts and the Plaza at the start of a session (full); between
+## battles only the squad gets attention; rank-up fodder is built only once a squad member is capped
+## at its rank; the bag is cleared once a day (daily).
+func _manage(full: bool, daily: bool) -> void:
+	var t := Time.get_ticks_usec()
+	if full:
+		_claim_all()
+	_p(" claims", t); t = Time.get_ticks_usec()
+	_squad_care(full)
+	_p(" squad", t); t = Time.get_ticks_usec()
+	if full:
+		_plaza()
+	if daily:
+		_sell()
+	_p(" plaza+sell", t)
+
+func _claim_all() -> void:
 	for r in ["uncommon", "rare", "epic", "legendary"]:
 		while Game.item_count(["contract", r]) > 0:
 			Game.open_contract(r)
@@ -329,10 +371,14 @@ func _manage() -> void:
 	for c in Game.S.items.cache.keys():
 		while Game.item_count(["cache", c]) > 0:
 			Game.open_cache(c)
+
+func _squad_care(regear: bool) -> void:
 	var team := squad()
+	var capped := false
 	for u in team:
 		var w = Game.wl(u)
-		Game.auto_equip(w)
+		if regear:   # Auto Equip when a session starts, not after every fight
+			Game.auto_equip(w)
 		# upgrade equipped gear with up to 40% of credits
 		for slot in w.gear:
 			var it = Game.eq(w.gear[slot])
@@ -367,6 +413,15 @@ func _manage() -> void:
 				var sk: Dictionary = Data.NEURONET[car][li][0]
 				while Game.nn_can(w, sk.id) == "":
 					Game.nn_add(w, sk.id)
+		if w.rank < 6 and w.level >= Game.max_level(w) and not Game.can_rank_up(w):
+			capped = true
+	# feed leftover commons for XP to the weakest squad member
+	var weakest = Game.wl(team[team.size() - 1])
+	var food: Array = Game.S.roster.filter(func(x): return Game.tpl(x).rarity == "common" and not team.has(x.uid) and x.level == 1).map(func(x): return x.uid).slice(0, 6)
+	if not food.is_empty() and weakest.level < Game.max_level(weakest):
+		Game.feed_xp(weakest, food)
+	# rank-up fodder is farmed continuously, like RAID players farm "food" (gating it on a capped
+	# squad member starved rank-ups: bots were still R5 at day 45)
 	# build rank-up fodder: level spare warlords with metabolics-free feeding and rank them up (RAID-style "food")
 	var spares: Array = Game.S.roster.filter(func(x): return not team.has(x.uid) and not x.locked)
 	spares.sort_custom(func(a, b): return a.rank * 100 + a.level > b.rank * 100 + b.level)
@@ -384,14 +439,14 @@ func _manage() -> void:
 			var same: Array = Game.S.roster.filter(func(x): return x.uid != f.uid and x.rank == f.rank and not team.has(x.uid) and not spares.slice(0, 6).has(x)).map(func(x): return x.uid)
 			if same.size() >= f.rank:
 				Game.rank_up(f, same.slice(0, f.rank))
-	# feed leftover commons for XP to the weakest squad member
-	var weakest = Game.wl(team[team.size() - 1])
-	var food: Array = Game.S.roster.filter(func(x): return Game.tpl(x).rarity == "common" and not team.has(x.uid) and x.level == 1).map(func(x): return x.uid).slice(0, 6)
-	if not food.is_empty() and weakest.level < Game.max_level(weakest):
-		Game.feed_xp(weakest, food)
+	_set_squads(team)
+
+func _set_squads(team: Array) -> void:
 	Game.S.squads.last = team
 	Game.S.squads.pit_brawl = team
 	Game.S.squads.pit_royal = team + Game.S.roster.filter(func(x): return not team.has(x.uid)).map(func(x): return x.uid).slice(0, 3)
+
+func _plaza() -> void:
 	# Plaza: spend credits above a reserve on progression items
 	var items := Game.plaza_items()
 	var pc0 := Game.cur("credits")
@@ -403,6 +458,8 @@ func _manage() -> void:
 		if k in ["firmware", "metabolic", "mf", "contract", "deeds", "stimm"] or (k in ["gear", "implant"] and int(it.r.rank) >= 5):
 			Game.plaza_buy(i)
 	_book("  of which plaza", Game.cur("credits") - pc0)
+
+func _sell() -> void:
 	# sell gear like a real player: junk always, and outgrown pieces once the inventory passes ~300
 	var sc0 := Game.cur("credits")
 	for it in Game.S.equip.duplicate():
@@ -429,7 +486,7 @@ func play_days(days: int) -> void:
 		for session in 3:
 			U.time_offset += 8 * 3600.0
 			Game.tick()
-			manage()
+			manage(true, session == 0)
 			# energy: push campaign; if walled, farm the best hideout we can win
 			var guard := 0
 			while Game.cur("energy") >= 4 and guard < 40:   # a human session is time-limited (~40 battles)
@@ -454,7 +511,9 @@ func play_days(days: int) -> void:
 							losses_in_row = 0   # try the campaign again later
 				if res == "nopay":
 					break
-				manage()
+				# like a player: sort the squad out after a loss and every few battles, not after every win
+				if res != "win" or guard % 5 == 0:
+					manage()
 			while Game.cur("heist") > 0:
 				if fight(Content.build_hideout("heist", clampi(int(Game.hideout_state("heist").max) + 1, 1, 20))) == "nopay":
 					break
