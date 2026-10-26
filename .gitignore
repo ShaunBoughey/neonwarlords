@@ -11,3 +11,7 @@
 .DS_Store
 Thumbs.db
 *.tmp
+# Meshy bridge staging drops (raw downloads); finished models go to assets/models/
+/imported_models/
+# Blender auto-backups
+*.blend1

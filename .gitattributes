@@ -7,4 +7,4 @@
 *.glb binary
 *.ttf binary
 *.otf binary
-*.blend binary
+*.blend filter=lfs diff=lfs merge=lfs -text
