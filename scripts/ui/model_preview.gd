@@ -1,7 +1,7 @@
 class_name ModelPreview
 extends View3D
 ## Transparent 3D viewer for warlord models (Armoury centrepiece, team select, boss intel).
-## Drag to rotate. set_models([{tpl, boss?}]) lines models up left to right.
+## Drag to rotate; on release models ease back to face the camera. set_models([{tpl, boss?}]) lines models up left to right.
 
 signal model_clicked(index: int)
 
@@ -10,7 +10,7 @@ var cam: Camera3D
 var pivot: Node3D
 var nodes: Array = []
 var spin := 0.0
-var auto_spin := 0.25
+var auto_spin := 0.0       # warlords face the camera by default; > 0 turns the model continuously
 var spacing := 1.6
 var cam_dist := 4.2
 var cam_height := 1.4
@@ -161,6 +161,8 @@ func _process(delta: float) -> void:
 		return
 	if not _dragging and nodes.size() == 1:
 		spin += auto_spin * delta
+	if not _dragging and auto_spin == 0.0:
+		spin = lerp_angle(spin, 0.0, 1.0 - exp(-3.0 * delta))   # ease back to facing the camera
 	pivot.rotation.y = spin
 
 func _gui_input(e: InputEvent) -> void:

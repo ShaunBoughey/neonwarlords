@@ -200,11 +200,15 @@ def rig(cape, arm, parent_bone="Spine", slit_from_row=13):
     cow = co @ W[:3, :3].T + W[:3, 3]
     J = np.array([[cow[j * NC + i] for j in RJ] for i in CH])
     arm.data.pose_position = "REST"; bpy.context.view_layer.update()
-    win = bpy.context.window_manager.windows[0]
-    area = [a for a in win.screen.areas if a.type == "VIEW_3D"][0]
     inv = arm.matrix_world.inverted()
-    with bpy.context.temp_override(window=win, area=area, active_object=arm, object=arm, selected_objects=[arm]):
-        bpy.context.view_layer.objects.active = arm
+    import contextlib
+    wins = bpy.context.window_manager.windows
+    areas = [a for a in wins[0].screen.areas if a.type == "VIEW_3D"] if wins else []
+    ctx = (bpy.context.temp_override(window=wins[0], area=areas[0], active_object=arm, object=arm, selected_objects=[arm])
+           if areas else contextlib.nullcontext())             # headless (blender -b) needs no override
+    with ctx:
+        for o in bpy.context.view_layer.objects: o.select_set(False)
+        arm.select_set(True); bpy.context.view_layer.objects.active = arm
         bpy.ops.object.mode_set(mode="EDIT"); ebn = arm.data.edit_bones
         for b in [b for b in ebn if b.name.startswith("Cape_")]: ebn.remove(b)
         for c in range(len(CH)):
@@ -238,8 +242,100 @@ def rig(cape, arm, parent_bone="Spine", slit_from_row=13):
     arm.data.pose_position = "POSE"
 
 
-def setup_sim(cape, arm, parent_bone="Spine"):
-    """Hidden cloth copy named 'cape_sim' (what cape_bake.py reads) + capsule colliders, in collection 'cape_sim'."""
+LIMB_CAP = {"thigh": 0.12, "shin": 0.10, "uparm": 0.09, "forearm": 0.09}   # hip plates skin to the thighs; the hip collider covers them
+
+
+def measure_colliders(body, arm, margin=0.012, pct=75, cap=True):
+    """Capsule colliders sized from the actual body: legs/arms by radial spread of their skinned verts,
+    hips/chest as ellipses from the torso band. Returns (name, bone0, bone1, rx, ry) tuples."""
+    P = _world_rest(body, arm); me = body.data
+    H = lambda n: np.array(arm.matrix_world @ arm.data.bones[n].head_local)
+    vg = {g.index: g.name for g in body.vertex_groups}
+    dom = np.array([vg[max(v.groups, key=lambda g: g.weight).group] if v.groups else "" for v in me.vertices])
+    out = []
+    for nm, b0, b1, owners in (("col_thigh_L", "LeftUpLeg", "LeftLeg", ["LeftUpLeg"]), ("col_shin_L", "LeftLeg", "LeftFoot", ["LeftLeg"]),
+                               ("col_thigh_R", "RightUpLeg", "RightLeg", ["RightUpLeg"]), ("col_shin_R", "RightLeg", "RightFoot", ["RightLeg"]),
+                               ("col_uparm_L", "LeftArm", "LeftForeArm", ["LeftArm"]), ("col_forearm_L", "LeftForeArm", "LeftHand", ["LeftForeArm", "LeftHand"]),
+                               ("col_uparm_R", "RightArm", "RightForeArm", ["RightArm"]), ("col_forearm_R", "RightForeArm", "RightHand", ["RightForeArm", "RightHand"])):
+        m = np.isin(dom, owners)
+        r = float(np.percentile(_seg_dist(P[m], H(b0), H(b1)), pct)) + margin if m.sum() > 20 else 0.09
+        if cap: r = min(r, LIMB_CAP[nm.split("_")[1]])
+        out.append((nm, b0, b1, r, r))
+    for nm, b0, b1, z0, z1 in (("col_hips", "Hips", "Spine02", 0.8, 1.15), ("col_chest", "Spine02", "Spine", 1.1, 1.36)):
+        band = (P[:, 2] > z0) & (P[:, 2] < z1) & (np.abs(P[:, 0]) < 0.28) & ~np.isin(dom, ["LeftArm", "RightArm", "LeftForeArm", "RightForeArm", "LeftHand", "RightHand"])
+        rx = float(np.percentile(np.abs(P[band, 0]), 95)) + margin if band.any() else 0.2
+        ry = float(np.percentile(np.abs(P[band, 1] - CY), 95)) + margin if band.any() else 0.15
+        out.append((nm, b0, b1, rx, ry))
+    return out
+
+
+def tie_top_to_shoulders(cape, arm, rows=3, share=0.6, width=0.18):
+    """Move part of the top rows' Spine weight onto Left/RightShoulder so the cape follows the mantle."""
+    W = np.array(cape.matrix_world); n0 = NR * NC
+    sp = cape.vertex_groups.get("Spine")
+    if sp is None: return
+    for side in ("LeftShoulder", "RightShoulder"):
+        if side not in cape.vertex_groups: cape.vertex_groups.new(name=side)
+    for v in cape.data.vertices:
+        k = v.index if v.index < n0 else None
+        if k is None or k // NC >= rows: continue
+        w = next((g.weight for g in v.groups if g.group == sp.index), 0.0)
+        if w <= 0: continue
+        x = (W[:3, :3] @ np.array(v.co[:]) + W[:3, 3])[0]
+        s = share * min(abs(x) / width, 1.0)
+        if s <= 0: continue
+        sp.add([v.index], w * (1 - s), "REPLACE")
+        cape.vertex_groups["LeftShoulder" if x > 0 else "RightShoulder"].add([v.index], w * s, "ADD")
+
+
+def tuck_top(cape, rows=4, factor=0.9, center=CY):
+    """Pull the top rows toward the body axis so they stay under the shoulder mantle."""
+    cm = cape.data; n0 = NR * NC
+    for v in cm.vertices:
+        if v.index < n0 and v.index // NC < rows:
+            t = 1 - (v.index // NC) / rows; f = 1 - (1 - factor) * t
+            v.co.x *= f; v.co.y = center + (v.co.y - center) * f
+    cm.update()
+
+
+def poke_through(body, cape, arm, action, step=2, covered=None, max_out=0.04):
+    """Count body verts that end up OUTSIDE the cape (poke-through) per sampled frame of `action`.
+    Only counts verts just outside the cloth (4 mm .. max_out): a cape that swings away is not a poke-through.
+    Returns (max, mean, covered_mask). covered = body verts under the cape at rest (computed if None)."""
+    sc = bpy.context.scene; ad = arm.animation_data
+    def bvh_of(o):
+        dg = bpy.context.evaluated_depsgraph_get(); e = o.evaluated_get(dg); m = e.to_mesh()
+        bm = bmesh.new(); bm.from_mesh(m); bm.transform(o.matrix_world); e.to_mesh_clear()
+        t = BVHTree.FromBMesh(bm); bm.free(); return t
+    def body_pts():
+        dg = bpy.context.evaluated_depsgraph_get(); e = body.evaluated_get(dg); m = e.to_mesh()
+        c = np.empty(len(m.vertices) * 3, np.float32); m.vertices.foreach_get("co", c); e.to_mesh_clear()
+        M = np.array(body.matrix_world); return c.reshape(-1, 3) @ M[:3, :3].T + M[:3, 3]
+    if covered is None:
+        prev = ad.action; ad.action = None
+        arm.data.pose_position = "REST"; bpy.context.view_layer.update()
+        t = bvh_of(cape); Pb = body_pts(); covered = np.zeros(len(Pb), bool)
+        for i, p in enumerate(Pb):
+            hit, nrm, _, d = t.find_nearest(Vector(p), 0.12)
+            if hit is not None and (Vector(p) - hit).dot(nrm) < 0 and p[2] < 1.2: covered[i] = True
+        arm.data.pose_position = "POSE"; ad.action = prev
+    act = bpy.data.actions[action]; ad.action = act
+    try: ad.action_slot = act.slots[0]
+    except Exception: pass
+    a, b = [int(x) for x in act.frame_range]; counts = []
+    idx = np.nonzero(covered)[0]
+    for f in range(a, b + 1, step):
+        sc.frame_set(f); t = bvh_of(cape); Pb = body_pts(); n = 0
+        for i in idx:
+            hit, nrm, _, d = t.find_nearest(Vector(Pb[i]), 0.12)
+            if hit is not None and 0.004 < (Vector(Pb[i]) - hit).dot(nrm) < max_out: n += 1
+        counts.append(n)
+    return max(counts), float(np.mean(counts)), covered
+
+
+def setup_sim(cape, arm, parent_bone="Spine", colliders=None):
+    """Hidden cloth copy named 'cape_sim' (what cape_bake.py reads) + capsule colliders, in collection 'cape_sim'.
+    Pass colliders=measure_colliders(body, arm) to size them from the body (cape_bake.bake_all does this per clip)."""
     arm.data.pose_position = "REST"; bpy.context.view_layer.update()
     coll = bpy.data.collections.get("cape_sim") or bpy.data.collections.new("cape_sim")
     if coll.name not in bpy.context.scene.collection.children: bpy.context.scene.collection.children.link(coll)
@@ -264,9 +360,10 @@ def setup_sim(cape, arm, parent_bone="Spine"):
     s.vertex_group_mass = "pin"; s.pin_stiffness = 1.0
     c = sim.modifiers["Cloth"].collision_settings; c.distance_min = 0.015; c.collision_quality = 4
     H = lambda n: Vector(arm.matrix_world @ arm.data.bones[n].head_local)
-    for nm, b0, b1, rx, ry in (("col_thigh_L", "LeftUpLeg", "LeftLeg", .095, .095), ("col_shin_L", "LeftLeg", "LeftFoot", .08, .08),
-                               ("col_thigh_R", "RightUpLeg", "RightLeg", .095, .095), ("col_shin_R", "RightLeg", "RightFoot", .08, .08),
-                               ("col_hips", "Hips", "Spine02", .2, .15), ("col_chest", "Spine02", "Spine", .2, .15)):
+    colliders = colliders or (("col_thigh_L", "LeftUpLeg", "LeftLeg", .095, .095), ("col_shin_L", "LeftLeg", "LeftFoot", .08, .08),
+                              ("col_thigh_R", "RightUpLeg", "RightLeg", .095, .095), ("col_shin_R", "RightLeg", "RightFoot", .08, .08),
+                              ("col_hips", "Hips", "Spine02", .2, .15), ("col_chest", "Spine02", "Spine", .2, .15))
+    for nm, b0, b1, rx, ry in colliders:
         a, b = H(b0), H(b1); L = (b - a).length
         bm = bmesh.new(); bmesh.ops.create_uvsphere(bm, u_segments=16, v_segments=10, radius=1.0)
         me = bpy.data.meshes.new(nm); bm.to_mesh(me); bm.free()
