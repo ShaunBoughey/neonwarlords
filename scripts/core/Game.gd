@@ -85,6 +85,9 @@ func new_game(player_name: String) -> void:
 	var welcome := {"id": U.uid(), "title": "Welcome to the City, Warlord", "body": "Your ragtag crew needs gear. Fight through the gangs of the city, recruit companions and climb the Pit.", "rewards": [{"k": "credits", "n": 100000}, {"k": "contract", "r": "rare", "n": 2}, {"k": "gearSet", "rank": 2, "set": "Health", "r": "uncommon"}], "claimed": false, "t": t}
 	S.inbox.append(welcome)
 	grant_starter_kit()
+	# dev builds: show off the first finished model on every new account (not in tests or release builds)
+	if OS.is_debug_build() and not OS.get_cmdline_user_args().has("--nwtest"):
+		add_warlord("deacon_chainz")
 	_init_gang()
 	tick()
 	save_game()
