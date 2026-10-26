@@ -52,6 +52,8 @@ No key is stored in the config. The server reads `MESHY_API_KEY` from your Windo
 
 ## 3. Recommended warlord pipeline
 
+> The canonical, maintained version of this process is **`docs/WARLORD_MODELS.md`**. This section records how it was worked out on Deacon.
+
 The battle view (`scripts/combat/battle_view_3d.gd`) loads `res://assets/models/warlord_<id>.glb` per template via `TPL_MODELS` (Deacon is already mapped: `deacon_chainz → warlord_deacon.glb`). It falls back to the class model and finds the first `AnimationPlayer`. It plays clips named **idle, run, attack, shoot, cast, hit, death, victory** (idle and run are set to loop). The model's materials keep their textures. `_recolour` only overrides materials named Accent/Neon/Body.
 
 Proven on Deacon Chainz (2026-10-26). **The key rule: never generate long cloth (capes, coats, robes) as part of the body.** Meshy builds one fused, watertight shell, so a cape is welded to the legs and there are no legs behind it. Re-weighting gives only a stiff robe, and cutting it free leaves holes. Generate the body without the cloth, and add the cloth as its own mesh.
