@@ -1,8 +1,13 @@
 class_name Portrait
 extends Control
-## Procedural warlord portrait: rim-lit bust in the syndicate colour. Headgear comes from the
+## Warlord portrait: the rendered card art from assets/portraits/<tpl_id>.png when it exists, else a
+## procedural rim-lit bust in the syndicate colour. Headgear comes from the
 ## syndicate (mitre, crest, antenna, horns, kabuto, ram horns, tricorn), shoulders from the class
 ## and the visor varies per warlord, so every card reads as a distinct character.
+
+const PHOTO_DIR := "res://assets/portraits/"   # <tpl_id>.png rendered from the 3D model (tools/blender/render_portrait.py)
+const PHOTO_FOCUS_Y := 0.15                     # crop anchor: 0 = keep the top (head-gear), 1 = keep the bottom
+static var _photos := {}
 
 var tpl_id := ""
 var dim := false
@@ -22,44 +27,48 @@ func _draw() -> void:
 	var h := hash(tpl_id)
 	var W := size.x
 	var H := size.y
-	# backdrop: syndicate glow fading to void, fine hatching
-	var steps := 14
-	for i in steps:
-		var f := float(i) / steps
-		draw_rect(Rect2(0, H * f, W, H / steps + 1), sc.darkened(0.45).lerp(Color("#06080F"), clampf(f * 1.25, 0, 1)))
-	var x := -H
-	while x < W:
-		draw_line(Vector2(x, H), Vector2(x + H * 0.5, 0), Color(sc, 0.06), 1.0)
-		x += max(5.0, W * 0.08)
-	var cx := W * 0.5
-	var hy := H * 0.42
-	var hr := H * 0.17
-	var body := Color("#151B2A")
-	var rim := sc.lightened(0.35)
 	var lw: float = max(1.5, W * 0.022)
-	# shoulders by class
-	var sh := _shoulders(String(t.cls), cx, W, H)
-	draw_colored_polygon(sh, body)
-	draw_polyline(_left_edge(sh), Color(rim, 0.9), lw, true)
-	if t.cls == "armour":
-		for sx in [-1.0, 1.0]:
-			var pc := Vector2(cx + sx * W * 0.3, H * 0.74)
-			draw_circle(pc, W * 0.13, Color("#1C2436"))
-			draw_arc(pc, W * 0.13, PI * (1.05 if sx < 0 else 1.55), PI * (1.6 if sx < 0 else 2.0), 12, Color(rim, 0.8), lw, true)
-	elif t.cls == "firepower":
-		draw_line(Vector2(cx - W * 0.22, H * 0.7), Vector2(cx + W * 0.18, H), Color(sc, 0.7), lw * 1.4)
-	elif t.cls == "modder":
-		for k in 3:
-			draw_circle(Vector2(cx + W * 0.24 + k * W * 0.05, H * 0.78 + k * H * 0.04), W * 0.018, Color(sc, 0.9))
-	elif t.cls == "hacker":
-		draw_colored_polygon(PackedVector2Array([Vector2(cx - hr * 1.5, hy + hr * 0.4), Vector2(cx, hy - hr * 1.55),
-			Vector2(cx + hr * 1.5, hy + hr * 0.4), Vector2(cx + hr * 1.1, H * 0.72), Vector2(cx - hr * 1.1, H * 0.72)]), Color("#10151F"))
-	# neck + head
-	draw_rect(Rect2(cx - hr * 0.45, hy + hr * 0.6, hr * 0.9, H * 0.12), body)
-	draw_circle(Vector2(cx, hy), hr, Color("#1A2133"))
-	draw_arc(Vector2(cx, hy), hr, PI * 0.75, PI * 1.45, 16, Color(rim, 0.95), lw, true)
-	_headgear(String(t.syn), cx, hy, hr, body, rim, lw)
-	_visor(h, cx, hy, hr, sc)
+	var photo := photo_for(tpl_id)
+	if photo:
+		_draw_photo(photo, W, H)
+	else:
+		# backdrop: syndicate glow fading to void, fine hatching
+		var steps := 14
+		for i in steps:
+			var f := float(i) / steps
+			draw_rect(Rect2(0, H * f, W, H / steps + 1), sc.darkened(0.45).lerp(Color("#06080F"), clampf(f * 1.25, 0, 1)))
+		var x := -H
+		while x < W:
+			draw_line(Vector2(x, H), Vector2(x + H * 0.5, 0), Color(sc, 0.06), 1.0)
+			x += max(5.0, W * 0.08)
+		var cx := W * 0.5
+		var hy := H * 0.42
+		var hr := H * 0.17
+		var body := Color("#151B2A")
+		var rim := sc.lightened(0.35)
+		# shoulders by class
+		var sh := _shoulders(String(t.cls), cx, W, H)
+		draw_colored_polygon(sh, body)
+		draw_polyline(_left_edge(sh), Color(rim, 0.9), lw, true)
+		if t.cls == "armour":
+			for sx in [-1.0, 1.0]:
+				var pc := Vector2(cx + sx * W * 0.3, H * 0.74)
+				draw_circle(pc, W * 0.13, Color("#1C2436"))
+				draw_arc(pc, W * 0.13, PI * (1.05 if sx < 0 else 1.55), PI * (1.6 if sx < 0 else 2.0), 12, Color(rim, 0.8), lw, true)
+		elif t.cls == "firepower":
+			draw_line(Vector2(cx - W * 0.22, H * 0.7), Vector2(cx + W * 0.18, H), Color(sc, 0.7), lw * 1.4)
+		elif t.cls == "modder":
+			for k in 3:
+				draw_circle(Vector2(cx + W * 0.24 + k * W * 0.05, H * 0.78 + k * H * 0.04), W * 0.018, Color(sc, 0.9))
+		elif t.cls == "hacker":
+			draw_colored_polygon(PackedVector2Array([Vector2(cx - hr * 1.5, hy + hr * 0.4), Vector2(cx, hy - hr * 1.55),
+				Vector2(cx + hr * 1.5, hy + hr * 0.4), Vector2(cx + hr * 1.1, H * 0.72), Vector2(cx - hr * 1.1, H * 0.72)]), Color("#10151F"))
+		# neck + head
+		draw_rect(Rect2(cx - hr * 0.45, hy + hr * 0.6, hr * 0.9, H * 0.12), body)
+		draw_circle(Vector2(cx, hy), hr, Color("#1A2133"))
+		draw_arc(Vector2(cx, hy), hr, PI * 0.75, PI * 1.45, 16, Color(rim, 0.95), lw, true)
+		_headgear(String(t.syn), cx, hy, hr, body, rim, lw)
+		_visor(h, cx, hy, hr, sc)
 	# class + syndicate marks, boss crown
 	var isz := H * 0.2
 	var ct := Art.tex(Art.CLASS_SYMBOL[t.cls])
@@ -75,6 +84,20 @@ func _draw() -> void:
 		draw_rect(Rect2(Vector2.ZERO, size), Color(0, 0, 0, 0.6))
 	if flash > 0.0:
 		draw_rect(Rect2(Vector2.ZERO, size), Color(1, 1, 1, flash * 0.6))
+
+## Rendered portrait for a warlord template, or null to fall back to the procedural bust. Cached.
+static func photo_for(tpl: String) -> Texture2D:
+	if not _photos.has(tpl):
+		var p := PHOTO_DIR + tpl + ".png"
+		_photos[tpl] = load(p) if ResourceLoader.exists(p) else null
+	return _photos[tpl]
+
+func _draw_photo(tex: Texture2D, W: float, H: float) -> void:
+	# cover-fit: fill the card, crop the overflow (sideways centred, vertically anchored near the top)
+	var ts := tex.get_size()
+	var k: float = max(W / ts.x, H / ts.y)
+	var src := Vector2(W / k, H / k)
+	draw_texture_rect_region(tex, Rect2(Vector2.ZERO, size), Rect2(Vector2((ts.x - src.x) * 0.5, (ts.y - src.y) * PHOTO_FOCUS_Y), src))
 
 func _shoulders(cls: String, cx: float, W: float, H: float) -> PackedVector2Array:
 	var top := H * 0.66

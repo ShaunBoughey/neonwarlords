@@ -179,6 +179,39 @@ def fit_to_body(cape, body, margin=0.015, iters=3):
     cm.update()
 
 
+def attach_top(cape, body, arm, rows=8, tuck=0.012, snug=0.006, step=0.003):
+    """Make the cape read as attached: top rows go INSIDE the cloth mantle where one covers them (the cape
+    emerges from under it), elsewhere they sit snug on the body, the gap growing gently down the cape.
+    Run after fit_to_body (which keeps the lower cape clear) and before rig()."""
+    arm.data.pose_position = "REST"; bpy.context.view_layer.update()
+    dg = bpy.context.evaluated_depsgraph_get(); eb = body.evaluated_get(dg); bme = eb.to_mesh()
+    bm = bmesh.new(); bm.from_mesh(bme); bm.transform(body.matrix_world)
+    uvl = bm.loops.layers.uv.active; bm.faces.ensure_lookup_table()
+    face_uv = [f.loops[0][uvl].uv.copy() for f in bm.faces]
+    bvh = BVHTree.FromBMesh(bm); bm.free(); eb.to_mesh_clear()
+    img = [n for n in body.data.materials[0].node_tree.nodes if n.type == "TEX_IMAGE"][0].image
+    tw, th = img.size; tex = np.array(img.pixels[:], np.float32).reshape(th, tw, 4)
+    def is_cloth(fi):
+        u, v = face_uv[fi]; c = tex[int(np.clip(v * th, 0, th - 1)), int(np.clip(u * tw, 0, tw - 1)), :3]
+        return (c.max() - c.min()) / (c.max() + 1e-6) > 0.35 and c[0] >= c[2]
+    cm = cape.data; Mw = cape.matrix_world; Mi = Mw.inverted(); n0 = NR * NC; moved = 0
+    for v in cm.vertices:
+        if v.index >= n0 or v.index // NC >= rows: continue
+        j = v.index // NC
+        p = Mw @ v.co
+        hit, nrm, fi, d = bvh.find_nearest(p, 0.15)       # nearest surface: never the far-out T-pose arms
+        if hit is None: continue
+        if is_cloth(fi) and j < rows - 2:
+            target = hit - nrm * tuck                        # hidden under the mantle
+        else:
+            target = hit + nrm * (snug + step * j)           # snug on armour, gap grows downward
+        target.z = p.z                                       # move sideways only: keeps the texture (and decals) unstretched
+        w = 1.0 if j < rows - 3 else (rows - j) / 3.0        # blend into the fitted lower cape
+        v.co = Mi @ (p.lerp(target, w)); moved += 1
+    cm.update()
+    return moved
+
+
 def _grid_index(cape):
     cm = cape.data; n0 = NR * NC
     co = np.array([v.co[:] for v in cm.vertices]); gi = np.zeros(len(co), int); gj = np.zeros(len(co), int)

@@ -88,6 +88,8 @@ func set_models(list: Array) -> void:
 		n.queue_free()
 	nodes.clear()
 	var count := list.size()
+	if count == 1 and auto_spin == 0.0:
+		spin = -1.4          # spin-in: a single warlord turns in and settles facing the camera
 	for i in count:
 		var m: Dictionary = list[i]
 		if m.is_empty():
