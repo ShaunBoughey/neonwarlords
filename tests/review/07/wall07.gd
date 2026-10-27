@@ -34,6 +34,10 @@ func _ready() -> void:
 		var cb := OS.get_environment("NW_CB").split(",")
 		Content.CAMPAIGN_BONUS = [[0.0, 0.0], [0.0, float(cb[0])], [float(cb[1]), float(cb[2])]]
 		print("CAMPAIGN_BONUS ", Content.CAMPAIGN_BONUS)
+	if OS.get_environment("NW_WCAP") != "":
+		var cp := OS.get_environment("NW_WCAP").split(",")   # "mob_boss_cap,warlord_cap"
+		Content.CAMPAIGN_BONUS_CAP = [99.0, float(cp[0]), float(cp[1])]
+		print("CAMPAIGN_BONUS_CAP ", Content.CAMPAIGN_BONUS_CAP)
 	for d in [1, 2]:
 		for st in [0, 6]:
 			var line := "%-10s st%d " % [Data.DIFFS[d], st + 1]

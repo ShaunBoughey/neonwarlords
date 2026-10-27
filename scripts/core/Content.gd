@@ -132,9 +132,14 @@ func build_campaign(d: int, loc: int, st: int) -> Dictionary:
 ## middle, dens 9-10 need R6 legendary).
 var CAMPAIGN_BONUS := [[0.0, 0.0], [0.0, 0.03], [0.6, 0.035]]   # per difficulty: [base, per den] (var so probes can sweep it)
 
+## Ceiling on the per-difficulty bonus so the last dens stay the hardest without needing a fully maxed squad
+## (open lever; the GDD level table already climbs steeply there). Index = difficulty.
+var CAMPAIGN_BONUS_CAP := [99.0, 0.2, 0.5]   # Street Punk uncapped (bonus 0); 60-day bots NW_SEED 11/22/33 finish at 55-83 h
+
 func campaign_bonus(d: int, loc: int, st: int) -> float:
 	var t := loc + st / 6.0   # 0 at den 1 stage 1, 10 at den 10 boss
-	return CAMPAIGN_BONUS[d][0] + CAMPAIGN_BONUS[d][1] * t
+	var b: float = CAMPAIGN_BONUS[d][0] + CAMPAIGN_BONUS[d][1] * t
+	return minf(b, float(CAMPAIGN_BONUS_CAP[d]))
 
 ## Den boss HP multiplier. Healers heal off their own max HP, so modder bosses get none; legendary
 ## bosses already carry their kit, so they get less than the 1.8 default.

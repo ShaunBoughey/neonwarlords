@@ -20,6 +20,9 @@ func _ready() -> void:
 	Game.reset_save()
 	# NW_SEED=<n>: repeatable run (account RNG, battle rolls and the clock are all fixed).
 	# The account itself is a normal new player's: same starter crew and kit, free-to-play.
+	if OS.get_environment("NW_WCAP") != "":
+		var cp := OS.get_environment("NW_WCAP").split(",")   # "mob_boss_cap,warlord_cap"
+		Content.CAMPAIGN_BONUS_CAP = [99.0, float(cp[0]), float(cp[1])]
 	var sd := OS.get_environment("NW_SEED")
 	if sd != "":
 		seeded = true
