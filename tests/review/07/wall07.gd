@@ -30,6 +30,10 @@ func _ready() -> void:
 		teams.append(pair)
 		print("band R%d %s+%d power %s / %s" % [bd[0], bd[1], bd[2], U.fmt(Game.team_power(pair[0])), U.fmt(Game.team_power(pair[1]))])
 	var n := int(OS.get_environment("NW_N")) if OS.get_environment("NW_N") != "" else 8
+	if OS.get_environment("NW_CB") != "":   # "mb_per_den,wl_base,wl_per_den"
+		var cb := OS.get_environment("NW_CB").split(",")
+		Content.CAMPAIGN_BONUS = [[0.0, 0.0], [0.0, float(cb[0])], [float(cb[1]), float(cb[2])]]
+		print("CAMPAIGN_BONUS ", Content.CAMPAIGN_BONUS)
 	for d in [1, 2]:
 		for st in [0, 6]:
 			var line := "%-10s st%d " % [Data.DIFFS[d], st + 1]

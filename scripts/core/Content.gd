@@ -130,7 +130,7 @@ func build_campaign(d: int, loc: int, st: int) -> Dictionary:
 ## Tuned with tests/review/07/Wall07.tscn: Street Punk unchanged; Mob Boss wins most dens with an R5
 ## epic squad and the last dens are ~50/50; Warlord needs R6 (R6 epic wins the early dens, ~50% in the
 ## middle, dens 9-10 need R6 legendary).
-const CAMPAIGN_BONUS := [[0.0, 0.0], [0.0, 0.045], [0.65, 0.04]]   # per difficulty: [base, per den]
+var CAMPAIGN_BONUS := [[0.0, 0.0], [0.0, 0.03], [0.6, 0.035]]   # per difficulty: [base, per den] (var so probes can sweep it)
 
 func campaign_bonus(d: int, loc: int, st: int) -> float:
 	var t := loc + st / 6.0   # 0 at den 1 stage 1, 10 at den 10 boss
@@ -140,9 +140,19 @@ func campaign_bonus(d: int, loc: int, st: int) -> float:
 ## bosses already carry their kit, so they get less than the 1.8 default.
 func campaign_boss_mult(boss_id: String) -> float:
 	var t: Dictionary = Warlords.get_t(boss_id)
-	if t.cls == "modder":
+	if t.cls == "modder" or _heals_team(t):
 		return 1.0
 	return 1.3   # one boss HP multiplier for every non-healer den boss (epic final boss at 1.8 was a wall)
+
+## True when a passive heals every ally each turn (e.g. Issac Vaun's Cash Injection): such a boss already
+## out-sustains extra HP, so it is treated like a healer for the den boss HP multiplier.
+func _heals_team(t: Dictionary) -> bool:
+	for a in t.abilities:
+		for h in a.get("hooks", []):
+			for fx in h.get("fx", []):
+				if fx.get("t", "") == "heal" and fx.get("to", "") == "all_allies":
+					return true
+	return false
 
 func campaign_set(loc: int) -> String:
 	var s: String = Data.GDD.campaign[loc].set
