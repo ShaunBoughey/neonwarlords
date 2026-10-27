@@ -598,7 +598,7 @@ func modal(title_text: String, body: Control, wide := false, closable := true, f
 		v.add_child(footer)
 	_fit_scroll.call_deferred(sc, body, max_h)
 	p.modulate.a = 0.0
-	create_tween().tween_property(p, "modulate:a", 1.0, 0.15)
+	p.create_tween().tween_property(p, "modulate:a", 1.0, 0.15)
 	return dim
 
 func _fit_scroll(sc: ScrollContainer, body: Control, max_h: float) -> void:
@@ -642,7 +642,7 @@ func show_rewards(title_text: String, list: Array, after := Callable()) -> void:
 		var tile := UI.reward_tile(r, 84)
 		tile.modulate.a = 0.0
 		f.add_child(tile)
-		var tw := create_tween()
+		var tw := tile.create_tween()   # bound to the tile so closing the modal early is clean
 		tw.tween_interval(0.05 * i)
 		tw.tween_property(tile, "modulate:a", 1.0, 0.2)
 		i += 1
@@ -661,7 +661,7 @@ func _on_toast(text: String, color: Color) -> void:
 	var l := UI.lbl(text, 15, color, HORIZONTAL_ALIGNMENT_CENTER)
 	p.add_child(l)
 	toast_box.add_child(p)
-	var tw := create_tween()
+	var tw := p.create_tween()   # bound to the toast: old toasts are trimmed below while their fade is pending
 	tw.tween_interval(2.2)
 	tw.tween_property(p, "modulate:a", 0.0, 0.4)
 	tw.tween_callback(p.queue_free)

@@ -46,7 +46,11 @@ Design choices where the GDD is silent or contradictory (all easy to change):
 - **Firmware Mk N** counts as one rank-N warlord when ranking up (from the Rank screen art and "Rank 3 Firmware" reward wording).
 - **Bosses for Synapse / Chopshop / Heist / Deeds / Bastion** were blank in the GDD and were designed to fit.
 - **Combat presentation** is RAID-style 3D (user request); models are placeholders pending real art.
-- "Tavern" appears in one flow chart but has no GDD text, so it is not implemented.
+- **Tavern** (flow chart) is the GDD's **Dojo** (Leveling Methods: metabolics): a Tavern sign on the City Centre opens the warlord Level page, labelled "Dojo".
+- **Warlord feeding** (consume warlords for XP) is kept as a third leveling method alongside battles and Dojo metabolics (user decision).
+- **Alignment** is on the warlord template and shown everywhere a warlord appears (card badge + tooltip, Armory filter, detail chip with explanation, rep page cost table, recruit reveal, battle hover). Roster retagged to 12 Paragon / 12 Neutral / 12 Renegade with every syndicate having all three (user decision).
+- **Hideout ability readings**: Ragnarok's "trigger ATK 3" (no ATK 3 exists) fires Thunder God and revives at 30% HP; Capitalist counts turn meter removed from allies; the Vultures boss wave has two extra thugs; GDD stage 6-7 gear odds that sum to 110% / 95% are normalised.
+- **Equipment**: one Neon per substat; substats never repeat the item's primary.
 
 ## Balance tuning: deviations from the GDD's literal numbers
 
@@ -64,7 +68,7 @@ toward that intent (structure, modes, stages and reward types are unchanged). Ve
 | Den bosses | not specified | strongest named warlord; a syndicate's second den uses another named warlord | Bosses repeated across dens |
 | Campaign difficulty climb | not specified (GDD level table kept exactly) | extra enemy gear-equivalent bonus: Street Punk 0, Mob Boss 0 -> 0.45, Warlord 0.65 -> 1.05 by den; den boss HP x1.3 (modder bosses x1.0) | Warlord was a random cliff (healer line-ups walled R5, R6 beat everything); now Mob Boss needs R5, Warlord needs R6 and dens 9-10 need maxed R6. Target ~60h of total play to finish (RAID ~60h); seeded bot runs (NW_SEED 11-66, player-like squads and housekeeping) finished at 17h (lucky account), 45h, 58h and 68h; one reached the last dens on day 41 and one stalled on Warlord 4-7 |
 | Campaign line-ups | not specified | fully seeded per stage; at most 1 healer per gang, named warlords build up through a den (1 / 2 / 3 per regular stage, 2 boss escorts), no named healers on regular Warlord stages, no repeated named warlord, no healer escorts on Warlord den bosses, no healer bosses from den 4, no legendary bosses before den 6 | Composition spikes made difficulty random |
-| Hideout enemy levels | not specified | 4 x stage + 1 to stage 10, +8 per stage to 15, then +16 per stage (stage 20 = level 161); boss HP x(2.5 + 0.15 x stage + 0.6 x max(0, stage - 15)) | Retuned after the GDD armour constant landed. Probe: R5 clears stage 10, stage 15 needs R6, stage 20 is ~50% for a maxed R6 legendary squad and ~0% for R6 epic |
+| Hideout enemy levels | not specified | 4 x stage + 1 to stage 10, +8 per stage to 15, then a per-hideout step to 20 (`Content.HIDEOUT_LATE_STEP_BY_ID`: 0 to 26 levels per stage); boss HP x(2.5 + 0.15 x stage + 0.15 x max(0, stage - 15)), Chop Shop boss x0.9 | Retuned after enemy debuffs started landing (enemy Hacking floor) and armour penetration joined the formula: one global curve left some hideouts at 0% and others at 100%. Bisected per hideout (`tests/fix/hideout_tune/bisect.tscn`, 24 fights over 3 geared squads per point): stage 20 is ~50% for a maxed R6 legendary squad in every hideout, stage 15 needs R6, R5 clears stage 10 |
 | Pit opponents | real players' defence squads in your bracket | geared squads scaled to 80-115% of your top warlords' power, bracket-adjusted; Royal fields 4 + 3; defence results are simulated battles | Offline stand-in for real players; was trivially winnable |
 | Den-boss escorts | not specified | built at boss level -2, never a copy of the boss | Escorts were the boss's own clones |
 | Bastion | turn cap and reward tiers blank | 50-turn cap per entry; one damage-tier table per stage; gang boss pool = 1.2x the gang's expected damage | Lets the "Survive 30/45 turns" ambitions complete; makes the top tier reachable |
@@ -73,6 +77,8 @@ toward that intent (structure, modes, stages and reward types are unchanged). Ve
 | Ability levels | not specified what each level does | abilities with nothing to scale have max level 1 | Duplicates were spent on levels that did nothing |
 | Stocks cap upgrade | "additional caps being a microtransaction" (no price) | "Stocks Vault +25 cap", GBP 1.99, up to 4 buys | Price is an open lever |
 | Multi-battle | not specified ("idle the game" audience) | AUTO x10 on the campaign stage sheet: replays on auto while energy lasts, stops on a loss | Matches the design canvas and RAID's multi-battle |
+| Enemy Hacking | not specified (GDD base Hacking 0) | `Content.enemy_hack(level)` = 10 + 14.4 x sqrt(level), a floor for campaign / hideout / Syndicate Wars enemies and Pit opponents (not Bastion) | With the literal Hacking >= Firewall check, enemy debuffs never landed, so hideout mechanics (Devour, Divine Retribution, Celestial Strike) never fired. Now ~50-80% land on an unspecialised squad; Firewall-built squads still resist (user decision) |
+| Plaza metabolics | not specified | every alignment / tier metabolic is buyable | Some combos had no source |
 | Plaza | "credits buy gear from shops" | adds R5-R6 legendary/epic gear and implants (0.5-1.8M credits) | Late-game credit sink |
 
 ## GDD rules enforced (bugs fixed against the document)
@@ -88,3 +94,11 @@ toward that intent (structure, modes, stages and reward types are unchanged). Ve
 - **Hideout "Bring It On"** is on the hideout boss only (`Content.HIDEOUT_BOSS_IMMUNE`); recruited copies of those warlords don't carry boss immunities.
 - **GDD typos fixed** (user decision): Hideout ambition order 11 is Generic Deeds (it repeated Paragon); Warlord ambitions tier 3 is "Recruit 100" (it repeated tier 2's 50).
 - **Pit ranking**: wins give x10 points; ranking is only lost when your *defence* is beaten. A failed attack just costs the invite (the build had also docked points for lost attacks).
+- **Campaign additional drops**: each difficulty's chances sum to 100%, so a win gives exactly one extra drop picked by those chances.
+- **Losing XP**: a loss gives 20% of the win's XP for warlords *and* the player (player XP is 1 per energy, granted at battle end; user decision).
+- **"Complete N Dens / Pit Brawls / Hideouts"** jobs, Battle Pass challenges and ambitions count wins only (user decision).
+- **Equipment ambitions 1-7 / 1-8** read "Crit Chance / Crit Damage Set **Weapon**" (the GDD said Gloves, which its own primary matrix forbids for CC% / CD%; user decision).
+- **Neons** come only from Syndicate Wars and the GDD's shop / Battle Pass rows; the starter kit no longer grants any (user decision).
+- **Armour penetration** follows the worked example: mitigation % minus penetration %, fed by every ignore-armour effect (Fracture, Ripper, Celestial Strike / Smite, Devour).
+- **Hacking vs Firewall order** follows the GDD: chance > Hacking vs Firewall > Block Debuffs > existing debuff > refresh / stack > place. Adaptive Networks / Syphon Intel heal on a resist or a block.
+- **Inbox** trimming never deletes mail with unclaimed rewards.

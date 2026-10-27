@@ -70,11 +70,12 @@ func _find(name: String) -> Dictionary:
 
 func _limit(sec: String, i: int) -> Array:
 	var row: Array = Data.GDD.shop[sec][i]
-	var bought := int(Game.S.shop_bought.get("%s|%d" % [sec, i], 0))
+	var bought := Game.shop_bought_count(sec, i)
 	var lim = row[3]
 	if typeof(lim) == TYPE_STRING:
 		return ["", false]
-	return ["%d / %d" % [bought, int(lim)], bought >= int(lim)]
+	# Trinium Market limits (the Pit refills) reset daily
+	return ["%d / %d%s" % [bought, int(lim), " today" if sec == "Trinium Market" else ""], bought >= int(lim)]
 
 func _buy_btn(sec: String, i: int, big := false) -> Button:
 	var row: Array = Data.GDD.shop[sec][i]
@@ -87,14 +88,20 @@ func _buy_btn(sec: String, i: int, big := false) -> Button:
 		b = UI.btn(cost, func(): _buy(sec, i), "primary", 0, 15)
 	b.custom_minimum_size.y = 56 if big else 44
 	b.disabled = _limit(sec, i)[1]
-	# heist plans are capped at 5 held: buying while holding any would waste Trinium
-	if String(row[1]).contains("Heist Plan") and not real and Game.cur("heist") > 0:
-		b.disabled = true
-		b.tooltip_text = "Use your Heist Plans first (you hold %d; the cap is 5)." % Game.cur("heist")
+	# bought plans may overflow the daily cap of 5; they are kept
+	if String(row[1]).contains("Heist Plan") and not real:
+		b.tooltip_text = "Plans above 5 are kept (you hold %d)." % Game.cur("heist")
+	if b.disabled and sec == "Trinium Market":
+		b.tooltip_text = "Daily limit reached. Resets in " + U.dur(U.secs_to_next_day())
 	return b
 
 func _buy(sec: String, i: int) -> void:
 	var row: Array = Data.GDD.shop[sec][i]
+	if String(row[2]).ends_with("Trinium"):
+		# Trinium buys can cost thousands per click: confirm first
+		main.confirm("Buy %s (%s) for %s?" % [String(row[0]), String(row[1]), String(row[2])], func():
+			main.show_rewards(String(row[0]), Game.shop_buy(sec, i), rebuild), "BUY")
+		return
 	if not String(row[2]).begins_with("GBP") or not Game.S.settings.free_iap:
 		main.show_rewards(String(row[0]), Game.shop_buy(sec, i), rebuild)
 		return
@@ -163,6 +170,8 @@ func _card(sec: String, i: int) -> Control:
 	var row: Array = Data.GDD.shop[sec][i]
 	var name: String = row[0]
 	var desc: String = row[1]
+	if name == "Raid Boss Ticket":
+		desc += ". " + String(Data.REWARD_INFO.get("raidTicket", ""))
 	var p := PanelContainer.new()
 	p.add_theme_stylebox_override("panel", UI._sb(Color(UI.DEEP, 0.92), UI.LINE, 1, UI.NOTCH, 14))
 	p.size_flags_horizontal = Control.SIZE_EXPAND_FILL

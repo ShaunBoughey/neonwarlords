@@ -27,15 +27,67 @@ func build() -> void:
 
 func _equip(implants: bool, slot: String) -> void:
 	var slots: Array = Data.IMPLANT_SLOTS if implants else Data.GEAR_SLOTS
-	# slot tabs get the full row so all 7 stay reachable; the count and bulk sell sit underneath
+	var rar: String = params.get("rar", "all")
+	var set_f: String = params.get("set", "all")
+	var rank_f: int = int(params.get("rank", 0))
+	var sort: String = params.get("sort", "Rank")
+	# slot tabs get the full row so all 7 stay reachable; the filters, count and bulk sell sit underneath
 	root.add_child(tabs(["all"] + slots, slot, func(n):
 		params.slot = n
 		rebuild()))
-	var items: Array = Game.S.equip.filter(func(e): return (e.kind == "implant") == implants and (slot == "all" or e.slot == slot))
-	items.sort_custom(func(a, b): return a.rank * 1000 + Data.rarity_idx(a.rarity) * 100 + a.level > b.rank * 1000 + Data.rarity_idx(b.rarity) * 100 + b.level)
+	var fr := UI.hb(6)
+	for r in ["all"] + Data.RARITIES:
+		var col: Color = UI.CYAN if r == "all" else Data.RARITY_COLOR[r]
+		var on: bool = r == rar
+		var b := UI.btn("All" if r == "all" else U.cap(r), func():
+			params.rar = r
+			rebuild(), "normal", 0, 13)
+		b.custom_minimum_size.y = 36
+		b.add_theme_stylebox_override("normal", UI._sb(Color(col, 0.22) if on else Color(UI.DEEP, 0.85), col if on else UI.LINE, 2 if on else 1, 8, 12))
+		b.add_theme_color_override("font_color", UI.TEXT if on else col)
+		fr.add_child(b)
+	fr.add_child(UI.spacer())
+	fr.add_child(UI.cap("Rank"))
+	var rk := OptionButton.new()
+	rk.add_item("All ranks", 0)
+	for r in range(1, 7):
+		rk.add_item("Rank %d" % r, r)
+	rk.select(rk.get_item_index(rank_f))
+	rk.item_selected.connect(func(i):
+		params.rank = rk.get_item_id(i)
+		rebuild())
+	fr.add_child(rk)
+	if not implants:
+		fr.add_child(UI.cap("Set"))
+		var so := OptionButton.new()
+		so.add_item("All sets")
+		var names: Array = Data.SETS.keys()
+		for sn in names:
+			so.add_item("%s (%d pc)" % [sn, Data.SETS[sn].pieces])
+		so.select(names.find(set_f) + 1)
+		so.item_selected.connect(func(i):
+			params.set = "all" if i == 0 else String(names[i - 1])
+			rebuild())
+		fr.add_child(so)
+	root.add_child(fr)
+	var items: Array = Game.S.equip.filter(func(e): return (e.kind == "implant") == implants and (slot == "all" or e.slot == slot) \
+		and (rar == "all" or e.rarity == rar) and (rank_f == 0 or int(e.rank) == rank_f) and (implants or set_f == "all" or e.get("set", "") == set_f))
+	var key := func(e) -> int:
+		match sort:
+			"Rarity": return Data.rarity_idx(e.rarity) * 10000 + int(e.rank) * 100 + int(e.level)
+			"Level": return int(e.level) * 10000 + int(e.rank) * 100 + Data.rarity_idx(e.rarity)
+		return int(e.rank) * 1000 + Data.rarity_idx(e.rarity) * 100 + int(e.level)
+	if sort == "Set":
+		items.sort_custom(func(a, b): return a.get("set", "") < b.get("set", "") if a.get("set", "") != b.get("set", "") else key.call(a) > key.call(b))
+	else:
+		items.sort_custom(func(a, b): return key.call(a) > key.call(b))
 	var f := UI.hb(6)
 	f.add_child(UI.lbl("%d items" % items.size(), 14, UI.DIM))
 	f.add_child(UI.spacer())
+	f.add_child(UI.cap("Sort"))
+	f.add_child(tabs(["Rank", "Rarity", "Level"] + ([] if implants else ["Set"]), sort, func(n):
+		params.sort = n
+		rebuild()))
 	f.add_child(UI.btn("Sell unequipped Common/Uncommon", func(): _bulk_sell(implants), "danger"))
 	root.add_child(f)
 	var g := UI.flow(8)
@@ -122,6 +174,13 @@ func _items() -> void:
 		var cname: String = c
 		var b := UI.btn("Open %s (%d)" % [c, n], func(): main.show_rewards(cname, Game.open_cache(cname), rebuild), "gold")
 		b.disabled = n <= 0
-		caches.add_child(b)
+		var ch := UI.hb(4)
+		ch.add_child(b)
+		var ib := UI.btn("?", func(): CacheInfo.show(main, cname), "ghost", 0, 13)
+		ib.tooltip_text = CacheInfo.text(cname)
+		b.tooltip_text = ib.tooltip_text
+		ch.add_child(ib)
+		caches.add_child(ch)
 	row.add_child(caches)
 	root.add_child(UI.scroll(row))
+

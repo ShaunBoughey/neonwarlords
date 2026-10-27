@@ -1,0 +1,2308 @@
+[] <IMG x3> GAME DESIGN DOCUMENTNeon WarlordsA mobile turn based looter game set in the neon dystopian world
+[] <IMG x1> 
+[] <IMG x2> Prepared By:ShaunLast Updated:23/01/21
+[] <IMG x1> TABLE OF CONTENTS
+[Heading1] Game Analysis
+[] Neon Warlords is a mobile game primarily aimed at people who love to level up characters as a form of progression and manipulate statistics to improve their characters for the purpose of PvE(Campaign, Hideouts) and PvP(Arena fights).
+[] This is in the same vein as RAID, SWGOH and Overhit. The design itself will be 3D harnessing the power of Unreal Engine with a clean GUI. 
+[Heading1] Mission Statement
+[] In Neon Warlords, you start as a ragtag group who has to fight their way through the gangs of the city, in doing so leveling up your characters, collecting new gear and finding new companions along the way. The game will include PvE in the form of a campaign and boss fights in hideouts. There will also be a PvP aspect where you are able to fight other players' teams!  This will be an Android game with the aspiration to support IOS at a later date.
+[Heading1] Genre
+[] Mobile looter, collection, PvE, PvP
+[Heading1] Platforms
+[] Android - Planned
+[] IOS - Future (need a device to build)
+[] Web or Play Launcher- Possible
+[Heading1] Technology 
+[] Unreal Engine 4 - Supports build of Web, Android and IOS.
+[] Google Firebase - Authentication, Database, Hosting(if needed), release pipelines and monitoring and analytics
+[] Unreal Asset - Soul: City 
+[] Unreal Asset - Firebase Blueprints 
+[Heading1] Target Audience
+[] This game is targeted towards gamers who enjoy a grindy looter game that allows for a lot of progression with your characters. This should be someone who enjoys spending small amounts of time, regularly running missing or possibly with a side of being able to idle the game. The target audience often dislike energy limits and duplication of gear from missions. There is often a desire to be in the top percentile of players as a ‘bragging right’, it gives players a form of satisfaction to be higher than others. This Also constantly gives others something to aim for.
+[Heading1] Warlords
+[Heading2] Warlord Rank
+[] Consuming warlords will rank up the rank of the chosen warlord. The required rank and number of warlords is equal to that of the current rank of the Chosen Warlord. The chosen Warlord must also be at their max level within their current rank. Warlords of different rarities start at different ranks. 
+<TABLE>
+Starting Rank | Required to ascend from | Required 1 Ranks to Ascend From
+1 - Common | Requires 1 x 1 Rank Warlord | 2
+2 - Uncommon | Requires 2 x 2 Rank Warlords | 6
+3 - Rare | Requires 3 x 3 Rank Warlords | 18
+4 - Epic | Requires 4 x 4 Rank Warlords | 90
+5 - Legendary | Requires 5 x 5 Rank Warlords | 540
+6 | N/A - Max | N/A
+</TABLE>
+[Heading2] Warlord Reputation
+[] A warlord can have their Reputation level increased to a maximum of their current star rating. Reputation level is increased through the acquisition of Alignment Deed. If the character is of ‘Paragon’ alignment they require both Paragon Deeds and Generic Deeds increase in reputation. Deeds break down into three tiers, Minor, Major and Grand assigned to their respective alignments of Paragon, Neutral and Renegade all of which are acquired from their respective Hideouts.
+<TABLE>
+Warlord Rarity | Reputation Level | Required Alignment Deeds | Required Generic Deeds
+Common, Uncommon and Rare | 1 | 2 Minor | 3 Minor
+ | 2 | 3 Minor | 3 Minor
+ | 3 | 4 Minor | 4 Minor
+ | 4 | 5 Minor | 4 Minor
+ | 5 | 2 Major | 2 Major
+ | 6 | 3 Major | 3 Major
+Epic | 1 | 5 Minor | 5 Minor
+ | 2 | 7 Minor | 5 Minor
+ | 3 | 3 Major | 3 Major
+ | 4 | 3 Major | 4 Major
+ | 5 | 1 Grand | 2 Grand
+ | 6 | 3 Grand | 2 Grand
+Legendary | 1 | 1 Major | 1 Major
+ | 2 | 2 Major | 2 Major
+ | 3 | 3 Major | 2 Major
+ | 4 | 2 Grand | 2 Grand
+ | 5 | 4 Grand | 3 Grand
+ | 6 | 6 Grand | 4 Grand
+</TABLE>
+[Heading2] Warlord Level
+[] Warlords gain xp from all combat activities with the amount dependent on the content and outcome. Losses result in only a 20% reward of the total XP. The level scaling is a cumulative increase of 10% each level with the same rule for the increase of the starting level Rank.
+<TABLE>
+Rank | XP Rank 1 | XP Rank 2 | XP Rank 3 | XP Rank 4 | XP Rank 5 | XP Rank 6
+Total XP | 6790 | 28137 | 89922 | 267163 | 773916 | 2220905
+1 | 500 | 550 | 605 | 666 | 732 | 805
+2 | 550 | 605 | 666 | 732 | 805 | 886
+3 | 605 | 666 | 732 | 805 | 886 | 974
+4 | 666 | 732 | 805 | 886 | 974 | 1072
+5 | 732 | 805 | 886 | 974 | 1072 | 1179
+6 | 805 | 886 | 974 | 1072 | 1179 | 1297
+7 | 886 | 974 | 1072 | 1179 | 1297 | 1427
+8 | 974 | 1072 | 1179 | 1297 | 1427 | 1569
+9 | 1072 | 1179 | 1297 | 1427 | 1569 | 1726
+10 | Max | 1297 | 1427 | 1569 | 1726 | 1899
+11 |  | 1427 | 1569 | 1726 | 1899 | 2089
+12 |  | 1569 | 1726 | 1899 | 2089 | 2297
+13 |  | 1726 | 1899 | 2089 | 2297 | 2527
+14 |  | 1899 | 2089 | 2297 | 2527 | 2780
+15 |  | 2089 | 2297 | 2527 | 2780 | 3058
+16 |  | 2297 | 2527 | 2780 | 3058 | 3364
+17 |  | 2527 | 2780 | 3058 | 3364 | 3700
+18 |  | 2780 | 3058 | 3364 | 3700 | 4070
+19 |  | 3058 | 3364 | 3700 | 4070 | 4477
+20 |  | Max | 3700 | 4070 | 4477 | 4925
+21 |  |  | 4070 | 4477 | 4925 | 5417
+22 |  |  | 4477 | 4925 | 5417 | 5959
+23 |  |  | 4925 | 5417 | 5959 | 6555
+24 |  |  | 5417 | 5959 | 6555 | 7210
+25 |  |  | 5959 | 6555 | 7210 | 7932
+26 |  |  | 6555 | 7210 | 7932 | 8725
+27 |  |  | 7210 | 7932 | 8725 | 9597
+28 |  |  | 7932 | 8725 | 9597 | 10557
+29 |  |  | 8725 | 9597 | 10557 | 11613
+30 |  |  | Max | 10557 | 11613 | 12774
+31 |  |  |  | 11613 | 12774 | 14051
+32 |  |  |  | 12774 | 14051 | 15456
+33 |  |  |  | 14051 | 15456 | 17002
+34 |  |  |  | 15456 | 17002 | 18702
+35 |  |  |  | 17002 | 18702 | 20572
+36 |  |  |  | 18702 | 20572 | 22630
+37 |  |  |  | 20572 | 22630 | 24893
+38 |  |  |  | 22630 | 24893 | 27382
+39 |  |  |  | 24893 | 27382 | 30120
+40 |  |  |  | Max | 30120 | 33132
+41 |  |  |  |  | 33132 | 36445
+42 |  |  |  |  | 36445 | 40090
+43 |  |  |  |  | 40090 | 44099
+44 |  |  |  |  | 44099 | 48509
+45 |  |  |  |  | 48509 | 53359
+46 |  |  |  |  | 53359 | 58695
+47 |  |  |  |  | 58695 | 64565
+48 |  |  |  |  | 64565 | 71021
+49 |  |  |  |  | 71021 | 78124
+50 |  |  |  |  | Max | 85936
+51 |  |  |  |  |  | 94530
+52 |  |  |  |  |  | 103983
+53 |  |  |  |  |  | 114381
+54 |  |  |  |  |  | 125819
+55 |  |  |  |  |  | 138401
+56 |  |  |  |  |  | 152241
+57 |  |  |  |  |  | 167465
+58 |  |  |  |  |  | 184211
+59 |  |  |  |  |  | 202633
+60 |  |  |  |  |  | Max
+</TABLE>
+[Heading3] Leveling Methods
+[] Warlords can be leveled through two methods. The first is taking them into a battle and receiving exp upon each completion which costs energy and time. The second is to take them into the Dojo and use varying levels of ‘Metabolics’ which provide Exp. This Exp bonus is higher if you align the right metabolic with the Warlord’s reputation. 
+[Heading2] Warlord Neuronet (Skilltree)
+[] The Warlord’s neuronet is split into 7 ‘synapse layers’ acting as the progression levels and 3 ‘careers’ acting as the class trees; Assault, Protection and Control.
+[] Acquiring memory fragments will improve a warlord’s skill tree and skills increase in cost as the tree progresses. Fragments are split into tier 1, 2 and 3 with later stages of the associated hideout producing more rewards of all three types. Warlords can assign 4 full memory slots per Synapse layer with most skills allowing for two points each, however they may only select 1 of the 2 presented in each career.  This should allow for diverse skill selection to benefit the inherent abilities of the selected Warlord.
+<TABLE>
+Category | Skill Name | Skill Description | Tier | Cost Per Point
+Assault | Precision Strike | Increase Critical Chance by 5/10%. | 1 | 50 x Tier 1 MF
+ | Blitz | First attack deals 5/10% more damage. |  | 
+ | Munitions Dump | Increase Firepower by 5/10%. | 2 | 100 x Tier 1 MF
+ | Force Measure | Increase Critical Damage by 10/20%. |  | 
+ | Essence Shield | Gain OVERSHIELD equal to 5/10% Max HP on Kill. | 3 | 150 x Tier 2 MF
+ | Grand Challenge | Deal 5/10% more damage to a target with higher HP. |  | 
+ | Blood Frenzy | Damage increased by 3/6% on each kill to a max of 9/18%. | 4 | 200 x Tier 2 MF
+ | Accruing Assault | Each skill stacks 2/4% more damage on each use to a max of 6/12%. |  | 
+ | Open Opportunity | Increase damage by 5/10% against debuffed Warlords. | 5 | 250 x Tier 3 MF
+ | Berserker Rage | Increase Damage by 10/20% for each debuff on this Warlord to a max of 30/60%. |  | 
+ | Pummel | Deal 5/10% more damage to Warlords with 50% or less HP. | 6 | 300 x Tier 3 MF
+ | Siphon Essence | Heal by 10% of damage dealt when at 30% HP or less. |  | 
+ | Warlord's Wrath | 65% chance to deal extra damage equal to 50% of the total damage being dealt . | 7 | 350 x Tier 3 MF
+ | Fracture | 50% chance to ignore 30% Armour when attacking. |  | 
+Protection | Heavy Plating | Increase Armour by 5/10%. | 1 | 50 x Tier 1 MF
+ | Fitness Regime | Increase Health by 5/10%. |  | 
+ | Egocentric | Increase Healing and OVERSHIELD values received by this Warlord by 5/15%. | 2 | 100 x Tier 1 MF
+ | Altruistic | Increase Healing and OVERSHIELD values given by abilities of this Warlord by 5/15%. |  | 
+ | Guardian Angel | This Warlord absorbs 5/10% of damage dealt to all allied Warlords. | 3 | 150 x Tier 2 MF
+ | Prepared Defense | Decrease the damage of first to this Warlord by 10/20%. |  | 
+ | Desperate Parry | 15/25% Chance to COUNTERATTACK each time this Warlord is hit with a Critical. Once per enemy Warlord turn. | 4 | 200 x Tier 2 MF
+ | Field Surgeon | Healing abilities used by this Warlord are increased by 50/100%. |  | 
+ | Medical Learning | Heal this champ by 5/10% of any value an enemy Warlord heals by. | 5 | 250 x Tier 3 MF
+ | Galvanized Metals | Increase Armour by 10/20%. |  | 
+ | White Knight | 15/25% Chance to COUNTERATTACK each time an ally is hit with a Critical. Once per enemy Warlord turn. | 6 | 300 x Tier 3 MF
+ | Rapid Rescue | Gain 15/25% turn meter whenever an allied Warlord drops below 25% HP. |  | 
+ | Battlefield Foresight | Provide an OVERSHIELD to the gang at the beginning of combat equal to 5/10% of this Warlord Max HP. | 7 | 350 x Tier 3 MF
+ | Advanced Formations | Allied Warlords Gain 5/10% of this Warlords Max Armour. |  | 
+Control | Malware Packages | Increase Hacking by 5/15 | 1 | 50 x Tier 1 MF
+ | Real Time Monitoring | Increase Firewall by 10/20 |  | 
+ | Adaptive Networks | Heal by 5/10% Max HP whenever a debuff is blocked by this Warlord. | 2 | 100 x Tier 1 MF
+ | System Exploits | 20/40% chance to gain 10% Turn Meter when a debuff created by this Warlord expires. |  | 
+ | Syphon Intel | Heal by 5/10% Max HP whenever a debuff is blocked by an enemy Warlord. | 3 | 150 x Tier 2 MF
+ | Packet Filtering | 20/40% chance to gain 10% Turn Meter when a buff created by this Warlord expires. |  | 
+ | Adware | 35% chance that each debuff created will last an extra turn. | 4 | 200 x Tier 2 MF
+ | Personal Advertisements | 35% chance that each buff created will last an extra turn. |  | 
+ | DDos | Gain 10/20% chance to spread created debuff to all enemy Warlords. | 5 | 250 x Tier 3 MF
+ | Encrypt NeuroNet | Increase Firewall by 30/60. |  | 
+ | Pull Metadata | Gain 10/20% chance to spread created buff to all allied Warlords | 6 | 300 x Tier 3 MF
+ | Ransomware | Increase Hacking by 25/50 |  | 
+ | Bait and Switch | Gain a 15/25% chance to 'Deflect' an incoming debuff to the attaching Warlord. | 7 | 350 x Tier 3 MF
+ | Breach | Increase the chance to place all Debuffs by 5/10%. |  | 
+</TABLE>
+[Heading2] Warlord Abilities
+[] Abilities can be level through multiple methods. One method is the consuming of a duplicate character to level the skill by 3 levels. Alternatively abilities can be raised 1 level through the use of the appropriate ‘Stimm’. The rarity of the warlord will require a stimm of equal rarity or higher.  Warlords ability count will vary from warlord to warlord giving them individual requirements. This will include a mixture of active, gang and passive abilities. All abilities have their own unique damage multiplies to help balance their damage output with their scaled states. Ability Damage scales off of both the ability multiplier and the appropriate stat.
+[] Active Abilities to a max of 3: Require activation during the combat.
+[] Passive Abilities: Always passively active during the combat.
+[] Leader/Syndicate Abilities to a max of 1: Only active when leading the team. Provides a passive bonus.
+[] Reinforce Abilities to a max of 2: Will only trigger if the Character reinforces during Pit Royal content or at the start of a combat round.
+[] Ability Example
+[] Bob:
+[] Ab 1 - Attack 1 enemy Reduce their tm by 10% apply SPEED UP for one turn on self
+[] Ab 2 - Attack all enemies Reduce Enemy tm by 10% and a 50% chance to apply ARMOUR DOWN on all enemies for two turns. Cooldown of 3 turns. 
+[] -Link to a Table listing all Warlords and their abilities-
+[Heading2] Warlord Equipment
+[Heading3] Gear
+[] There will be six slots per warlord; Weapon, Boots, Legs, Chest, Helmet and Gloves. These are accessible with any level warlord.  
+[Heading3] Implants
+[] There are also three Implant slots; Limbs, Organs, Skeleton. These will be unlocked based on your Reputation rank. Unlocking Limbs at rank 2, Organs at rank 4 and Skeleton at rank 6.
+[Heading3] Neons
+[] Neons are additional upgrade materials that attach to equipment, improving a substat by its corresponding designation. Neons can only be applied to Equipment of the same or higher rank.  Neons drop from ‘Syndicate Wars’ and range from rank 1-6 and cover all substats except Critical Chance.
+[] Example: A Rank 5 Speed Neon will increase a speed substat of an equipment piece ranked 5 or 6. It cannot be applied to Equipment without a speed substat or or rank =<4
+[Heading3] Equipment Leveling
+[] All equipment contains a primary stat that increases with each level and sub stats that are either awarded or increased at 5 level intervals. Credits can be used to level your equipment  from 0 - 20 gaining and additional substat roll every 5 levels. Equipment is also inherently ranked by quality when acquired ranging from ranks 1 - 6. Equipment rank does not change once acquired.
+<TABLE>
+Equipment Rarity | Number of Substats Already Rolled
+Common | 0
+Uncommon | 1
+Rare | 2
+Epic | 3
+Legendary | 4
+</TABLE>
+[] Primary stats;
+<TABLE>
+Equipment Piece | Weapon | Helmet | Chest | Gloves | Legs | Boots | Limbs | Organs | Skeleton
+Health | Primary Sub | Sub | Primary Sub | Sub | Primary Sub | Primary Sub | Primary Sub | Primary Sub | Primary Sub
+Health % | Primary Sub | Sub | Primary Sub | Sub | Sub | Primary Sub | Sub | Sub | Sub
+Armour | Primary Sub | Primary Sub | Primary Sub | Sub | Sub | Primary Sub | Primary Sub | Primary Sub | Primary Sub
+Armour % | Primary Sub | Sub | Primary Sub | Sub | Sub | Primary Sub | Sub | Sub | Sub
+Firepower | Primary Sub | Sub | Primary Sub | Primary Sub | Sub | Primary Sub | Primary Sub | Primary Sub | Primary Sub
+Firepower % | Primary Sub | Sub | Primary Sub | Sub | Sub | Primary Sub | Sub | Sub | Sub
+Speed | Sub | Sub | Sub | Sub | Sub | Primary Sub | Sub | N/A | Sub
+Crit Chance % | Primary Sub | Sub | Sub | Sub | Sub | Sub | N/A | N/A | N/A
+Crit Damage % | Primary Sub | Sub | Sub | Sub | Sub | Sub | Sub | Primary Sub | Sub
+Hacking | Sub | Sub | Primary Sub | Sub | Sub | Sub | Primary Sub | Sub | Sub
+Firewall | Sub | Sub | Primary Sub | Sub | Sub | Sub | Sub | Sub | Primary Sub
+</TABLE>
+<TABLE>
+Equipment Primaries Table
+Primary | Rank
+ | 1 | 2 | 3 | 4 | 5 | 6
+Health | 250 | 275 | 300 | 350 | 450 | 600
+Health % | 1% | 2% | 4% | 6% | 8% | 10%
+Armour | 6 | 8 | 12 | 18 | 25 | 35
+Armour % | 1% | 2% | 4% | 6% | 8% | 10%
+Firepower | 6 | 8 | 12 | 18 | 25 | 35
+Firepower % | 1% | 2% | 4% | 6% | 8% | 10%
+Crit Chance % | 1% | 2% | 4% | 6% | 8% | 10%
+Crit Damage % | 1% | 2% | 4% | 6% | 8% | 10%
+Hacking | 1 | 3 | 5 | 8 | 12 | 17
+Firewall | 1 | 3 | 5 | 8 | 12 | 17
+Speed | 1 | 2 | 3 | 4 | 5 | 6
+</TABLE>
+<TABLE>
+Equipment Substats Table
+Substat | Rank
+ | 1 | 2 | 3 | 4 | 5 | 6
+Health | 75 | 100 | 150 | 200 | 300 | 500
+Health % | 1% | 2% | 3% | 5% | 7% | 10%
+Armour | 10 | 12 | 16 | 20 | 24 | 30
+Armour % | 1% | 2% | 3% | 5% | 7% | 10%
+Firepower | 10 | 12 | 16 | 20 | 24 | 30
+Firepower % | 1% | 2% | 3% | 5% | 7% | 10%
+Crit Chance % | 1% | 2% | 3% | 5% | 7% | 10%
+Crit Damage % | 1% | 2% | 3% | 5% | 7% | 10%
+Hacking | 10 | 12 | 16 | 20 | 24 | 30
+Firewall | 10 | 12 | 16 | 20 | 24 | 30
+Speed | 1 | 2 | 3 | 4 | 5 | 6
+</TABLE>
+[Heading3] Equipment Sets
+[] This is a list of all the Equipment sets, their various effects and the required amount of gear slots to activate the effect.
+<TABLE>
+Set Name | Full Set Effect | Activation Amount | Set Drop Locations
+HP | Increase Base HP by 20% | 2 Slots | Campaign Den 1 Hideout: Vultures
+Armour | Increase Base Armour by 20% | 2 Slots | Campaign Den 2 Hideout: Teratek Cybernetics
+Firepower | Increase Base Firepower by 20% | 2 Slots | Campaign Den 3 Hideout: Cardinal Trolls
+Speed | Increase Base Speed by 10% | 2 Slots | Campaign Den 4 Hideout: Quantum Vikings
+Hacking | Increase Base Hacking by 20 | 2 Slots | Campaign Den 6 Hideout: Teratek Cybernetics
+Firewall | Increase Base Firewall by 20 | 2 Slots | Campaign Den 7 Hideout: Quantum Vikings
+Critical Chance | Increase Critical Chance by 15% | 2 Slots | Campaign Den 8 Hideout: Cardinal Trolls
+Critical Damage | Increase Critical Damage by 30% | 2 Slots | Campaign Den 9 Hideout: Vultures
+Energy Drain | Heal by 30% of Damage Dealt | 4 Slots | Hideout: Teratek Cybernetics
+Pain Mirror | reflect 30% of damage back at the attacking player | 4 Slots | Hideout: Vultures
+Jamming | Blocks debuffs on warlord for 2 turns | 4 Slots | Hideout: Quantum Vikings
+Strike Back | 50% chance to counter when hit | 4 Slots | Hideout: Cardinal Trolls
+Plague | 40% Chance to apply Poison Debuff | 4 Slots | Hideout: Vultures
+Sanguine | 40% Chance to apply Bleed Debuff | 4 Slots | Hideout: Quantum Vikings
+Discharge | 30% Chance to apply Shock Debuff | 4 Slots | Hideout: Vultures
+Truma | 20% Chance to apply Stun Debuff | 4 Slots | Hideout: Quantum Vikings
+Safeguard | 3 Turn Overshield equal to 30% of this character's HP at the start of the round applied to the team. | 4 Slots | Hideout: Teratek Cybernetics
+Goad | 20% Chance to Apply Enraged | 4 Slots | Hideout: Cardinal Trolls
+Stitcher | 10% heal to each allied Warlord based on this Warlord’s HP | 4 Slots | Campaign Den 5 Hideout: Teratek Cybernetics
+Ripper | Ignore 25% of Armour | 4 Slots | Hideout: Cardinal Trolls
+</TABLE>
+[Heading3] Equipment Acquisition
+[] Equipment’s main avenue of acquisition will be through the various Hideouts, each rendering up a different selection available to farm, though these will not be the exclusive locations. Campaign will also drop selected sets at a lower quality and rank, the game game shops will sell it for Credits and Premium currency and it will be rewarded for rank standing in PVP content.
+[Heading2] Warlord Class
+[] All Warlords split into classes with each representing their general roles and the stats they most care about being increased. Though the classes have a general desired role they are not limited to it. The control of the warlord’s balance will be strongly rooted in their base stats.  I.E. A ‘Armour’ Warlord will generally have a decent defensive stats but may still hit hard with a high ability multiplier. A Warlord with 1000 base armour receives a bigger scaling from equipment than a warlord with 900 armour.
+<TABLE>
+Class | Role
+Armour | Tank: Dmg is scaled with the Armour stat. Focuses on taking punishment.
+Firepower | DPS: High multipliers on abilities combined with damage being scaled off of the Firepower stat. Focuses on hitting the hardest.
+Modder | Buffer: Dmg scaled with the Health stat. Focuses on a supporting role, increasing speeds and team strengths.
+Hacker | Debuffer:  Dmg is scaled with the Hacking stat. Focuses on a debilitating role of hindering the other team often placing various debuffs.
+</TABLE>
+[Heading2] Warlord Syndicate
+[] Each warlord has a ‘Syndicate’ tag attached to them to represent the group that they derive from. Some Warlords will use abilities that call on the tag to work. I.E ‘This warlord attacks and calls two other  ‘X Syndicate’ warlords to attack the same target’. If the team does not contain other ‘X Syndicate’ tagged warlords, no additional attacks will be called. 
+<TABLE>
+Syndicate Name | Description | Gang Sign
+Cardinal Trolls | A rough and ready slum syndicate who is in it just for fun. Manic and Ferocious  themes. | Papal Tiara with a Troll Face
+Vultures | Lower slum syndicate who preys on the augmented to steal the augments by force. Dark and gruesome themes. | Cybernetic Talon
+Teratek Cybernetics | A corporation focused on the manufacturing and selling of augments. Suits and cyborgs theme. | Cybernetic Illuminati Eye
+Quantum Vikings | A stimm junkie syndicate who have based themselves on their neo misconception of vikings. Vikings and muscles theme. | Helmet with Lightning Beard
+Neo Shogunate | Cyber Ninjas. | Samurai Helmet
+Gene Spliced | Anthropomorphic Hybrids. | Ramshead
+Frontier Traders | Corporation of Space Pirates. | Cyborg Skull and Crossbones
+</TABLE>
+[Heading2] Warlord Statistics
+[] The Warlord’s Base stats are the static starting values each individual Warlord has to help control their scaling as they level and help to keep them focused on the correct area for their class.
+<TABLE>
+All Major Stat | Affects | Scales?
+Health | Max health pool Increases Dmg Output on Modders | Scales
+Armour | Reduce Dmg % and Increase Armour Warlords Dmg Output | Scales
+Firepower | Increase Dmg Output on Firepower Warlords | Scales
+Speed | Rate the Warlords Turn Meter increases. | 90-110
+Critical Chance | Critical hit chance: Cap 100%, Base 10% | 10%
+Critical Damage | Critical hit damage multiplier: Base 50% | 50%
+Hacking | Chance increase to land debuffs (affect opponent) | 0
+Firewall | Chance increase to resist debuffs: Base 30 | 30
+</TABLE>
+<TABLE>
+Warlord Base Stat Starting Ranges
+Class | Rarity | HP Starting Range: 800-1400 | Armour Starting Range: 60-80 | Firepower Starting Range: 50-80
+ |  |  |  | 
+ |  |  |  | 
+ |  |  |  | 
+Armour | Common | 800-1200 | 60-75 | 60-70
+ | Uncommon | 800-1200 | 60-75 | 60-70
+ | Rare | 1100-1400 | 60-80 | 60-75
+ | Epic | 1100-1400 | 60-80 | 60-75
+ | Legendary | 1100-1400 | 70-80 | 60-75
+Firepower | Common | 800-1200 | 60-70 | 60-75
+ | Uncommon | 800-1200 | 60-70 | 60-75
+ | Rare | 800-1300 | 60-75 | 60-80
+ | Epic | 800-1400 | 60-75 | 60-80
+ | Legendary | 800-1400 | 60-75 | 70-80
+Modder | Common | 900-1200 | 60-70 | 60-65
+ | Uncommon | 900-1200 | 60-70 | 60-65
+ | Rare | 900-1300 | 60-75 | 60-70
+ | Epic | 1100-1400 | 60-75 | 60-70
+ | Legendary | 1100-1400 | 60-75 | 60-70
+Hacker | Common | 900-1200 | 60-70 | 60-70
+ | Uncommon | 900-1200 | 60-70 | 60-70
+ | Rare | 1000-1300 | 60-75 | 60-75
+ | Epic | 1100-1400 | 60-75 | 60-75
+ | Legendary | 1100-1400 | 60-75 | 60-75
+</TABLE>
+[] As Each Warlord levels, Ranks and Reps, their HP, Armour and Firepower will scale accordingly. The table below should accurately detail how each Class and Rarity of Warlord scales during this process.
+<TABLE>
+Warlord Level Rank and Reputation Scaling
+Class | Rarity | Scaled Per Level Total % (%/Levels) Range = 70-80% | Scaled Per Rank Total Percentage Range = 45-55% | Scaled Per Reputation Range 1-3% Per Increase
+ |  |  |  | 
+ |  |  |  | 
+ |  | HP | Armour | Firepower | HP | Armour | Firepower | 
+Armour | Common | 70% | 75% | 70% | 45% | 55% | 45% | 1%
+ | Uncommon | 70% | 75% | 70% | 45% | 55% | 45% | 1%
+ | Rare | 70% | 80% | 70% | 45% | 55% | 45% | 2%
+ | Epic | 75% | 80% | 70% | 50% | 55% | 45% | 2%
+ | Legendary | 75% | 80% | 70% | 50% | 55% | 45% | 3%
+Firepower | Common | 70% | 70% | 75% | 45% | 45% | 55% | 1%
+ | Uncommon | 70% | 70% | 75% | 45% | 45% | 55% | 1%
+ | Rare | 70% | 70% | 80% | 45% | 45% | 55% | 2%
+ | Epic | 70% | 70% | 80% | 45% | 45% | 55% | 2%
+ | Legendary | 70% | 70% | 80% | 45% | 45% | 55% | 3%
+Modder | Common | 75% | 70% | 70% | 55% | 45% | 45% | 1%
+ | Uncommon | 75% | 70% | 70% | 55% | 45% | 45% | 1%
+ | Rare | 80% | 70% | 70% | 55% | 45% | 45% | 2%
+ | Epic | 80% | 75% | 70% | 55% | 50% | 45% | 2%
+ | Legendary | 80% | 75% | 70% | 55% | 50% | 45% | 3%
+Hacker | Common | 70% | 70% | 70% | 45% | 45% | 45% | 1%
+ | Uncommon | 70% | 70% | 70% | 45% | 45% | 45% | 1%
+ | Rare | 70% | 70% | 70% | 45% | 45% | 45% | 2%
+ | Epic | 75% | 70% | 75% | 50% | 45% | 50% | 2%
+ | Legendary | 75% | 70% | 75% | 50% | 45% | 50% | 3%
+</TABLE>
+[Heading1] Combat
+[Heading2] Flow of Combat
+[] Start fight button. Match loads to show both teams ready and facing eachother. 
+[] All turn meters start. This is almost instantaneous stopping when the first warlord gains enough turn meter to fill their bar entirely.
+[] Take the warlords turn by first selecting which ability to use.
+[] Then select the target to use the ability on. Targets depend on the ability being used.
+[] Ability activates and applies all relative effects of the ability; turn meter loss or gain, dmg to targets, buff/debuffs etc.
+[] Trigger all relevant passive effects due to events and resolve their effects. Most passives should not then trigger additional passives.
+[] With the turn over, the turn meters will now begin again from their last position with the next Warlord to reach full gaining their turn.
+[] Repeat the process until all members of one team are dead. 
+[] Deploy win or loss screen with relevant outcomes and award player rewards then defaulting back to the fight select screen.
+[Heading2] Squad Composition
+[Heading2] Speed Equation 
+[] UMG: convert the speed value to a % to fill the bar. First bar filled, goes first. All Speed bars pause during a turn taking place. pause them for extra turns. 
+[] how to work out who goes first
+[] Possible Unreal reference
+[Heading2] Total Damage Equation
+[] The total damage equation should factor in all forms of damage multipliers making a reliance on certain balance control values. A Warlord ability multiplier will be static and will aid in control by being the first number the total stats are multiplied by. 
+[] Total Damage =  Total Base Stats * Warlord Ability Multiplier * Ability Level Multipliers * Crit Damage Multiplier *  Neuronet Bonuses * Currently Applied Buffs * Passive Effects
+[] The damage mitigation percentage is taken from the total damage at the end to establish a final damage number on the attacked target.
+[Heading2] Total Damage Mitigation Equation
+[] The total damage mitigation will work out total armour value after all buffs and multipliers are applied, once again keeping a control on warlord balance through a warlord’s base stat values. This will be converted to a mitigation percentage which will then be applied to the damage being dealt. 
+[] Damage Mitigation = Total Base Armour * Neuronet Bonuses * Currently Applied Buffs * Passive Bonuses = Total Damage Mitigation Percentage.
+[] Finally the Armour penetration values is taken from the Total Damage Mitigation Percentage 
+[] <IMG x1> 
+[Heading3] Example Equation
+[] A Warlord has a total base stat of 1000 Firepowers, Ability multiplier of 2.0, Ability Level Multiplier of 10%, 50% Critical Damage, Neuronet Bonuses of 15%, 30% Firepower Buff Currently Applied, A passive of 10% firepower and a 5% armour penetration.
+[] 1000*2.0*1.1*1.5*1.15*1.3*1.1 = 5437 Total Damage
+[] A Warlord has a total base stat 1000 Armour, Neuro Net Bonus of 20% Armour, 15% Armour Buff Currently Applied, and a 10% Passive. 
+[] 1000*1.2*1.15*1.1 = 1518 Armour = 50% Damage Mitigation
+[] Final Damage is calculated using one against the other whilst taking into account Armour Penetration.
+[] 5437 - 45% (50%Armour - 5% Armour Penetration) = 2990 Damage dealt to the Warlord’s HealthPool.
+[Heading2] Hacking Vs Firewall
+[] Whenever a warlord uses a skill that attempts to debuff or manipulate the turnmeter of an enemy Warlord a Hacking vs Firewall check will be made to assess if the buff will land.
+[] Debuffing: Check if Debuff % is successful > Check if Attacker’s Hacking is Higher than targets Firewall > Check for Blocking Debuffs Status > Check if Target already has the Relevant Debuff > Can Debuff be Refreshed/Stacked > Place/Replace Relevant Debuff for Relevant Turns.
+[] Buffing: Check if Debuff % is successful > Check for Blocking Buffs Status > Check if Target already has the Relevant Debuff > Can Buff be Refreshed > Place/Replace Relevant Buff for Relevant Turns.
+[Heading3] Buff and Positive Effects List
+<TABLE>
+Buff/Effect | Effect | Value Small | Value Large
+Speed Up | Increase speed value by x% | 15 | 30
+Armour Up | Increase current armour value by x % | 25 | 50
+Firepower Up | Increase current firepower by x % | 25 | 50
+Hacking Up | Increase current hacking by x | 40 | 70
+Firewall Up | Increase current firewall by x | 40 | 70
+Crit Chance Up | Increase current Crit Chance by x % | 15 | 30
+Crit Damage Up | Increase current Crit Damage by x % | 25 | 50
+Block Debuffs | Block All Debuff Attempts | N/A | N/A
+Continuous Heal | Heal at start of each turn by x% | 10 | 20
+Bolster | Solid Dmg mitigation by x% | 15 | 25
+Reflect | Reflect x% of dmg back to the attack | 15 | 30
+Overshield | Place x of bonus shield (HP) on character | 10 | 30
+Vampire | Increase current HP based on x% of damage dealt | 15 | 30
+Counter | x% to counter when attacked | 50 | 100
+Cooldown | Decreases the cooldown turns on skills. | Decrease | Reset
+Increase Turn Meter | x% Increase to turn meter bar. |  | 
+</TABLE>
+[Heading3] Debuff and Negative EffectsList
+<TABLE>
+Debuff/Effect | Effect | Value Small | Value Large
+Speed Down | Decrease speed value by x% | 15 | 30
+Armour Down | Decrease current armour value by x % | 25 | 50
+Firepower Down | Decrease current firepower by x % | 25 | 50
+Firewall Down | Decrease current firewall by x (Shouldnt use HackVSFirewall Check) | 40 | 70
+Hacking Down | Decrease current hacking by x | 40 | 70
+Crit Chance Down | Decrease current Crit Chance by x % | 15 | 30
+Crit Damage Down | Decrease current Crit Damage by x % | 25 | 50
+Poison | Deal x% hp as dmg start of turn | 2.5 | 5
+Bleed | Deal x% of dmg dealt at the start of turn | 2.5 | 5
+Shock | Chance The character misses their next turn | 25% | 50%
+Stun | Character Misses their next turn | N/A | N/A
+Break | x% Dmg increase towards this warlord | 15 | 25
+Mark Target | next hit on target deal times x damage | 2 | 3
+Enraged | Attacks with only their basic attack to the Warlord that Enraged them. | N/A | N/A
+Block Buffs | Stops all buffs from landing. |  | 
+Cooldown Increase | Puts all skill cooldowns up. | Increase | Full Cooldown
+Reduce Turn Meter | x% decrease turn meter bar. |  | 
+Heal Block | Stops all healing effects. |  | 
+Stupefy | 35% to miss next turn + Reduces Hacking by 50 |  | 
+</TABLE>
+[Heading2] Winning Process 
+[] When you win and combat is over, the player will be shown a winning screen that shall contain any XP gained and any other rewards given.
+[] Screen information should include; Content Name, Content Difficulty, Stage Number, Victory Header, Player XP Gained, Item Rewards/Drops, Warlords Used, Warlord Contributions (Dmg Dealt, Dmg Taken, Dmg Healed), Warlord XP Gained, Back to Upper Menu Button, Continue To Next Stage Button, Replay Button.
+[Heading2] Losing Process
+[] When you lose and combat is over, the player will be shown a losing screen that shall contain 20% of the amount of XP you would get from winning. 
+[] Screen information should include; Content Name, Content Difficulty, Stage Number, Defeat Header, Player XP Gained, Warlords Used, Warlord Contributions (Dmg Dealt, Dmg Taken, Dmg Healed), Warlord XP Gained, Back to Upper Menu Button, Replay Button.
+[Heading1] Levels
+[Heading2] City Centre
+[] The City Centre is the central screen or Hub of the game where all other locations and menus sprout from. Below is a flow chart of the main layout and how menus will connect together in Neon Warlords.
+[] <IMG x1> 
+[Heading2] Campaign
+[] The full campaign in Neon Warlords is split into 10 Locations each containing 7 Stages. Stages 1 - 6 will each reward some credits, xp, chance to drop a Warlord of Rarity common-rare and equipment of a specified set, Other than Location 10 which will rotate its reward set daily. Each stage contains requirements to be completed to 3 Chevrons which as accumulated throughout the campaign will result in rewards. Once the first campaign is completed, a new difficulty will open up, beginning the process again with a total of 3 difficulties overall. The XP gained from each battle should divide equally amongst the 5 Warlords used.
+[Heading3] Campaign Locations
+<TABLE>
+Campaign Reward Table
+Location | Difficulty | Equipment Set
+ | Street Punk | Mob Boss | Warlord | 
+Slums | XP | Credits | XP | Credits | XP | Credits | Health
+Stage 1:1 | 2,000 | 1000 | 7,000 | 9,000 | 12,000 | 11,000 | Weapon
+Stage 1:2 | 2,000 | 1100 | 7,000 | 9,100 | 12,000 | 11,100 | Helmet
+Stage 1:3 | 2,000 | 1200 | 7,000 | 9,200 | 12,000 | 11,200 | Chest
+Stage 1:4 | 2,000 | 1300 | 7,000 | 9,300 | 12,000 | 11,300 | Gloves
+Stage 1:5 | 2,000 | 1400 | 7,000 | 9,400 | 12,000 | 11,400 | Legs
+Stage 1:6 | 2,000 | 1500 | 7,000 | 9,500 | 12,000 | 11,500 | Boots
+Stage 1:7 | 2,000 | 1600 | 7,000 | 9,600 | 12,000 | 11,600 | Random Piece
+Sewers | EXP | Credits | EXP | Credits | EXP | Credits | Armour
+Stage 2:1 | 2,500 | 1,600 | 7,500 | 9,600 | 12,500 | 11,600 | Weapon
+Stage 2:2 | 2,500 | 1,700 | 7,500 | 9,700 | 12,500 | 11,700 | Helmet
+Stage 2:3 | 2,500 | 1,800 | 7,500 | 9,800 | 12,500 | 11,800 | Chest
+Stage 2:4 | 2,500 | 1,900 | 7,500 | 9,900 | 12,500 | 11,900 | Gloves
+Stage 2:5 | 2,500 | 2,000 | 7,500 | 10,000 | 12,500 | 12,000 | Legs
+Stage 2:6 | 2,500 | 2,100 | 7,500 | 10,100 | 12,500 | 12,100 | Boots
+Stage 2:7 | 2,500 | 2,200 | 7,500 | 10,200 | 12,500 | 12,200 | Random Piece
+Shipyard | XP | Credits | XP | Credits | XP | Credits | Firepower
+Stage 3:1 | 3,000 | 2,200 | 8,000 | 10,200 | 13,000 | 12,200 | Weapon
+Stage 3:2 | 3,000 | 2,300 | 8,000 | 10,300 | 13,000 | 12,300 | Helmet
+Stage 3:3 | 3,000 | 2,400 | 8,000 | 10,400 | 13,000 | 12,400 | Chest
+Stage 3:4 | 3,000 | 2,500 | 8,000 | 10,500 | 13,000 | 12,500 | Gloves
+Stage 3:5 | 3,000 | 2,600 | 8,000 | 10,600 | 13,000 | 12,600 | Legs
+Stage 3:6 | 3,000 | 2,700 | 8,000 | 10,700 | 13,000 | 12,700 | Boots
+Stage 3:7 | 3,000 | 2,800 | 8,000 | 10,800 | 13,000 | 12,800 | Random Piece
+Industrial | XP | Credits | XP | Credits | XP | Credits | Speed
+Stage 4:1 | 3,500 | 2,800 | 8,500 | 10,800 | 14,000 | 12,800 | Weapon
+Stage 4:2 | 3,500 | 2,900 | 8,500 | 10,900 | 14,000 | 12,900 | Helmet
+Stage 4:3 | 3,500 | 3,000 | 8,500 | 11,000 | 14,000 | 13,000 | Chest
+Stage 4:4 | 3,500 | 3,100 | 8,500 | 11,100 | 14,000 | 13,100 | Gloves
+Stage 4:5 | 3,500 | 3,200 | 8,500 | 11,200 | 14,000 | 13,200 | Legs
+Stage 4:6 | 3,500 | 3,300 | 8,500 | 11,300 | 14,000 | 13,300 | Boots
+Stage 4:7 | 3,500 | 3,400 | 8,500 | 11,400 | 14,000 | 13,400 | Random Piece
+Chemical Plant | XP | Credits | XP | Credits | XP | Credits | Stitcher
+Stage 5:1 | 4,000 | 3,400 | 9,000 | 11,400 | 14,500 | 13,400 | Weapon
+Stage 5:2 | 4,000 | 3,500 | 9,000 | 11,500 | 14,500 | 13,500 | Helmet
+Stage 5:3 | 4,000 | 3,600 | 9,000 | 11,600 | 14,500 | 13,600 | Chest
+Stage 5:4 | 4,000 | 3,700 | 9,000 | 11,700 | 14,500 | 13,700 | Gloves
+Stage 5:5 | 4,000 | 3,800 | 9,000 | 11,800 | 14,500 | 13,800 | Legs
+Stage 5:6 | 4,000 | 3,900 | 9,000 | 11,900 | 14,500 | 13,900 | Boots
+Stage 5:7 | 4,000 | 4,000 | 9,000 | 12,000 | 14,500 | 14,000 | Random Piece
+Mall | XP | Credits | XP | Credits | XP | Credits | Hacking
+Stage 6:1 | 4,500 | 4,000 | 9,500 | 12,000 | 15,000 | 14,000 | Weapon
+Stage 6:2 | 4,500 | 4,100 | 9,500 | 12,100 | 15,000 | 14,100 | Helmet
+Stage 6:3 | 4,500 | 4,200 | 9,500 | 12,200 | 15,000 | 14,200 | Chest
+Stage 6:4 | 4,500 | 4,300 | 9,500 | 12,300 | 15,000 | 14,300 | Gloves
+Stage 6:5 | 4,500 | 4,400 | 9,500 | 12,400 | 15,000 | 14,400 | Legs
+Stage 6:6 | 4,500 | 4,500 | 9,500 | 12,500 | 15,000 | 14,500 | Boots
+Stage 6:7 | 4,500 | 4,600 | 9,500 | 12,600 | 15,000 | 14,600 | Random Piece
+Sky Street | XP | Silver | XP | Credits | XP | Credits | Firewall
+Stage 7:1 | 5,000 | 4,600 | 10,000 | 12,600 | 15,500 | 14,600 | Weapon
+Stage 7:2 | 5,000 | 4,700 | 10,000 | 12,700 | 15,500 | 14,700 | Helmet
+Stage 7:3 | 5,000 | 4,800 | 10,000 | 12,800 | 15,500 | 14,800 | Chest
+Stage 7:4 | 5,000 | 4,900 | 10,000 | 12,900 | 15,500 | 14,900 | Gloves
+Stage 7:5 | 5,000 | 5,000 | 10,000 | 13,000 | 15,500 | 15,000 | Legs
+Stage 7:6 | 5,000 | 5,100 | 10,000 | 13,100 | 15,500 | 15,100 | Boots
+Stage 7:7 | 5,000 | 5,200 | 10,000 | 13,200 | 15,500 | 15,200 | Random Piece
+Megablock | XP | Credits | XP | Credits | XP | Credits | Crit Chance
+Stage 8:1 | 5,500 | 5,200 | 10,500 | 13,200 | 16,000 | 15,200 | Weapon
+Stage 8:2 | 5,500 | 5,300 | 10,500 | 13,300 | 16,000 | 15,300 | Helmet
+Stage 8:3 | 5,500 | 5,400 | 10,500 | 13,400 | 16,000 | 15,400 | Chest
+Stage 8:4 | 5,500 | 5,500 | 10,500 | 13,500 | 16,000 | 15,500 | Gloves
+Stage 8:5 | 5,500 | 5,600 | 10,500 | 13,600 | 16,000 | 15,600 | Legs
+Stage 8:6 | 5,500 | 5,700 | 10,500 | 13,700 | 16,000 | 15,700 | Boots
+Stage 8:7 | 5,500 | 5,800 | 10,500 | 13,800 | 16,000 | 15,800 | Random Piece
+Downtown | XP | Credits | XP | Credits | XP | Credits | Crit Damage
+Stage 9:1 | 6,000 | 5,800 | 11,000 | 13,800 | 16,500 | 15,800 | Weapon
+Stage 9:2 | 6,000 | 5,900 | 11,000 | 13,900 | 16,500 | 15,900 | Helmet
+Stage 9:3 | 6,000 | 6,000 | 11,000 | 14,000 | 16,500 | 16,000 | Chest
+Stage 9:4 | 6,000 | 6,100 | 11,000 | 14,100 | 16,500 | 16,100 | Gloves
+Stage 9:5 | 6,000 | 6,200 | 11,000 | 14,200 | 16,500 | 16,200 | Legs
+Stage 9:6 | 6,000 | 6,300 | 11,000 | 14,300 | 16,500 | 16,300 | Boots
+Stage 9:7 | 6,000 | 6,400 | 11,000 | 14,400 | 16,500 | 16,400 | Random Piece
+Corpo Tower | XP | Credits | XP | Credits | XP | Credits | Rotates Daily
+Stage 10:1 | 6,500 | 6,400 | 11,500 | 14,400 | 17,000 | 16,400 | Weapon
+Stage 10:2 | 6,500 | 6,500 | 11,500 | 14,500 | 17,000 | 16,500 | Helmet
+Stage 10:3 | 6,500 | 6,600 | 11,500 | 14,600 | 17,000 | 16,600 | Chest
+Stage 10:4 | 6,500 | 6,700 | 11,500 | 14,700 | 17,000 | 16,700 | Gloves
+Stage 10:5 | 6,500 | 6,800 | 11,500 | 14,800 | 17,000 | 16,800 | Legs
+Stage 10:6 | 6,500 | 6,900 | 11,500 | 14,900 | 17,000 | 16,900 | Boots
+Stage 10:7 | 6,500 | 7,000 | 11,500 | 15,000 | 17,000 | 17,000 | Random Piece
+</TABLE>
+<TABLE>
+Campaign Additional Drops Per Stage
+Difficulty | Drop | Drop Chance % | Energy Cost
+Street Punk | Common Warlord | 15 | 4 Energy  Per Battle
+ | Uncommon Warlord | 5 | 
+ | Equipment | 75 | 
+ | Uncommon Contract | 5 | 
+Mob Boss | Uncommon Warlord | 17.5 | 6 Energy  Per Battle
+ | Rare Warlord | 2.5 | 
+ | Equipment | 75 | 
+ | 2x Uncommon Contract | 5 | 
+Warlord | Uncommon Warlord | 15 | 8 Energy  Per Battle
+ | Rare Warlord | 5 | 
+ | Equipment | 75 | 
+ | 3x Uncommon Contract | 5 | 
+</TABLE>
+<TABLE>
+Campaign Progression Rewards
+Chevrons | Difficulty
+ | Street Punk | Mob Boss | Warlord
+15 | 5x Uncommon Contract | 1x Rare Contract | 2x Rare Contract
+30 | 50,000 Credits | 100,000 Credits | 200,000 Credits
+45 | 1x Energy Battery | 2x Energy Battery | 3x Energy Battery
+60 | 50 Trinium | 100 Trinium | 150 Trinium
+75 | Gear Set: Rank 4 Health | Gear Set: Rank 4 Speed | Gear Set: Rank 4 Crit Chance
+90 | 1x Rank 3 Firmware | 2x Rank 3 Firmware | 1x Rank 4 Firmware
+105 | 100,000 Credits | 150,000 Credits | 250,000 Credits
+120 | 1x Rare Contract | 2x Rare Contract | 3x Rare Contract
+135 | Gear Set: Rank 4 Armour | Gear Set: Rank 4 Hacking | Gear Set: Rank 4 Crit Damage
+150 | 2x Rank 3 Firmware | 1x Rank 4 Firmware | 1x Rank 5 Firmware
+165 | 80 Trinium | 120 Trinium | 180 Trinium
+180 | Gear Set: Rank 4 Firepower | Gear Set: Rank 4 Firewall | Gear Set: Rank 4 Stitcher
+195 | 2x Energy Battery | 3x Energy Battery | 4x Energy Battery
+210 | 1x Epic Contract | 1x Epic Contract | 1x Epic Contract
+</TABLE>
+[Heading3] Campaign Enemy Levels
+[] As players progress through the main Campaign, the enemy should scale in considerable difficulty demanding that the players deploy a decent amount of resources to create any ‘Campaign Farmers’ who would be used to leveling lower level characters.
+<TABLE>
+Campaign Enemy Warlord Levels
+Den Name and Stage | Difficulty
+ | Street Punk | Mob Boss | Warlord
+Slums | Level | Rank | Rep | Level | Rank | Rep | Level | Rank | Rep
+Stage 1:1 | 1 | 1 | 0 | 50 | 5 | 1 | 60 | 6 | 5
+Stage 1:2 | 2 | 1 | 0 | 50 | 5 | 1 | 60 | 6 | 5
+Stage 1:3 | 3 | 1 | 0 | 50 | 5 | 1 | 50 | 6 | 6
+Stage 1:4 | 4 | 1 | 0 | 50 | 5 | 1 | 51 | 6 | 6
+Stage 1:5 | 5 | 2 | 0 | 50 | 5 | 1 | 52 | 6 | 6
+Stage 1:6 | 6 | 2 | 0 | 50 | 5 | 1 | 53 | 6 | 6
+Stage 1:7 | 10 | 2 | 0 | 30 | 6 | 1 | 65 | 6 | 6
+Sewers |  |  |  |  |  |  |  |  | 
+Stage 2:1 | 7 | 2 | 0 | 50 | 5 | 2 | 54 | 6 | 6
+Stage 2:2 | 8 | 2 | 0 | 50 | 5 | 2 | 55 | 6 | 6
+Stage 2:3 | 9 | 2 | 0 | 50 | 5 | 2 | 56 | 6 | 6
+Stage 2:4 | 10 | 2 | 0 | 50 | 5 | 2 | 57 | 6 | 6
+Stage 2:5 | 11 | 2 | 0 | 50 | 5 | 2 | 58 | 6 | 6
+Stage 2:6 | 12 | 2 | 0 | 50 | 5 | 2 | 59 | 6 | 6
+Stage 2:7 | 13 | 3 | 0 | 40 | 6 | 2 | 70 | 6 | 6
+Shipyard |  |  |  |  |  |  |  |  | 
+Stage 3:1 | 14 | 2 | 0 | 50 | 5 | 3 | 61 | 6 | 6
+Stage 3:2 | 15 | 2 | 0 | 50 | 5 | 3 | 62 | 6 | 6
+Stage 3:3 | 16 | 2 | 0 | 50 | 5 | 3 | 63 | 6 | 6
+Stage 3:4 | 17 | 2 | 0 | 50 | 5 | 3 | 64 | 6 | 6
+Stage 3:5 | 18 | 2 | 0 | 50 | 5 | 3 | 65 | 6 | 6
+Stage 3:6 | 19 | 3 | 0 | 50 | 5 | 3 | 66 | 6 | 6
+Stage 3:7 | 25 | 3 | 0 | 50 | 6 | 3 | 75 | 6 | 6
+Industrial |  |  |  |  |  |  |  |  | 
+Stage 4:1 | 19 | 3 | 0 | 50 | 5 | 4 | 67 | 6 | 6
+Stage 4:2 | 20 | 3 | 0 | 50 | 5 | 4 | 68 | 6 | 6
+Stage 4:3 | 21 | 3 | 0 | 50 | 5 | 4 | 69 | 6 | 6
+Stage 4:4 | 22 | 3 | 0 | 50 | 5 | 4 | 70 | 6 | 6
+Stage 4:5 | 23 | 3 | 0 | 50 | 5 | 4 | 71 | 6 | 6
+Stage 4:6 | 24 | 3 | 0 | 50 | 5 | 4 | 72 | 6 | 6
+Stage 4:7 | 22 | 4 | 0 | 55 | 6 | 4 | 80 | 6 | 6
+Chemical Plant |  |  |  |  |  |  |  |  | 
+Stage 5:1 | 25 | 3 | 0 | 50 | 5 | 5 | 73 | 6 | 6
+Stage 5:2 | 26 | 3 | 0 | 50 | 5 | 5 | 74 | 6 | 6
+Stage 5:3 | 27 | 3 | 0 | 50 | 5 | 5 | 75 | 6 | 6
+Stage 5:4 | 28 | 3 | 0 | 50 | 5 | 5 | 76 | 6 | 6
+Stage 5:5 | 29 | 3 | 0 | 50 | 5 | 5 | 77 | 6 | 6
+Stage 5:6 | 24 | 4 | 0 | 50 | 5 | 5 | 78 | 6 | 6
+Stage 5:7 | 35 | 4 | 0 | 55 | 6 | 5 | 85 | 6 | 6
+Mall |  |  |  |  |  |  |  |  | 
+Stage 6:1 | 25 | 4 | 0 | 30 | 6 | 3 | 79 | 6 | 6
+Stage 6:2 | 26 | 4 | 0 | 31 | 6 | 3 | 80 | 6 | 6
+Stage 6:3 | 27 | 4 | 0 | 32 | 6 | 3 | 81 | 6 | 6
+Stage 6:4 | 28 | 4 | 0 | 33 | 6 | 3 | 82 | 6 | 6
+Stage 6:5 | 29 | 4 | 0 | 34 | 6 | 3 | 83 | 6 | 6
+Stage 6:6 | 30 | 4 | 0 | 35 | 6 | 3 | 84 | 6 | 6
+Stage 6:7 | 39 | 4 | 0 | 40 | 6 | 4 | 90 | 6 | 6
+Sky Street |  |  |  |  |  |  |  |  | 
+Stage 7:1 | 32 | 4 | 0 | 36 | 6 | 4 | 85 | 6 | 6
+Stage 7:2 | 33 | 4 | 0 | 37 | 6 | 4 | 86 | 6 | 6
+Stage 7:3 | 34 | 4 | 0 | 38 | 6 | 4 | 87 | 6 | 6
+Stage 7:4 | 35 | 4 | 0 | 39 | 6 | 4 | 88 | 6 | 6
+Stage 7:5 | 36 | 4 | 0 | 40 | 6 | 4 | 89 | 6 | 6
+Stage 7:6 | 37 | 4 | 0 | 41 | 6 | 4 | 90 | 6 | 6
+Stage 7:7 | 25 | 5 | 0 | 55 | 6 | 4 | 95 | 6 | 6
+Megablock |  |  |  |  |  |  |  |  | 
+Stage 8:1 | 20 | 5 | 0 | 42 | 6 | 4 | 91 | 6 | 6
+Stage 8:2 | 21 | 5 | 0 | 43 | 6 | 4 | 92 | 6 | 6
+Stage 8:3 | 22 | 5 | 0 | 44 | 6 | 4 | 93 | 6 | 6
+Stage 8:4 | 23 | 5 | 0 | 45 | 6 | 4 | 94 | 6 | 6
+Stage 8:5 | 24 | 5 | 0 | 46 | 6 | 4 | 95 | 6 | 6
+Stage 8:6 | 25 | 5 | 0 | 47 | 6 | 4 | 96 | 6 | 6
+Stage 8:7 | 35 | 5 | 0 | 60 | 6 | 4 | 100 | 6 | 6
+Downtown |  |  |  |  |  |  |  |  | 
+Stage 9:1 | 27 | 5 | 0 | 48 | 6 | 4 | 97 | 6 | 6
+Stage 9:2 | 28 | 5 | 0 | 49 | 6 | 4 | 98 | 6 | 6
+Stage 9:3 | 29 | 5 | 0 | 50 | 6 | 4 | 99 | 6 | 6
+Stage 9:4 | 30 | 5 | 0 | 51 | 6 | 4 | 100 | 6 | 6
+Stage 9:5 | 31 | 5 | 0 | 52 | 6 | 4 | 101 | 6 | 6
+Stage 9:6 | 32 | 5 | 0 | 53 | 6 | 4 | 102 | 6 | 6
+Stage 9:7 | 45 | 5 | 0 | 60 | 6 | 4 | 107 | 6 | 6
+Corpo Tower |  |  |  |  |  |  |  |  | 
+Stage 10:1 | 50 | 5 | 0 | 54 | 6 | 4 | 103 | 6 | 6
+Stage 10:2 | 50 | 5 | 0 | 55 | 6 | 4 | 104 | 6 | 6
+Stage 10:3 | 50 | 5 | 0 | 56 | 6 | 4 | 105 | 6 | 6
+Stage 10:4 | 50 | 5 | 0 | 57 | 6 | 4 | 106 | 6 | 6
+Stage 10:5 | 50 | 5 | 0 | 58 | 6 | 4 | 107 | 6 | 6
+Stage 10:6 | 50 | 5 | 0 | 59 | 6 | 4 | 108 | 6 | 6
+Stage 10:7 | 50 | 5 | 0 | 60 | 6 | 5 | 125 | 6 | 6
+</TABLE>
+[Heading2] Hideouts
+[] Hideouts are set challenges often centered around specific mechanics that must be overcome with the deployed team in order to obtain victory. I.E two waves of strong enemies followed by a boss who cannot be killed unless both of his accompanying minions are dead, with the minions factoring some form of revive mechanic. The goal being to overcome the revive mechanics by a block revive skill or killing them all at the correctimes. This creates a dynamic economy amongst the Warlord viability as certain Warlords will excel within certain Hideouts. These Hideouts will be the number one location to obtain high rank and rarity equipment, increasing the reward payout chances through stages 1-20.
+[Heading3] Hideout: Cardinal Trolls
+[] Deacon Chainz, head of the east side monastery has been leading his  devoted acolytes in regular raids of your territory. It’s about time he atoned for his sins. He has a naturally high defense with an average HP pool making him quite tanky. In addition he will enrage and break enemy warlords whilst placing a REFLECT DAMAGE buff on himself making him a spiky tank. His two trusted acolytes will also Buff Deacon whilst dealing heavy damage to debuffed Warlords. Players will be required to work around the Debuffs whilst also controlling his minions to become victorious.
+[] Boss - Deacon Chainz:
+[] [ATK1] Not So Fast: Attacks one Enemy and Removes 10% Turn Meter, 20% if they have Enraged or Break, 40% if they have Both.
+[] [ATK2] Holy Torment: Attack all enemies and places ENRAGED - 3 Turn cooldown. 
+[] [ATK3] Holy Fracture: Attack all enemies and places BREAK - 4 Turns cooldown. 
+[] [PASV1] Divine Retribution: Receive a stack of 1 30% REFLECT buff each time an enrage is placed on an opponent.
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, INCREASE COOL DOWN and ENRAGE. 
+[] Acolyte Bishop Brick (Side Minion)
+[] [ATK1] Celestial Strike: Ignores 50% Armour Anyone with ENRAGE - 100% if both
+[] [PASV1] Mass:Places a 2 Turn 50% ARMOUR UP Buff on Deacon Chainz - 3 Turn Cooldown
+[] Acolyte Bishop Clyde (Side Minion)
+[] [ATK1] Celestial Smite: Ignores 50% Armour Anyone with BREAK - 100% if both
+[] [PASV1] Prayer: Places a 2 Turn 10% CONTINUOUS HEAL Buff on Deacon Chainz -3 Turn Cooldown
+[] Possible Victory Strategies:
+[] Resist or Block the debuffs
+[] Cleansing Debuffs Regularly
+[] High sustain and HP take the dmg reflect
+[] Can control or stun lock Acolytes
+[] Can Turn Meter Control Main Boss
+[] Removing Buffs from the Boss is a priority
+[] Available Equipment Sets;
+[] Firepower
+[] Critical chance
+[] Strike back
+[] Goad
+[] Ripper
+[Heading3] Hideout: Vultures
+[] Cormac is a high ranking Vulture known for his love of bleeding enemies dry. He will deal high damage and lacerate the Warlords, opening wounds until his bloodlust drives him to a final blow. Staunching the wounds will be vital to defending against his powerful attacks.
+[] Boss - Cormac The Carrion Leech:
+[] [ATK1] Open Wounds: Attacks 1 Warlord, doubling all stacks if BLEED on the target.
+[] [ATK2] Lacerate: Attacks all Warlords three times. Places 1 stack of 5% BLEED with each hit. 4 Turns cooldown. 
+[] [ATK3] Devour: (Automatic Trigger) Locked until 5 stacks of BLEED are on a Warlord - Attacks target enemy with 5 stacks of Bleed. Ignores 100% Armour and removes all BLEED debuffs. Heals by 25% Max HP.
+[] [PASV1] Tear Stitches: Will use ‘[ATK1] Open Wounds’ ability on a random target whenever an opponent heals. 1 Turn Cooldown.
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, Turn Meter Manipulation, INCREASE COOL DOWN or ENRAGE. 
+[] Possible Victory Strategies:
+[] Resist or Block the debuffs
+[] Cleansing Debuffs Regularly
+[] Enemy Max HP Attacks
+[] Revives and Block Dmg/Unkillable
+[] High HP Teams
+[] Heal Block
+[] Available Equipment Sets;
+[] HP
+[] Critical Damage
+[] Pain Mirror
+[] Plague
+[] Discharge
+[Heading3] Hideout: TeraTek Cybernetics
+[] Issac Vaun, the chief financial officer of TeraTek Cybernetics excels at making opportunist plays that leave him in a higher standing than his opponents. Players will have to hinder his progress whilst also fending off the opportunistic attacks of his colleagues. 
+[] Boss - Issac Vuan: 
+[] [ATK1] Bribe: Attack target 1 time. 50% chance to apply STUPEFY  
+[] [ATK2] Hostile Takeover: Apply ‘FIREWALL UP’ to all allies for 2 turns and Apply ‘FIREWALL DOWN’ to all enemies for 2 turns. Apply BLOCK BUFFS for 1 turn. 4 Turn Cooldown.
+[] [ATK3] Power Play: Attacks all enemies 2 times. 25% chance to apply STUN for 1 turn.  4 Turn Cooldown  
+[] [PASV1] Cash Injection : Heals all allies by 10% of their Max HP each turn.
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, INCREASE COOL DOWN or ENRAGE. 
+[] Enforcer Kellen (Side Minion)
+[] [ATK1] Opportunist: Attack all enemies 1 time. Apply ARMOUR down for 1 turn. 
+[] [PASV1] Capitalist: Gain turn meter equal to double the turn meter removed from ‘’.
+[] Enforcer Ried (Side Minion)
+[] [ATK1] Schemer: Attack all enemies 1 time. Apply FIREPOWER down for 1 turn.
+[] [PASV1] Capitalist: Gain turn meter equal to double the turn meter removed from ‘’.
+[] Possible Victory Strategies:
+[] Resist or Block the debuffs
+[] Cleansing Debuffs Regularly
+[] Turn Meter down + Control minions
+[] Firewall down will be important/buff removal
+[] Available Equipment Sets;
+[] Armour
+[] Hackers
+[] Energy Drain
+[] Safeguard
+[] Stitcher 
+[Heading3] Hideout: Quantum Vikings
+[] The Hammer of Four is the homage to the Viking god ‘Four’. He roams with his band of ‘four’ raider body guards under the misconception of value in the number four. He will use Four’s lightning to shock enemy Warlords then call his warband to assist. His chosen bodyguard also forms up a shield wall to protect him.
+[] Boss - The Hammer of Four:
+[] [ATK1] Thunder God: Attacks all Warlords, 50% chance to place 50% SHOCK
+[] [ATK2] To Valhalla: Attack target Warlord, Then call all allied Warlords to attack that target (All Warlords use [ATK 1]).
+[] [PASV1] Ragnarok : Revives 1 Minion at the start of this turn. Then trigger ‘ATK 3’ - 3 Turn Cooldown
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, Turn Meter Manipulation, INCREASE COOL DOWN or ENRAGE. 
+[] Raider (Side Minion) x 4
+[] [ATK1] Hammer Time : Attack target Warlord, If the target was shocked heal The Hammer of Four by 10%
+[] [PASV1] Shield Wall: Provides 20% Armour Bonus to ‘The Hammer of Four’
+[] [PASV2] Four’s Chosen: Immune to SHOCK
+[] Possible Victory Strategies:
+[] AOE damage to kill minions
+[] Cleansing shock will be useful
+[] Armour mitigation will be strong here.
+[] Block revive skills
+[] Heal Block
+[] Minion Control
+[] Available Equipment Sets;
+[] Firewall
+[] Speed
+[] Stun
+[] Jamming
+[] Sanguine
+<TABLE>
+Hideout: Generic Reward Table For All Above
+Stage | Rewards | % Chance | Cost to Play
+1 | 1x 3000 Credits | 100 | 10 Energy
+ | 1x Random Equipment 1-3 Random Rarity | 100 | 
+ | Rank 1 | 15 | 
+ | Rank 2 | 50 | 
+ | Rank 3 | 35 | 
+ | Uncommon | 60 | 
+ | Rare | 40 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+2 | 1x 3200 Credits | 100 | 10 Energy
+ | 1x Random Equipment 1-3 Random Rarity | 100 | 
+ | Rank 1 | 12 | 
+ | Rank 2 | 48 | 
+ | Rank 3 | 40 | 
+ | Uncommon | 55 | 
+ | Rare | 45 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+3 | 1x 3400 Credits | 100 | 10 Energy
+ | 1x Random Equipment 1-3 Random Rarity | 100 | 
+ | Rank 1 | 10 | 
+ | Rank 2 | 45 | 
+ | Rank 3 | 45 | 
+ | Uncommon | 50 | 
+ | Rare | 50 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+4 | 1x 3600 Credits | 100 | 10 Energy
+ | 1x Random Equipment 1-3 Random Rarity | 100 | 
+ | Rank 1 | 8 | 
+ | Rank 2 | 42 | 
+ | Rank 3 | 50 | 
+ | Uncommon | 45 | 
+ | Rare | 55 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+5 | 1x 3800 Credits | 100 | 10 Energy
+ | 1x Random Equipment 1-3 Random Rarity | 100 | 
+ | Rank 1 | 5 | 
+ | Rank 2 | 40 | 
+ | Rank 3 | 55 | 
+ | Uncommon | 40 | 
+ | Rare | 60 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+6 | 1x 4000 Credits | 100 | 12 Energy
+ | 1x Random Equipment 1-3 Random Rarity | 100 | 
+ | Rank 2 | 40 | 
+ | Rank 3 | 35 | 
+ | Rank 4 | 35 | 
+ | Uncommon | 35 | 
+ | Rare | 55 | 
+ | Epic | 5 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+7 | 1x 4200 Credits | 100 | 12 Energy
+ | 1x Random Equipment 2-4 Random Rarity | 100 | 
+ | Rank 2 | 40 | 
+ | Rank 3 | 35 | 
+ | Rank 4 | 35 | 
+ | Uncommon | 30 | 
+ | Rare | 60 | 
+ | Epic | 10 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+8 | 1x 4400 Credits | 100 | 12 Energy
+ | 1x Random Equipment 2-4 Random Rarity | 100 | 
+ | Rank 2 | 20 | 
+ | Rank 3 | 35 | 
+ | Rank 4 | 45 | 
+ | Uncommon | 20 | 
+ | Rare | 65 | 
+ | Epic | 15 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+9 | 1x 4600 Credits | 100 | 12 Energy
+ | 1x Random Equipment 2-4 Random Rarity | 100 | 
+ | Rank 2 | 18 | 
+ | Rank 3 | 32 | 
+ | Rank 4 | 50 | 
+ | Uncommon | 10 | 
+ | Rare | 70 | 
+ | Epic | 20 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+10 | 1x 4800 Credits | 100 | 12 Energy
+ | 1x Random Equipment 2-4 Random Rarity | 100 | 
+ | Rank 2 | 15 | 
+ | Rank 3 | 30 | 
+ | Rank 4 | 55 | 
+ | Uncommon | 0 | 
+ | Rare | 75 | 
+ | Epic | 25 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+11 | 1x 5000 Credits | 100 | 14 Energy
+ | 1x Random Equipment 3-5 Random Rarity | 100 | 
+ | Rank 3 | 30 | 
+ | Rank 4 | 55 | 
+ | Rank 5 | 15 | 
+ | Rare | 65 | 
+ | Epic | 30 | 
+ | Legendary | 5 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+12 | 1x 5200 Credits | 100 | 14 Energy
+ | 1x Random Equipment 3-5 Random Rarity | 100 | 
+ | Rank 3 | 25 | 
+ | Rank 4 | 55 | 
+ | Rank 5 | 20 | 
+ | Rare | 55 | 
+ | Epic | 35 | 
+ | Legendary | 10 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+13 | 1x 5400 Credits | 100 | 14 Energy
+ | 1x Random Equipment 3-5 Random Rarity | 100 | 
+ | Rank 3 | 25 | 
+ | Rank 4 | 55 | 
+ | Rank 5 | 20 | 
+ | Rare | 55 | 
+ | Epic | 35 | 
+ | Legendary | 10 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+14 | 1x 5600 Credits | 100 | 14 Energy
+ | 1x Random Equipment 3-5 Random Rarity | 100 | 
+ | Rank 3 | 20 | 
+ | Rank 4 | 55 | 
+ | Rank 5 | 25 | 
+ | Rare | 50 | 
+ | Epic | 35 | 
+ | Legendary | 15 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+15 | 1x 5800 Credits | 100 | 14 Energy
+ | 1x Random Equipment 3-5 Random Rarity | 100 | 
+ | Rank 3 | 10 | 
+ | Rank 4 | 55 | 
+ | Rank 5 | 35 | 
+ | Rare | 40 | 
+ | Epic | 35 | 
+ | Legendary | 25 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+16 | 1x 6000 Credits | 100 | 16 Energy
+ | 1x Random Equipment 4-6 Random Rarity | 100 | 
+ | Rank 4 | 50 | 
+ | Rank 5 | 40 | 
+ | Rank 6 | 10 | 
+ | Rare | 40 | 
+ | Epic | 35 | 
+ | Legendary | 25 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+17 | 1x 6200 Credits | 100 | 16 Energy
+ | 1x Random Equipment 4-6 Random Rarity | 100 | 
+ | Rank 4 | 40 | 
+ | Rank 5 | 45 | 
+ | Rank 6 | 15 | 
+ | Rare | 40 | 
+ | Epic | 35 | 
+ | Legendary | 25 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+18 | 1x 6400 Credits | 100 | 16 Energy
+ | 1x Random Equipment 4-6 Random Rarity | 100 | 
+ | Rank 4 | 30 | 
+ | Rank 5 | 50 | 
+ | Rank 6 | 20 | 
+ | Rare | 40 | 
+ | Epic | 35 | 
+ | Legendary | 25 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+19 | 1x 6600 Credits | 100 | 16 Energy
+ | 1x Random Equipment 4-6 Random Rarity | 100 | 
+ | Rank 4 | 10 | 
+ | Rank 5 | 60 | 
+ | Rank 6 | 30 | 
+ | Rare | 40 | 
+ | Epic | 35 | 
+ | Legendary | 25 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+20 | 1x 8000 Credits | 100 | 16 Energy
+ | 1x Random Equipment 4-6 Random Rarity | 100 | 
+ | Rank 4 | 0 | 
+ | Rank 5 | 65 | 
+ | Rank 6 | 35 | 
+ | Rare | 35 | 
+ | Epic | 35 | 
+ | Legendary | 30 | 
+ | Weapon, Helmet, Chest, Gloves, Legs or Boots | 16.6 | 
+ |  |  | 
+</TABLE>
+[Heading3] Hideout: Synapse Centre (NeuroNet)
+[] The ‘Synapse Centre’ is the only place to acquire ‘Memory Fragments’ for leveling up the Neuronet Synapse layers. This can be farmed as long as you have the required energy. Each victory will render up a random selection of fragments varying in tier and quantity. 
+[] Boss - :
+[] [ATK1] : 
+[] [ATK2] :
+[] [PASV1] :
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, Turn Meter Manipulation, INCREASE COOL DOWN or ENRAGE. 
+[] (Side Minion)
+[] [ATK1] :
+[] [PASV1] :
+[] Possible Victory Strategies:
+<TABLE>
+Hideout: Synapse Centre Reward Table
+Stage | Rewards | Amount | Energy | Stage | Rewards | Amount | Energy
+1 | Tier 1 | 15-35 | 8 | 11 | Tier 1 | 36-56 | 12
+ | Tier 2 | 0 |  |  | Tier 2 | 6-26 | 
+ | Tier 3 | 0 |  |  | Tier 3 | 0-15 | 
+2 | Tier 1 | 18-38 | 8 | 12 | Tier 1 | 38-58 | 12
+ | Tier 2 | 0 |  |  | Tier 2 | 08-28 | 
+ | Tier 3 | 0 |  |  | Tier 3 | 0-18 | 
+3 | Tier 1 | 20-40 | 8 | 13 | Tier 1 | 40-60 | 12
+ | Tier 2 | 0 |  |  | Tier 2 | 10-30 | 
+ | Tier 3 | 0 |  |  | Tier 3 | 0-20 | 
+4 | Tier 1 | 22-42 | 8 | 14 | Tier 1 | 42-52 | 12
+ | Tier 2 | 0-12 |  |  | Tier 2 | 12-32 | 
+ | Tier 3 | 0 |  |  | Tier 3 | 2-22 | 
+5 | Tier 1 | 24-44 | 8 | 15 | Tier 1 | 44-64 | 12
+ | Tier 2 | 0-14 |  |  | Tier 2 | 14-34 | 
+ | Tier 3 | 0 |  |  | Tier 3 | 4-24 | 
+6 | Tier 1 | 26-46 | 10 | 16 | Tier 1 | 46-66 | 14
+ | Tier 2 | 0-16 |  |  | Tier 2 | 16-36 | 
+ | Tier 3 | 0 |  |  | Tier 3 | 6-26 | 
+7 | Tier 1 | 28-48 | 10 | 17 | Tier 1 | 48-68 | 14
+ | Tier 2 | 0-18 |  |  | Tier 2 | 18-38 | 
+ | Tier 3 | 0 |  |  | Tier 3 | 8-28 | 
+8 | Tier 1 | 30-50 | 10 | 18 | Tier 1 | 50-70 | 14
+ | Tier 2 | 0-20 |  |  | Tier 2 | 20-40 | 
+ | Tier 3 | 0 |  |  | Tier 3 | 10-30 | 
+9 | Tier 1 | 32-52 | 10 | 19 | Tier 1 | 52-72 | 14
+ | Tier 2 | 2-22 |  |  | Tier 2 | 22-42 | 
+ | Tier 3 | 0 |  |  | Tier 3 | 12-32 | 
+10 | Tier 1 | 34-54 | 10 | 20 | Tier 1 | 55-75 | 14
+ | Tier 2 | 4-24 |  |  | Tier 2 | 25-45 | 
+ | Tier 3 | 0 |  |  | Tier 3 | 15-35 | 
+</TABLE>
+[Heading3] Hideout: Heist (Money)
+[] The Heist is a Credit gain focused location with the primary reward being large sums of credits. Additional Contracts can be earned a rare drop as well as the occasional huge payout.
+[] The Heist Hideout is a limited entry location requiring a Heist Plan in order to participate. These will be refreshed to the players account at regular intervals with the player receiving 5 plans a day. The total is capped at 5 so any not used in a day will be lost. This is another incentive to participate daily. 
+<TABLE>
+Hideout: Heist Reward Table
+Stage | Rewards | % Chance | Cost to Play
+1 | 50,000 Credits | 30 | 1 Heist Plan
+ | 75,000 Credits | 40 | 
+ | 100,000 Credits | 25 | 
+ | 500,000 Credits | 2 | 
+ | 1,000,000 Credits | 0.5 | 
+ | 1xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+2 | 50,000 Credits | 28 | 1 Heist Plan
+ | 75,000 Credits | 41 | 
+ | 100,000 Credits | 26 | 
+ | 500,000 Credits | 2 | 
+ | 1,000,000 Credits | 0.5 | 
+ | 1xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+3 | 50,000 Credits | 26 | 1 Heist Plan
+ | 75,000 Credits | 42 | 
+ | 100,000 Credits | 27 | 
+ | 500,000 Credits | 2 | 
+ | 1,000,000 Credits | 0.5 | 
+ | 1xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+4 | 50,000 Credits | 24 | 1 Heist Plan
+ | 75,000 Credits | 43 | 
+ | 100,000 Credits | 28 | 
+ | 500,000 Credits | 2 | 
+ | 1,000,000 Credits | 0.5 | 
+ | 1xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+5 | 50,000 Credits | 20 | 1 Heist Plan
+ | 75,000 Credits | 45 | 
+ | 100,000 Credits | 30 | 
+ | 500,000 Credits | 2 | 
+ | 1,000,000 Credits | 0.5 | 
+ | 1xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+6 | 100,000 Credits | 30 | 1 Heist Plan
+ | 150,000 Credits | 40 | 
+ | 200,000 Credits | 25 | 
+ | 750,000 Credits | 2 | 
+ | 1,500,000 Credits | 0.5 | 
+ | 2xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+7 | 100,000 Credits | 28 | 1 Heist Plan
+ | 150,000 Credits | 41 | 
+ | 200,000 Credits | 26 | 
+ | 750,000 Credits | 2 | 
+ | 1,500,000 Credits | 0.5 | 
+ | 2xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+8 | 100,000 Credits | 26 | 1 Heist Plan
+ | 150,000 Credits | 42 | 
+ | 200,000 Credits | 27 | 
+ | 750,000 Credits | 2 | 
+ | 1,500,000 Credits | 0.5 | 
+ | 2xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+9 | 100,000 Credits | 24 | 1 Heist Plan
+ | 150,000 Credits | 43 | 
+ | 200,000 Credits | 28 | 
+ | 750,000 Credits | 2 | 
+ | 1,500,000 Credits | 0.5 | 
+ | 2xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+10 | 100,000 Credits | 20 | 1 Heist Plan
+ | 150,000 Credits | 45 | 
+ | 200,000 Credits | 30 | 
+ | 750,000 Credits | 2 | 
+ | 1,500,000 Credits | 0.5 | 
+ | 2xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+11 | 250,000 Credits | 30 | 1 Heist Plan
+ | 300,000 Credits | 40 | 
+ | 350,000 Credits | 25 | 
+ | 1,000,000 Credits | 2 | 
+ | 2,000,000 Credits | 0.5 | 
+ | 3xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+12 | 250,000 Credits | 28 | 1 Heist Plan
+ | 300,000 Credits | 41 | 
+ | 350,000 Credits | 26 | 
+ | 1,000,000 Credits | 2 | 
+ | 2,000,000 Credits | 0.5 | 
+ | 3xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+13 | 250,000 Credits | 26 | 1 Heist Plan
+ | 300,000 Credits | 42 | 
+ | 350,000 Credits | 27 | 
+ | 1,000,000 Credits | 2 | 
+ | 2,000,000 Credits | 0.5 | 
+ | 3xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+14 | 250,000 Credits | 24 | 1 Heist Plan
+ | 300,000 Credits | 43 | 
+ | 350,000 Credits | 28 | 
+ | 1,000,000 Credits | 2 | 
+ | 2,000,000 Credits | 0.5 | 
+ | 3xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+15 | 250,000 Credits | 20 | 1 Heist Plan
+ | 300,000 Credits | 45 | 
+ | 350,000 Credits | 30 | 
+ | 1,000,000 Credits | 2 | 
+ | 2,000,000 Credits | 0.5 | 
+ | 3xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+16 | 400,000 Credits | 30 | 1 Heist Plan
+ | 450,000 Credits | 40 | 
+ | 500,000 Credits | 25 | 
+ | 1,250,000 Credits | 2 | 
+ | 2,500,000 Credits | 0.5 | 
+ | 4xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+17 | 400,000 Credits | 28 | 1 Heist Plan
+ | 450,000 Credits | 41 | 
+ | 500,000 Credits | 26 | 
+ | 1,250,000 Credits | 2 | 
+ | 2,500,000 Credits | 0.5 | 
+ | 4xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+18 | 400,000 Credits | 26 | 1 Heist Plan
+ | 450,000 Credits | 42 | 
+ | 500,000 Credits | 27 | 
+ | 1,250,000 Credits | 2 | 
+ | 2,500,000 Credits | 0.5 | 
+ | 4xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+19 | 400,000 Credits | 24 | 1 Heist Plan
+ | 450,000 Credits | 43 | 
+ | 500,000 Credits | 28 | 
+ | 1,250,000 Credits | 2 | 
+ | 2,500,000 Credits | 0.5 | 
+ | 4xUC Contract | 2 | 
+ | 1xR Contract | 0.5 | 
+20 | 500,000 Credits | 20 | 1 Heist Plan
+ | 600,000 Credits | 45 | 
+ | 700,000 Credits | 30 | 
+ | 2,500,000 Credits | 2 | 
+ | 5,000,000 Credits | 0.5 | 
+ | 5xUC Contract | 2 | 
+ | 2xR Contract | 0.5 | 
+</TABLE>
+[Heading3] Hideout: Chopshop (Implants)
+[] The Chopshop Hideout is the primary location for Implant acquisition. Once again this is designed around a specific set of mechanics so that the player will have to comprise a team suited best for this particular task, however there should still be multiple team compositions to achieve victory. 
+<TABLE>
+Hideout: Chopshop Reward Table
+Stage | Rewards | % Chance | Cost to Play
+1 | 1x 3000 Credits | 100 | 10 Energy
+ | 1x Random Implant Rank 1-3 Random Rarity | 100 | 
+ | Rank 1 | 15 | 
+ | Rank 2 | 50 | 
+ | Rank 3 | 35 | 
+ | Uncommon | 60 | 
+ | Rare | 40 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+2 | 1x 3200 Credits | 100 | 10 Energy
+ | 1x Random Implant Rank 1-3 Random Rarity | 100 | 
+ | Rank 1 | 12 | 
+ | Rank 2 | 48 | 
+ | Rank 3 | 40 | 
+ | Uncommon | 55 | 
+ | Rare | 45 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+3 | 1x 3400 Credits | 100 | 10 Energy
+ | 1x Random Implant Rank 1-3 Random Rarity | 100 | 
+ | Rank 1 | 10 | 
+ | Rank 2 | 45 | 
+ | Rank 3 | 45 | 
+ | Uncommon | 50 | 
+ | Rare | 50 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+4 | 1x 3600 Credits | 100 | 10 Energy
+ | 1x Random Implant Rank 1-3 Random Rarity | 100 | 
+ | Rank 1 | 8 | 
+ | Rank 2 | 42 | 
+ | Rank 3 | 50 | 
+ | Uncommon | 45 | 
+ | Rare | 55 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+5 | 1x 3800 Credits | 100 | 10 Energy
+ | 1x Random Implant Rank 1-3 Random Rarity | 100 | 
+ | Rank 1 | 5 | 
+ | Rank 2 | 40 | 
+ | Rank 3 | 55 | 
+ | Uncommon | 40 | 
+ | Rare | 60 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+6 | 1x 4000 Credits | 100 | 12 Energy
+ | 1x Random Implant Rank 2-4 Random Rarity | 100 | 
+ | Rank 2 | 25 | 
+ | Rank 3 | 40 | 
+ | Rank 4 | 35 | 
+ | Uncommon | 35 | 
+ | Rare | 55 | 
+ | Epic | 5 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+7 | 1x 4200 Credits | 100 | 12 Energy
+ | 1x Random Implant Rank 2-4 Random Rarity | 100 | 
+ | Rank 2 | 22 | 
+ | Rank 3 | 38 | 
+ | Rank 4 | 40 | 
+ | Uncommon | 30 | 
+ | Rare | 60 | 
+ | Epic | 10 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+8 | 1x 4400 Credits | 100 | 12 Energy
+ | 1x Random Implant Rank 2-4 Random Rarity | 100 | 
+ | Rank 2 | 20 | 
+ | Rank 3 | 35 | 
+ | Rank 4 | 45 | 
+ | Uncommon | 20 | 
+ | Rare | 65 | 
+ | Epic | 15 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+9 | 1x 4600 Credits | 100 | 12 Energy
+ | 1x Random Implant Rank 2-4 Random Rarity | 100 | 
+ | Rank 2 | 18 | 
+ | Rank 3 | 32 | 
+ | Rank 4 | 50 | 
+ | Uncommon | 10 | 
+ | Rare | 70 | 
+ | Epic | 20 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+10 | 1x 4800 Credits | 100 | 12 Energy
+ | 1x Random Implant Rank 2-4 Random Rarity | 100 | 
+ | Rank 2 | 15 | 
+ | Rank 3 | 30 | 
+ | Rank 4 | 55 | 
+ | Uncommon | 0 | 
+ | Rare | 75 | 
+ | Epic | 25 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+11 | 1x 5000 Credits | 100 | 14 Energy
+ | 1x Random Implant Rank 3-5 Random Rarity | 100 | 
+ | Rank 3 | 30 | 
+ | Rank 4 | 55 | 
+ | Rank 5 | 15 | 
+ | Rare | 65 | 
+ | Epic | 30 | 
+ | Legendary | 5 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+12 | 1x 5200 Credits | 100 | 14 Energy
+ | 1x Random Implant Rank 3-5 Random Rarity | 100 | 
+ | Rank 3 | 25 | 
+ | Rank 4 | 55 | 
+ | Rank 5 | 20 | 
+ | Rare | 55 | 
+ | Epic | 35 | 
+ | Legendary | 10 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+13 | 1x 5400 Credits | 100 | 14 Energy
+ | 1x Random Implant Rank 3-5 Random Rarity | 100 | 
+ | Rank 3 | 20 | 
+ | Rank 4 | 55 | 
+ | Rank 5 | 25 | 
+ | Rare | 50 | 
+ | Epic | 35 | 
+ | Legendary | 15 | 
+ | Limbs | 40 | 
+ | Organs | 35 | 
+ | Skeleton | 25 | 
+14 | 1x 5600 Credits | 100 | 14 Energy
+ | 1x Random Implant Rank 3-5 Random Rarity | 100 | 
+ | Rank 3 | 15 | 
+ | Rank 4 | 55 | 
+ | Rank 5 | 30 | 
+ | Rare | 45 | 
+ | Epic | 35 | 
+ | Legendary | 20 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+15 | 1x 5800 Credits | 100 | 14 Energy
+ | 1x Random Implant Rank 3-5 Random Rarity | 100 | 
+ | Rank 3 | 10 | 
+ | Rank 4 | 55 | 
+ | Rank 5 | 35 | 
+ | Rare | 40 | 
+ | Epic | 35 | 
+ | Legendary | 25 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+16 | 1x 6000 Credits | 100 | 16 Energy
+ | 1x Random Implant Rank 4-6 Random Rarity | 100 | 
+ | Rank 4 | 50 | 
+ | Rank 5 | 40 | 
+ | Rank 6 | 10 | 
+ | Rare | 40 | 
+ | Epic | 35 | 
+ | Legendary | 25 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+17 | 1x 6200 Credits | 100 | 16 Energy
+ | 1x Random Implant Rank 4-6 Random Rarity | 100 | 
+ | Rank 4 | 40 | 
+ | Rank 5 | 45 | 
+ | Rank 6 | 15 | 
+ | Rare | 40 | 
+ | Epic | 35 | 
+ | Legendary | 25 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+18 | 1x 6600 Credits | 100 | 16 Energy
+ | 1x Random Implant Rank 4-6 Random Rarity | 100 | 
+ | Rank 4 | 20 | 
+ | Rank 5 | 55 | 
+ | Rank 6 | 25 | 
+ | Rare | 40 | 
+ | Epic | 35 | 
+ | Legendary | 25 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+19 | 1x 6800 Credits | 100 | 16 Energy
+ | 1x Random Implant Rank 4-6 Random Rarity | 100 | 
+ | Rank 4 | 10 | 
+ | Rank 5 | 60 | 
+ | Rank 6 | 30 | 
+ | Rare | 40 | 
+ | Epic | 35 | 
+ | Legendary | 25 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+20 | 1x 8000 Credits | 100 | 16 Energy
+ | 1x Random Implant Rank 5-6 Random Rarity | 100 | 
+ | Rank 4 | 0 | 
+ | Rank 5 | 65 | 
+ | Rank 6 | 35 | 
+ | Rare | 35 | 
+ | Epic | 35 | 
+ | Legendary | 30 | 
+ | Limbs | 35 | 
+ | Organs | 35 | 
+ | Skeleton | 30 | 
+</TABLE>
+[Heading3] Hideout: (Paragon Deeds)
+[] Boss - :
+[] [ATK1] : 
+[] [ATK2] :
+[] [PASV1] :
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, Turn Meter Manipulation, INCREASE COOL DOWN or ENRAGE. 
+[] (Side Minion)
+[] [ATK1] :
+[] [PASV1] :
+[] Possible Victory Strategies:
+[] Rewards Table:
+[Heading3] Hideout: (Neutral Deeds)
+[] Boss - :
+[] [ATK1] : 
+[] [ATK2] :
+[] [PASV1] :
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, Turn Meter Manipulation, INCREASE COOL DOWN or ENRAGE. 
+[] (Side Minion)
+[] [ATK1] :
+[] [PASV1] :
+[] Possible Victory Strategies:
+[] Rewards Table:
+[Heading3] Hideout: (Renegade Deeds)
+[] Boss - :
+[] [ATK1] : 
+[] [ATK2] :
+[] [PASV1] :
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, Turn Meter Manipulation, INCREASE COOL DOWN or ENRAGE. 
+[] (Side Minion)
+[] [ATK1] :
+[] [PASV1] :
+[] Possible Victory Strategies:
+[] Rewards Table:
+[Heading3] Hideout: (Generic Deeds)
+[] Boss - :
+[] [ATK1] : 
+[] [ATK2] :
+[] [PASV1] :
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, Turn Meter Manipulation, INCREASE COOL DOWN or ENRAGE. 
+[] (Side Minion)
+[] [ATK1] :
+[] [PASV1] :
+[] Possible Victory Strategies:
+[] Rewards Table:
+<TABLE>
+Hideout: All Deeds Reward Tables
+Stage | Rewards | Chance | Energy | Stage | Rewards | Chance | Energy
+1 | 2-6 Minor | 70% | 10 | 11 | 4-8 Minor | 45% | 14
+ | 1-2 Major | 30% |  |  | 1-4 Major | 40% | 
+ | N/A Grand | 0% |  |  | 1-2 Grand | 15% | 
+ | 8000 Credits | 100% |  |  | 10000 Credits | 100% | 
+ | 1x Rare Contract | 0.50% |  |  | 1x Rare Contract | 1.50% | 
+2 | 2-6 Minor | 65% | 10 | 12 | 4-8 Minor | 44% | 14
+ | 1-2 Major | 35% |  |  | 1-4 Major | 40% | 
+ | N/A Grand | 0% |  |  | 1-2 Grand | 16% | 
+ | 8200 Credits | 100% |  |  | 10200 Credits | 100% | 
+ | 1x Rare Contract | 0.50% |  |  | 1x Rare Contract | 1.50% | 
+3 | 2-6 Minor | 60% | 10 | 13 | 4-8 Minor | 43% | 14
+ | 1-2 Major | 40% |  |  | 1-4 Major | 39% | 
+ | N/A Grand | 0% |  |  | 1-2 Grand | 18% | 
+ | 8400 Credits | 100% |  |  | 10400 Credits | 100% | 
+ | 1x Rare Contract | 0.50% |  |  | 1x Rare Contract | 1.50% | 
+4 | 2-6 Minor | 55% | 10 | 14 | 4-8 Minor | 42% | 14
+ | 1-2 Major | 45% |  |  | 1-4 Major | 38% | 
+ | N/A Grand | 0% |  |  | 1-2 Grand | 20% | 
+ | 8600Credits | 100% |  |  | 10600 Credits | 100% | 
+ | 1x Rare Contract | 0.50% |  |  | 1x Rare Contract | 1.50% | 
+5 | 2-6 Minor | 50% | 10 | 15 | 4-8 Minor | 40% | 14
+ | 1-2 Major | 50% |  |  | 1-4 Major | 36% | 
+ | N/A Grand | 0% |  |  | 1-2 Grand | 24% | 
+ | 8800 Credits | 100% |  |  | 10800 Credits | 100% | 
+ | 1x Rare Contract | 0.50% |  |  | 1x Rare Contract | 1.50% | 
+6 | 3-7 Minor | 54% | 12 | 16 | 5-9 Minor | 43% | 16
+ | 1-3 Major | 34% |  |  | 1-5 Major | 39% | 
+ | 1 Grand | 12% |  |  | 1-3 Grand | 18% | 
+ | 9000 Credits | 100% |  |  | 11000 Credits | 100% | 
+ | 1x Rare Contract | 1.00% |  |  | 1x Rare Contract | 2% | 
+7 | 3-7 Minor | 50% | 12 | 17 | 5-9 Minor | 42% | 16
+ | 1-3 Major | 36% |  |  | 1-5 Major | 38% | 
+ | 1 Grand | 14% |  |  | 1-3 Grand | 20% | 
+ | 9200 Credits | 100% |  |  | 11200 Credits | 100% | 
+ | 1x Rare Contract | 1.00% |  |  | 1x Rare Contract | 2% | 
+8 | 3-7 Minor | 48% | 12 | 18 | 5-9 Minor | 40% | 16
+ | 1-3 Major | 36% |  |  | 1-5 Major | 38% | 
+ | 1 Grand | 16% |  |  | 1-3 Grand | 22% | 
+ | 9400 Credits | 100% |  |  | 11400 Credits | 100% | 
+ | 1x Rare Contract | 1.00% |  |  | 1x Rare Contract | 2% | 
+9 | 3-7 Minor | 44% | 12 | 19 | 5-9 Minor | 37% | 16
+ | 1-3 Major | 38% |  |  | 1-5 Major | 37% | 
+ | 1 Grand | 18% |  |  | 1-3 Grand | 26% | 
+ | 9600 Credits | 100% |  |  | 11600 Credits | 100% | 
+ | 1x Rare Contract | 1.00% |  |  | 1x Rare Contract | 2% | 
+10 | 3-7 Minor | 40% | 12 | 20 | 5-9 Minor | 35% | 16
+ | 1-3 Major | 38% |  |  | 1-5 Major | 35% | 
+ | 1 Grand | 22% |  |  | 1-3 Grand | 30% | 
+ | 9800 Credits | 100% |  |  | 12000 Credits | 100% | 
+ | 1x Rare Contract | 1.00% |  |  | 1x Rare Contract | 2% | 
+</TABLE>
+[Heading2] Syndicate Wars
+[] Syndicate wars is where each team must be composed of a single Syndicate, EG: your full team will be from the Quantum Vikings. Syndicat War will be the only location that renders ‘Neons’ which are upgrades for the Warlord equipment. This will encourage the player to utilise not only the strongest warlords but also others to make sure their Syndicate team is strong enough to progress. This helps in giving another use to lesser warlords bolstering diverse rosters. Completing each of the 1-20 stages will reward 1-3 Chevrons depending on the circumstances. Total completion progress counts towards a reward bar, rewarding the player for full completion of each stage and the entirety of Syndicate Wars. Syndicate rewards will require Bounty Tokens to enter and tokens will be refreshed each day to a max of 12.
+<TABLE>
+Syndicate Wars Reward Table
+Stage | Rewards | % Chance | Cost to play
+1 | Neon Rank 1-3 | 100 | 1x Bounty Token
+ | Rank 1 | 35 | 
+ | Rank 2 | 40 | 
+ | Rank 3 | 25 | 
+ | Equal Chance Random Stat Focus | 10 | 
+2 | Neon Rank 1-3 | 100 | 1x Bounty Token
+ | Rank 1 | 30 | 
+ | Rank 2 | 40 | 
+ | Rank 3 | 30 | 
+ | Equal Chance Random Stat Focus | 10 | 
+3 | Neon Rank 1-3 | 100 | 1x Bounty Token
+ | Rank 1 | 25 | 
+ | Rank 2 | 40 | 
+ | Rank 3 | 35 | 
+ | Equal Chance Random Stat Focus | 10 | 
+4 | Neon Rank 1-3 | 100 | 1x Bounty Token
+ | Rank 1 | 20 | 
+ | Rank 2 | 40 | 
+ | Rank 3 | 40 | 
+ | Equal Chance Random Stat Focus | 10 | 
+5 | Neon Rank 1-3 | 100 | 1x Bounty Token
+ | Rank 1 | 15 | 
+ | Rank 2 | 40 | 
+ | Rank 3 | 45 | 
+ | Equal Chance Random Stat Focus | 10 | 
+6 | Neon Rank 2-4 | 100 | 2x Bounty Tokens
+ | Rank 2 | 35 | 
+ | Rank 3 | 40 | 
+ | Rank 4 | 25 | 
+ | Equal Chance Random Stat Focus | 10 | 
+7 | Neon Rank 2-4 | 100 | 2x Bounty Tokens
+ | Rank 2 | 30 | 
+ | Rank 3 | 40 | 
+ | Rank 4 | 30 | 
+ | Equal Chance Random Stat Focus | 10 | 
+8 | Neon Rank 2-4 | 100 | 2x Bounty Tokens
+ | Rank 2 | 25 | 
+ | Rank 3 | 40 | 
+ | Rank 4 | 35 | 
+ | Equal Chance Random Stat Focus | 10 | 
+9 | Neon Rank 2-4 | 100 | 2x Bounty Tokens
+ | Rank 2 | 20 | 
+ | Rank 3 | 40 | 
+ | Rank 4 | 40 | 
+ | Equal Chance Random Stat Focus | 10 | 
+10 | Neon Rank 2-4 | 100 | 2x Bounty Tokens
+ | Rank 2 | 15 | 
+ | Rank 3 | 40 | 
+ | Rank 4 | 45 | 
+ | Equal Chance Random Stat Focus | 10 | 
+11 | Neon Rank 3-5 | 100 | 3x Bounty Tokens
+ | Rank 3 | 35 | 
+ | Rank 4 | 40 | 
+ | Rank 5 | 25 | 
+ | Equal Chance Random Stat Focus | 10 | 
+12 | Neon Rank 3-5 | 100 | 3x Bounty Tokens
+ | Rank 3 | 30 | 
+ | Rank 4 | 40 | 
+ | Rank 5 | 30 | 
+ | Equal Chance Random Stat Focus | 10 | 
+13 | Neon Rank 3-5 | 100 | 3x Bounty Tokens
+ | Rank 3 | 25 | 
+ | Rank 4 | 40 | 
+ | Rank 5 | 35 | 
+ | Equal Chance Random Stat Focus | 10 | 
+14 | Neon Rank 3-5 | 100 | 3x Bounty Tokens
+ | Rank 3 | 20 | 
+ | Rank 4 | 40 | 
+ | Rank 5 | 40 | 
+ | Equal Chance Random Stat Focus | 10 | 
+15 | Neon Rank 3-5 | 100 | 3x Bounty Tokens
+ | Rank 3 | 15 | 
+ | Rank 4 | 40 | 
+ | Rank 5 | 45 | 
+ | Equal Chance Random Stat Focus | 10 | 
+16 | Neon Rank 4-6 | 100 | 4x Bounty Tokens
+ | Rank 4 | 35 | 
+ | Rank 5 | 40 | 
+ | Rank 6 | 25 | 
+ | Equal Chance Random Stat Focus | 10 | 
+17 | Neon Rank 4-6 | 100 | 4x Bounty Tokens
+ | Rank 4 | 30 | 
+ | Rank 5 | 40 | 
+ | Rank 6 | 30 | 
+ | Equal Chance Random Stat Focus | 10 | 
+18 | Neon Rank 4-6 | 100 | 4x Bounty Tokens
+ | Rank 4 | 25 | 
+ | Rank 5 | 40 | 
+ | Rank 6 | 35 | 
+ | Equal Chance Random Stat Focus | 10 | 
+19 | Neon Rank 4-6 | 100 | 4x Bounty Tokens
+ | Rank 4 | 20 | 
+ | Rank 5 | 40 | 
+ | Rank 6 | 40 | 
+ | Equal Chance Random Stat Focus | 10 | 
+20 | Neon Rank 5-6 | 100 | 4x Bounty Tokens
+ | Rank 5 | 55 | 
+ | Rank 6 | 45 | 
+ | Equal Chance Random Stat Focus | 10 | 
+</TABLE>
+<TABLE>
+Syndicate Progression Rewards
+Chevrons | Rewards | Chevrons | Rewards
+ |  |  | 
+15 | 250K Credits | 195 | Set of Rank 6 Implants
+30 | 3x Energy | 210 | 4x Energy
+45 | 3x Rare Contract | 225 | 3x Rare Contract
+60 | 200 Trinium | 240 | 200 Trinium
+75 | 1x lvl 4 Firmware | 255 | 2x lvl 4 Firmware
+90 | 1x Epic Contract | 270 | 3x Epic Contract
+105 | Set of Rank 5 Implants | 285 | 500K Credits
+120 | 3x Energy | 300 | 5x Energy
+135 | 250K Credits | 315 | Set of Rank 6 Equipment
+150 | Set of Rank 5 Equipment | 330 | 250 Trinium
+165 | 2x lvl 4 Firmware | 345 | 1M Credits
+180 | 2x Epic Contract | 360 | Legendary Warlord
+</TABLE>
+[Heading2] The Pit
+[Heading3] Pit Brawls
+[] Pit Brawls is the Player Vs Player aspect of the game (PVP). Brawl Invites are required to enter the brawls and are capped at 10. Refills of Brawl Invites are refreshed daily, can be earned through missions and can be purchased with Trinium. All players assign 5 Warlords as a Defensive Gang. When players select to fight in the pit, they are presented with a selection of 10 defensive gangs from players within their ‘Skill Bracket’ and ‘Ranking’. They may then tailor their ‘Offensive’ team to battle against the defensive gang. If the player is victorious they will gain Pit Coin (PTC used with the Safehouse and black market) and PVP Ranking. At the end of each 1 week Ranking period the player will receive rewards based on their ‘Skill Bracket’. A player can ascend brackets at any time as they acquire more rankings. If a player's defensive gang is beaten, they will lose PVP ranking allowing them to descend skill brackets over time.
+[] Global Leaderboards will show the player’s defensive teams, weekly earned rankings and bracket as well as filter to ‘gang’, ‘friends’ and ‘search for players’.  
+[Heading3] Pit Royal
+[] This is an extended version of Pit Brawls aimed at players with more bloated rosters. Royal Invites are required to enter and are capped at 10. Refills are earned daily and through missions as well as able to be purchased with Trinium. A player instead picks a team of 8 Warlords, 5 for the initially deployed gang and 3 as reinforcements. A reinforcement will enter the fight when one member of the gang dies taking their slot. Due to this mechanic NO REVIVES will be allowed during this mode. Warlords with Reinforce abilities become great for this mode as they will provide a bonus on entering the fight, helping to sway the tide of battle. 
+[Heading3] Pit Brackets and Rewards
+<TABLE>
+Pit Brawls/Royal Skill Bracket
+Tier | Name | Points | Weekly Rewards | Fight Rewards
+1 | Runner | 100 | 1x Meager Cache | x10 Points, 10k Credits, 10 Pit Coin
+2 | Underling | 200 | 1x Meager Cache | x10 Points, 12k Credits, 15 Pit Coin
+3 | Muscle | 300 | 2x Meager Cache | x10 Points, 14k Credits, 20 Pit Coin
+4 | Enforcer | 400 | 2x Meager Cache | x10 Points, 16k Credits, 25 Pit Coin
+5 | Soldier | 600 | 1x Substantial Cache | x10 Points, 18k Credits, 35 Pit Coin
+6 | Body Guard | 800 | 1x Substantial Cache | x10 Points, 20k Credits, 45 Pit Coin
+7 | Gun Runner | 1,000 | 2x Substantial Cache | x10 Points, 22k Credits, 55 Pit Coin
+8 | Diplomat | 1,200 | 2x Substantial Cache | x10 Points, 24k Credits, 65 Pit Coin
+9 | Captain | 1,500 | 1x Sublime Cache | x10 Points, 26k Credits, 80 Pit Coin
+10 | UnderBoss | 1,800 | 2x Sublime Cache | x10 Points, 28k Credits, 95 Pit Coin
+11 | Boss | 2,100 | 3x Sublime Cache | x10 Points, 30k Credits, 110 Pit Coin
+12 | Warlord | 2,400 | 1x Exalted Cache | x10 Points, 35k Credits, 125 Pit Coin
+13 | Neon Legend | 3,000+ | 3x Exalted Cache | x10 Points, 40k Credits, 150 Pit Coin
+</TABLE>
+<TABLE>
+Pit Cache Rewards
+Meager Cache | Chance
+6x Random Set, Rank 4-5, Rare-Legendary Equipment | 100%
+1-3x Rare Contracts | 50%
+250-500k Credits | 100%
+1-3x Rare Stimm | 25%
+500 Pit Coin | 100%
+Substantial Cache
+6x Random Set, Rank 5-6, Rare-Legendary Equipment | 100%
+1-2x Epic Contracts | 50%
+500k-1m Credits | 100%
+1-2x Epic Stimm | 25%
+1x Meager Cache | 20%
+1000 Pit Coin | 100%
+Sublime Cache
+6x Random Set, Rank 6, Epic-Legendary Equipment | 100%
+1-2x Epic Contracts | 50%
+1m-1.5m Credits | 100%
+1-2x Epic Stimm | 25%
+1-3x Rare Stimm | 50%
+1x Substantial Cache | 20%
+1500 Pit Coin | 100%
+Exalted Cache
+6x Random Set, Rank 6, Legendary Equipment | 100%
+1-2x Epic Contracts | 65%
+2m-2.5m Credits | 100%
+1-2x Epic Stimm | 35%
+1-3x Rare Stimm | 75%
+1x Sublime Cache | 25%
+2000 Pit Coin | 100%
+</TABLE>
+[Heading3] Black Market
+[] Pit Coins earned from all PVP activities in game can be exchanged for limited goods from the Black Market. Purchases are limited to 1 per week or 1 per day depending on the individual item itself with the exception of Credits. 
+<TABLE>
+Black Market Store Items
+Item | Pit Coin Cost | Reset
+350 Energy | 1,000 | Weekly
+250k Credits | 250 | N/A
+1x Rare Stimm | 1,000 | Daily
+1x Epic Stimm | 15,000 | Weekly
+1x Legendary Stimm | 30,000 | Weekly
+1x Lvl 3 Firmware | 1,000 | Daily
+1x Lvl 4 Firmware | 10,000 | Weekly
+1x Lvl 5 Firmware | 25,000 | Weekly
+1x Rank 4 Epic Equipment | 300 | Daily
+1x Rank 5 Epic Equipment | 700 | Daily
+1x Rank 6 Epic Equipment | 1,100 | Daily
+1x Rank 4 Epic Implant | 600 | Daily
+1x Rank 5 Epic Implant | 1,000 | Daily
+1x Rank 6 Epic Implant | 1,400 | Daily
+1x Rare Contract | 1,200 | Weekly
+1x Epic Contract | 2,500 | Weekly
+</TABLE>
+[Heading2] Bastions
+[] A Bastion is a gang wide activity where everyone must combine their strengths to defeat the bastions. Each Bastion  will last 3 days presenting a 1 of its three stages on each day. After reset on each day, rewards will be given in accordance to damage dealt and the next stage will begin. Even when fully defeated, players are still able to enter to deal damage just in case any of them missed out on the initial attack from the gang. Everyone can achieve max rewards if they deal enough damage to the boss.
+[Heading3] Bastion: Assault on Teratech’s Cybernetics
+[] Stage 1: The Atrium
+[] Boss - :
+[] [ATK1] : 
+[] [ATK2] :
+[] [PASV1] :
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, Turn Meter Manipulation, INCREASE COOL DOWN or ENRAGE. 
+[] (Side Minion)
+[] [ATK1] :
+[] [PASV1] :
+[] Possible Victory Strategies:
+[] Rewards Table:
+[] Stage 2: The Foundry
+[] Boss - :
+[] [ATK1] : 
+[] [ATK2] :
+[] [PASV1] :
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, Turn Meter Manipulation, INCREASE COOL DOWN or ENRAGE. 
+[] (Side Minion)
+[] [ATK1] :
+[] [PASV1] :
+[] Possible Victory Strategies:
+[] Rewards Table
+[] Stage 3: Head of the Hydra
+[] Boss - :
+[] [ATK1] : 
+[] [ATK2] :
+[] [PASV1] :
+[] [PASV2] Bring It On: (Boss Passive) - Immune to STUN, SHOCK, STUPEFY, Turn Meter Manipulation, INCREASE COOL DOWN or ENRAGE. 
+[] (Side Minion)
+[] [ATK1] :
+[] [PASV1] :
+[] Possible Victory Strategies:
+[] Rewards Table
+[Heading2] Trinium Stocks
+[] Trinium Stocks will be a location in the city that provides a daily reward of Trinium (Premium Currency) value depending on its level, maxim of 3. Level 1 will provide 22, Level 2 will provide 44 and Level 3 will provide 66. The Stocks are capped at 40,60 and 75 when level 3, with additional caps being a microtransaction. The Additional Stocks levels are gained through player progression missions.
+[Heading1] Gameplay
+[Heading2] Currencies
+<TABLE>
+Currency | Use case | Acquired From | Cap
+Credits | Used to buy gear from shops | By playing PvE Battles, Rewards, Mission, Selling Equipment, Neons and Implants. | N/A
+Contracts | Used to recruit new Gang Members of the relevant Rarity. | Rewards for winning in PvE Content and Missions/Quests, Rewards | N/A
+Trinium | Premium currency, 132per £1 | Purchased with IRL Money | N/A
+Energy | Energy | Rewards | 160
+Brawl Invites | Used to gain entry into Pit Brawls | Gained via missions and purchased with Trinium, Rewards | 10
+Royal Invites | Used to gain entry into Pit Royal | Gained via missions and purchased with Trinium, Rewards | 10
+Heist Plan | Use only to enter the Heist Hideout | Get 5 a day - Rewards | 5
+Pit Coin | Used only in the Black Market and the Safe House | PVP wins | N/A
+Bounty Token | Used to gain entry into Syndicate Wars. | get 12 a day | 12
+Merits | Used to level Battle Pass | Gain from battle pass missions. Purchased. | 
+</TABLE>
+[Heading2] Contracts
+[] Warlords are acquired through the opening of contracts. Contracts will have specific drop rates for warlords depending on the quality of the contract opened. A whole contract can be gained from various areas of the game as well as the breaking down of existing warlords at a rate of 1-2 scrap pieces per warlord. 10 scraps will make a whole contract.
+<TABLE>
+Contract | Warlord pull chances | Notes
+Uncommon | 90% Common 9% Uncommon 1% Rare | 
+Rare | 92% Rare 7.5% Epic 0.5% Legendary | 
+Epic | 92% Epic 8% Legendary | 
+Legendary | 100% Legendary Warlord. | Only obtainable through breaking of legendary Warlords + Rewards + Purchase
+</TABLE>
+[Heading2] Player Progression
+[Heading3] Player Level
+[] As the player progresses through the games ‘Jobs’ and ‘Life Goals’ they will earn XP. They will also earn 1XP from each energy they spend. Each level will give the player a maximum energy refill and provide additional rewards such as Credits, Contracts and Trinium. 
+<TABLE>
+Player Level And Rewards Table
+Level | XP Required | Reward | Level | XP Required | Reward | Level | XP Required | Reward
+ |  |  |  |  |  |  |  | 
+1 | 100 | 1x Energy, 10K Credits, 5UC Contracts. | 34 | 4,000 | 1x Energy, 760K Credits. 80 Trinium | 67 | 13,300 | 1x Energy, 2.59M Credits. 150 Trinium
+2 | 150 | 1x Energy, 20K Credits. 20 Trinium | 35 | 4,200 | 1x Energy, 800K Credits. Lvl 4 Firmware. | 68 | 13,650 | 1x Energy, 2.66M Credits. 150 Trinium
+3 | 200 | 1x Energy, 30K Credits. 20 Trinium | 36 | 4,400 | 1x Energy, 840K Credits. 90 Trinium | 69 | 14,000 | 1x Energy, 2.73M Credits. 150 Trinium
+4 | 250 | 1x Energy, 40K Credits. 20 Trinium | 37 | 4,600 | 1x Energy, 880K Credits. 90 Trinium | 70 | 14,400 | 1x Energy, 2.80M Credits. 1E Contract
+5 | 300 | 1x Energy, 50K Credits. 10UC Contracts. | 38 | 4,800 | 1x Energy, 920K Credits. 90 Trinium | 71 | 14,800 | 1x Energy, 2.88M Credits. 160 Trinium
+6 | 350 | 1x Energy, 60K Credits. 30 Trinium | 39 | 5,000 | 1x Energy, 960K Credits. 90 Trinium | 72 | 15,200 | 1x Energy, 2.96M Credits. 160 Trinium
+7 | 400 | 1x Energy, 70K Credits. 30 Trinium | 40 | 5,250 | 1x Energy, 1M Credits. 1R Contract | 73 | 15,600 | 1x Energy, 3.04M Credits. 160 Trinium
+8 | 450 | 1x Energy, 80K Credits. 30 Trinium | 41 | 5,500 | 1x Energy, 1.05M Credits. 100 Trinium | 74 | 16,000 | 1x Energy, 3.12M Credits. 160 Trinium
+9 | 500 | 1x Energy, 90K Credits. 30 Trinium | 42 | 5,750 | 1x Energy, 1.1M Credits. 100 Trinium | 75 | 16,400 | 1x Energy, 3.20M Credits. 2 Lvl 5 Firmware.
+10 | 600 | 1x Energy, 100K Credits. 1R Contract. | 43 | 6,000 | 1x Energy, 1.15M Credits. 100 Trinium | 76 | 16,800 | 1x Energy, 3.28M Credits. 170 Trinium
+11 | 700 | 1x Energy, 120K Credits. 40 Trinium | 44 | 6,250 | 1x Energy, 1.2M Credits. 100 Trinium | 77 | 17,200 | 1x Energy, 3.36M Credits. 170 Trinium
+12 | 800 | 1x Energy, 140K Credits. 40 Trinium | 45 | 6,500 | 1x Energy, 1.25M Credits. Lvl 4 Firmware. | 78 | 17,600 | 1x Energy, 3.44M Credits. 170 Trinium
+13 | 900 | 1x Energy, 160K Credits. 40 Trinium | 46 | 6,750 | 1x Energy, 1.3M Credits. 110 Trinium | 79 | 18,000 | 1x Energy, 3.52M Credits. 170 Trinium
+14 | 1,000 | 1x Energy, 180K Credits. 40 Trinium | 47 | 7,000 | 1x Energy, 1.35M Credits. 110 Trinium | 80 | 18,500 | 1x Energy, 3.60M Credits. 1E Contract
+15 | 1,100 | 1x Energy, 200K Credits. Lvl 3 Firmware. | 48 | 7,250 | 1x Energy, 1.4M Credits. 110 Trinium | 81 | 19,000 | 1x Energy, 3.69M Credits. 180 Trinium
+16 | 1,200 | 1x Energy, 220K Credits. 50 Trinium | 49 | 7,500 | 1x Energy, 1.45M Credits. 110 Trinium | 82 | 19,500 | 1x Energy, 3.78M Credits. 180 Trinium
+17 | 1,300 | 1x Energy, 240K Credits. 50 Trinium | 50 | 7,800 | 1x Energy, 1.5M Credits. 1R Contract | 83 | 20,000 | 1x Energy, 3.87M Credits. 180 Trinium
+18 | 1,400 | 1x Energy, 260K Credits. 50 Trinium | 51 | 8,100 | 1x Energy, 1.56M Credits. 120 Trinium | 84 | 20,500 | 1x Energy, 3.96M Credits. 180 Trinium
+19 | 1,500 | 1x Energy, 280K Credits. 50 Trinium | 52 | 8,400 | 1x Energy, 1.62M Credits. 120 Trinium | 85 | 21,000 | 1x Energy, 4.05M Credits. 2 Lvl 5 Firmware.
+20 | 1,650 | 1x Energy, 300K Credits. 1R Contract | 53 | 8,700 | 1x Energy, 1.68M Credits. 120 Trinium | 86 | 21,500 | 1x Energy, 4.14M Credits. 190 Trinium
+21 | 1,800 | 1x Energy, 330K Credits. 60 Trinium | 54 | 9,000 | 1x Energy, 1.74M Credits. 120 Trinium | 87 | 22,000 | 1x Energy, 4.23M Credits. 190 Trinium
+22 | 1,950 | 1x Energy, 360K Credits. 60 Trinium | 55 | 9,300 | 1x Energy, 1.8M Credits. lvl 5 Firmware. | 88 | 22,500 | 1x Energy, 4.32M Credits. 190 Trinium
+23 | 2,100 | 1x Energy, 390K Credits. 60 Trinium | 56 | 9,600 | 1x Energy, 1.86M Credits. 130 Trinium | 89 | 23,000 | 1x Energy, 4.41M Credits. 190 Trinium
+24 | 2,250 | 1x Energy, 420K Credits. 60 Trinium | 57 | 9,900 | 1x Energy, 1.92M Credits. 130 Trinium | 90 | 23,600 | 1x Energy, 4.5M Credits. 1E Contract
+25 | 2,400 | 1x Energy, 450K Credits. Lvl 3 Firmware. | 58 | 10,200 | 1x Energy, 1.98M Credits. 130 Trinium | 91 | 24,200 | 1x Energy, 4.6M Credits. 200 Trinium
+26 | 2,550 | 1x Energy, 480K Credits. 70 Trinium | 59 | 10,500 | 1x Energy, 2.04M Credits. 130 Trinium | 92 | 24,800 | 1x Energy, 4.7M Credits. 200 Trinium
+27 | 2,700 | 1x Energy, 510K Credits. 70 Trinium | 60 | 10,850 | 1x Energy, 2.10M Credits. 1E Contract | 93 | 25,400 | 1x Energy, 4.8M Credits. 200 Trinium
+28 | 2,850 | 1x Energy, 540K Credits. 70 Trinium | 61 | 11,200 | 1x Energy, 2.17M Credits. 140 Trinium | 94 | 26,000 | 1x Energy, 4.9M Credits. 200 Trinium
+29 | 3,000 | 1x Energy, 570K Credits. 70 Trinium | 62 | 11,550 | 1x Energy, 2.24M Credits. 140 Trinium | 95 | 26,600 | 1x Energy, 5M Credits. 3 Lvl 5 Firmware.
+30 | 3,200 | 1x Energy, 600K Credits. 1R Contract | 63 | 11,900 | 1x Energy, 2.31M Credits. 140 Trinium | 96 | 27,200 | 1x Energy, 5.1M Credits. 1L Contract
+31 | 3,400 | 1x Energy, 640K Credits. 80 Trinium | 64 | 12,250 | 1x Energy, 2.38M Credits. 140 Trinium | 97 | 27,800 | 1x Energy, 5.2M Credits. 1L Contract
+32 | 3,600 | 1x Energy, 680K Credits. 80 Trinium | 65 | 12,600 | 1x Energy, 2.45M Credits. lvl 5 Firmware. | 98 | 28,400 | 1x Energy, 5.3M Credits. 1L Contract
+33 | 3,800 | 1x Energy, 720K Credits. 80 Trinium | 66 | 12,950 | 1x Energy, 2.52M Credits. 150 Trinium | 99 | 29,000 | 1x Energy, 5.5M Credits. 1L Contract
+ |  |  |  |  |  | 100 | 30,000 | 1x Energy, 6M Credits. 1L Warlord
+</TABLE>
+[Heading3] Pit Rank (PVP)
+[] As outlined in the Pit section, there are 13 Ranks to the PVP side of the game. With two PVP aspects to the game there are two sets of ranks both of which will offer a regular weekly cache as a reward. Any and all players can ascend up the ranks to the top with the caveat that losses on offence and defense lose them points. Ranks 1-4 lose 10 pints, 5-8 lose 15 points, 9-12 lose 20 points and rank 13 loses 25 points. Victories each day from offensive fights will gain points +10 each. 
+<TABLE>
+Pit Ranks
+Tier | Brawl | Royal | Points
+1 | Runner | Runner | 100
+2 | Underling | Underling | 200
+3 | Muscle | Muscle | 300
+4 | Enforcer | Enforcer | 400
+5 | Soldier | Soldier | 600
+6 | Body Guard | Body Guard | 800
+7 | Gun Runner | Gun Runner | 1,000
+8 | Diplomat | Diplomat | 1,200
+9 | Captain | Captain | 1,500
+10 | UnderBoss | UnderBoss | 1,800
+11 | Boss | Boss | 2,100
+12 | Warlord | Warlord | 2,400
+13 | Neon Legend | Neon Legend | 3,000+
+</TABLE>
+[Heading3] Monthly Login Rewards
+[] The monthly login rewards will be set to begin with, releasing a specified Epic Warlord for everyone to get. After so many months it’ll then become a rolling reward. This reward table will only progress on login. If a player does not login for a day there is no reset or deletion of progress. An additional feature would be to be able to randomise the groupings, EG month 1 is energy on yellow, month 2 is XP or credits on yellow etc.
+<TABLE>
+Mon | Tues | Weds | Thurs | Fri | Sat | Sun
+20K Credits | 1x XP Boost | 2x Rare T3 Gear Piece | 1x Firmware lvl 2 | 3 x Uncommon Contract | 2x Energy Battery | 2x XP Boost
+2 x Energy Battery | 40K Credits | 4x Rare T3 Gear Piece | 1x XP Boost | 1 x Uncommon T2 Implant | 2x Firmware lvl 2 | 3 x Uncommon Contract
+3 x Energy Battery | 2x Firmware lvl 2 | 2x Rare T3 Gear Piece | 3 x Uncommon Contract | 80K Credits | 1 x Uncommon T2 Implant | 1x Firmware lvl 3
+4 x Energy Battery | 150K Credits | 4x Rare T3 Gear Piece | 3x XP Boost | 1x Firmware lvl 3 | 250 Trinium | 1 x Rare Contract
+5 x Energy Battery | 1 x Uncommon T2 Implant | Epic Warlord | N/A | N/A | N/A | N/A
+</TABLE>
+[Heading3] Jobs and Rewards
+[] Jobs are given to a player in the form of Daily Weekly and Monthly challenges, which when fulfilled will give xp and additional rewards. 
+<TABLE>
+Jobs and Rewards Table
+Jobs | Rewards
+Daily
+Complete 3 'Pit Brawls' | 100 XP, 1x Energy, 10k Credits
+Complete 10 'Den' Battles on Any Difficulty | 100 XP, 10x Pit Brawl Invites, 10k Credits
+Purchase 1 Item From 'The Plaza' | 100 XP,10x Generic Minor Deeds, 10k Credits
+Recruit 3 Warlords | 100 XP, 10 Trinium, 10k Credits
+Upgrade Three Pieces of Equipment to 8+ | 100 XP, 1x lvl 3 Firmware, 10k Credits
+Raise a Warlords Level | 100 XP, 1x Heist Plan, 10k Credits
+Gain 3 Equipment From Hideouts | 100 XP, 10 Trinium, 10k Credits
+Complete All Daily Jobs | 300 XP, 50 Trinium, 50K Credits
+Weekly
+Complete all Daily Jobs 5 Times | 900 XP, 1x Rare Stimm, 20k Credits
+Complete 20 Pit Brawls | 900 XP, 1x Energy, 20k Credits
+Increase 1 Warlord's Reputation | 900 XP, 5x Generic Major Deeds, 20k Credits
+Gain 15 Equipment From Hideouts | 900 XP, 100% XP Boost, 20k Credits
+Upgrade a Warlord to Rank 3 | 900 XP, 2x Heist Plan, 20k Credits
+Upgrade Three Pieces of Equipment to 12+ | 900 XP, 10x Pit Brawl Invites, 20k Credits
+Complete All Weekly Jobs | 1600 XP, 1x Rare Contract, 100k Credits
+Monthly
+Complete all Daily Jobs 30 Times | 1800 XP, 1x Epic Stimm, 100K Credits
+Complete 150 Pit Brawls | 1800 XP, 2x Energy, 100K Credits
+Complete 400 'Den' Battles on Any Difficulty | 1800 XP, 1x lvl 4 Firmware, 100K Credits
+Upgrade a Warlord to Rank 5 | 1800 XP, 2x Rare Stimm, 100K Credits
+Upgrade Three Pieces of Equipment to 16 | 1800 XP, 5x Generic Grand Deeds, 100K Credits
+Gain 100 Equipment From Hideouts | 1800 XP, 3x 100% XP Boost, 100K Credits
+Complete All Monthly Jobs | 3200 XP, 1x Epic Contract, 1M Credits
+</TABLE>
+[Heading3] Ambitions (Lifetime Missions)
+[] Ambitions are effectively life long achievements to be made in game, for instance beating the highest stage of each Hideout several times. These achievements will act as an overall mission progression throughout the game.  
+[] Campaign Ambitions
+<TABLE>
+Campaign Ambitions Table and Rewards
+Tier | Order | Ambition Description | Rewards
+1 | 1 | Complete Den 1:7 on Street Punk | 1x Energy, 10K Credits
+1 | 2 | Complete Den 2:7 on Street Punk | 1x 100% XP Boost,10K Credits
+1 | 3 | Complete Den 3:7 on Street Punk | 5x Generic Minor Deeds, 10K Credits
+1 | 4 | Complete Den 4:7 on Street Punk | 6x Rank 4 Epic Equipment, 10K Credits
+1 | 5 | Complete Den 5:7 on Street Punk | 50 Trinium, 10K Credits
+1 | 6 | Complete Den 6:7 on Street Punk | 2x Heist Plan, 10K Credits
+1 | 7 | Complete Den 7:7 on Street Punk | 1x lvl 3 Firmware, 10K Credits
+1 | 8 | Complete Den 8:7 on Street Punk | 250K Credits
+1 | 9 | Complete Den 9:7 on Street Punk | 10x Pit Brawl Invites, 10k Credits
+1 | 10 | Complete Den 10:7 on Street Punk | 3x Rank 4 Epic Implants, 10K Credits
+1 | 11 | Complete All Tier 1 Campaign Ambitions | 1x Rare Contract
+2 | 1 | Complete Den 1:7 on Mob Boss | 2x Energy, 25K Credits
+2 | 2 | Complete Den 2:7 on Mob Boss | 2x 100% XP Boost, 25K Credits
+2 | 3 | Complete Den 3:7 on Mob Boss | 5x Generic Major Deeds, 25K Credits
+2 | 4 | Complete Den 4:7 on Mob Boss | 6x Rank 5 Epic Equipment, 25K Credits
+2 | 5 | Complete Den 5:7 on Mob Boss | 100 Trinium, 25K Credits
+2 | 6 | Complete Den 6:7 on Mob Boss | 3x Heist Plan, 25K Credits
+2 | 7 | Complete Den 7:7 on Mob Boss | 1x lvl 4 Firmware, 25K Credits
+2 | 8 | Complete Den 8:7 on Mob Boss | 500K Credits
+2 | 9 | Complete Den 9:7 on Mob Boss | 10x Pit Brawl Invites, 250 Pit Coin, 25k Credits
+2 | 10 | Complete Den 10:7 on Mob Boss | 3x Rank 5 Epic Implants, 25K Credits
+2 | 11 | Complete All Tier 2 Campaign Ambitions | 1x Epic Contract
+3 | 1 | Complete Den 1:7 on Warlord | 3x Energy, 50K Credits
+3 | 2 | Complete Den 2:7 on Warlord | 3x 100% XP Boost, 50K Credits
+3 | 3 | Complete Den 3:7 on Warlord | 5x Generic Grand Deeds, 50K Credits
+3 | 4 | Complete Den 4:7 on Warlord | 6x Rank 6 Epic Equipment, 50K Credits
+3 | 5 | Complete Den 5:7 on Warlord | 200 Trinium, 50K Credits
+3 | 6 | Complete Den 6:7 on Warlord | 5x Heist Plan, 50K Credits
+3 | 7 | Complete Den 7:7 on Warlord | 1x lvl 5 Firmware, 50K Credits
+3 | 8 | Complete Den 8:7 on Warlord | 1M Credits
+3 | 9 | Complete Den 9:7 on Warlord | 1000 Pit Coin, 50k Credits
+3 | 10 | Complete Den 10:7 on Warlord | 3x Rank 6 Epic Implants, 50K Credits
+3 | 11 | Complete All Tier 3 Campaign Ambitions | 1x Legendary Contract
+</TABLE>
+[] Hideout Ambitions
+<TABLE>
+Hideout Ambitions Table and Rewards
+Tier | Order | Ambition Description | Rewards
+1 | 1 | Beat Hideout Cardinal Trolls Stage 10, 20 Times | 1x Energy, 10K Credits
+1 | 2 | Beat Hideout Vultures Stage 10, 20 Times | 1x 100% XP Boost,10K Credits
+1 | 3 | Beat Hideout TeraTech Cybernetics Stage 10, 20 Times | 5x Generic Minor Deeds, 10K Credits
+1 | 4 | Beat Hideout Quantum Vikings Stage 10, 20 Times | 6x Rank 4 Epic Equipment, 10K Credits
+1 | 5 | Beat Hideout Synapse Centre Stage 10, 20 Times | 50 Trinium, 10K Credits
+1 | 6 | Beat Hideout Heist Stage 10, 5 Times | 2x Heist Plan, 10K Credits
+1 | 7 | Beat Hideout Chop Shop Stage 10, 20 Times | 1x lvl 3 Firmware, 10K Credits
+1 | 8 | Beat Hideout Paragon Deeds Stage 10, 20 Times | 250K Credits
+1 | 9 | Beat Hideout Neutral Deeds Stage 10, 20 Times | 10x Pit Brawl Invites, 10k Credits
+1 | 10 | Beat Hideout Renegade Deeds Stage 10, 20 Times | 3x Rank 4 Epic Implants, 10K Credits
+1 | 11 | Beat Hideout Paragon Deeds Stage 10, 20 Times | 50x Tier 1 Memory Fragments, 10K Credits
+1 | 12 | Complete All Tier 1 Hideout Ambitions | 1x Rare Contract
+2 | 1 | Beat Hideout Cardinal Trolls Stage 15, 20 Times | 2x Energy, 25K Credits
+2 | 2 | Beat Hideout Vultures Stage 15, 20 Times | 2x 100% XP Boost, 25K Credits
+2 | 3 | Beat Hideout TeraTech Cybernetics Stage 15, 20 Times | 5x Generic Major Deeds, 25K Credits
+2 | 4 | Beat Hideout Quantum Vikings Stage 15, 20 Times | 6x Rank 5 Epic Equipment, 25K Credits
+2 | 5 | Beat Hideout Synapse Centre Stage 15, 20 Times | 100 Trinium, 25K Credits
+2 | 6 | Beat Hideout Heist Stage 15, 5 Times | 3x Heist Plan, 25K Credits
+2 | 7 | Beat Hideout Chop Shop Stage 15, 20 Times | 1x lvl 4 Firmware, 25K Credits
+2 | 8 | Beat Hideout Paragon Deeds Stage 15, 20 Times | 500K Credits
+2 | 9 | Beat Hideout Neutral Deeds Stage 15, 20 Times | 10x Pit Brawl Invites, 250 Pit Coin, 25k Credits
+2 | 10 | Beat Hideout Renegade Deeds Stage 15, 20 Times | 3x Rank 5 Epic Implants, 25K Credits
+2 | 11 | Beat Hideout Paragon Deeds Stage 15, 20 Times | 100x Tier 2 Memory Fragments, 25K Credits
+2 | 12 | Complete All Tier 2 Hideout Ambitions | 1x Epic Contract
+3 | 1 | Beat Hideout Cardinal Trolls Stage 20, 20 Times | 3x Energy, 50K Credits
+3 | 2 | Beat Hideout Vultures Stage 20, 20 Times | 3x 100% XP Boost, 50K Credits
+3 | 3 | Beat Hideout TeraTech Cybernetics Stage 20, 20 Times | 5x Generic Grand Deeds, 50K Credits
+3 | 4 | Beat Hideout Quantum Vikings Stage 20, 20 Times | 6x Rank 6 Epic Equipment, 50K Credits
+3 | 5 | Beat Hideout Synapse Centre Stage 20, 20 Times | 200 Trinium, 50K Credits
+3 | 6 | Beat Hideout Heist Stage 20, 5 Times | 5x Heist Plan, 50K Credits
+3 | 7 | Beat Hideout Chop Shop Stage 20, 20 Times | 1x lvl 5 Firmware, 50K Credits
+3 | 8 | Beat Hideout Paragon Deeds Stage 20, 20 Times | 1M Credits
+3 | 9 | Beat Hideout Neutral Deeds Stage 20, 20 Times | 1000 Pit Coin, 50k Credits
+3 | 10 | Beat Hideout Renegade Deeds Stage 20, 20 Times | 3x Rank 6 Epic Implants, 50K Credits
+3 | 11 | Beat Hideout Paragon Deeds Stage 20, 20 Times | 100x Tier 3 Memory Fragments, 50K Credits
+3 | 12 | Complete All Tier 3 Hideout Ambitions | 1x Legendary Contract
+</TABLE>
+[] Equipment Ambitions
+<TABLE>
+Equipment Ambitions Table and Rewards
+Tier | Order | Ambition Description | Rewards
+1 | 1 | Gain HP Set Chest with HP% Primary | 1x Energy, 10K Credits
+1 | 2 | Gain Armour Set Chest with Armour% Primary | 1x 100% XP Boost,10K Credits
+1 | 3 | Gain Firepower Set Chest with Firepower% Primary | 5x Generic Minor Deeds, 10K Credits
+1 | 4 | Gain Speed Set Boots with Speed Primary | 6x Rank 4 Epic Equipment, 10K Credits
+1 | 5 | Gain Hacking Set Chest with Hacking Primary | 50 Trinium, 10K Credits
+1 | 6 | Gain Firewall Set Chest with Firewall Primary | 2x Heist Plan, 10K Credits
+1 | 7 | Gain Crit Chance Set Gloves with Crit Chance% Primary | 1x lvl 3 Firmware, 10K Credits
+1 | 8 | Gain Crit Damage Set Gloves with Crit Damage% Primary | 250K Credits
+1 | 9 | Sell 10 Equipments | 10x Pit Brawl Invites, 10k Credits
+1 | 10 | Level 6 Equipments to 4 | 3x Rank 4 Epic Implants, 10K Credits
+1 | 11 | Equip 1 Warlord with a Full Set | 50x Tier 1 Memory Fragments, 10K Credits
+1 | 12 | Complete All Tier 1 Equipment Ambitions | 1x Rare Contract
+2 | 1 | Equip a Warlord with a HP Set | 2x Energy, 25K Credits
+2 | 2 | Equip a Warlord with a Armour Set | 2x 100% XP Boost, 25K Credits
+2 | 3 | Equip a Warlord with a Firepower Set | 5x Generic Major Deeds, 25K Credits
+2 | 4 | Equip a Warlord with a Speed Set | 6x Rank 5 Epic Equipment, 25K Credits
+2 | 5 | Equip a Warlord with a Hacking Set | 100 Trinium, 25K Credits
+2 | 6 | Equip a Warlord with a Firewall Set | 3x Heist Plan, 25K Credits
+2 | 7 | Equip a Warlord with a Crit Chance Set | 1x lvl 4 Firmware, 25K Credits
+2 | 8 | Equip a Warlord with a Crit Damage Set | 500K Credits
+2 | 9 | Sell 50 Equipments | 10x Pit Brawl Invites, 250 Pit Coin, 25k Credits
+2 | 10 | Level 6 Equipments to 12 | 3x Rank 5 Epic Implants, 25K Credits
+2 | 11 | Equip 5 Warlords with a Full Set | 100x Tier 2 Memory Fragments, 25K Credits
+2 | 12 | Complete All Tier 2 Equipment Ambitions | 1x Epic Contract
+3 | 1 | Equip 3 Warlords with a HP Set | 3x Energy, 50K Credits
+3 | 2 | Equip 3 Warlords with a Armour Set | 3x 100% XP Boost, 50K Credits
+3 | 3 | Equip 3 Warlords with a Firepower Set | 5x Generic Grand Deeds, 50K Credits
+3 | 4 | Equip 3 Warlords with a Speed Set | 6x Rank 6 Epic Equipment, 50K Credits
+3 | 5 | Equip 3 Warlords with a Hacking Set | 200 Trinium, 50K Credits
+3 | 6 | Equip 3 Warlords with a Firewall Set | 5x Heist Plan, 50K Credits
+3 | 7 | Equip 3 Warlords with a Crit Chance Set | 1x lvl 5 Firmware, 50K Credits
+3 | 8 | Equip 3 Warlords with a Crit Damage Set | 1M Credits
+3 | 9 | Sell 100 Equipments | 1000 Pit Coin, 50k Credits
+3 | 10 | Level 6 Equipments to 16 | 3x Rank 6 Epic Implants, 50K Credits
+3 | 11 | Equip 10 Warlords with a Full Set | 100x Tier 3 Memory Fragments, 50K Credits
+3 | 12 | Complete All Tier 3 Equipment Ambitions | 1x Legendary Contract
+</TABLE>
+[] Reputation Ambitions
+<TABLE>
+Reputation Ambitions Table and Rewards
+Tier | Order | Ambition Description | Rewards
+1 | 1 | Gain 10 Minor Paragon Deeds | 1x Energy, 10K Credits
+1 | 2 | Gain 10 Minor Neutral Deeds | 1x 100% XP Boost,10K Credits
+1 | 3 | Gain 10 Minor Renegade Deeds | 5x Generic Minor Deeds, 10K Credits
+1 | 4 | Gain 10 Minor Generic Deeds | 6x Rank 4 Epic Equipment, 10K Credits
+1 | 5 | Raise a Paragon Warlord's Reputation to 1 | 50 Trinium, 10K Credits
+1 | 6 | Raise a Paragon Warlord's Reputation to 2 | 2x Heist Plan, 10K Credits
+1 | 7 | Raise a Neutral Warlord's Reputation to 1 | 1x lvl 3 Firmware, 10K Credits
+1 | 8 | Raise a Neutral Warlord's Reputation to 2 | 250K Credits
+1 | 9 | Raise a Renegade Warlord's Reputation to 1 | 10x Pit Brawl Invites, 10k Credits
+1 | 10 | Raise a Renegade Warlord's Reputation to 2 | 3x Rank 4 Epic Implants, 10K Credits
+1 | 11 | Complete all Tier 1 Reputation Ambitions | 1x Rare Contract
+2 | 1 | Gain 10 Major Paragon Deeds | 2x Energy, 25K Credits
+2 | 2 | Gain 10 Major Neutral Deeds | 2x 100% XP Boost, 25K Credits
+2 | 3 | Gain 10 Major Renegade Deeds | 5x Generic Major Deeds, 25K Credits
+2 | 4 | Gain 10 Major Generic Deeds | 6x Rank 5 Epic Equipment, 25K Credits
+2 | 5 | Raise a Paragon Warlord's Reputation to 3 | 100 Trinium, 25K Credits
+2 | 6 | Raise a Paragon Warlord's Reputation to 4 | 3x Heist Plan, 25K Credits
+2 | 7 | Raise a Neutral Warlord's Reputation to 3 | 1x lvl 4 Firmware, 25K Credits
+2 | 8 | Raise a Neutral Warlord's Reputation to 4 | 500K Credits
+2 | 9 | Raise a Renegade Warlord's Reputation to 3 | 10x Pit Brawl Invites, 250 Pit Coin, 25k Credits
+2 | 10 | Raise a Renegade Warlord's Reputation to 4 | 3x Rank 5 Epic Implants, 25K Credits
+2 | 11 | Complete all Tier 2 Reputation Ambitions | 1x Epic Contract
+3 | 1 | Gain 10 Grand Paragon Deeds | 3x Energy, 50K Credits
+3 | 2 | Gain 10 Grand Neutral Deeds | 3x 100% XP Boost, 50K Credits
+3 | 3 | Gain 10 Grand Renegade Deeds | 5x Generic Grand Deeds, 50K Credits
+3 | 4 | Gain 10 Grand Generic Deeds | 6x Rank 6 Epic Equipment, 50K Credits
+3 | 5 | Raise a Paragon Warlord's Reputation to 5 | 200 Trinium, 50K Credits
+3 | 6 | Raise a Paragon Warlord's Reputation to 6 | 5x Heist Plan, 50K Credits
+3 | 7 | Raise a Neutral Warlord's Reputation to 5 | 1x lvl 5 Firmware, 50K Credits
+3 | 8 | Raise a Neutral Warlord's Reputation to 6 | 1M Credits
+3 | 9 | Raise a Renegade Warlord's Reputation to 5 | 1000 Pit Coin, 50k Credits
+3 | 10 | Raise a Renegade Warlord's Reputation to 6 | 3x Rank 6 Epic Implants, 50K Credits
+3 | 11 | Complete all Tier 3 Reputation Ambitions | 1x Legendary Contract
+</TABLE>
+[] Warlord Ambitions
+<TABLE>
+Warlord Ambitions Table and Rewards
+Tier | Order | Ambition Description | Rewards
+1 | 1 | Recruit 25 Warlords | 1x Energy, 10K Credits
+1 | 2 | Level 10 Warlords to 10 | 1x 100% XP Boost,10K Credits
+1 | 3 | Rank 10 Warlords to Rank 2 | 5x Generic Minor Deeds, 10K Credits
+1 | 4 | Consume 10 Warlords | 6x Rank 4 Epic Equipment, 10K Credits
+1 | 5 | Level an Armour Warlord to 30 | 50 Trinium, 10K Credits
+1 | 6 | Level an Firepower Warlord to 30 | 1x lvl 3 Firmware, 10K Credits
+1 | 7 | Level an Modder Warlord to 30 | 10x Pit Brawl Invites, 10k Credits
+1 | 8 | Level an Hacker Warlord to 30 | 3x Rank 4 Epic Implants, 10K Credits
+1 | 9 | Complete all Tier 1 Warlord Ambitions | 1x Rare Contract
+2 | 1 | Recruit 50 Warlords | 2x Energy, 25K Credits
+2 | 2 | Level 10 Warlords to 30 | 2x 100% XP Boost, 25K Credits
+2 | 3 | Rank 10 Warlords to Rank 4 | 5x Generic Major Deeds, 25K Credits
+2 | 4 | Consume 50 Warlords | 6x Rank 5 Epic Equipment, 25K Credits
+2 | 5 | Level an Armour Warlord to 40 | 100 Trinium, 25K Credits
+2 | 6 | Level an Firepower Warlord to 40 | 1x lvl 4 Firmware, 25K Credits
+2 | 7 | Level an Modder Warlord to 40 | 10x Pit Brawl Invites, 250 Pit Coin, 25k Credits
+2 | 8 | Level an Hacker Warlord to 40 | 3x Rank 5 Epic Implants, 10K Credits
+2 | 9 | Complete all Tier 2 Warlord Ambitions | 1x Epic Contract
+3 | 1 | Recruit 50 Warlords | 3x Energy, 50K Credits
+3 | 2 | Level 10 Warlords to 50 | 3x 100% XP Boost, 50K Credits
+3 | 3 | Rank 10 Warlords to Rank 6 | 5x Generic Grand Deeds, 50K Credits
+3 | 4 | Consume 100 Warlords | 6x Rank 6 Epic Equipment, 50K Credits
+3 | 5 | Level an Armour Warlord to 60 | 200 Trinium, 50K Credits
+3 | 6 | Level an Firepower Warlord to 60 | 1x lvl 5 Firmware, 50K Credits
+3 | 7 | Level an Modder Warlord to 60 | 1000 Pit Coin, 50k Credits
+3 | 8 | Level an Hacker Warlord to 60 | 3x Rank 6 Epic Implants, 50K Credits
+3 | 9 | Complete all Tier 3 Warlord Ambitions | 1x Legendary Contract
+</TABLE>
+[] Bastion and Pit  Ambitions
+<TABLE>
+Bastion and Pit Ambitions Table and Rewards
+Tier | Order | Ambition Description | Rewards
+1 | 1 | Deal 10m Total Damage in Bastions | 1x Energy, 10K Credits
+1 | 2 | Apply 50 Debuffs to a Bastion Boss | 1x 100% XP Boost,10K Credits
+1 | 3 | Enter 10 Bastion Stages | 5x Generic Minor Deeds, 10K Credits
+1 | 4 | Survive 20 Turns Inside a Bastion | 6x Rank 4 Epic Equipment, 10K Credits
+1 | 5 | Enter 25 Pit Brawls/Royals | 50 Trinium, 10K Credits
+1 | 6 | Defeat 100 Enemies in The Pit | 1x lvl 3 Firmware, 10K Credits
+1 | 7 | Apply 50 Debuffs in The Pit | 10x Pit Brawl Invites, 10k Credits
+1 | 8 | Purchase a Safehouse Upgrade | 3x Rank 4 Epic Implants, 10K Credits
+1 | 9 | Complete all Tier 1 Bastion and Pit Ambitions | 1x Rare Contract
+2 | 1 | Deal 50m Total Damage in Bastions | 2x Energy, 25K Credits
+2 | 2 | Apply 100 Debuffs to a Bastion Boss | 2x 100% XP Boost, 25K Credits
+2 | 3 | Enter 25 Bastion Stages | 5x Generic Major Deeds, 25K Credits
+2 | 4 | Survive 30 Turns Inside a Bastion | 6x Rank 5 Epic Equipment, 25K Credits
+2 | 5 | Enter 50 Pit Brawls/Royals | 100 Trinium, 25K Credits
+2 | 6 | Defeat 150 Enemies in The Pit | 1x lvl 4 Firmware, 25K Credits
+2 | 7 | Apply 100 Debuffs in The Pit | 10x Pit Brawl Invites, 250 Pit Coin, 25k Credits
+2 | 8 | Purchase a Level 5 Safehouse Upgrade | 3x Rank 5 Epic Implants, 10K Credits
+2 | 9 | Complete all Tier 2 Bastion and Pit Ambitions | 1x Epic Contract
+3 | 1 | Deal 150m Total Damage in Bastions | 3x Energy, 50K Credits
+3 | 2 | Apply 150 Debuffs to a Bastion Boss | 3x 100% XP Boost, 50K Credits
+3 | 3 | Enter 50 Bastion Stages | 5x Generic Grand Deeds, 50K Credits
+3 | 4 | Survive 45 Turns Inside a Bastion | 6x Rank 6 Epic Equipment, 50K Credits
+3 | 5 | Enter 100 Pit Brawls/Royals | 200 Trinium, 50K Credits
+3 | 6 | Defeat 300 Enemies in The Pit | 1x lvl 5 Firmware, 50K Credits
+3 | 7 | Apply 150 Debuffs in The Pit | 1000 Pit Coin, 50k Credits
+3 | 8 | Purchase a Level 10 Safehouse Upgrade | 3x Rank 6 Epic Implants, 50K Credits
+3 | 9 | Complete all Tier 3 Bastion and Pit Ambitions | 1x Legendary Contract
+</TABLE>
+[Heading3] Safehouse Upgrade
+[] The Safehouse is an upgradeable location found on the City Centre Hub. It contains nodes for each of the core attributes/stats split by morality. Each node can be upgraded by spending Pit Coin. 
+<TABLE>
+Safehouse Purchasable Upgrades
+Level | Pit Coin | Bonus | Stats
+1 | 100 | 1% | HP, Armour, Firepower, Crit Damage
+2 | 225 | 2% | 
+3 | 350 | 3% | 
+4 | 475 | 4% | 
+5 | 600 | 6% | 
+6 | 725 | 8% | 
+7 | 850 | 10% | 
+8 | 975 | 14% | 
+9 | 1,100 | 16% | 
+10 | 1,250 | 20% | 
+1 | 100 | 2 | Hacking and Firewall
+2 | 225 | 4 | 
+3 | 350 | 6 | 
+4 | 475 | 8 | 
+5 | 600 | 12 | 
+6 | 725 | 16 | 
+7 | 850 | 20 | 
+8 | 975 | 28 | 
+9 | 1,100 | 32 | 
+10 | 1,250 | 40 | 
+</TABLE>
+[Heading2] Gang (Clan)
+[] A player is required to join a ‘Gang’ before they can enter/take part in Bastions as they are a clan only activity. Once in a Gang, players will have a gang chatroom, access to Gang messages if the Gang leader.
+[] -Think up reason to have clan other than Bastions-
+[Heading2] The Plaza
+[] The plaza is a market in the city center which updates hourly with new items for purchase with credits. 
+[Heading1] Monetization 
+[Heading2] The Trinium Exchange (Shop)
+[] The Trinium Exchange is the in-game shop that allows for the purchase of various packs and resources with Neon Warlord’s Premium in-game currency.
+<TABLE>
+Trinium Exchange
+Items | Description | Cost | Limit
+Packs |  |  | 
+Small Rare Contracts Pack | 5 Rare Contracts, 125k Credits | £4.99 | 5
+Large Rare Contracts Pack | 15 Rare Contracts, 375k Credits | £12.99 | 3
+Small Epic Contract Pack | 1 Epic Contract, 50k Credits | £9.99 | 5
+Medium Epic Contracts Pack | 3 Epic Contract, 150k Credits | £28.99 | 3
+Large Epic Contract Pack | 10 Epic Contract, 500k Credits | £89.99 | 1
+Small Legendary Contract Pack | 1 Legendary Contract, 100k Credits | £19.99 | 3
+Large Legendary Contracts Pack | 3 Legendary Contracts, 300k Credits | £49.99 | 1
+Street Punk Pack | 1 Rare Contract,150k Credits, 300 Trinium, 350 Energy | £4.99 | 5
+Mob Boss Pack | 5 Rare Contract, 1 Epic Contract, 500k Credits, 600 Trinium, 700 Energy | £19.99 | 2
+Warlord Pack | 10 Rare, 2 Epic, 1 Legendary Contracts, 1m Credits, 1000 Trinium, 1000 Energy | £49.99 | 1
+Scavenger Pack | 250 Energy, 150k Credits, 1x Lvl 3 Firmware, 1x 100% XP Boost, 5 Heist Plans | £4.99 | 5
+Vulture Pack | 500 Energy, 500k Credits, 3x Lvl 3 Firmware, 3x 100% XP Boost, 5 Heist Plans | £9.99 | 2
+Hunter Pack | 1000 Energy, 1m Credits, 2x Lvl 4 Firmware, 5x 100% XP Boost, 5 Heist Plans | £19.99 | 1
+Equipment Pack | Full Set of Rank 6 Legendary Equipment, 500k Credits, 200 Energy | £19.99 | 5
+Implant Pack | Full Set of Rank 6 Legendary Implants, 300k Credits, 150 Energy | £14.99 | 5
+Neon Pack | 12 Assorted Rank 6 Neons | £4.99 | 5
+Massive Neon Pack | 60 Assorted Rank 6 Neons | £49.99 | 1
+Trinium Vault |  |  | 
+Iota of Trinium | 660 Trinium | £4.99 | N/A
+Bundle of Trinium | 1550 Trinium | £9.99 | N/A
+Consignment of Trinium | 3200 Trinium | £19.99 | N/A
+Cluster of Trinium | 4750 Trinium | £29.99 | N/A
+Plethora of Trinium | 8000 Trinium | £49.99 | N/A
+Credit Bank |  |  | 
+Small Investment | 100k Credits | 60 Trinium | N/A
+Medium Investment | 250k Credits | 150 Trinium | N/A
+Substantial Investment | 1.5m Credits | 900 Trinium | N/A
+Exceptional Investment | 4m Credits | 2000 Trinium | N/A
+Masterful Investment | 10m Credits | 5000 Trinium | N/A
+Trinium Market |  |  | 
+Paragon Deeds | 30 Minor, 20 Major, 10 Grand | 1200 Trinium | N/A
+Neutral Deeds | 30 Minor, 20 Major, 10 Grand | 1200 Trinium | N/A
+Renegade Deeds | 30 Minor, 20 Major, 10 Grand | 1200 Trinium | N/A
+Generic Deeds | 30 Minor, 20 Major, 10 Grand | 1000 Trinium | N/A
+Energy Boost | 1x Energy | 60 Trinium | N/A
+Pit Brawl Refill | 10x Pit Brawl Invites | 100 Trinium | 2
+Pit Royal Refill | 10x Pit Royal Invites | 100 Trinium | 2
+1 Day Boost | 1x 100% XP Boost | 100 Trinium | N/A
+3 Day Boost | 3x 100% XP Boost | 250 Trinium | N/A
+3x Rare Contracts | 3x Rare Contracts, 75k Credits | 500 Trinium | N/A
+7x Rare Contracts | 7x Rare Contracts, 175k Credits | 1100 Trinium | N/A
+15x Rare Contracts | 15x Rare Contracts, 375k Credits | 2200 Trinium | N/A
+Raid Boss Ticket | 1x Raid Boss Ticket | 300 Trinium | N/A
+Heist Plan | 5x Heist Plan | 1000 Trinium | N/A
+</TABLE>
+[Heading2] Subscriptions
+[] A Sub that gives you regular bonuses? More automated battles, increases to credits and xp given? 
+[Heading2] Player Progress Double Rewards
+[] Gives extra Rewards on each of the player levels 
+[Heading2] Battle Pass 
+[] The battle pass is a seasonal reward track that lasts for 10 weeks with a  2 week gap. During this time the players can level their pass from 1-100 gaming rewards along the way.  There will be two tracks, Free and Premium. Free players will only be able to receive the rewards aligned with the free track, whilst Premium players will receive the free track as well as the bonus rewards aligned in the premium track. Optionally you can purchase a Boosted Premium Pass which will boot the players pass straight to level 25. Reducing the amount they have to do to complete the pass during that season. 
+[] The pass is leveled through the completion of daily and weekly challenges which each reward the player with ‘Merits’. Each level of the pass requires 20 Merits progress. Additionally, each week during the season will add a set of ‘Weekly’ challenges which offer up a total of 100 Merits to further help boost progress. The challenges will randomly select from an assortment and players have the ability to reset 1 weekly challenge from each of the respective weeks. 
+[] The 3 price points are;
+[] Free: £0
+[] Premium: £15
+[] Premium + 25 Levels: £25
+[] Daily Challenges x 5: 15 Merits Each + 25 Merits for Full Completion
+[] Kill 10 Warlords in the Pit.
+[] Rank up Warlord to Rank 4+
+[] Rank up An ‘x’ Warlord
+[] Leveling Equipment to 16
+[] Level 3 Equipments to 12
+[] Acquire 3 Equipment from Hideouts
+[] Open 10 Contracts
+[] Complete 10 Dens
+[] Complete 5 Hideouts
+[] Spend 100k Credits
+[] Weekly Challenges x 4: 20 Merits Each + 20 Merits Full Completion
+[] Kill 25 Warlords in the Pit.
+[] Rank up Warlord to Rank 5+
+[] Rank up An ‘x’ Warlord
+[] Level 2 Equipment to 16
+[] Acquire 10 Equipment from Hideouts
+[] Open 25 Contracts
+[] Complete 50 Dens
+[] Complete 25 Hideouts
+[] Spend 500k Credits
+<TABLE>
+Battle Pass Reward Track
+Level | Free Pass | Paid Pass | Level | Free Pass | Paid Pass
+1 | 1x Rare Contract | 10% XP Boost | 51 |  | Set of Rank 5 Equipment
+2 | 1x Energy | 1x Rare Contract | 52 | 250K Credits | 500K Credits
+3 | 50K Credits | 100K Credits | 53 |  | Set of Rank 5 Implants
+4 | 1x 100% XP Boost | 1x 100% XP Boost | 54 | 2x 100% XP Boost | 3x Energy
+5 | 50 Trinium | 50 Trinium | 55 |  | 100 Trinium
+6 | 1x lvl 3 Firmware | 2x lvl 3 Firmware | 56 | Set of Rank 5 Equipment | Set of Rank 5 Equipment
+7 | 2x Heist Plan | 2x Heist Plan | 57 |  | 1x lvl 5 Firmware
+8 | Set of Rank 4 Equipment | Set of Rank 4 Equipment | 58 | 3x Energy | 3x Energy
+9 | Set of Rank 4 Implants | Set of Rank 4 Implants | 59 |  | Set of Rank 5 Implants
+10 | 1x Rare Contract | 1x Rare Contract | 60 | 2x Heist Plan | 10% XP Boost
+11 |  | Set of Rank 4 Equipment | 61 |  | 1x Rare Contract
+12 | 50K Credits | 100K Credits | 62 | 2x Rare Contract | 3x Rare Contract
+13 |  | 2x Energy | 63 |  | 500K Credits
+14 | 1x Rare Contract | 1x Rare Contract | 64 | Set of Rank 5 Implants | Set of Rank 5 Implants
+15 |  | 2x lvl 3 Firmware | 65 |  | Set of Rank 5 Neons
+16 | 1x 100% XP Boost | 250K Credits | 66 | 100 Trinium | Set of Rank 5 Implants
+17 |  | Set of Rank 4 Neons | 67 |  | 200 Trinium
+18 | 1x lvl 3 Firmware | 1x lvl 3 Firmware | 68 | Set of Rank 5 Neons | Set of Rank 5 Neons
+19 |  | 2x Energy | 69 |  | 500K Credits
+20 | 50 Trinium | 10% XP Boost | 70 | 2x 100% XP Boost | 1x Rare Contract
+21 |  | 1x Rare Contract | 71 |  | Set of Rank 5 Equipment
+22 | 100K Credits | 100K Credits | 72 | 3x Energy | 3x Energy
+23 |  | Set of Rank 4 Equipment | 73 |  | Set of Rank 5 Neons
+24 | 2x Energy | 250K Credits | 74 | 2x Heist Plan | Set of Rank 5 Implants
+25 | Set Rare Warlord | Set of Rank 4 Implants | 75 | Set Rare Warlord | 1x lvl 5 Firmware
+26 | 1x 100% XP Boost | 1x Energy | 76 | 200 Trinium | 200 Trinium
+27 |  | 1x lvl 4 Firmware | 77 |  | Set of Rank 5 Equipment
+28 | Set of Rank 4 Neons | Set of Rank 4 Neons | 78 | 1x Epic Contract | 2x Epic Contract
+29 |  | 1x Rare Contract | 79 |  | 4x Energy
+30 | 2x Energy | 250K Credits | 80 | 2x 100% XP Boost | 10% XP Boost
+31 |  | 1x Rare Contract | 81 |  | 1x Rare Contract
+32 | 2x Heist Plan | 250K Credits | 82 | Set of Rank 6 Implants | Set of Rank 6 Implants
+33 |  | 2x Energy | 83 |  | 2x Heist Plan
+34 | 100K Credits | 100K Credits | 84 | 500K Credits | 1M Credits
+35 |  | Set of Rank 4 Equipment | 85 |  | Set of Rank 5 Neons
+36 | Set of Rank 4 Equipment | 1x lvl 4 Firmware | 86 | 4x Energy | 5x Energy
+37 |  | 1x Energy | 87 |  | 2x Heist Plan
+38 | 50 Trinium | 50 Trinium | 88 | Set of Rank 6 Equipment | Set of Rank 6 Equipment
+39 |  | Set of Rank 4 Neons | 89 |  | Set of Rank 6 Neons
+40 | 2x Energy | 10% XP Boost | 90 | 2x Heist Plan | 1x lvl 5 Firmware
+41 |  | 250K Credits | 91 |  | 1M Credits
+42 | 2x Rare Contract | 2x Rare Contract | 92 | 1x Epic Contract | 2x Epic Contract
+43 |  | 2x Energy | 93 |  | Set of Rank 6 Equipment
+44 | 2x Heist Plan | 2x Heist Plan | 94 | Set of Rank 6 Neons | Set of Rank 6 Neons
+45 |  | Set of Rank 5 Equipment | 95 |  | 1x lvl 5 Firmware
+46 | 250K Credits | 1x lvl 4 Firmware | 96 | 500K Credits | 1M Credits
+47 |  | Set of Rank 4 Implants | 97 |  | 2x 100% XP Boost
+48 | 2x Energy | 1x Rare Contract | 98 | 5x Energy | 5x Energy
+49 |  | 2x Energy | 99 |  | Set of Rank 6 Implants
+50 | Set Epic Warlord | 1x Epic Contract | 100 | Set Legendary Warlord | 1x Legendary Contract
+</TABLE>
+[Heading1] Level Design
+[] Discuss the levels. How many levels will the game have, what will be included in each level. Include overall look and feel, hazards the level presents, difficulty, objectives, etc. 
+[] Slums Levels 
+[] <IMG x2> 
+[] <IMG x1> 
+[] <IMG x1> 
+[Heading1] User Interface
+[] Below is a flow chart of the main layout and how menus will connect together in Neon Warlords.
+[] <IMG x1> 
+[Heading1] Finance
+[] With a suggested Avg IAP conversion rate being 1.6 for this genre of game, we will make our predictions based on 1% for a realistic Revenue prediction. 
+[] ARPPU (Avg Rev Per Paying User) is *up to* $18 - $25, so for this we will take a lower number of £5.
+[] ARPDAU (Avg Rev Per Daily Active User) *up to* $0.07 - $0.30. The £5 transaction over a 1% conversion rate places the ARPDAU at £0.05 which is in line with the lower values.
+[] We can then compare this to our foreseen costs on maintaining a player base that supports the revenue of a 1% conversion rate.
+[] allowance of read/writes * 30 for the month * MAU
+[] Data PP/D: 100MB
+[] Egress PP/D: 2GB
+[] Reads PP/D: 1,000
+[] WritesPP/D:  2,000
+[] Deletes PP/D: 1,000
+<TABLE>
+ |  | Monthly Cost Based On MAU (Monthly Active Users)
+ |  | 100 MAU | 1000 MAU | 10K MAU | 100k MAU | 1M MAU | 10M MAU
+Authentication | US,CA,IN | £0.00 | £0.00 | £0.00 | £0.00 | £0.00 | £0.00
+ | All other | £0.00 | £0.00 | £0.00 | £0.00 | £0.00 | £0.00
+FireStore (Database) |  |  |  |  |  |  | 
+ | Data | £0.00 | £0.00 | £1.31 | £13.11 | £130.00 | £1,300.00
+ | Egress | £18.00 | £161.00 | £1,166.00 | £11,660.00 | £116,600.00 | £1,166,000.00
+ | Write | £0.00 | £0.62 | £6.20 | £62.00 | £620.00 | £6,200.00
+ | Read | £0.00 | £0.92 | £9.20 | £92.00 | £920.00 | £9,200.00
+ | Delete | £0.00 | £0.44 | £4.40 | £44.00 | £440.00 | £4,400.00
+Web Hosting |  |  |  |  |  |  | 
+ | Storage | £0.00 | £0.00 | £0.00 | £0.00 | £0.00 | £0.00
+ | Transfer | £0.00 | £0.00 | £2.20 | £220.00 | £2,200.00 | £22,000.00
+Play Store |  |  |  |  |  |  | 
+ | App deployment | £1.60 | £1.60 | £1.60 | £1.60 | £1.60 | £1.60
+App Store |  |  |  |  |  |  | 
+ | App Deployment | £6.00 | £6.00 | £6.00 | £6.00 | £6.00 | £6.00
+Revenue | 1% Conversion Rate*0.05 ARPDAU |  |  |  |  |  | 
+ |  | £150.00 | £1,500.00 | £15,000.00 | £150,000.00 | £1,500,000.00 | £15,000,000.00
+ | 30% Transaction Cost | £45.00 | £450.00 | £4,500.00 | £45,000.00 | £450,000.00 | £4,500,000.00
+ | Unreal 5% | £0.00 | £0.00 | £0.00 | £0.00 | £50,000.00 | £500,000.00
+ | Total Revenue |  |  |  |  |  | 
+ |  | £79.40 | £879.42 | £9,303.09 | £92,901.29 | £879,082.40 | £8,790,892.40
+</TABLE>
+[] Other costs:
+[] Firebase unreal plugin: £43
+[] Google services goodies: £63
+[] Domain: £6.99/year
+[] UNITY 
+<TABLE>
+ |  | Monthly Cost Based On MAU (Monthly Active Users)
+ |  | 100 MAU | 1000 MAU | 10K MAU | 100k MAU | 1M MAU | 10M MAU
+Authentication | All | £0.00 | £0.00 | £0.00 | £0.00 | £0.00 | £0.00
+Cloud Save |  |  |  |  |  |  | 
+ | Data |  |  |  |  |  | 
+ | Write |  |  |  |  |  | 
+ | Read | 0 | 0 | 0 | 0 |  | 
+ |  |  |  |  |  |  | 
+Economy | Write |  |  |  |  |  | 
+ | Read |  |  |  |  |  | 
+Web Hosting |  |  |  |  |  |  | 
+ | Storage | £0.00 | £0.00 | £0.00 | £0.00 | £0.00 | £0.00
+ | Transfer | £0.00 | £0.00 | £2.20 | £220.00 | £2,200.00 | £22,000.00
+Play Store |  |  |  |  |  |  | 
+ | App deployment | £1.60 | £1.60 | £1.60 | £1.60 | £1.60 | £1.60
+App Store |  |  |  |  |  |  | 
+ | App Deployment | £6.00 | £6.00 | £6.00 | £6.00 | £6.00 | £6.00
+Revenue | 1% Conversion Rate*0.05 ARPDAU |  |  |  |  |  | 
+ |  | £150.00 | £1,500.00 | £15,000.00 | £150,000.00 | £1,500,000.00 | £15,000,000.00
+ | 30% Transaction Cost | £45.00 | £450.00 | £4,500.00 | £45,000.00 | £450,000.00 | £4,500,000.00
+ | Unreal 5% | £0.00 | £0.00 | £0.00 | £0.00 | £50,000.00 | £500,000.00
+ | Total Revenue |  |  |  |  |  | 
+ |  | £79.40 | £879.42 | £9,303.09 | £92,901.29 | £879,082.40 | £8,790,892.40
+</TABLE>
+[] Emails (2 accounts) £3/month
+[] Business plan:
+[] ltd? llc? magic?

@@ -235,6 +235,17 @@ func _reveal(got: Array, best: Dictionary, bcol: Color) -> void:
 	nm.offset_right = 300
 	nm.offset_top = 342
 	add_child(nm)
+	var bt := Game.tpl(best)
+	var tags := UI.hb(10)
+	tags.alignment = BoxContainer.ALIGNMENT_CENTER
+	tags.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+	tags.offset_left = -400
+	tags.offset_right = 400
+	tags.offset_top = 384
+	tags.add_child(UI.class_tag(bt.cls))
+	tags.add_child(UI.syn_tag(bt.syn))
+	tags.add_child(UI.align_tag(bt.align))
+	add_child(tags)
 	var row := UI.hb(14)
 	row.alignment = BoxContainer.ALIGNMENT_CENTER
 	row.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)

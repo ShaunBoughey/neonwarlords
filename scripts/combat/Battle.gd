@@ -37,6 +37,7 @@ var player_turns := 0
 var _uid_counter := 0
 var _in_assist := false
 var _ally_died := false
+var _extra_uid := ""          # unit owed an extra turn: acts next, before anyone else over 100% TM
 var debuffs_placed_by_player := 0
 var debuffs_on_boss := 0       # player debuffs that landed on a boss (Bastion ambitions)
 
@@ -316,6 +317,12 @@ func next_turn():
 			continue
 		ready.sort_custom(func(a, b): return a.tm > b.tm)
 		var actor: Dictionary = ready[0]
+		# GDD: meters pause for extra turns, so the extra-turn unit cannot be pre-empted
+		if _extra_uid != "":
+			for r in ready:
+				if r.uid == _extra_uid:
+					actor = r
+			_extra_uid = ""
 		actor.tm = TM_FULL
 		turn_count += 1
 		if overtime_level() > _overtime:
@@ -420,6 +427,7 @@ func _turn_start(u: Dictionary) -> bool:
 
 func _end_turn(u: Dictionary, extra: bool) -> void:
 	u.tm = TM_FULL if extra and u.alive else 0.0
+	_extra_uid = u.uid if extra and u.alive else ""
 	_tick_effects(u)
 	_check_end()
 
@@ -586,8 +594,10 @@ func _attack(src: Dictionary, tgt: Dictionary, a: Dictionary, ctx: Dictionary, c
 			_ev({"e": "expire", "u": tgt.uid, "id": "mark"})
 			break
 	dmg *= 1.0 + _debuff_sum(tgt, "break") / 100.0
-	# armour mitigation. "Ignore X% armour" effects cut the armour value. The GDD's armour
-	# penetration (subtract %-points from mitigation) has no source in the game yet.
+	# armour mitigation (GDD): mitigation % from total armour, then armour penetration is taken
+	# off that percentage, e.g. 5437 x (1 - (50% - 5%)) = 2990. The game's "ignore X% armour"
+	# effects (Fracture, Ripper, Celestial Strike/Smite, Devour, ability ignore_arm) are the
+	# penetration sources, so they all go through this one step.
 	var ignore: float = float(a.get("ignore_arm", 0))
 	if a.get("special", "") == "celestial_enraged" or a.get("special", "") == "celestial_break":
 		var primary := "enraged" if a.special == "celestial_enraged" else "break"
@@ -598,8 +608,9 @@ func _attack(src: Dictionary, tgt: Dictionary, a: Dictionary, ctx: Dictionary, c
 		ignore += 25.0
 	if rng.randf() * 100.0 < _nn(src, "fracture"):
 		ignore += 30.0
-	var arm: float = eff(tgt, "arm") * (1.0 - min(100.0, ignore) / 100.0)
-	var mit: float = min(MAX_MITIGATION, arm / (arm + ARMOUR_K))
+	var pen: float = clampf(ignore + float(src.get("pen", 0.0)), 0.0, 100.0)
+	var arm: float = eff(tgt, "arm")
+	var mit: float = maxf(0.0, min(MAX_MITIGATION, arm / (arm + ARMOUR_K)) - pen / 100.0)
 	dmg *= 1.0 - mit
 	dmg *= 1.0 - _buff_sum(tgt, "bolster") / 100.0
 	if tgt.first_hit:
@@ -868,21 +879,25 @@ func _place_debuff(src: Dictionary, tgt: Dictionary, e: Dictionary, ctx: Diction
 	if tgt.immune.has(id) or (id == "cdIncrease" and tgt.immune.has("cdIncrease")):
 		_ev({"e": "text", "u": tgt.uid, "t": "Immune"})
 		return
-	if has_buff(tgt, "blockDebuffs"):
-		_ev({"e": "block", "u": tgt.uid})
-		var ad := _nn(tgt, "adaptive")
-		if ad > 0.0: _heal(tgt, tgt, tgt.max_hp * ad / 100.0, false)
-		var si := _nn(src, "syphonIntel")
-		if si > 0.0: _heal(src, src, src.max_hp * si / 100.0, false)
-		return
+	# GDD order: chance > Hacking vs Firewall > Block Debuffs > already has > refresh/stack > place
 	if not def.get("noCheck", false) and not _hack_check(src, tgt):
 		_ev({"e": "resist", "u": tgt.uid})
-		var si2 := _nn(src, "syphonIntel")
-		if si2 > 0.0: _heal(src, src, src.max_hp * si2 / 100.0, false)
+		_debuff_blocked_heals(src, tgt)
+		return
+	if has_buff(tgt, "blockDebuffs"):
+		_ev({"e": "block", "u": tgt.uid})
+		_debuff_blocked_heals(src, tgt)
 		return
 	if not spreading and rng.randf() * 100.0 < _nn(tgt, "baitSwitch") and src.alive:
 		_ev({"e": "text", "u": tgt.uid, "t": "Deflected"})
 		tgt = src
+		# the deflected debuff still respects the attacker's own immunities and Block Debuffs
+		if tgt.immune.has(id):
+			_ev({"e": "text", "u": tgt.uid, "t": "Immune"})
+			return
+		if has_buff(tgt, "blockDebuffs"):
+			_ev({"e": "block", "u": tgt.uid})
+			return
 	var turns := int(e.get("turns", 1))
 	if rng.randf() * 100.0 < _nn(src, "adware"):
 		turns += 1
@@ -902,6 +917,8 @@ func _place_debuff(src: Dictionary, tgt: Dictionary, e: Dictionary, ctx: Diction
 		if stacks >= 10:
 			return
 		var hit := float(ctx.get("hit", {}).get(tgt.uid, 0.0)) if ctx.has("hit") else 0.0
+		if spreading and hit <= 0.0:
+			hit = float(ctx.get("spread_hit", 0.0))  # DDoS copy: same basis as the original Bleed
 		tgt.debuffs.append({"id": id, "v": v, "turns": turns, "src": src.uid, "hit": hit})
 	else:
 		var found := false
@@ -922,12 +939,24 @@ func _place_debuff(src: Dictionary, tgt: Dictionary, e: Dictionary, ctx: Diction
 		_place_buff(src, src, {"id": "reflect", "turns": 2, "l": 1}, true)
 	if not spreading and rng.randf() * 100.0 < _nn(src, "ddos"):
 		_ev({"e": "text", "u": src.uid, "t": "DDoS"})
+		ctx["spread_hit"] = float(ctx.get("hit", {}).get(tgt.uid, 0.0)) if ctx.has("hit") else 0.0
 		for o in foes(src):
 			if o != tgt:
 				_place_debuff(src, o, e, ctx, true)
 
+## Adaptive Networks (target) and Syphon Intel (attacker) fire whenever this debuff is stopped,
+## by a Hacking vs Firewall resist or by Block Debuffs.
+func _debuff_blocked_heals(src: Dictionary, tgt: Dictionary) -> void:
+	var ad := _nn(tgt, "adaptive")
+	if ad > 0.0: _heal(tgt, tgt, tgt.max_hp * ad / 100.0, false)
+	var si := _nn(src, "syphonIntel")
+	if si > 0.0: _heal(src, src, src.max_hp * si / 100.0, false)
+
 func _place_buff(src: Dictionary, tgt: Dictionary, e: Dictionary, quiet := false, spreading := false) -> void:
 	if not tgt.alive:
+		return
+	# GDD order: chance > Block Buffs > already has > refresh > place
+	if not spreading and e.has("chance") and rng.randf() * 100.0 >= float(e.chance):
 		return
 	if has_debuff(tgt, "blockBuffs"):
 		_ev({"e": "text", "u": tgt.uid, "t": "Buff blocked"})

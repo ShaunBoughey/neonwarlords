@@ -45,6 +45,18 @@ static func open(main, it: Dictionary, on_change: Callable) -> void:
 	if it.set != "":
 		var sd: Dictionary = Data.SETS[it.set]
 		sv.add_child(UI.lbl("Set: %s (%d pieces): %s" % [it.set, sd.pieces, sd.desc], 13, UI.CYAN, HORIZONTAL_ALIGNMENT_LEFT, true))
+		var ow = Game.wl(it.owner) if it.owner != "" else null
+		if ow != null:
+			var worn := int(Game.compute_stats(ow).sets.get(it.set, 0))
+			var times := int(worn / sd.pieces)
+			sv.add_child(UI.lbl("%s worn: %d/%d - %s" % [it.set, worn, sd.pieces, ("ACTIVE x%d" % times) if times > 0 else "inactive"], 13, UI.GREEN if times > 0 else UI.DIM))
+		var src := UI.set_sources(it.set)
+		if src != "":
+			sv.add_child(UI.lbl("Drops: " + src, 12, UI.DIM, HORIZONTAL_ALIGNMENT_LEFT, true))
+	if it.kind == "implant":
+		var need := int(Data.IMPLANT_UNLOCK.get(it.slot, 0))
+		var ow2 = Game.wl(it.owner) if it.owner != "" else null
+		sv.add_child(UI.lbl("%s slot unlocks at Reputation %d" % [U.cap(it.slot), need], 13, UI.YELLOW if ow2 == null or int(ow2.rep) >= need else UI.RED))
 	v.add_child(sp)
 	var dim_ref := []
 	var refresh := func():
@@ -59,7 +71,10 @@ static func open(main, it: Dictionary, on_change: Callable) -> void:
 			if e != "":
 				Game.say(e, UI.RED)
 			refresh.call(), "primary"))
-		actions.add_child(UI.btn("Level x5", func():
+		var cost5 := 0
+		for i in range(it.level, mini(it.level + 5, Data.MAX_EQUIP_LEVEL)):
+			cost5 += Data.equip_level_cost(it.rank, i)
+		actions.add_child(UI.btn("Level x%d (%s ¢)" % [mini(5, Data.MAX_EQUIP_LEVEL - it.level), U.fmt(cost5)], func():
 			for i in 5:
 				if Game.equip_level_up(it) != "":
 					break
@@ -69,6 +84,11 @@ static func open(main, it: Dictionary, on_change: Callable) -> void:
 		actions.add_child(UI.btn("Apply Neon (%d fit)" % fitting.size(), func():
 			main.close_modal()
 			_neon_picker(main, it, fitting, on_change), "magenta"))
+	else:
+		var nb := UI.btn("Apply Neon", func(): pass, "magenta")
+		nb.disabled = true
+		actions.add_child(nb)
+		nb.tooltip_text = _neon_why(it)
 	actions.add_child(UI.btn("Unlock" if it.locked else "Lock", func():
 		it.locked = not it.locked
 		Game.mark()
@@ -79,13 +99,17 @@ static func open(main, it: Dictionary, on_change: Callable) -> void:
 			main.close_modal()
 			on_change.call(), "ghost"))
 	actions.add_child(UI.btn("Sell (%s ¢)" % U.fmt(Game.equip_sell_value(it)), func():
-		main.confirm("Sell %s?" % Game.equip_name(it), func():
+		var on = Game.wl(it.owner) if it.owner != "" else null
+		var q := ("Sell %s? It is equipped on %s." % [Game.equip_name(it), Game.tpl(on).name]) if on != null else "Sell %s?" % Game.equip_name(it)
+		main.confirm(q, func():
 			var e := Game.sell_equipment(it)
 			if e != "":
 				Game.say(e, UI.RED)
 			main.close_modal()
 			on_change.call()), "danger"))
 	v.add_child(actions)
+	if fitting.is_empty():
+		v.add_child(UI.lbl(_neon_why(it), 12, UI.DIM, HORIZONTAL_ALIGNMENT_LEFT, true))
 	dim_ref.append(main.modal("Equipment", v))
 
 static func _neon_picker(main, it: Dictionary, fitting: Array, on_change: Callable) -> void:
@@ -103,3 +127,20 @@ static func _neon_picker(main, it: Dictionary, fitting: Array, on_change: Callab
 			open(main, it, on_change), "magenta"))
 	v.add_child(f)
 	main.modal("Apply Neon", v)
+
+## Why no owned neon fits this item (shown under a disabled Apply Neon).
+static func _neon_why(it: Dictionary) -> String:
+	if Game.S.neons.is_empty():
+		return "No Neons owned. Win Neons in Syndicate Wars."
+	var stats: Array = it.subs.map(func(sb): return sb.stat)
+	var free: Array = it.subs.filter(func(sb): return float(sb.get("neon", 0)) <= 0).map(func(sb): return Data.STATS[sb.stat].short)
+	if free.is_empty():
+		return "Every substat already has a Neon (one Neon per substat)."
+	var match_hi := false
+	for ne in Game.S.neons:
+		if ne.stat in stats and int(ne.rank) > int(it.rank):
+			match_hi = true
+	var why := "Needs a Rank <= %d Neon matching a free substat (%s)." % [it.rank, ", ".join(free)]
+	if match_hi:
+		why += " Your matching Neons are higher rank than this item."
+	return why

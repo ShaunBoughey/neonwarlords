@@ -24,7 +24,7 @@ const SYNDICATES := {
 	"trolls": {"name": "Cardinal Trolls", "desc": "A rough and ready slum syndicate who is in it just for fun. Manic and ferocious themes.", "sign": "Papal Tiara with a Troll Face", "icon": "♛", "color": Color("#ff5a36")},
 	"vultures": {"name": "Vultures", "desc": "Lower slum syndicate who preys on the augmented to steal the augments by force. Dark and gruesome themes.", "sign": "Cybernetic Talon", "icon": "▼", "color": Color("#9b5cff")},
 	"teratek": {"name": "Teratek Cybernetics", "desc": "A corporation focused on the manufacturing and selling of augments. Suits and cyborgs theme.", "sign": "Cybernetic Illuminati Eye", "icon": "◬", "color": Color("#29e3ff")},
-	"vikings": {"name": "Quantum Vikings", "desc": "A stimm junkie syndicate based on their neo misconception of vikings.", "sign": "Helmet with Lightning Beard", "icon": "ᛉ", "color": Color("#ffd42a")},
+	"vikings": {"name": "Quantum Vikings", "desc": "A stimm junkie syndicate based on their neo misconception of vikings. Vikings and muscles theme.", "sign": "Helmet with Lightning Beard", "icon": "ᛉ", "color": Color("#ffd42a")},
 	"shogunate": {"name": "Neo Shogunate", "desc": "Cyber ninjas.", "sign": "Samurai Helmet", "icon": "⛩", "color": Color("#ff2e88")},
 	"spliced": {"name": "Gene Spliced", "desc": "Anthropomorphic hybrids.", "sign": "Ramshead", "icon": "♈", "color": Color("#47ff8a")},
 	"traders": {"name": "Frontier Traders", "desc": "Corporation of space pirates.", "sign": "Cyborg Skull and Crossbones", "icon": "☠", "color": Color("#ff9d2e")},
@@ -381,6 +381,14 @@ const FEATURE_INFO := {
 	"gang": ["Gangs & Bastion", "Join a gang and raid the TeraTek Bastion together."],
 }
 
+# share of a win's XP given on a loss (warlord XP and player XP, GDD: 20%)
+const LOSS_XP_FACTOR := 0.2
+
+# player-facing explanation of reward kinds whose shop/GDD row text doesn't say what they do (keyed by reward "k")
+const REWARD_INFO := {
+	"raidTicket": "+1 Gang Bastion (raid boss) entry after the daily entries are used.",
+}
+
 const PLAZA_POOL := [
 	{"r": {"k": "gear", "rank": 3, "r": "rare", "n": 1}, "cost": 40000},
 	{"r": {"k": "gear", "rank": 4, "r": "rare", "n": 1}, "cost": 90000},
@@ -396,9 +404,12 @@ const PLAZA_POOL := [
 	{"r": {"k": "implant", "rank": 6, "r": "legendary", "n": 1}, "cost": 1800000},
 	{"r": {"k": "metabolic", "align": "neutral", "tier": "minor", "n": 3}, "cost": 15000},
 	{"r": {"k": "metabolic", "align": "paragon", "tier": "minor", "n": 3}, "cost": 15000},
+	{"r": {"k": "metabolic", "align": "renegade", "tier": "minor", "n": 3}, "cost": 15000},
 	{"r": {"k": "metabolic", "align": "paragon", "tier": "major", "n": 2}, "cost": 40000},
 	{"r": {"k": "metabolic", "align": "neutral", "tier": "major", "n": 2}, "cost": 40000},
 	{"r": {"k": "metabolic", "align": "renegade", "tier": "major", "n": 2}, "cost": 40000},
+	{"r": {"k": "metabolic", "align": "paragon", "tier": "grand", "n": 1}, "cost": 120000},
+	{"r": {"k": "metabolic", "align": "neutral", "tier": "grand", "n": 1}, "cost": 120000},
 	{"r": {"k": "metabolic", "align": "renegade", "tier": "grand", "n": 1}, "cost": 120000},
 	{"r": {"k": "deeds", "align": "generic", "tier": "minor", "n": 5}, "cost": 25000},
 	{"r": {"k": "deeds", "align": "paragon", "tier": "minor", "n": 5}, "cost": 25000},

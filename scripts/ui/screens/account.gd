@@ -44,7 +44,7 @@ func build() -> void:
 	var lv := UI.vb(4)
 	lp.add_child(lv)
 	lv.add_child(UI.lbl("Upcoming player level rewards", 15, UI.CYAN))
-	lv.add_child(UI.lbl("Earn player XP from Jobs, Ambitions and 1 XP per energy spent. Each level refills energy.", 12, UI.DIM, HORIZONTAL_ALIGNMENT_LEFT, true))
+	lv.add_child(UI.lbl("Earn player XP from Jobs and 1 XP per energy spent. Each level refills energy.", 12, UI.DIM, HORIZONTAL_ALIGNMENT_LEFT, true))
 	var list := UI.vb(4)
 	var tbl: Array = Data.GDD.playerLevels
 	for i in range(p_lv - 1, mini(tbl.size(), p_lv + 9)):

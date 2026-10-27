@@ -443,10 +443,13 @@ static func warlord_card(w: Dictionary, cb: Callable, selected := false, compact
 	var lv := lbl("LV %d" % w.level, 12, DIM)
 	lv.position = Vector2(8, sz.y - 23)
 	b.add_child(lv)
-	var st := lbl("★".repeat(w.rank), 11 if not compact else 9, GOLD, HORIZONTAL_ALIGNMENT_RIGHT)
-	st.position = Vector2(8, sz.y - 23)
+	var st := rank_stars(w, 11 if not compact else 9)
+	st.position = Vector2(8, sz.y - 24)
 	st.size = Vector2(sz.x - 16, 16)
 	b.add_child(st)
+	var ab := align_badge(t.align, 20 if not compact else 16)
+	ab.position = Vector2(sz.x - ab.custom_minimum_size.x - 6, 6)
+	b.add_child(ab)
 	if w.get("locked", false):
 		var lk := Icon.make("lock", GOLD, 14)
 		lk.position = Vector2(sz.x - 22, sz.y - 60)
@@ -459,8 +462,53 @@ static func warlord_card(w: Dictionary, cb: Callable, selected := false, compact
 		_ignore_mouse(c)
 	if cb.is_valid():
 		b.pressed.connect(cb)
-	b.tooltip_text = "%s  •  %s %s  •  %s" % [t.name, U.cap(t.rarity), Data.CLASS_INFO[t.cls].name, Data.SYNDICATES[t.syn].name]
+	b.tooltip_text = warlord_tooltip(w)
 	return b
+
+static func warlord_tooltip(w: Dictionary) -> String:
+	var t := Game.tpl(w)
+	return "%s\n%s %s  •  %s  •  %s\nLevel %d  •  Rank %d  •  Reputation %d/%d" % [t.name, U.cap(t.rarity), Data.CLASS_INFO[t.cls].name,
+		Data.SYNDICATES[t.syn].name, U.cap(t.align), w.level, w.rank, w.rep, w.rank]
+
+## Rank stars: gold per rank; stars already raised by reputation glow magenta (rep is capped at rank).
+static func rank_stars(w: Dictionary, size := 11) -> RichTextLabel:
+	var r := RichTextLabel.new()
+	r.bbcode_enabled = true
+	r.fit_content = true
+	r.scroll_active = false
+	r.autowrap_mode = TextServer.AUTOWRAP_OFF
+	r.add_theme_font_size_override("normal_font_size", size)
+	var rep: int = int(w.get("rep", 0))
+	r.text = "[right][color=#%s]%s[/color][color=#%s]%s[/color][/right]" % [MAGENTA.to_html(false), "★".repeat(rep),
+		GOLD.to_html(false), "★".repeat(max(0, int(w.rank) - rep))]
+	r.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	return r
+
+## Round alignment mark (Paragon / Neutral / Renegade / Generic) in its alignment colour.
+static func align_badge(al: String, px := 20) -> Control:
+	var p := Panel.new()
+	p.custom_minimum_size = Vector2(px, px)
+	p.size = p.custom_minimum_size
+	var col: Color = Data.ALIGN_COLOR[al]
+	var sb := StyleBoxFlat.new()
+	sb.bg_color = Color(BG, 0.85)
+	sb.border_color = col
+	sb.set_border_width_all(1)
+	sb.set_corner_radius_all(px)
+	p.add_theme_stylebox_override("panel", sb)
+	var ic := Icon.make(al, col, int(px * 0.8))
+	ic.width = 1.6
+	ic.position = Vector2(px * 0.1, px * 0.1)
+	p.add_child(ic)
+	p.tooltip_text = ALIGN_INFO.get(al, U.cap(al))
+	return p
+
+const ALIGN_INFO := {
+	"paragon": "Paragon: reputation needs Paragon + Generic Deeds. Paragon Metabolics give +50% XP. Boosted by the Safehouse Paragon nodes.",
+	"neutral": "Neutral: reputation needs Neutral + Generic Deeds. Neutral Metabolics give +50% XP. Boosted by the Safehouse Neutral nodes.",
+	"renegade": "Renegade: reputation needs Renegade + Generic Deeds. Renegade Metabolics give +50% XP. Boosted by the Safehouse Renegade nodes.",
+	"generic": "Generic Deeds are needed by every warlord's reputation, alongside their alignment's deeds.",
+}
 
 static func _ignore_mouse(n: Node) -> void:
 	if n is Control:
@@ -521,7 +569,25 @@ static func item_tooltip(it: Dictionary) -> String:
 		s += "  " + stat_text(sub.stat, float(sub.val) + float(sub.get("neon", 0))) + ("  ✦" if float(sub.get("neon", 0)) > 0 else "") + "\n"
 	if it.set != "":
 		s += "Set: %s (%d pc) - %s" % [it.set, Data.SETS[it.set].pieces, Data.SETS[it.set].desc]
+		var src := set_sources(it.set)
+		if src != "":
+			s += "
+Drops: " + src
+	if it.get("kind", "") == "implant":
+		s += "%s slot unlocks at Reputation %d" % [U.cap(it.slot), int(Data.IMPLANT_UNLOCK.get(it.slot, 0))]
 	return s
+
+## Where a set drops: campaign locations (GDD campaign table) and syndicate hideouts (Data.HIDEOUT_SETS).
+static func set_sources(set_name: String) -> String:
+	var out: Array = []
+	var camp: Array = Data.GDD.campaign
+	for i in camp.size():
+		if String(camp[i].get("set", "")) == set_name:
+			out.append("Campaign %d %s" % [i + 1, camp[i].name])
+	for syn in Data.HIDEOUT_SETS:
+		if set_name in Data.HIDEOUT_SETS[syn]:
+			out.append("%s Hideout" % Content.HIDEOUTS[syn].name if Content.HIDEOUTS.has(syn) else syn)
+	return ", ".join(out)
 
 static func _art_chip(art: String, text: String, color: Color) -> PanelContainer:
 	var c := chip("", text, color, 12)
@@ -543,4 +609,13 @@ static func syn_tag(syn: String) -> PanelContainer:
 	return _art_chip(Art.SYN_SYMBOL[syn], info.name, info.color)
 
 static func align_tag(al: String) -> PanelContainer:
-	return chip("◈", U.cap(al), Data.ALIGN_COLOR[al], 12)
+	var c := chip("", U.cap(al), Data.ALIGN_COLOR[al], 12)
+	var row: HBoxContainer = c.get_child(0)
+	var first := row.get_child(0)
+	row.remove_child(first)
+	first.queue_free()
+	var ic := Icon.make(al, Data.ALIGN_COLOR[al], 18)
+	row.add_child(ic)
+	row.move_child(ic, 0)
+	c.tooltip_text = ALIGN_INFO.get(al, "")
+	return c

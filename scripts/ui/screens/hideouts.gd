@@ -294,6 +294,7 @@ func _reward_lines() -> Array:
 			out.append("1x random %s  •  Rarity: %s" % ["Implant" if kind == "implant" else "Equipment", _pct_text(row.rar)])
 			if kind == "gear":
 				out.append("Sets: " + ", ".join(Data.HIDEOUT_SETS[id]))
+				out.append("Slot: Weapon / Helmet / Chest / Gloves / Legs / Boots, 16.6% each")
 			else:
 				out.append("Slot: " + _pct_text(row.slots))
 		"mf":

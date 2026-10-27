@@ -96,6 +96,7 @@ func build() -> void:
 		nxt.tooltip_text = "Den %d: %s" % [loc + 2, Data.GDD.campaign[loc + 1].name]
 	nxt.disabled = not nxt_ok
 	nav_row.add_child(nxt)
+	nav_row.add_child(UI.btn("MAP", func(): _map(), "normal", 0, 14))
 	var claimable := _claimable_rewards()
 	nav_row.add_child(UI.btn("REWARDS%s" % ("  •  %d" % claimable if claimable > 0 else ""), func(): _rewards(), "gold" if claimable > 0 else "primary", 0, 14))
 	add_child(nav_row)
@@ -132,6 +133,24 @@ func _selected_stage() -> int:
 					break
 		params.st = sel_st
 	return sel_st
+
+## Campaign map: all 10 dens of this difficulty with chevrons earned and lock state.
+func _map() -> void:
+	var g := UI.grid(2, 8)
+	var dim_ref := []
+	for i in Data.GDD.campaign.size():
+		var stars := 0
+		for st in 7:
+			stars += Game.campaign_stars(diff, i, st)
+		var open := Game.campaign_unlocked(diff, i, 0)
+		var den: int = i
+		var b := UI.btn("%d. %s   %s" % [i + 1, String(Data.GDD.campaign[i].name), ("%d / 21 chevrons" % stars) if open else "Locked"], func():
+			main._close(dim_ref[0])
+			_den(den), "primary" if i == loc else "normal", 420, 14)
+		b.disabled = not open
+		b.custom_minimum_size.y = 48
+		g.add_child(b)
+	dim_ref.append(main.modal("Campaign map - %s" % Data.DIFFS[diff], g, true))
 
 func _den(i: int) -> void:
 	params.loc = clampi(i, 0, 9)
@@ -210,7 +229,21 @@ func _sheet(sel_st: int, syn: String, scol: Color) -> PanelContainer:
 	var dr := UI.flow(8)
 	var slot_name: String = String(stg.slot).to_lower()
 	var set_name := Content.campaign_set(loc)
-	dr.add_child(_art_tile(Art.SLOT_BUTTON.get(slot_name, Art.SLOT_BUTTON.weapon), "rare", "75%", "%s set" % set_name))
+	# rarity border = the most likely rarity at this difficulty; tooltip shows the real rank/rarity odds
+	var eq: Dictionary = Data.CAMPAIGN_EQUIP[diff]
+	var top_r := "common"
+	for r in eq.rar:
+		if int(eq.rar[r]) > int(eq.rar.get(top_r, 0)):
+			top_r = r
+	var rk_parts: Array = []
+	for k in eq.ranks:
+		rk_parts.append("R%s %d%%" % [str(k), int(eq.ranks[k])])
+	var rr_parts: Array = []
+	for r in eq.rar:
+		rr_parts.append("%s %d%%" % [U.cap(r), int(eq.rar[r])])
+	dr.add_child(_art_tile(Art.SLOT_BUTTON.get(slot_name, Art.SLOT_BUTTON.weapon), top_r, "75%", "%s set
+Rank: %s
+Rarity: %s" % [set_name, ", ".join(rk_parts), ", ".join(rr_parts)]))
 	for d in Data.CAMPAIGN_DROPS[diff]:
 		if d[0] == "warlord":
 			dr.add_child(_icon_tile("users", Data.RARITY_COLOR[d[1]], "%s%%" % str(d[2]), "%s Warlord" % U.cap(d[1])))
@@ -225,6 +258,11 @@ func _sheet(sel_st: int, syn: String, scol: Color) -> PanelContainer:
 	var gl := UI.lbl(gear_txt, 13, UI.DIM, HORIZONTAL_ALIGNMENT_LEFT, true)
 	gl.custom_minimum_size.x = 0
 	dv.add_child(gl)
+	# when the next difficulty opens (GDD: clearing the final stage of a difficulty unlocks the next)
+	if diff < Data.DIFFS.size() - 1 and not Game.campaign_unlocked(diff + 1, 0, 0):
+		var last := loc == 9 and sel_st == 6
+		var ul := UI.lbl(("Winning this stage unlocks %s" if last else "Clear Den 10 stage 7 to unlock %s") % Data.DIFFS[diff + 1], 13, UI.GOLD if last else UI.HINT, HORIZONTAL_ALIGNMENT_LEFT, true)
+		dv.add_child(ul)
 	sv.add_child(dv)
 	# chevron goals
 	var gv := UI.vb(6)

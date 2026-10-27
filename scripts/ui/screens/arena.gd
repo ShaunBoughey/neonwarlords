@@ -44,7 +44,31 @@ func build() -> void:
 	ihh.add_child(UI.lbl("%d / %d" % [Game.cur(mode), Data.PIT_CAP], 15, UI.TEXT))
 	iv.add_child(ihh)
 	iv.add_child(UI.segments(Game.cur(mode), Data.PIT_CAP, UI.CYAN))
-	iv.add_child(UI.lbl("Weekly cache: " + String(row[3]), 14, UI.DIM, HORIZONTAL_ALIGNMENT_LEFT, true))
+	var rh := UI.hb(8)
+	var refill := "Refills to %d in %s" % [Data.PIT_CAP, U.dur(U.secs_to_next_day())]
+	var rl := UI.lbl(refill, 13, UI.DIM)
+	rl.tooltip_text = "%s invites refill to %d at the daily reset." % [U.cap(mode), Data.PIT_CAP]
+	rl.mouse_filter = Control.MOUSE_FILTER_PASS
+	UI.expand(rl)
+	rh.add_child(rl)
+	if Game.cur(mode) <= 0:
+		rh.add_child(UI.btn("Buy invites", func(): main.go("shop", {"sec": "Trinium Market"}), "ghost", 0, 13))
+	iv.add_child(rh)
+	var ck := CacheInfo.kind_in(String(row[3]))
+	if ck != "":
+		iv.add_child(CacheInfo.link(main, "Weekly cache: " + String(row[3]), ck))
+	else:
+		iv.add_child(UI.lbl("Weekly cache: " + String(row[3]), 14, UI.DIM, HORIZONTAL_ALIGNMENT_LEFT, true))
+	# progress toward the next bracket's points
+	var tier := int(row[0])
+	if tier < Data.GDD.pitTiers.size():
+		var nxt: Array = Data.GDD.pitTiers[tier]
+		var lo := int(row[2]) if int(p.points) >= int(row[2]) else 0
+		var need := int(nxt[2]) - int(p.points)
+		bv.add_child(UI.bar(float(int(p.points) - lo), float(int(nxt[2]) - lo), UI.GOLD, 6, 260))
+		bv.add_child(UI.lbl("%d pts to %s" % [need, String(nxt[1])], 13, UI.DIM))
+	else:
+		bv.add_child(UI.lbl("Top bracket reached", 13, UI.GOLD))
 	ih.add_child(iv)
 	root.add_child(info)
 	match view:
@@ -79,7 +103,10 @@ func _fight(mode: String) -> void:
 		h.add_child(UI.btn("FIGHT", func(): main.start_encounter(Content.build_pit(mode, opp)), "primary", 100))
 		list.add_child(p)
 	var bottom := UI.hb()
-	var note := UI.lbl("Opponents refresh hourly. Wins: +10 points, Credits & Pit Coin. A lost attack costs only the invite; points are lost when your defence is beaten.", 14, UI.DIM, HORIZONTAL_ALIGNMENT_LEFT, true)
+	var note_txt := "Opponents refresh hourly. Wins: +10 points, Credits & Pit Coin. A lost attack costs only the invite; points are lost when your defence is beaten."
+	if mode == "royal":
+		note_txt += " Reinforcements replace fallen warlords. No revives in Pit Royal."
+	var note := UI.lbl(note_txt, 14, UI.DIM, HORIZONTAL_ALIGNMENT_LEFT, true)
 	UI.expand(note)
 	bottom.add_child(note)
 	bottom.add_child(UI.btn("Refresh (10 ◆)", func():
@@ -229,7 +256,8 @@ func _brackets() -> void:
 		var per_win := "+10 pts  •  %sK Credits  •  %s Pit Coin" % [m.get_string(1), m.get_string(2)] if m else String(row[4])
 		var cells := [[str(row[0]), UI.TEXT], [String(row[1]), UI.GOLD], [U.fmt(int(row[2])) + "+", UI.TEXT], [String(row[3]), UI.TEXT], [per_win, UI.SOFT]]
 		for i in cells.size():
-			var l := UI.lbl(cells[i][0], 15, cells[i][1])
+			var ck := CacheInfo.kind_in(String(cells[i][0])) if i == 3 else ""
+			var l: Control = CacheInfo.link(main, cells[i][0], ck, 15, cells[i][1]) if ck != "" else UI.lbl(cells[i][0], 15, cells[i][1])
 			l.custom_minimum_size.x = widths[i]
 			if widths[i] == 0:
 				UI.expand(l)

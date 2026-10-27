@@ -48,8 +48,12 @@ func _bounty_pill() -> PanelContainer:
 	ic.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	h.add_child(ic)
 	h.add_child(UI.lbl("%d / %d" % [Game.cur("bounty"), Data.BOUNTY_DAILY], 18, UI.TEXT))
+	var refill := "Refills in " + U.dur(U.secs_to_next_day())
+	var rl := UI.lbl(refill, 13, UI.DIM)
+	rl.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	h.add_child(rl)
 	p.add_child(h)
-	p.tooltip_text = "Bounty Tokens (refresh daily)"
+	p.tooltip_text = "Bounty Tokens refill to %d daily. %s" % [Data.BOUNTY_DAILY, refill]
 	return p
 
 ## Three chevron stroke icons, lit for each chevron earned.
@@ -221,6 +225,7 @@ func _stage_panel(syn: String) -> PanelContainer:
 	sh.add_child(UI.spacer())
 	sh.add_child(_chevrons(Game.sw_stars(syn, stage), 18))
 	v.add_child(sh)
+	v.add_child(UI.lbl("Chevrons: 1 win  •  2 no warlord lost  •  3 win within %d turns" % int(enc.get("chevron_turns", 99)), 13, UI.DIM, HORIZONTAL_ALIGNMENT_LEFT, true))
 	v.add_child(UI.lbl(String(enc.subtitle), 15, Color("#FF8AA0")))
 	# power check against the squad auto-fill would pick (your best 4 of this syndicate)
 	var mine := Game.team_power(_owned(syn).slice(0, 4).map(func(w): return w.uid))
@@ -261,4 +266,5 @@ func _odds_text(ranks: Dictionary) -> String:
 	for k in ranks:
 		if float(ranks[k]) > 0:
 			parts.append("R%s %d%%" % [k, int(round(float(ranks[k]) / max(0.001, total) * 100.0))])
-	return "  •  ".join(parts)
+	return "  •  ".join(parts) + "
+Stat: random, equal chance (1 in %d)" % Data.NEON_STATS.size()

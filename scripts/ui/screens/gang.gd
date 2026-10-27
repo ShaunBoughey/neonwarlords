@@ -21,7 +21,12 @@ func build() -> void:
 	bp.add_child(outer)
 	var stage := int(b.stage)
 	var info: Dictionary = Content.BASTION_STAGES[stage - 1]
-	bv.add_child(UI.lbl("BASTION: ASSAULT ON TERATEK CYBERNETICS", 20, UI.RED))
+	var bh := UI.hb(8)
+	var bt := UI.lbl("BASTION: ASSAULT ON TERATEK CYBERNETICS", 20, UI.RED)
+	UI.expand(bt)
+	bh.add_child(bt)
+	bh.add_child(UI.lbl("Next stage and rewards in " + U.dur(U.secs_to_next_day()), 13, UI.SOFT))
+	bv.add_child(bh)
 	bv.add_child(UI.lbl("A gang-wide raid lasting 3 days, one stage per day. Rewards are based on the damage you deal and arrive in your inbox at the daily reset.", 13, UI.DIM, HORIZONTAL_ALIGNMENT_LEFT, true))
 	var stages := UI.hb(8)
 	for i in 3:

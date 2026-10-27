@@ -79,6 +79,7 @@ func new_game(player_name: String) -> void:
 	# starter gang: the ragtag crew from the mission statement
 	for id in ["brother_grin", "scrapjaw", "intern7", "kage9", "abbot_mayhem"]:
 		add_warlord(id, true)
+	S.stats.erase("recruited")  # the starter crew doesn't count toward "Recruit N Warlords" ambitions
 	S.squads.last = S.roster.map(func(w): return w.uid).slice(0, Data.TEAM_SIZE)
 	S.squads.pit_brawl = S.squads.last.duplicate()
 	S.squads.pit_royal = S.squads.last.duplicate()
@@ -102,15 +103,14 @@ func grant_starter_kit() -> void:
 	r.call("Health", 2, "uncommon")
 	for slot in Data.IMPLANT_SLOTS:
 		add_equipment(make_equipment(slot, 3, "rare"))
-	for i in 8:
-		add_neon(U.ri(2, 3))
 	add_item(["stimm", "rare"], 3)
 	add_item(["firmware", "1"], 2)
 	add_item(["mf", "1"], 400)
 	add_item(["mf", "2"], 150)
 	for al in ["paragon", "neutral", "renegade", "generic"]:
 		add_item(["deeds", al, "minor"], 10)
-		add_item(["metabolic", al, "minor"], 3)
+		if al != "generic":  # metabolics only exist for the three alignments
+			add_item(["metabolic", al, "minor"], 3)
 	add_item(["contract", "rare"], 2)
 	for e in S.equip:
 		e.new = false
@@ -150,9 +150,10 @@ func grant_test_kit() -> Array:
 		add_item(["deeds", al, "minor"], 30)
 		add_item(["deeds", al, "major"], 15)
 		add_item(["deeds", al, "grand"], 8)
-		add_item(["metabolic", al, "minor"], 10)
-		add_item(["metabolic", al, "major"], 5)
-		add_item(["metabolic", al, "grand"], 2)
+		if al != "generic":
+			add_item(["metabolic", al, "minor"], 10)
+			add_item(["metabolic", al, "major"], 5)
+			add_item(["metabolic", al, "grand"], 2)
 	add_item(["contract", "rare"], 10)
 	add_item(["contract", "epic"], 3)
 	add_item(["contract", "legendary"], 1)
@@ -321,7 +322,7 @@ func spend(k: String, n: int) -> bool:
 		return false
 	S.cur[k] = cur(k) - n
 	if k == "energy":
-		add_pxp(n)
+		# player XP (1 per energy) is granted when the battle ends: Game.battle_pxp (full on a win, 20% on a loss)
 		if cur("energy") < Data.ENERGY_CAP and S.cur.energy_t < U.now() - Data.ENERGY_REGEN_SECS:
 			S.cur.energy_t = U.now()
 	if k == "credits":
@@ -386,6 +387,21 @@ func pxp_needed() -> int:
 	if lv > tbl.size():
 		return 0
 	return int(tbl[lv - 1][1])
+
+## Player XP for a finished battle that cost `energy`: 1 XP per energy on a win, Data.LOSS_XP_FACTOR (20%) of that on a loss.
+## Fractions of a loss are banked in S.player.xp_frac so repeated losses pay exactly 20% over time. Returns XP granted now.
+func battle_pxp(energy: int, won: bool) -> int:
+	if energy <= 0:
+		return 0
+	if won:
+		add_pxp(energy)
+		return energy
+	var acc: float = float(S.player.get("xp_frac", 0.0)) + energy * Data.LOSS_XP_FACTOR
+	var n := int(floor(acc + 0.0001))
+	S.player.xp_frac = maxf(0.0, acc - n)
+	if n > 0:
+		add_pxp(n)
+	return n
 
 ## Reaching level L+1 grants row L. The GDD table has 100 levels: row 100's XP is a final
 ## "max level" milestone that grants its rewards while the level stays at 100 (S.player.maxed).
@@ -465,8 +481,12 @@ func collect_stocks() -> int:
 # ================================================================ inbox
 func send_mail(title: String, body: String, rewards: Array) -> void:
 	S.inbox.push_front({"id": U.uid(), "title": title, "body": body, "rewards": rewards, "claimed": rewards.is_empty(), "t": U.now()})
-	if S.inbox.size() > 60:
-		S.inbox.resize(60)
+	# trim oldest claimed mail first; never delete a mail whose rewards are unclaimed
+	var i: int = S.inbox.size() - 1
+	while S.inbox.size() > 60 and i >= 0:
+		if S.inbox[i].claimed:
+			S.inbox.remove_at(i)
+		i -= 1
 	mark()
 
 func claim_mail(m: Dictionary) -> Array:
@@ -1515,7 +1535,7 @@ func pit_record(mode: String, won: bool, opp: Dictionary) -> Array:
 	var row := pit_tier_row(int(p.points))
 	var rewards: Array = []
 	stat_add("pit_entries", 1)
-	if mode == "brawl":
+	if mode == "brawl" and won:  # "Complete N Pit Brawls" counts wins only
 		track("pitBrawl", 1)
 	if won:
 		p.wins = int(p.wins) + 1

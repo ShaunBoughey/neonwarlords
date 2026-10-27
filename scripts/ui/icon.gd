@@ -128,4 +128,20 @@ static func paint(ci: CanvasItem, name: String, o: Vector2, s: float, c: Color, 
 			line.call([[4, 21], [4, 10], [12, 4], [20, 10], [20, 21], [4, 21]])
 			line.call([[10, 21], [10, 15], [14, 15], [14, 21]])
 		"chart": line.call([[4, 20], [4, 4], [4, 20], [20, 20], [8, 14], [12, 16], [19, 8]])
+		# alignment marks: Paragon = haloed shield, Neutral = balance, Renegade = horned shield
+		"paragon":
+			ci.draw_arc(P.call(12, 4.5), 5.0 * s, 0, TAU, 24, c, w, true)
+			line.call([[12, 9], [19, 12], [17, 18], [12, 22], [7, 18], [5, 12], [12, 9]])
+		"neutral":
+			line.call([[12, 4], [12, 20]])
+			line.call([[4, 8], [20, 8]])
+			line.call([[4, 8], [2, 14], [6, 14], [4, 8]])
+			line.call([[20, 8], [18, 14], [22, 14], [20, 8]])
+			line.call([[8, 20], [16, 20]])
+		"renegade":
+			line.call([[5, 3], [8, 9], [16, 9], [19, 3]])
+			line.call([[8, 9], [5, 12], [7, 18], [12, 22], [17, 18], [19, 12], [16, 9]])
+		"generic":
+			circ.call(12, 12, 8)
+			line.call([[8, 12], [16, 12]])
 		_: circ.call(12, 12, 8)

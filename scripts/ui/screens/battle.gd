@@ -261,6 +261,7 @@ func _add_card(u: Dictionary, idx := -1, count := 5) -> void:
 	hit.pressed.connect(func(): _card_clicked(uid))
 	hit.mouse_entered.connect(func(): _hover(uid))
 	hud_layer.add_child(hit)
+	hud.status_pressed.connect(func(t: String): info_label.text = t)
 	cards[u.uid] = {"u": u, "hud": hud, "hit": hit}
 	_refresh_card(u.uid)
 
@@ -281,19 +282,10 @@ func _refresh_card(uid: String) -> void:
 	hud.shield_ratio = b.total_shield(u) / u.max_hp
 	hud.tm_ratio = min(1.0, u.tm / 1000.0)
 	hud.alive = u.alive
-	var icons: Array = []
-	var seen := {}
-	for d in u.debuffs:
-		if seen.has(d.id):
-			continue
-		seen[d.id] = true
-		var cnt := b.debuff_count(u, d.id)
-		icons.append({"id": d.id, "turns": cnt if cnt > 1 else int(d.turns), "debuff": true})
-	for bf in u.buffs:
-		if seen.has(bf.id):
-			continue
-		seen[bf.id] = true
-		icons.append({"id": bf.id, "turns": int(bf.turns), "debuff": false})
+	var icons: Array = _status_list(u)
+	for ic in icons:
+		if int(ic.stacks) > 1:
+			ic.turns = int(ic.stacks)  # stacking DoTs show the stack count on the icon
 	hud.icons = icons
 	c.hit.visible = u.alive
 
@@ -319,24 +311,55 @@ func _update_top() -> void:
 			boss_info.text = "TURNS %d/%d   •   DAMAGE %s" % [b.player_turns, enc.turn_limit, U.fmt(b.damage_to_side(1))]
 	else:
 		top_label.text = "%s  •  %s" % [enc.get("title", ""), enc.get("subtitle", "")]
+		if enc.get("royal", false):
+			top_label.text += "  •  NO REVIVES"
 
 func _set_targets(valid: Array) -> void:
 	for uid in cards:
 		cards[uid].hud.targetable = valid.has(uid)
 
+## One entry per buff/debuff id on a unit: {id, debuff, turns, stacks, tip} where tip reads
+## e.g. "Speed Down: Speed -30% (2 turns left)".
+func _status_list(u: Dictionary) -> Array:
+	var out: Array = []
+	var by_id := {}
+	for pair in [[u.debuffs, true], [u.buffs, false]]:
+		for e in pair[0]:
+			var key := ("d:" if pair[1] else "b:") + String(e.id)
+			if by_id.has(key):
+				var o: Dictionary = by_id[key]
+				o.stacks += 1
+				o.turns = max(int(o.turns), int(e.turns))
+				o.v = max(float(o.v), float(e.get("v", 0)))
+				continue
+			var o2 := {"id": String(e.id), "debuff": pair[1], "turns": int(e.turns), "stacks": 1, "v": float(e.get("v", 0))}
+			by_id[key] = o2
+			out.append(o2)
+	var rx := RegEx.create_from_string("\\bx\\b")
+	for o in out:
+		var def: Dictionary = (Data.DEBUFFS if o.debuff else Data.BUFFS).get(o.id, {})
+		var v: float = o.v
+		var vs := ("%d" % int(v)) if is_equal_approx(v, round(v)) else ("%.1f" % v)
+		var desc := rx.sub(String(def.get("desc", "")), vs, true)
+		var tip := "%s: %s" % [def.get("name", o.id), desc]
+		if int(o.stacks) > 1:
+			tip += " (x%d stacks)" % int(o.stacks)
+		tip += " (%d turn%s left)" % [int(o.turns), "" if int(o.turns) == 1 else "s"]
+		o.tip = tip
+	return out
+
 func _hover(uid: String) -> void:
 	var u = b.unit(uid)
 	if u == null or waiting and pending_ab != "":
 		return
-	var parts: Array = []
-	for bf in u.buffs:
-		parts.append("%s (%dt)" % [Data.BUFFS[bf.id].name, bf.turns])
-	for d in u.debuffs:
-		parts.append("%s (%dt)" % [Data.DEBUFFS[d.id].name, d.turns])
-	info_label.text = "%s  Lv%d  •  HP %s/%s  •  SPD %d  ARM %d  FP %d%s" % [u.name, u.level, U.fmt(u.hp), U.fmt(u.max_hp), b.eff(u, "spd"), b.eff(u, "arm"), b.eff(u, "fp"), ("  •  " + ", ".join(parts)) if not parts.is_empty() else ""]
+	var parts: Array = _status_list(u).map(func(o): return o.tip)
+	var tag := "%s %s  •  %s %s  •  %s  •  " % ["★".repeat(int(u.rank)), U.cap(u.rarity), Data.CLASS_INFO[u.cls].name, Data.SYNDICATES[u.syn].name, U.cap(u.align)] if Data.CLASS_INFO.has(u.cls) and Data.SYNDICATES.has(u.syn) else ""
+	info_label.text = tag + "%s  Lv%d  •  HP %s/%s  •  SPD %d  ARM %d  FP %d%s" % [u.name, u.level, U.fmt(u.hp), U.fmt(u.max_hp), b.eff(u, "spd"), b.eff(u, "arm"), b.eff(u, "fp"), ("  •  " + ", ".join(parts)) if not parts.is_empty() else ""]
 
 # ================================================================ main loop
 func _run() -> void:
+	if enc.get("royal", false):
+		_banner("NO REVIVES IN PIT ROYAL")
 	b.start()
 	await _play(b.take_events())
 	while b.result == "" and not fled and is_inside_tree():
@@ -794,7 +817,7 @@ func _finish() -> void:
 	ov.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	ov.mouse_filter = Control.MOUSE_FILTER_STOP
 	add_child(ov)
-	create_tween().tween_property(ov, "color:a", 0.82, 0.35)
+	ov.create_tween().tween_property(ov, "color:a", 0.82, 0.35)
 	var v := UI.vb(8)
 	v.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	v.offset_top = 20
@@ -813,7 +836,7 @@ func _finish() -> void:
 	head.pivot_offset = Vector2(600, 40)
 	head.scale = Vector2(1.6, 1.6)
 	v.add_child(head)
-	create_tween().tween_property(head, "scale", Vector2.ONE, 0.35).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	head.create_tween().tween_property(head, "scale", Vector2.ONE, 0.35).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	var sub := "%s  •  %s  •  %d turn%s" % [enc.get("title", ""), enc.get("subtitle", ""), b.player_turns, "" if b.player_turns == 1 else "s"]
 	v.add_child(UI.lbl(sub, 16, UI.DIM, HORIZONTAL_ALIGNMENT_CENTER))
 	if not run.is_empty():
@@ -879,7 +902,7 @@ func _finish() -> void:
 		var tile := UI.reward_tile(r, 66)
 		tile.modulate.a = 0.0
 		f.add_child(tile)
-		var tw := create_tween()
+		var tw := tile.create_tween()   # bound to the tile: dies with the results overlay
 		tw.tween_interval(0.25 + 0.08 * i)
 		tw.tween_property(tile, "modulate:a", 1.0, 0.2)
 		i += 1
@@ -987,7 +1010,7 @@ func _result_card(c: Dictionary, summary: Dictionary, is_mvp: bool) -> Control:
 		var maxed: bool = w.level >= Game.max_level(w)
 		var bar := UI.bar(0, 1.0, UI.PURPLE, 6)
 		v.add_child(bar)
-		create_tween().tween_property(bar, "value", 1.0 if maxed else float(w.xp) / float(need), 0.8).set_delay(0.3)
+		bar.create_tween().tween_property(bar, "value", 1.0 if maxed else float(w.xp) / float(need), 0.8).set_delay(0.3)
 	var sh := UI.hb()
 	sh.add_child(UI.lbl("+%s XP" % U.fmt(summary.xp_each), 14, Color("#C9A6FF")))
 	sh.add_child(UI.spacer())

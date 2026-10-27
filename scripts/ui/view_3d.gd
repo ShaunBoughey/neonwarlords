@@ -18,6 +18,13 @@ func _notification(what: int) -> void:
 	match what:
 		NOTIFICATION_ENTER_TREE:
 			set_process(true)
+			# Godot 4.3's headless dummy renderer errors ("Parameter m is null") when a MeshInstance3D is
+			# freed with its mesh attached; detach meshes as they leave this view so headless tests run clean.
+			if DisplayServer.get_name() == "headless" and not get_tree().node_removed.is_connected(_on_node_removed):
+				get_tree().node_removed.connect(_on_node_removed)
+		NOTIFICATION_EXIT_TREE:
+			if get_tree().node_removed.is_connected(_on_node_removed):
+				get_tree().node_removed.disconnect(_on_node_removed)
 		NOTIFICATION_PROCESS:
 			if vp != null and is_visible_in_tree():
 				var want := Vector2i((size * render_scale()).round()).max(Vector2i.ONE)
@@ -29,3 +36,7 @@ func _notification(what: int) -> void:
 		NOTIFICATION_DRAW:
 			if vp != null:
 				draw_texture_rect(vp.get_texture(), Rect2(Vector2.ZERO, size), false)
+
+func _on_node_removed(n: Node) -> void:
+	if n is MeshInstance3D and is_ancestor_of(n):
+		(n as MeshInstance3D).mesh = null

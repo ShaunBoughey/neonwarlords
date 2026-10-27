@@ -314,8 +314,8 @@ func reward_label(r: Dictionary) -> String:
 		"gear": return ns + "x Rank %d %sEquipment" % [r.rank, (cap(r.r) + " ") if r.get("r", "") != "" else ""]
 		"implant": return ns + "x Rank %d %sImplant" % [r.rank, (cap(r.r) + " ") if r.get("r", "") != "" else ""]
 		"mf": return ns + "x Tier %d Memory Fragments" % r.tier
-		"gearSet": return "Set of Rank %d %sEquipment" % [r.rank, (r.set + " ") if r.get("set", "") != "" else ""]
-		"implantSet": return "Set of Rank %d Implants" % r.rank
+		"gearSet": return "Set of Rank %d %s%sEquipment" % [r.rank, (cap(r.r) + " ") if String(r.get("r", "")) != "" else "", (r.set + " ") if r.get("set", "") != "" else ""]
+		"implantSet": return "Set of Rank %d %sImplants" % [r.rank, (cap(r.r) + " ") if String(r.get("r", "")) != "" else ""]
 		"neon": return ns + "x Rank %d Neon" % r.rank
 		"cache": return ns + "x " + r.name
 		"raidTicket": return ns + "x Raid Boss Ticket"

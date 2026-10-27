@@ -118,7 +118,8 @@ func _build() -> void:
 	env.fog_enabled = true
 	env.fog_light_color = Color("#05040d").lerp(accent, 0.08)
 	env.fog_density = 0.028
-	env.ssr_enabled = true
+	# SSR exists only on the Forward+ renderer (the project ships on Mobile, where it just warns)
+	env.ssr_enabled = ProjectSettings.get_setting("rendering/renderer/rendering_method") == "forward_plus"
 	var we := WorldEnvironment.new()
 	we.environment = env
 	world.add_child(we)

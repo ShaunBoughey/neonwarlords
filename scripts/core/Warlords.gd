@@ -136,7 +136,7 @@ func _build() -> void:
 		_p("harvested_plating", "Harvested Plating", "When hit, 20% chance to gain a 50% COUNTER for 1 turn.", {"hooks": [{"on": "hit_taken", "chance": 20, "fx": [_bf("counter", 1, "self", 0)]}]}),
 		_l("flock", "The Flock", "Vultures allies gain 15% Health.", {"hpP": 15}, "vultures"),
 	])
-	_w("madame_marrow", "Madame Marrow", "epic", "modder", "vultures", "renegade", [
+	_w("madame_marrow", "Madame Marrow", "epic", "modder", "vultures", "paragon", [
 		_a("leech_kiss", "Leech Kiss", "Attack 1 enemy and heal self by 50% of the damage dealt.", 1.0, "enemy", 0, [], {"lifesteal": 50}),
 		_a("blood_rite", "Blood Rite", "Place a 15% VAMPIRE and 25% FIREPOWER UP on all allies for 2 turns.", 0.0, "all_allies", 3, [_bf("vampire", 2, "all_allies", 0), _bf("fpUp", 2, "all_allies", 0)]),
 		_a("transfusion", "Transfusion", "Heal all allies by 20% of this Warlord's Max HP and remove 1 debuff from each.", 0.0, "all_allies", 5, [{"t": "heal", "pct": 20, "of": "caster", "to": "all_allies"}, {"t": "cleanse", "n": 1, "to": "all_allies"}]),
@@ -162,7 +162,7 @@ func _build() -> void:
 		_a("freeze_assets", "Freeze Assets", "Remove 10% Turn Meter from all enemies and 50% chance to place SPEED DOWN for 2 turns.", 0.5, "all_enemies", 4, [{"t": "tm", "v": -10, "to": "target"}, _db("spdDown", 2, 50)]),
 		_p("compliance", "Compliance", "Increase Firewall by 20.", {"stats": {"fw": 20}}),
 	])
-	_w("kellen", "Enforcer Kellen", "rare", "armour", "teratek", "neutral", [
+	_w("kellen", "Enforcer Kellen", "rare", "armour", "teratek", "paragon", [
 		_a("opportunist", "Opportunist", "Attack all enemies. Place ARMOUR DOWN for 1 turn.", 0.6, "all_enemies", 0, [_db("armDown", 1)]),
 		_a("bodyguard", "Bodyguard Protocol", "Place 50% ARMOUR UP and 15% BOLSTER on all allies for 2 turns.", 0.0, "all_allies", 4, [_bf("armUp", 2, "all_allies", 1), _bf("bolster", 2, "all_allies", 0)]),
 		_p("capitalist_k", "Capitalist", "Gain Turn Meter equal to double any Turn Meter removed from allies.", {"special": "capitalist"}),
@@ -191,7 +191,7 @@ func _build() -> void:
 	], {"lore": "Chief financial officer of TeraTek Cybernetics. Excels at opportunist plays."})
 
 	# ============================================================ QUANTUM VIKINGS
-	_w("ragnar_volt", "Ragnar Volt", "common", "firepower", "vikings", "renegade", [
+	_w("ragnar_volt", "Ragnar Volt", "common", "firepower", "vikings", "paragon", [
 		_a("axe_zap", "Axe Zap", "Attack 1 enemy. 20% chance to place SHOCK for 1 turn.", 1.0, "enemy", 0, [_db("shock", 1, 20)]),
 		_a("berserk_dose", "Berserk Dose", "Place a 50% FIREPOWER UP on self for 2 turns, then attack 1 enemy.", 1.4, "enemy", 3, [_bf("fpUp", 2, "self", 1, {"pre": true})]),
 	])
@@ -231,7 +231,7 @@ func _build() -> void:
 		_a("iaido", "Iaido", "Attack 1 enemy. If this kills the target, take an extra turn.", 2.0, "enemy", 3, [{"t": "extra_turn", "if": "kill"}]),
 		_p("ronin_code", "Ronin Code", "Increase Critical Damage by 15%.", {"stats": {"cd": 15}}),
 	])
-	_w("oni_matsuda", "Oni Matsuda", "rare", "armour", "shogunate", "paragon", [
+	_w("oni_matsuda", "Oni Matsuda", "rare", "armour", "shogunate", "renegade", [
 		_a("tetsubo", "Tetsubo", "Attack 1 enemy. 15% chance to place STUN for 1 turn.", 1.1, "enemy", 0, [_db("stun", 1, 15)]),
 		_a("iron_vow", "Iron Vow", "Place a 50% ARMOUR UP and 50% COUNTER on self for 2 turns.", 0.0, "self", 4, [_bf("armUp", 2, "self", 1), _bf("counter", 2, "self", 0)]),
 		_p("bushido", "Bushido", "Gain 20% Turn Meter whenever an ally drops below 25% HP.", {"hooks": [{"on": "ally_low", "fx": [{"t": "tm", "v": 20, "to": "self"}]}]}),
@@ -258,7 +258,7 @@ func _build() -> void:
 		_a("gnaw", "Gnaw", "Attack 1 enemy. 30% chance to place POISON for 2 turns.", 1.0, "enemy", 0, [_db("poison", 2, 30)]),
 		_a("plague_squeak", "Plague Squeak", "Attack all enemies. 30% chance to place POISON for 2 turns.", 0.7, "all_enemies", 3, [_db("poison", 2, 30)]),
 	])
-	_w("mama_hogg", "Mama Hogg", "uncommon", "armour", "spliced", "neutral", [
+	_w("mama_hogg", "Mama Hogg", "uncommon", "armour", "spliced", "paragon", [
 		_a("tusk_charge", "Tusk Charge", "Attack 1 enemy and remove 10% Turn Meter.", 1.0, "enemy", 0, [{"t": "tm", "v": -10, "to": "target"}]),
 		_a("wallow", "Wallow", "Heal self by 20% Max HP and place a 25% ARMOUR UP on self for 2 turns.", 0.0, "self", 3, [{"t": "heal", "pct": 20, "of": "caster", "to": "self"}, _bf("armUp", 2, "self", 0)]),
 		_p("thick_hide_h", "Thick Hide", "Increase Health by 10%.", {"stats": {"hpP": 10}}),
@@ -290,12 +290,12 @@ func _build() -> void:
 		_a("blaster", "Blaster", "Attack 1 enemy.", 1.0),
 		_a("plunder", "Plunder", "Remove 1 buff from the target, then attack it.", 1.6, "enemy", 3, [{"t": "strip", "n": 1, "to": "target", "pre": true}]),
 	])
-	_w("pix", "Navigator Pix", "uncommon", "modder", "traders", "neutral", [
+	_w("pix", "Navigator Pix", "uncommon", "modder", "traders", "paragon", [
 		_a("pistol", "Pistol Whip", "Attack 1 enemy.", 1.0),
 		_a("hyperlane", "Hyperlane", "Grant all allies 15% Turn Meter.", 0.0, "all_allies", 3, [{"t": "tm", "v": 15, "to": "all_allies"}]),
 		_p("star_charts", "Star Charts", "Increase Speed by 6%.", {"stats": {"spdP": 6}}),
 	])
-	_w("bosun_krug", "Bosun Krug", "rare", "armour", "traders", "renegade", [
+	_w("bosun_krug", "Bosun Krug", "rare", "armour", "traders", "neutral", [
 		_a("anchor", "Anchor Swing", "Attack 1 enemy. 30% chance to place SPEED DOWN for 2 turns.", 1.1, "enemy", 0, [_db("spdDown", 2, 30)]),
 		_a("batten", "Batten Down", "Place 15% BOLSTER on all allies for 2 turns and an OVERSHIELD of 10% of this Warlord's Max HP.", 0.0, "all_allies", 4, [_bf("bolster", 2, "all_allies", 0), {"t": "shield", "pct": 10, "of": "caster", "to": "all_allies", "turns": 2}]),
 		_p("salty", "Salty", "Increase Firewall by 30.", {"stats": {"fw": 30}}),

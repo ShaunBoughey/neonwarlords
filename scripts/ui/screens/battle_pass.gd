@@ -37,9 +37,11 @@ func build() -> void:
 		th.add_child(UI.btn("PREMIUM  £15", func():
 			err(Game.bp_buy_premium(false))
 			rebuild(), "gold" if iap else "ghost", 0, 14))
-		th.add_child(UI.btn("PREMIUM +25 LV  £25", func():
-			err(Game.bp_buy_premium(true))
-			rebuild(), "primary" if iap else "ghost", 0, 14))
+		# "straight to level 25": nothing extra once you are already there
+		if lvl < 25:
+			th.add_child(UI.btn("PREMIUM +25 LV  £25", func():
+				err(Game.bp_buy_premium(true))
+				rebuild(), "primary" if iap else "ghost", 0, 14))
 	root.add_child(top)
 	# challenges
 	var ch := UI.hb(12)

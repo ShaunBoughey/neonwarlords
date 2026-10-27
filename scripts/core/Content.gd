@@ -20,8 +20,21 @@ func enemy_bonus(level: int, rank: int) -> float:
 	var r := float(rank - 1)
 	return 0.04 * r + 0.03 * r * r + 0.002 * level
 
-func enemy_unit(tpl_id: String, level: int, rank: int, rep := 0, boss_mult := 1.0, bonus_add := 0.0) -> Dictionary:
-	return Battle.make_unit(enemy(tpl_id, level, rank, rep), 1, enemy_bonus(level, rank) + bonus_add, boss_mult)
+## Enemy Hacking floor (open lever; the GDD gives enemies no Hacking): grows with enemy level (sqrt, since player
+## Firewall tracks gear rank, which flattens late) so debuffs land against the Firewall a typical squad has at that
+## point (literal Hacking >= Firewall check), while Firewall-invested squads still resist.
+## Tuned with tests/fix/C/hack_sim.tscn: roughly 50-80% of checked debuff attempts land on an unspecialised squad.
+const ENEMY_HACK_BASE := 10.0
+const ENEMY_HACK_PER_SQRT_LEVEL := 14.4
+
+func enemy_hack(level: int) -> float:
+	return ENEMY_HACK_BASE + ENEMY_HACK_PER_SQRT_LEVEL * sqrt(float(maxi(1, level)))
+
+func enemy_unit(tpl_id: String, level: int, rank: int, rep := 0, boss_mult := 1.0, bonus_add := 0.0, add_hack := true) -> Dictionary:
+	var u := Battle.make_unit(enemy(tpl_id, level, rank, rep), 1, enemy_bonus(level, rank) + bonus_add, boss_mult)
+	if add_hack:
+		u.base.hack = maxf(float(u.base.hack), enemy_hack(level))
+	return u
 
 func player_units(uids: Array) -> Array:
 	var out: Array = []
@@ -143,15 +156,19 @@ func campaign_rewards(enc: Dictionary, won: bool) -> Dictionary:
 	var stg := campaign_stage(enc.d, enc.loc, enc.st)
 	var rew: Array = stg.rew[enc.d]
 	var xp := int(rew[0])
-	var res := {"xp": xp if won else int(xp * 0.2), "items": [], "pxp": 0}
+	var res := {"xp": xp if won else int(xp * Data.LOSS_XP_FACTOR), "items": [], "pxp": 0}
 	if not won:
 		return res
 	var list: Array = [{"k": "credits", "n": int(rew[1])}]
 	var drops: Array = Data.CAMPAIGN_DROPS[enc.d]
 	var out: Array = Game.grant(list)
-	for dr in drops:
-		if not U.chance(float(dr[2])):
-			continue
+	# GDD chances per difficulty sum to 100%: exactly one additional drop per win (same rule as the deeds hideouts)
+	var wts: Array = []
+	for i in drops.size():
+		wts.append([i, float(drops[i][2])])
+	var picked = U.weighted(wts)
+	if picked != null:
+		var dr: Array = drops[int(picked)]
 		match dr[0]:
 			"warlord":
 				out.append_array(Game.grant([{"k": "warlord", "r": dr[1], "n": 1}]))
@@ -196,10 +213,28 @@ const HIDEOUT_ORDER := ["trolls", "vultures", "teratek", "vikings", "synapse", "
 ## Hideout enemy level per stage (the GDD gives none). Stages 1-10 climb gently, 11-15 by 8 a stage,
 ## 16-20 by 16 (stage 20 = level 161). Tuned with HideoutProbe: stage 10 for R5, stage 15 for R6,
 ## stage 20 ~50% for a maxed R6 legendary+20 squad and under 15% for R6 epic+16.
-func hideout_level(stage: int) -> Array:
+## Hideout difficulty levers (open: the GDD gives hideout enemies no level table). Levels climb 4 per stage to 10,
+## then HIDEOUT_MID_STEP per stage to 15, then HIDEOUT_LATE_STEP per stage to 20; the boss's HP multiplier is
+## HIDEOUT_BOSS_BASE + HIDEOUT_BOSS_PER_STAGE x stage + HIDEOUT_BOSS_LATE x stages past 15. Vars (not consts) so
+## tests/fix/hideout_tune can sweep them. Tuned with tests/fix/hideout_tune/bisect.tscn (3 geared squads x 8 fights per point):
+## stage 20 ~50% for a maxed R6 legendary squad in every hideout; stage 15 needs R6; R5 clears stage 10.
+var HIDEOUT_MID_STEP := 8
+var HIDEOUT_LATE_STEP := 16
+## Per-hideout late step (stages 16-20) so every hideout's stage 20 sits near 50% for a maxed R6 legendary squad;
+## hideouts whose boss mechanics hit harder climb less. Missing ids use HIDEOUT_LATE_STEP.
+var HIDEOUT_LATE_STEP_BY_ID := {"trolls": 16, "vultures": 11, "teratek": 12, "vikings": 11, "synapse": 26, "chopshop": 0,
+	"heist": 20, "deeds_paragon": 0, "deeds_neutral": 15, "deeds_renegade": 12, "deeds_generic": 23}
+## Per-hideout factor on the boss HP multiplier (bosses whose minions heal them need less raw HP). Missing ids = 1.0.
+var HIDEOUT_BOSS_HP_BY_ID := {"chopshop": 0.9}
+var HIDEOUT_BOSS_BASE := 2.5
+var HIDEOUT_BOSS_PER_STAGE := 0.15
+var HIDEOUT_BOSS_LATE := 0.15
+
+func hideout_level(stage: int, id := "") -> Array:
+	var late: int = HIDEOUT_LATE_STEP_BY_ID.get(id, HIDEOUT_LATE_STEP)
 	var lv := 4 * stage + 1
 	if stage > 10:
-		lv = 41 + 8 * (stage - 10) if stage <= 15 else 81 + 16 * (stage - 15)
+		lv = 41 + HIDEOUT_MID_STEP * (stage - 10) if stage <= 15 else 41 + 5 * HIDEOUT_MID_STEP + late * (stage - 15)
 	return [lv, clampi(1 + stage / 3, 1, 6), clampi(stage / 3, 0, 6)]
 
 func hideout_cost(id: String, stage: int) -> Dictionary:
@@ -229,11 +264,11 @@ const BRING_IT_ON_TEXT := {
 }
 
 func build_hideout(id: String, stage: int) -> Dictionary:
-	var l := hideout_level(stage)
+	var l := hideout_level(stage, id)
 	var lv: int = l[0]
 	var rk: int = l[1]
 	var rp: int = l[2]
-	var boss_m := 2.5 + stage * 0.15 + 0.6 * maxi(0, stage - 15)   # boss HP x; steepens over stages 16-20
+	var boss_m := (HIDEOUT_BOSS_BASE + stage * HIDEOUT_BOSS_PER_STAGE + HIDEOUT_BOSS_LATE * maxi(0, stage - 15)) * float(HIDEOUT_BOSS_HP_BY_ID.get(id, 1.0))   # boss HP x; steepens over stages 16-20
 	var wave1: Array
 	var wave2: Array
 	match id:
@@ -281,7 +316,7 @@ func _rank_weights(d: Dictionary) -> Dictionary:
 func hideout_rewards(enc: Dictionary, won: bool) -> Dictionary:
 	var stage: int = enc.stage
 	var xp := 3000 + 1500 * stage
-	var res := {"xp": xp if won else int(xp * 0.2), "items": []}
+	var res := {"xp": xp if won else int(xp * Data.LOSS_XP_FACTOR), "items": []}
 	if not won:
 		return res
 	var id: String = enc.id
@@ -359,7 +394,7 @@ func build_sw(syn: String, stage: int) -> Dictionary:
 
 func sw_rewards(enc: Dictionary, won: bool) -> Dictionary:
 	var xp := 2000 + 1000 * int(enc.stage)
-	var res := {"xp": xp if won else int(xp * 0.2), "items": []}
+	var res := {"xp": xp if won else int(xp * Data.LOSS_XP_FACTOR), "items": []}
 	if won:
 		var row: Dictionary = Data.GDD.syndicateWars[enc.stage - 1]
 		var rank := int(U.weighted(_rank_weights(row.ranks)))
@@ -421,6 +456,8 @@ func _pit_unit(m: Dictionary, k: float, side: int) -> Dictionary:
 	var u := Battle.make_unit(enemy(m.tpl, m.level, m.rank, m.rep), side, enemy_bonus(m.level, m.rank))
 	for st in ["hp", "arm", "fp", "hack"]:
 		u.base[st] = float(u.base[st]) * k
+	# same enemy-Hacking floor as PvE (opponent warlords otherwise have ~0 Hacking, so no debuff ever lands)
+	u.base.hack = maxf(float(u.base.hack), enemy_hack(int(m.level)))
 	return u
 
 func build_pit(mode: String, opp: Dictionary) -> Dictionary:
@@ -448,8 +485,8 @@ func build_bastion(stage: int) -> Dictionary:
 	var info: Dictionary = BASTION_STAGES[stage - 1]
 	var lv := 30 + stage * 15
 	var rk := clampi(3 + stage, 1, 6)
-	var boss := enemy_unit(info.boss, lv, rk, 3, 60.0)
-	var adds := [enemy_unit("teratek_drone", lv - 10, rk - 1, 1), enemy_unit("teratek_drone", lv - 10, rk - 1, 1), enemy_unit("teratek_drone", lv - 10, rk - 1, 1)]
+	var boss := enemy_unit(info.boss, lv, rk, 3, 60.0, 0.0, false)   # Bastion is out of the enemy-Hacking lever (tuned separately)
+	var adds := [enemy_unit("teratek_drone", lv - 10, rk - 1, 1, 1.0, 0.0, false), enemy_unit("teratek_drone", lv - 10, rk - 1, 1, 1.0, 0.0, false), enemy_unit("teratek_drone", lv - 10, rk - 1, 1, 1.0, 0.0, false)]
 	return {"mode": "bastion", "stage": stage, "title": "Bastion - " + info.name, "subtitle": "Deal as much damage as you can in %d turns" % BASTION_TURNS,
 		"waves": [[boss] + adds], "cost": {"bastion": 1}, "turn_limit": BASTION_TURNS, "chevron_turns": 99}
 
@@ -527,8 +564,8 @@ func finish(enc: Dictionary, b: Battle, team: Array) -> Dictionary:
 	match enc.mode:
 		"campaign":
 			res = campaign_rewards(enc, won)
-			Game.track("den", 1)
-			if won:
+			if won:  # "Complete N Dens" jobs / BP / ambitions count wins only
+				Game.track("den", 1)
 				Game.campaign_record(enc.d, enc.loc, enc.st, stars)
 		"hideout":
 			res = hideout_rewards(enc, won)
@@ -554,12 +591,14 @@ func finish(enc: Dictionary, b: Battle, team: Array) -> Dictionary:
 		var w = Game.wl(uid)
 		if w:
 			levels[uid] = Game.add_wxp(w, per)
+	# player XP: 1 per energy spent on a win, 20% of that on a loss (energy-free modes give none)
+	var pxp := Game.battle_pxp(int(enc_cost(enc).get("energy", 0)), won)
 	Game.save_game()
 	var contrib: Array = []
 	for u in b.side_units(0, false):
 		contrib.append({"tpl": u.tpl, "uid": u.owner_uid, "dealt": int(u.dmg_dealt), "taken": int(u.dmg_taken), "healed": int(u.healed), "alive": u.alive})
 	return {"won": won, "result": b.result, "stars": stars, "xp_each": per, "levels": levels, "items": res.items, "contrib": contrib,
-		"damage": res.get("damage", 0), "pxp": int(enc_cost(enc).get("energy", 0))}
+		"damage": res.get("damage", 0), "pxp": pxp}
 
 ## Rough enemy power (same scale as Game.power) for the squad screen's difficulty read-out.
 func enc_power(enc: Dictionary) -> int:

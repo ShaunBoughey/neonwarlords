@@ -86,6 +86,10 @@ func build() -> void:
 	_sign(right, "The Plaza", "Hourly credit market", UI.YELLOW, func(): main.go("plaza"), false, "plaza")
 	_sign(right, "Black Market", "Pit Coin store", UI.CYAN, func(): main.go("black_market"), false, "black_market")
 	_sign(right, "Safehouse", "Permanent stat nodes", UI.CYAN, func(): main.go("safehouse"), false, "safehouse")
+	# GDD Leveling Methods (the RAID Tavern): the warlord Dojo page, feed Metabolics with the alignment bonus
+	_sign(right, "Tavern", "Level Warlords with Metabolics", UI.CYAN, func():
+		var first: String = squad[0] if not squad.is_empty() else (String(Game.S.roster[0].uid) if not Game.S.roster.is_empty() else "")
+		main.go("warlord", {"uid": first, "tab": "Dojo"}))
 	var stocks_ready: bool = Game.stocks_level() > 0 and Game.S.stocks.stored >= 1.0
 	_sign(right, "Trinium Stocks", ("Ready to collect  •  %d" % int(Game.S.stocks.stored)) if stocks_ready else _stocks_text(), UI.GOLD if stocks_ready else UI.CYAN, func(): _stocks(), stocks_ready)
 	_sign(right, "Inventory", "%d items  •  %d neons" % [Game.S.equip.size(), Game.S.neons.size()], UI.CYAN, func(): main.go("inventory"))

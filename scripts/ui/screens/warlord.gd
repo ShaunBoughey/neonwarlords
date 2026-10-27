@@ -237,8 +237,24 @@ func _filter(n: String) -> void:
 			var opts2: Array = Data.CLASSES
 			f[key] = opts2[(opts2.find(f.get(key, "")) + 1) % opts2.size()] if f.get(key, "") != opts2[opts2.size() - 1] else null
 		"set":
+			# pick from a list instead of cycling through 20 sets
 			var opts3: Array = Data.SETS.keys()
-			f[key] = opts3[(opts3.find(f.get(key, "")) + 1) % opts3.size()] if f.get(key, "") != opts3[opts3.size() - 1] else null
+			var pm := PopupMenu.new()
+			pm.add_item("All sets", 0)
+			for i in opts3.size():
+				pm.add_item("%s (%d pc)" % [opts3[i], Data.SETS[opts3[i]].pieces], i + 1)
+			pm.id_pressed.connect(func(id):
+				if id == 0:
+					f.erase(key)
+				else:
+					f[key] = opts3[id - 1]
+				if st.drawer == "":
+					st.drawer = "equipment"
+				rebuild())
+			pm.popup_hide.connect(func(): if is_instance_valid(pm): pm.queue_free())
+			add_child(pm)
+			pm.popup(Rect2i(Vector2i(get_viewport().get_mouse_position()), Vector2i(260, 0)))
+			return
 		"slot":
 			var opts4: Array = Data.ALL_SLOTS
 			f[key] = opts4[(opts4.find(f.get(key, "")) + 1) % opts4.size()] if f.get(key, "") != opts4[opts4.size() - 1] else null
@@ -296,7 +312,14 @@ func _bottom_strip() -> void:
 	_ui_btn("⌂", Vector2(315, 985), func(): main.home(), "ghost", 60)
 	_ui_btn("◀", Vector2(385, 985), func(): _cycle(-1), "ghost", 60)
 	_ui_btn("▶", Vector2(455, 985), func(): _cycle(1), "ghost", 60)
-	_lbl("%s  •  %s" % [U.cap(t.rarity).to_upper(), U.cap(t.align).to_upper()], Vector2(540, 968), 20, Data.RARITY_COLOR[t.rarity], 0, HORIZONTAL_ALIGNMENT_LEFT, true)
+	var rl := _lbl(U.cap(t.rarity).to_upper(), Vector2(540, 968), 20, Data.RARITY_COLOR[t.rarity], 0, HORIZONTAL_ALIGNMENT_LEFT, true, null, false)
+	var ax: float = 540 + rl.get_minimum_size().x + 14
+	var ab := UI.align_badge(t.align, 26)
+	ab.position = Vector2(ax, 966)
+	ab.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	canvas.add_child(ab)
+	_lbl(U.cap(t.align).to_upper(), Vector2(ax + 32, 968), 20, Data.ALIGN_COLOR[t.align], 0, HORIZONTAL_ALIGNMENT_LEFT, true, null, false)
+	_hit(Vector2(ax, 964), Vector2(170, 30), func(): _info_modal(U.cap(t.align) + " alignment", String(UI.ALIGN_INFO[t.align])), UI.ALIGN_INFO[t.align])
 	_lbl("POWER %s · REP %d/%d · LV %d/%d" % [U.fmt(Game.power(w)), w.rep, w.rank, w.level, Game.max_level(w)], Vector2(540, 998), 17, UI.YELLOW, 355, HORIZONTAL_ALIGNMENT_LEFT, false, null, false)
 	if w.level < Game.max_level(w):
 		var need := Data.xp_to_next(w.level, w.rank)
@@ -358,17 +381,28 @@ func _stats_panel() -> void:
 		_lbl(("+%s%%" % str(snappedf(inc, 0.1))) if pct else "+" + U.fmt(inc), Vector2(x + 16, y + 56), 18, UI.GREEN)
 	# set slots
 	_img("StatsG/SetSlotsG/SetSlotsI.png", Vector2(1216, 670))
-	var k := 0
-	for sname in s.sets:
+	# every set with a piece worn, active ones first; the 3 slots show the top 3, the rest go in the last slot's tooltip
+	var snames: Array = s.sets.keys().filter(func(n): return int(s.sets[n]) > 0)
+	snames.sort_custom(func(a, b2): return int(s.sets[a] / Data.SETS[a].pieces) * 10 + int(s.sets[a]) > int(s.sets[b2] / Data.SETS[b2].pieces) * 10 + int(s.sets[b2]))
+	var set_line := func(n: String) -> String:
+		var d: Dictionary = Data.SETS[n]
+		var tm := int(s.sets[n] / d.pieces)
+		return "%s %d/%d %s: %s" % [n, s.sets[n], d.pieces, ("ACTIVE x%d" % tm) if tm > 0 else "inactive", d.desc]
+	for k in mini(3, snames.size()):
+		var sname: String = snames[k]
 		var sd: Dictionary = Data.SETS[sname]
 		var times := int(s.sets[sname] / sd.pieces)
-		if times <= 0 or k >= 3:
-			continue
+		var tip: String = set_line.call(sname)
+		if k == 2 and snames.size() > 3:
+			for extra in snames.slice(3):
+				tip += "
+" + set_line.call(extra)
 		var sym := _img("StatsG/SetSlotsG/GearSetSymbol%d.png" % (k + 1), Vector2(1225, 700 + k * 80))
-		sym.tooltip_text = "%s x%d: %s" % [sname, times, sd.desc]
-		_hit(Vector2(1216, 685 + k * 80), Vector2(56, 60), func(): pass, "%s (%d/%d) x%d: %s" % [sname, s.sets[sname], sd.pieces, times, sd.desc])
-		_lbl(sname.to_upper(), Vector2(1000, 700 + k * 80), 16, UI.GREEN, 210, HORIZONTAL_ALIGNMENT_RIGHT)
-		k += 1
+		sym.tooltip_text = tip
+		if times <= 0:
+			sym.modulate = Color(1, 1, 1, 0.35)
+		_hit(Vector2(1216, 685 + k * 80), Vector2(56, 60), func(): pass, tip)
+		_lbl("%s %d/%d%s" % [sname.to_upper(), s.sets[sname], sd.pieces, (" +%d" % (snames.size() - 3)) if k == 2 and snames.size() > 3 else ""], Vector2(1000, 700 + k * 80), 16, UI.GREEN if times > 0 else UI.DIM, 210, HORIZONTAL_ALIGNMENT_RIGHT)
 
 # ================================================================ GEAR / IMPLANTS
 func _page_slots(slots: Array) -> void:
@@ -450,13 +484,23 @@ func _gear_modal() -> void:
 		_lbl(text, Vector2(165 + (17 if c == UI.MAGENTA else 0), 132 + i * 19), 15, c)
 	if it.set != "":
 		var sd: Dictionary = Data.SETS[it.set]
-		_lbl("SET BONUS (%d):" % sd.pieces, Vector2(420, 104), 14, UI.CYAN, 180, HORIZONTAL_ALIGNMENT_LEFT, true)
-		_lbl(String(sd.desc).to_upper(), Vector2(420, 124), 13, Color.WHITE, 180)
+		var worn := int(Game.compute_stats(w).sets.get(it.set, 0))
+		if it.owner != w.uid:
+			worn += 1  # what the set would reach if this piece were equipped (replacing a different-set piece)
+			var cur = Game.eq(w.get("gear", {}).get(it.slot, ""))
+			if cur != null and cur.get("set", "") == it.set:
+				worn -= 1
+		var set_on: bool = worn >= int(sd.pieces)
+		_lbl("SET BONUS %d/%d%s:" % [worn, sd.pieces, "" if it.owner == w.uid else " IF EQUIPPED"], Vector2(420, 104), 14, UI.CYAN if set_on else UI.DIM, 180, HORIZONTAL_ALIGNMENT_LEFT, true)
+		_lbl(String(sd.desc).to_upper(), Vector2(420, 124), 13, Color.WHITE if set_on else UI.DIM, 180)
 	var owner = Game.wl(it.owner)
 	if owner != null and owner.uid != w.uid:
 		_lbl("ON " + Game.tpl(owner).name.to_upper(), Vector2(165, 52), 13, UI.YELLOW, 245, HORIZONTAL_ALIGNMENT_RIGHT, false, null, false)
 	var equipped: bool = it.owner == w.uid
-	if not equipped:
+	var rep_need := int(Data.IMPLANT_UNLOCK.get(it.slot, 0)) if it.kind == "implant" else 0
+	if not equipped and int(w.rep) < rep_need:
+		_lbl("NEEDS REP %d: %s IMPLANT SLOT IS LOCKED (REP %d)" % [rep_need, String(it.slot).to_upper(), int(w.rep)], Vector2(165, 205), 13, UI.RED, 540, HORIZONTAL_ALIGNMENT_LEFT, true, null, false)
+	elif not equipped:
 		var delta := Game.equip_delta(w, it)
 		var parts: Array = []
 		for k in ["hp", "arm", "fp", "spd", "cc", "cd", "hack", "fw"]:
@@ -656,7 +700,7 @@ func _page_level() -> void:
 		var xpv: float = Data.METABOLIC_XP[tier] * ((1.0 + Data.METABOLIC_ALIGN_BONUS) if meta == t.align else 1.0)
 		gain += int(xpv * n)
 	_img("LevelScreenG/OwnedMetabolicsBG.png", Vector2(1282, 893))
-	_lbl("METABOLICS", Vector2(1282, 898), 20, Color.WHITE, 504, HORIZONTAL_ALIGNMENT_CENTER, true)
+	_lbl("DOJO  •  METABOLICS", Vector2(1282, 898), 20, Color.WHITE, 504, HORIZONTAL_ALIGNMENT_CENTER, true)
 	var aligns := ["paragon", "renegade", "neutral"]
 	for i in 3:
 		var al: String = aligns[i]
@@ -665,6 +709,10 @@ func _page_level() -> void:
 			st.meta_n = 1
 			rebuild(), 0.85, meta == al)
 		b.tooltip_text = "%s metabolics: %d minor / %d major / %d grand" % [U.cap(al), Game.item_count(["metabolic", al, "minor"]), Game.item_count(["metabolic", al, "major"]), Game.item_count(["metabolic", al, "grand"])]
+		if al == t.align:
+			b.tooltip_text += "
+Matches %s's %s alignment: +%d%% XP" % [t.name, U.cap(al), int(round(Data.METABOLIC_ALIGN_BONUS * 100))]
+			_lbl("+%d%% XP" % int(round(Data.METABOLIC_ALIGN_BONUS * 100)), Vector2(1335 + i * 145, 906), 14, UI.GREEN, 105, HORIZONTAL_ALIGNMENT_CENTER, true)
 		var tot := 0
 		for tr in ["minor", "major", "grand"]:
 			tot += Game.item_count(["metabolic", al, tr])
@@ -807,6 +855,9 @@ func _page_rep() -> void:
 		else:
 			Game.say("Reputation raised to %d" % w.rep, UI.YELLOW)
 		rebuild())
+	_lbl("%s IS %s: REPUTATION NEEDS %s + GENERIC DEEDS" % [String(t.name).to_upper(), String(t.align).to_upper(), String(t.align).to_upper()],
+		Vector2(1282, 150), 16, Data.ALIGN_COLOR[t.align], 506, HORIZONTAL_ALIGNMENT_CENTER, true)
+	_rep_cost_table(Vector2(1282, 585))
 	var groups := [[t.align, 218], ["generic", 538]]
 	for g in groups:
 		var al: String = g[0]
@@ -842,6 +893,19 @@ func _page_rep() -> void:
 		var y2 := 892 + i * 82
 		_bar("RepScreenG/New Assets/Upgrade Bar BG 480x73.png", "RepScreenG/New Assets/Upgrade Bar Fill 474x35.png", Vector2(1295, y2), float(have) / max(1, need), Vector2(3, 33))
 		_lbl("%s: %d %s  (%d/%d)" % [al2.to_upper(), need, tier2.to_upper(), mini(have, need), need], Vector2(1340, y2 + 4), 17, Color.WHITE, 420, HORIZONTAL_ALIGNMENT_LEFT, true)
+
+## Every reputation level's deed cost for this warlord's rarity (GDD Reputation table); the next level is highlighted.
+func _rep_cost_table(pos: Vector2) -> void:
+	var tbl: Array = Data.rep_table(t.rarity)
+	_lbl("%s COSTS" % U.cap(t.rarity).to_upper(), pos, 14, Data.RARITY_COLOR[t.rarity], 160, HORIZONTAL_ALIGNMENT_CENTER, true)
+	_lbl("%s / GENERIC" % String(t.align).to_upper(), pos + Vector2(0, 20), 12, UI.DIM, 160, HORIZONTAL_ALIGNMENT_CENTER, false)
+	for i in tbl.size():
+		var row: Array = tbl[i]
+		var a: String = row[0].keys()[0]
+		var g: String = row[1].keys()[0]
+		var txt := "%d   %d %s / %d %s" % [i + 1, row[0][a], a.substr(0, 3).to_upper(), row[1][g], g.substr(0, 3).to_upper()]
+		var col := UI.YELLOW if i == w.rep else (UI.DIM if i < w.rep else Color.WHITE)
+		_lbl(txt, pos + Vector2(0, 44 + i * 22), 13, col, 160, HORIZONTAL_ALIGNMENT_CENTER, i == w.rep, null, false)
 
 # ================================================================ NEURONET
 func _page_neuronet() -> void:
@@ -944,8 +1008,9 @@ func _nn_modal(sk: Dictionary) -> void:
 	_lbl(String(sk.desc).to_upper(), Vector2(175, 98), 18, Color.WHITE, 470)
 	var vals: Array = sk.get("v", [])
 	if not vals.is_empty():
-		var now_t: String = (str(vals[pts - 1]) + "%") if pts > 0 else "-"
-		var next_t: String = (str(vals[pts]) + "%") if pts < vals.size() else "MAX"
+		var unit := "" if sk.id in ["malware", "monitoring", "encrypt", "ransomware"] else "%"  # flat Hacking / Firewall
+		var now_t: String = (str(vals[pts - 1]) + unit) if pts > 0 else "-"
+		var next_t: String = (str(vals[pts]) + unit) if pts < vals.size() else "MAX"
 		_lbl("NOW: %s   NEXT: %s" % [now_t, next_t], Vector2(175, 156), 16, UI.CYAN, 470)
 	var why := Game.nn_can(w, sk.id)
 	_lbl(why.to_upper() if why != "" else "READY TO INSTALL", Vector2(175, 180), 15, UI.YELLOW if why != "" else UI.GREEN, 470)
@@ -988,6 +1053,12 @@ func _page_abilities() -> void:
 			info += "  •  " + ("BASIC" if int(sel.cd) == 0 else "CD %d" % sel.cd)
 		_lbl(String(sel.name).to_upper() + info, Vector2(172, 56), 20, Color.WHITE, 480, HORIZONTAL_ALIGNMENT_LEFT, true, null, false)
 		_lbl(String(sel.desc).to_upper(), Vector2(172, 92), 16, Color.WHITE, 470)
+		if sel.type == "active" and float(sel.get("mult", 0.0)) > 0.0:
+			var parts: Array = []
+			var sc: Dictionary = Data.CLASS_SCALING.get(t.cls, {"fp": 1.0})
+			for stk in sc:
+				parts.append(Data.STATS[stk].short)
+			_lbl("DAMAGE: x%s MULTIPLIER  •  SCALES WITH %s (%s CLASS)" % [str(snappedf(float(sel.mult), 0.01)), " + ".join(parts).to_upper(), Data.CLASS_INFO[t.cls].name.to_upper()], Vector2(172, 174), 15, UI.YELLOW, 470)
 		if Data.ability_max_level(sel) > 1:
 			_lbl("+%d%% EFFECT PER LEVEL" % int(round(Data.ABILITY_LEVEL_BONUS * 100)), Vector2(172, 196), 15, UI.CYAN, 470)
 		else:
@@ -1151,10 +1222,18 @@ func _warlord_card(f: Dictionary, mode: String) -> Control:
 	nm.clip_text = true
 	nm.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	c.add_child(nm)
-	var info := UI.lbl("LV %d  R%d" % [f.level, f.rank] + ("  +%s XP" % U.fmt(Game.feed_xp_value(f)) if mode == "feed" else ""), 13, UI.YELLOW, HORIZONTAL_ALIGNMENT_CENTER)
-	info.position = Vector2(4, 162)
-	info.size = Vector2(142, 20)
+	var info := UI.lbl("LV %d" % f.level + ("  +%s XP" % U.fmt(Game.feed_xp_value(f)) if mode == "feed" else ""), 13, UI.YELLOW, HORIZONTAL_ALIGNMENT_LEFT)
+	info.position = Vector2(10, 162)
+	info.size = Vector2(130, 20)
 	c.add_child(info)
+	var stars := UI.rank_stars(f, 12)
+	stars.position = Vector2(10, 163)
+	stars.size = Vector2(130, 18)
+	c.add_child(stars)
+	var ab := UI.align_badge(tf.align, 22)
+	ab.position = Vector2(116, 16)
+	ab.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	c.add_child(ab)
 	if picked:
 		var g := ColorRect.new()
 		g.color = Color(1, 0.84, 0.16, 0.25)
@@ -1162,7 +1241,7 @@ func _warlord_card(f: Dictionary, mode: String) -> Control:
 		g.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		c.add_child(g)
 	var uid: String = f.uid
-	_hit(Vector2.ZERO, Vector2(150, 198), func(): _pick_warlord(uid, mode), "%s • %s %s • %s" % [tf.name, U.cap(tf.rarity), Data.CLASS_INFO[tf.cls].name, Data.SYNDICATES[tf.syn].name], c)
+	_hit(Vector2.ZERO, Vector2(150, 198), func(): _pick_warlord(uid, mode), UI.warlord_tooltip(f), c)
 	return c
 
 func _pick_warlord(uid: String, mode: String) -> void:

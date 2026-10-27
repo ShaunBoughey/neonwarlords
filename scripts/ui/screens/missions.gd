@@ -43,8 +43,16 @@ func _jobs(period: String) -> void:
 	root.add_child(UI.lbl("Jobs reset in %s." % U.dur(reset), 14, UI.DIM))
 	var list := UI.vb(6)
 	for j in Game.jobs_list(period):
-		list.add_child(_row(j.text, j.rewards, j.cur, j.target, j.claimed, func(): main.show_rewards("Job Complete", Game.claim_job(period, j.i), rebuild)))
+		list.add_child(_row(j.text, j.rewards, j.cur, j.target, j.claimed, func(): main.show_rewards("Job Complete", Game.claim_job(period, j.i), rebuild), _lock_hint(j.text)))
 	root.add_child(UI.scroll(list))
+
+## "Unlocks at Player Level N" for jobs whose feature is still locked ("" otherwise).
+func _lock_hint(text: String) -> String:
+	var tl := text.to_lower()
+	var feat := "arena" if "pit brawl" in tl else ("plaza" if "plaza" in tl else ("hideouts" if "hideout" in tl else ""))
+	if feat == "" or Game.feature_ok(feat):
+		return ""
+	return "%s unlocks at Player Level %d" % [Data.FEATURE_INFO[feat][0], Game.feature_level(feat)]
 
 func _ambitions(cat: String) -> void:
 	root.add_child(UI.lbl("Ambitions are lifetime goals. Complete a tier to reveal the next.", 14, UI.DIM))
@@ -58,7 +66,7 @@ func _ambitions(cat: String) -> void:
 		list.add_child(_row(a.text, a.rewards, a.cur, a.target, a.claimed, func(): main.show_rewards("Ambition Complete", Game.claim_ambition(cat, amb), rebuild)))
 	root.add_child(UI.scroll(list))
 
-func _row(text: String, rewards: Array, cur_v: int, target: int, claimed: bool, cb: Callable) -> PanelContainer:
+func _row(text: String, rewards: Array, cur_v: int, target: int, claimed: bool, cb: Callable, lock := "") -> PanelContainer:
 	var done := cur_v >= target
 	var acc := UI.DIM if claimed else (UI.GREEN if done else UI.CYAN)
 	var p := PanelContainer.new()
@@ -80,6 +88,8 @@ func _row(text: String, rewards: Array, cur_v: int, target: int, claimed: bool, 
 	if bf:
 		tl.add_theme_font_override("font", bf)
 	v.add_child(tl)
+	if lock != "":
+		v.add_child(UI.lbl(lock, 13, UI.HINT))
 	v.add_child(UI.reward_chips(rewards, 14))
 	h.add_child(v)
 	var pv := UI.vb(3)

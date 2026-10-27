@@ -687,15 +687,20 @@ func die(uid: String) -> void:
 	a.dead = true
 	play(uid, "death", 0.05)
 	a.ring.visible = false
-	var tw := _tween()
+	# bound to the actor so it dies with it, and kept so a revive can cancel the sink
+	var tw: Tween = a.node.create_tween()
+	tw.set_speed_scale(speed)
 	tw.tween_interval(1.4)
 	tw.tween_property(a.node, "position:y", -0.6, 0.8)
+	a.sink = tw
 
 func revive(uid: String) -> void:
 	if not actors.has(uid):
 		return
 	var a: Dictionary = actors[uid]
 	a.dead = false
+	if a.get("sink") is Tween and (a.sink as Tween).is_valid():
+		(a.sink as Tween).kill()
 	a.node.position = a.home
 	a.ring.visible = true
 	_face_front(uid)
